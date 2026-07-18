@@ -85,13 +85,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Behrouz Bagherzadeh — Digital Transformation & BI Leader" },
+      { name: "twitter:description", content: "Portfolio of Behrouz Bagherzadeh: 15+ years turning AI, data, and enterprise systems into measurable business outcomes." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b63aab1c-9c70-490f-b814-98fbec5f0dd2/id-preview-d9ff8c95--85bb88d5-3025-4146-9ed5-610b6d3f829b.lovable.app-1784409958244.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b63aab1c-9c70-490f-b814-98fbec5f0dd2/id-preview-d9ff8c95--85bb88d5-3025-4146-9ed5-610b6d3f829b.lovable.app-1784409958244.png" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" },
