@@ -135,6 +135,12 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <div className="bg-motion" aria-hidden="true">
+        <div className="bg-motion__orb bg-motion__orb--1" />
+        <div className="bg-motion__orb bg-motion__orb--2" />
+        <div className="bg-motion__orb bg-motion__orb--3" />
+        <div className="bg-motion__grain" />
+      </div>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>
