@@ -515,6 +515,7 @@ function Portfolio() {
           <div>Istanbul · Türkiye</div>
         </div>
       </footer>
+      </main>
     </div>
   );
 }
