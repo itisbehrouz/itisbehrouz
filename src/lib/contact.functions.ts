@@ -11,7 +11,7 @@ const contactSchema = z.object({
 export type ContactFormData = z.infer<typeof contactSchema>;
 
 export const submitContact = createServerFn({ method: "POST" })
-  .inputValidator((data) => contactSchema.parse(data))
+  .validator((data) => contactSchema.parse(data))
   .handler(async ({ data }) => {
     // TODO: wire up an email provider (e.g. Resend, SendGrid, AWS SES) to deliver the message.
     // For now, the submission is validated and can be logged or stored.
