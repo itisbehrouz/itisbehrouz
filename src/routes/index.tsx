@@ -5,6 +5,35 @@ import { useTheme } from "@/hooks/use-theme";
 
 export const Route = createFileRoute("/")({
   component: Portfolio,
+  head: () => {
+    const url = "https://itisbehrouz.lovable.app/";
+    const personLd = {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Behrouz Bagherzadeh",
+      jobTitle: "Digital Transformation & BI Manager",
+      url,
+      sameAs: ["https://linkedin.com/in/itisbehrouz"],
+      address: { "@type": "PostalAddress", addressLocality: "Istanbul", addressCountry: "TR" },
+      email: "mailto:itisbehrouz@outlook.com",
+    };
+    const websiteLd = {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Behrouz Bagherzadeh — Portfolio",
+      url,
+    };
+    return {
+      meta: [
+        { property: "og:url", content: url },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        { type: "application/ld+json", children: JSON.stringify(personLd) },
+        { type: "application/ld+json", children: JSON.stringify(websiteLd) },
+      ],
+    };
+  },
 });
 
 const experience = [
@@ -194,6 +223,7 @@ function Portfolio() {
         </div>
       </header>
 
+      <main id="main">
       <section id="top" className="relative pt-40 pb-24 md:pt-48 md:pb-32 px-6 md:px-10 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none opacity-[0.08]" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, var(--ember) 0, transparent 50%), radial-gradient(circle at 80% 70%, var(--ember) 0, transparent 40%)" }} />
         <div className="max-w-7xl mx-auto relative">
@@ -208,6 +238,7 @@ function Portfolio() {
             Behrouz
             <br />
             <span className="italic text-[var(--ember)]">Bagher</span>zadeh
+            <span className="sr-only"> — Digital Transformation & BI Leader</span>
           </h1>
           <div className="mt-12 grid md:grid-cols-12 gap-8">
             <p className="md:col-span-7 text-xl md:text-2xl leading-relaxed text-foreground/90" style={{ fontFamily: "var(--font-display)" }}>
@@ -478,6 +509,7 @@ function Portfolio() {
         </div>
       </section>
 
+      </main>
       <footer className="border-t border-border py-8 px-6 md:px-10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
           <div>© 2026 Behrouz Bagherzadeh</div>

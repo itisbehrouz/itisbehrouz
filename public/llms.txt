@@ -1,0 +1,14 @@
+# Behrouz Bagherzadeh — Portfolio
+
+> Portfolio of Behrouz Bagherzadeh, a Digital Transformation & Business Intelligence leader with 15+ years turning AI, data, and enterprise systems into measurable business outcomes.
+
+## Pages
+
+- [Home](/): Overview, capabilities, impact metrics, and career timeline.
+
+## Case Studies
+
+- [Executive Power BI Suite](/work/executive-bi-suite): Real-time KPI visibility across a 7-entity international group.
+- [AI Automation Platform](/work/ai-automation-platform): AI-enabled automation on Microsoft Power Platform lifting productivity 67%.
+- [Digital Workplace PWA](/work/digital-workplace-pwa): Unified PWA consolidating ERP, HR, CRM, BI, and IT Service Desk.
+- [B2B E-Commerce Launch](/work/b2b-ecommerce-launch): End-to-end B2B commerce platform for international markets.
