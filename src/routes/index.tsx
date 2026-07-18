@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { caseStudies } from "@/lib/case-studies";
 
 export const Route = createFileRoute("/")({
   component: Portfolio,
@@ -203,7 +204,50 @@ function Portfolio() {
 
       <section id="work" className="py-24 md:py-32 px-6 md:px-10 border-t border-border">
         <div className="max-w-7xl mx-auto">
-          <SectionLabel index="03" title="Selected Work" />
+          <SectionLabel index="03" title="Case Studies" />
+          <p className="mt-6 max-w-2xl text-muted-foreground">
+            Four projects that turned enterprise ambition into measurable outcomes.
+          </p>
+          <div className="mt-16 grid md:grid-cols-2 gap-px bg-border border-y border-border">
+            {caseStudies.map((c) => (
+              <Link
+                key={c.slug}
+                to="/work/$slug"
+                params={{ slug: c.slug }}
+                className="group bg-background p-8 md:p-10 hover:bg-card transition-colors block"
+              >
+                <div className="relative overflow-hidden border border-border aspect-[16/10]">
+                  <img
+                    src={c.cover}
+                    alt={c.title}
+                    loading="lazy"
+                    width={1600}
+                    height={1000}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="mt-6 flex items-baseline gap-4">
+                  <span className="text-xs text-[var(--ember)] tracking-[0.3em]" style={{ fontFamily: "var(--font-mono)" }}>
+                    / {c.index}
+                  </span>
+                  <span className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
+                    {c.client} · {c.period}
+                  </span>
+                </div>
+                <h3 className="mt-3 text-2xl md:text-3xl leading-tight group-hover:text-[var(--ember)] transition-colors" style={{ fontFamily: "var(--font-display)" }}>
+                  {c.title}
+                </h3>
+                <p className="mt-3 text-base text-foreground/80">{c.tagline}</p>
+                <div className="mt-6 text-xs tracking-[0.3em] uppercase text-[var(--ember)] group-hover:translate-x-1 transition-transform inline-flex items-center gap-2" style={{ fontFamily: "var(--font-mono)" }}>
+                  Read case →
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-24">
+            <SectionLabel index="03·b" title="Career Timeline" />
+          </div>
           <div className="mt-16 space-y-px bg-border">
             {experience.map((e, i) => (
               <article key={i} className="group bg-background hover:bg-card transition-colors py-8 md:py-10 px-2 md:px-6">
