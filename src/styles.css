@@ -173,3 +173,95 @@
     color: var(--color-foreground);
   }
 }
+
+/* ============================================================
+ * Ambient background motion — floating gradient orbs + grain.
+ * Fixed behind all content, pointer-events disabled.
+ * ============================================================ */
+.bg-motion {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--background);
+}
+
+.bg-motion__orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.55;
+  will-change: transform;
+}
+
+.bg-motion__orb--1 {
+  width: 46vmax;
+  height: 46vmax;
+  top: -12vmax;
+  left: -10vmax;
+  background: radial-gradient(circle at 30% 30%, var(--ember), transparent 65%);
+  animation: bg-drift-1 22s ease-in-out infinite alternate;
+}
+
+.bg-motion__orb--2 {
+  width: 38vmax;
+  height: 38vmax;
+  bottom: -14vmax;
+  right: -12vmax;
+  background: radial-gradient(circle at 60% 40%, oklch(0.55 0.15 260), transparent 65%);
+  animation: bg-drift-2 28s ease-in-out infinite alternate;
+  opacity: 0.4;
+}
+
+.bg-motion__orb--3 {
+  width: 30vmax;
+  height: 30vmax;
+  top: 40%;
+  left: 45%;
+  background: radial-gradient(circle at 50% 50%, oklch(0.65 0.12 180), transparent 65%);
+  animation: bg-drift-3 34s ease-in-out infinite alternate;
+  opacity: 0.28;
+}
+
+.light .bg-motion__orb {
+  opacity: 0.35;
+}
+.light .bg-motion__orb--2 { opacity: 0.22; }
+.light .bg-motion__orb--3 { opacity: 0.18; }
+
+.bg-motion__grain {
+  position: absolute;
+  inset: -50%;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.5 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  animation: bg-grain 6s steps(4) infinite;
+}
+
+@keyframes bg-drift-1 {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(8vmax, 6vmax, 0) scale(1.15); }
+}
+@keyframes bg-drift-2 {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(-10vmax, -4vmax, 0) scale(1.1); }
+}
+@keyframes bg-drift-3 {
+  0%   { transform: translate3d(-50%, -50%, 0) scale(1); }
+  100% { transform: translate3d(-38%, -60%, 0) scale(1.2); }
+}
+@keyframes bg-grain {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-2%, 1%); }
+  50%  { transform: translate(1%, -2%); }
+  75%  { transform: translate(-1%, 2%); }
+  100% { transform: translate(2%, -1%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-motion__orb,
+  .bg-motion__grain {
+    animation: none !important;
+  }
+}
