@@ -7,19 +7,36 @@ export const Route = createFileRoute("/work/$slug")({
     if (!study) throw notFound();
     return { study };
   },
-  head: ({ loaderData }) => {
+  head: ({ loaderData, params }) => {
     if (!loaderData) {
       return { meta: [{ title: "Case study not found" }, { name: "robots", content: "noindex" }] };
     }
     const { study } = loaderData;
     const title = `${study.title} — Behrouz Bagherzadeh`;
+    const url = `https://itisbehrouz.lovable.app/work/${params.slug}`;
+    const image = `https://itisbehrouz.lovable.app${study.cover}`;
+    const articleLd = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: study.title,
+      description: study.tagline,
+      image,
+      author: { "@type": "Person", name: "Behrouz Bagherzadeh", url: "https://itisbehrouz.lovable.app/" },
+      mainEntityOfPage: url,
+    };
     return {
       meta: [
         { title },
         { name: "description", content: study.tagline },
         { property: "og:title", content: title },
         { property: "og:description", content: study.tagline },
+        { property: "og:type", content: "article" },
+        { property: "og:url", content: url },
+        { property: "og:image", content: image },
+        { name: "twitter:image", content: image },
       ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [{ type: "application/ld+json", children: JSON.stringify(articleLd) }],
     };
   },
   component: CaseStudyPage,
