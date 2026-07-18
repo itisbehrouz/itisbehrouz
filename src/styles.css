@@ -169,8 +169,11 @@
   }
 
   body {
-    background-color: var(--color-background);
     color: var(--color-foreground);
+  }
+
+  html {
+    background-color: var(--color-background);
   }
 }
 
