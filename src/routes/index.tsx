@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { CASE_CATEGORIES, caseStudies, type CaseCategory } from "@/lib/case-studies";
+import { useTheme } from "@/hooks/use-theme";
 
 export const Route = createFileRoute("/")({
   component: Portfolio,
@@ -119,6 +120,7 @@ function Portfolio() {
   const [category, setCategory] = useState<CaseCategory | "All">("All");
   const [query, setQuery] = useState("");
   const q = query.trim().toLowerCase();
+  const { theme, toggle } = useTheme();
   const chipRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const chipValues = ["All", ...CASE_CATEGORIES] as const;
 
@@ -172,9 +174,23 @@ function Portfolio() {
             <a href="#impact" className="hover:text-[var(--ember)] transition-colors">Impact</a>
             <a href="#contact" className="hover:text-[var(--ember)] transition-colors">Contact</a>
           </nav>
-          <a href="mailto:itisbehrouz@outlook.com" className="text-xs px-3 py-1.5 border border-[var(--ember)]/40 text-[var(--ember)] hover:bg-[var(--ember)] hover:text-primary-foreground transition-colors" style={{ fontFamily: "var(--font-mono)" }}>
-            GET IN TOUCH
-          </a>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={toggle}
+              aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
+              aria-pressed={theme === "light"}
+              title={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
+              className="inline-flex items-center justify-center min-h-9 min-w-9 border border-border text-muted-foreground hover:text-[var(--ember)] hover:border-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <span aria-hidden="true" className="text-sm">
+                {theme === "light" ? "☾" : "☀"}
+              </span>
+            </button>
+            <a href="mailto:itisbehrouz@outlook.com" className="hidden sm:inline-block text-xs px-3 py-1.5 border border-[var(--ember)]/40 text-[var(--ember)] hover:bg-[var(--ember)] hover:text-primary-foreground transition-colors" style={{ fontFamily: "var(--font-mono)" }}>
+              GET IN TOUCH
+            </a>
+          </div>
         </div>
       </header>
 
