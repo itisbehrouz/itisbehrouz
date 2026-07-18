@@ -693,12 +693,3 @@ function EduCard({ period, title, school, loc }: { period: string; title: string
     </div>
   );
 }
-
-function ContactItem({ label, value, href }: { label: string; value: string; href: string }) {
-  return (
-    <a href={href} className="group block border-t border-border pt-6 hover:border-[var(--ember)] transition-colors">
-      <div className="text-xs text-muted-foreground uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>{label}</div>
-      <div className="mt-2 text-lg md:text-xl text-foreground group-hover:text-[var(--ember)] transition-colors break-all" style={{ fontFamily: "var(--font-display)" }}>{value}</div>
-    </a>
-  );
-}
