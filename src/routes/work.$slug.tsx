@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { caseStudies, getCaseStudy } from "@/lib/case-studies";
+import { caseStudies, getCaseStudy, type CaseStudy } from "@/lib/case-studies";
 
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }) => {
@@ -45,7 +45,7 @@ function NotFound() {
 }
 
 function CaseStudyPage() {
-  const { study } = Route.useLoaderData();
+  const { study } = Route.useLoaderData() as { study: CaseStudy };
   const currentIdx = caseStudies.findIndex((c) => c.slug === study.slug);
   const next = caseStudies[(currentIdx + 1) % caseStudies.length];
 
