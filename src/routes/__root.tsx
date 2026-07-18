@@ -116,6 +116,11 @@ function RootShell({ children }: { children: ReactNode }) {
             __html: `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}if(t==='light'){document.documentElement.classList.add('light');}document.documentElement.style.colorScheme=t;}catch(e){}})();`,
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var l=localStorage.getItem('lang');if(!l){l=(navigator.language||'en').toLowerCase().indexOf('tr')===0?'tr':'en';}document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l;}catch(e){}})();`,
+          }}
+        />
       </head>
       <body>
         {children}
