@@ -1,0 +1,622 @@
+import type { ReactNode } from "react";
+import type { Lang } from "@/hooks/use-lang";
+
+export type UI = {
+  nav: { work: string; capabilities: string; impact: string; contact: string; getInTouch: string };
+  hero: {
+    location: string;
+    srSuffix: string;
+    intro: (yrs: string) => ReactNode;
+    role: string;
+    based: string;
+    langs: string;
+    status: string;
+    roleVal: string;
+    basedVal: string;
+    langsVal: string;
+    statusVal: string;
+    years: string;
+  };
+  sections: {
+    capabilities: string;
+    caseStudies: string;
+    careerTimeline: string;
+    education: string;
+    contact: string;
+    impact: string;
+  };
+  work: {
+    intro: string;
+    filterLabel: string;
+    searchLabel: string;
+    searchPlaceholder: string;
+    searchHint: string;
+    clearSearch: string;
+    caseSingular: string;
+    casePlural: string;
+    noMatches: string;
+    reset: string;
+    noRoles: (q: string) => string;
+    readCase: string;
+    all: string;
+  };
+  contact: {
+    headingA: string;
+    headingEm: string;
+    headingB: string;
+    intro: string;
+    sent: string;
+    received: string;
+    thanks: string;
+    sendAnother: string;
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+    namePh: string;
+    emailPh: string;
+    subjectPh: string;
+    messagePh: string;
+    submit: string;
+    submitting: string;
+    errorMsg: string;
+    ariaForm: string;
+  };
+  errors: {
+    nameReq: string;
+    nameLong: string;
+    emailInv: string;
+    emailLong: string;
+    subjectReq: string;
+    subjectLong: string;
+    messageMin: string;
+    messageMax: string;
+  };
+  footerLoc: string;
+  caseStudy: {
+    notFound: string;
+    back: string;
+    getInTouch: string;
+    caseLabel: string;
+    figPrefix: string;
+    overview: string;
+    challenges: string;
+    approach: string;
+    outcomes: string;
+    client: string;
+    role: string;
+    period: string;
+    location: string;
+    nextCase: string;
+    read: string;
+    allWork: string;
+    quoteBy: string;
+  };
+  categories: Record<string, string>;
+};
+
+export const ui: Record<Lang, UI> = {
+  en: {
+    nav: { work: "Work", capabilities: "Capabilities", impact: "Impact", contact: "Contact", getInTouch: "GET IN TOUCH" },
+    hero: {
+      location: "Portfolio · Istanbul, TR",
+      srSuffix: " — Digital Transformation & BI Leader",
+      years: "15+ years",
+      intro: (yrs) => (
+        <>Digital transformation & business intelligence leader with{" "}
+          <span className="text-[var(--ember)]">{yrs}</span> bridging enterprise technology and business strategy — turning AI and analytics investments into outcomes leadership can measure.</>
+      ),
+      role: "ROLE",
+      based: "BASED",
+      langs: "LANGS",
+      status: "STATUS",
+      roleVal: "DX & BI Manager",
+      basedVal: "Istanbul, TR",
+      langsVal: "TR · FA · AZ · EN",
+      statusVal: "Open to leadership roles",
+    },
+    sections: {
+      capabilities: "Capabilities",
+      caseStudies: "Case Studies",
+      careerTimeline: "Career Timeline",
+      education: "Education",
+      contact: "Contact",
+      impact: "Impact",
+    },
+    work: {
+      intro: "Four projects that turned enterprise ambition into measurable outcomes.",
+      filterLabel: "Filter case studies by category",
+      searchLabel: "Search case studies and roles",
+      searchPlaceholder: "Search projects, tools, outcomes…",
+      searchHint: "Press Escape to clear the search.",
+      clearSearch: "Clear search",
+      caseSingular: "case",
+      casePlural: "cases",
+      noMatches: "No case studies match your filters.",
+      reset: "Reset",
+      noRoles: (q) => `No roles match "${q}".`,
+      readCase: "Read case →",
+      all: "All",
+    },
+    contact: {
+      headingA: "Let's build the ",
+      headingEm: "next",
+      headingB: "transformation.",
+      intro: "Send a message and I'll respond within two business days. No email or phone is displayed here — just fill in the form below.",
+      sent: "/ sent",
+      received: "Message received",
+      thanks: "Thanks for reaching out. I'll get back to you soon.",
+      sendAnother: "Send another message",
+      name: "Name",
+      email: "Email",
+      subject: "Subject",
+      message: "Message",
+      namePh: "Your name",
+      emailPh: "you@company.com",
+      subjectPh: "How can I help?",
+      messagePh: "Tell me about your project, challenge, or role...",
+      submit: "Send message",
+      submitting: "Sending...",
+      errorMsg: "Something went wrong. Please try again.",
+      ariaForm: "Contact form",
+    },
+    errors: {
+      nameReq: "Name is required",
+      nameLong: "Name is too long",
+      emailInv: "Invalid email address",
+      emailLong: "Email is too long",
+      subjectReq: "Subject is required",
+      subjectLong: "Subject is too long",
+      messageMin: "Message must be at least 10 characters",
+      messageMax: "Message is too long",
+    },
+    footerLoc: "Istanbul · Türkiye",
+    caseStudy: {
+      notFound: "Case study not found.",
+      back: "← Back to portfolio",
+      getInTouch: "GET IN TOUCH",
+      caseLabel: "Case",
+      figPrefix: "Fig.",
+      overview: "Overview",
+      challenges: "Challenges",
+      approach: "Approach",
+      outcomes: "Outcomes",
+      client: "Client",
+      role: "Role",
+      period: "Period",
+      location: "Location",
+      nextCase: "Next case",
+      read: "Read →",
+      allWork: "← All work",
+      quoteBy: "— Behrouz Bagherzadeh, on the project",
+    },
+    categories: {
+      "Data & BI": "Data & BI",
+      "Automation & AI": "Automation & AI",
+      "Digital Workplace": "Digital Workplace",
+      "E-Commerce": "E-Commerce",
+    },
+  },
+  tr: {
+    nav: { work: "Projeler", capabilities: "Yetkinlikler", impact: "Etki", contact: "İletişim", getInTouch: "İLETİŞİME GEÇ" },
+    hero: {
+      location: "Portfolyo · İstanbul, TR",
+      srSuffix: " — Dijital Dönüşüm & İş Zekâsı Lideri",
+      years: "15+ yıl",
+      intro: (yrs) => (
+        <>Dijital dönüşüm ve iş zekâsı lideri;{" "}
+          <span className="text-[var(--ember)]">{yrs}</span> boyunca kurumsal teknoloji ile iş stratejisini birleştirerek yapay zekâ ve analitik yatırımlarını ölçülebilir sonuçlara dönüştürüyor.</>
+      ),
+      role: "ROL",
+      based: "MERKEZ",
+      langs: "DİLLER",
+      status: "DURUM",
+      roleVal: "Dijital Dönüşüm & İZ Yöneticisi",
+      basedVal: "İstanbul, TR",
+      langsVal: "TR · FA · AZ · EN",
+      statusVal: "Liderlik rollerine açık",
+    },
+    sections: {
+      capabilities: "Yetkinlikler",
+      caseStudies: "Vaka Çalışmaları",
+      careerTimeline: "Kariyer Zaman Çizelgesi",
+      education: "Eğitim",
+      contact: "İletişim",
+      impact: "Etki",
+    },
+    work: {
+      intro: "Kurumsal hedefleri ölçülebilir sonuçlara dönüştüren dört proje.",
+      filterLabel: "Vaka çalışmalarını kategoriye göre filtrele",
+      searchLabel: "Vaka çalışmaları ve rollerde ara",
+      searchPlaceholder: "Proje, araç veya sonuç ara…",
+      searchHint: "Aramayı temizlemek için Esc tuşuna basın.",
+      clearSearch: "Aramayı temizle",
+      caseSingular: "vaka",
+      casePlural: "vaka",
+      noMatches: "Filtrelerinize uygun vaka bulunamadı.",
+      reset: "Sıfırla",
+      noRoles: (q) => `"${q}" ile eşleşen rol yok.`,
+      readCase: "Vakayı oku →",
+      all: "Tümü",
+    },
+    contact: {
+      headingA: "Bir sonraki ",
+      headingEm: "dönüşümü",
+      headingB: "birlikte kuralım.",
+      intro: "Mesaj gönderin, iki iş günü içinde dönüş yapıyorum. Burada e-posta veya telefon paylaşılmıyor — sadece aşağıdaki formu doldurun.",
+      sent: "/ gönderildi",
+      received: "Mesajınız alındı",
+      thanks: "İletişime geçtiğiniz için teşekkürler. En kısa sürede dönüş yapacağım.",
+      sendAnother: "Yeni bir mesaj gönder",
+      name: "İsim",
+      email: "E-posta",
+      subject: "Konu",
+      message: "Mesaj",
+      namePh: "Adınız",
+      emailPh: "siz@sirket.com",
+      subjectPh: "Nasıl yardımcı olabilirim?",
+      messagePh: "Projeniz, zorluğunuz veya rol hakkında yazın...",
+      submit: "Mesajı gönder",
+      submitting: "Gönderiliyor...",
+      errorMsg: "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
+      ariaForm: "İletişim formu",
+    },
+    errors: {
+      nameReq: "İsim gerekli",
+      nameLong: "İsim çok uzun",
+      emailInv: "Geçersiz e-posta adresi",
+      emailLong: "E-posta çok uzun",
+      subjectReq: "Konu gerekli",
+      subjectLong: "Konu çok uzun",
+      messageMin: "Mesaj en az 10 karakter olmalı",
+      messageMax: "Mesaj çok uzun",
+    },
+    footerLoc: "İstanbul · Türkiye",
+    caseStudy: {
+      notFound: "Vaka çalışması bulunamadı.",
+      back: "← Portfolyoya dön",
+      getInTouch: "İLETİŞİME GEÇ",
+      caseLabel: "Vaka",
+      figPrefix: "Şkl.",
+      overview: "Genel Bakış",
+      challenges: "Zorluklar",
+      approach: "Yaklaşım",
+      outcomes: "Sonuçlar",
+      client: "Müşteri",
+      role: "Rol",
+      period: "Dönem",
+      location: "Konum",
+      nextCase: "Sonraki vaka",
+      read: "Oku →",
+      allWork: "← Tüm projeler",
+      quoteBy: "— Behrouz Bagherzadeh, proje hakkında",
+    },
+    categories: {
+      "Data & BI": "Veri & İZ",
+      "Automation & AI": "Otomasyon & YZ",
+      "Digital Workplace": "Dijital İş Yeri",
+      "E-Commerce": "E-Ticaret",
+    },
+  },
+};
+
+export type MetricT = { value: string; label: string };
+export const metricsI18n: Record<Lang, MetricT[]> = {
+  en: [
+    { value: "80%", label: "Reduction in manual reporting effort" },
+    { value: "67%", label: "Lift in operational productivity" },
+    { value: "18→6", label: "Months to transformation impact" },
+    { value: "7", label: "International entities led" },
+  ],
+  tr: [
+    { value: "80%", label: "Manuel raporlama efor azaltımı" },
+    { value: "67%", label: "Operasyonel verimlilik artışı" },
+    { value: "18→6", label: "Dönüşüm etkisine kadar ay sayısı" },
+    { value: "7", label: "Yönetilen uluslararası kuruluş" },
+  ],
+};
+
+export type CapabilityT = { title: string; items: string[] };
+export const capabilitiesI18n: Record<Lang, CapabilityT[]> = {
+  en: [
+    { title: "Transformation & Strategy", items: ["Digital Transformation Strategy", "AI Strategy & Adoption", "Change Management", "Business Process Reengineering", "Operating Model Design", "Executive Stakeholder Management"] },
+    { title: "Data & Analytics", items: ["Power BI", "Data Strategy & Governance", "KPI Framework Design", "Executive Reporting", "Data Analytics"] },
+    { title: "Automation & Systems", items: ["Microsoft Power Platform", "Power Automate", "ERP / CRM Integration", "SAP SuccessFactors", "E-Commerce & B2B Platforms", "IT Infrastructure"] },
+    { title: "Leadership", items: ["Team Building", "Cross-Functional Leadership", "Multi-Entity Delivery", "Project Management", "Requirements Analysis"] },
+  ],
+  tr: [
+    { title: "Dönüşüm & Strateji", items: ["Dijital Dönüşüm Stratejisi", "YZ Stratejisi & Benimsenmesi", "Değişim Yönetimi", "İş Süreçleri Yeniden Tasarımı", "Operasyon Modeli Tasarımı", "Üst Düzey Paydaş Yönetimi"] },
+    { title: "Veri & Analitik", items: ["Power BI", "Veri Stratejisi & Yönetişim", "KPI Çerçevesi Tasarımı", "Yönetici Raporlama", "Veri Analitiği"] },
+    { title: "Otomasyon & Sistemler", items: ["Microsoft Power Platform", "Power Automate", "ERP / CRM Entegrasyonu", "SAP SuccessFactors", "E-Ticaret & B2B Platformlar", "BT Altyapısı"] },
+    { title: "Liderlik", items: ["Ekip Kurma", "Fonksiyonlar Arası Liderlik", "Çoklu Kuruluş Teslimatı", "Proje Yönetimi", "Gereksinim Analizi"] },
+  ],
+};
+
+export type ExperienceT = { period: string; role: string; company: string; location: string; bullets: string[] };
+export const experienceI18n: Record<Lang, ExperienceT[]> = {
+  en: [
+    { period: "2022 — 2026", role: "Digital Transformation & BI Manager", company: "Yiğitoğlu", location: "Istanbul", bullets: [
+      "Led enterprise-wide transformation across 7 international entities, aligning strategy, data, and technology.",
+      "Built and led a 5-person transformation & BI team, owning delivery and capability development.",
+      "Architected an executive Power BI suite across Finance, HR, Sales, and Supply Chain — cutting manual reporting by 80%.",
+      "Directed AI-enabled automation on Microsoft Power Platform, lifting operational productivity by 67%.",
+      "Delivered SAP SuccessFactors HR digitalization for 450+ employees across 9 locations.",
+      "Launched a company-wide Digital Workplace PWA consolidating ERP, HR, CRM, BI, and IT Service Desk.",
+    ]},
+    { period: "2021 — 2022", role: "Digital Transformation Analyst", company: "Yiğitoğlu", location: "Istanbul", bullets: [
+      "Compressed average transformation delivery from 18 to 6 months — a 67% faster path to impact.",
+      "Mapped end-to-end processes across departments to surface automation and digitalization opportunities.",
+    ]},
+    { period: "2019 — 2021", role: "Digital Transformation Analyst", company: "Kiğılı", location: "Istanbul", bullets: [
+      "Integrated e-commerce operations with ERP, streamlining order fulfillment.",
+      "Automated inventory & order workflows with Power Automate — cutting manual processing time by 40%.",
+      "Supported CRM transformation that lifted customer engagement and marketing effectiveness.",
+    ]},
+    { period: "2019", role: "E-Commerce Manager", company: "Edgers", location: "Istanbul", bullets: [
+      "Built and launched the company's first B2B e-commerce platform end-to-end.",
+      "Managed international B2B operations across Iran, the Balkans, Egypt, the US, and multiple African markets.",
+    ]},
+    { period: "2018", role: "Senior Business Developer", company: "Orka Holding — Damat / Tween / D'S", location: "Istanbul", bullets: [
+      "Surfaced new opportunities through market and competitive analysis across multiple retail brands.",
+    ]},
+    { period: "2016 — 2017", role: "Business Development Specialist", company: "Finesse", location: "Istanbul", bullets: [
+      "Developed strategic partnerships and managed client relationships to support expansion.",
+    ]},
+    { period: "2013 — 2016", role: "IT Engineer → Senior IT Engineer", company: "Mercedes-Benz AG", location: "Tabriz", bullets: [
+      "Led enterprise IT infrastructure operations, ensuring high availability and stability.",
+      "Implemented security and process improvements, reducing incident resolution time.",
+    ]},
+    { period: "2011 — 2013", role: "IT System Engineer", company: "EghtesadNovin Bank", location: "Tabriz", bullets: [] },
+  ],
+  tr: [
+    { period: "2022 — 2026", role: "Dijital Dönüşüm & İZ Yöneticisi", company: "Yiğitoğlu", location: "İstanbul", bullets: [
+      "7 uluslararası kuruluşta strateji, veri ve teknolojiyi hizalayan kurum çapında dönüşümü yönettim.",
+      "5 kişilik dönüşüm & iş zekâsı ekibini kurup yönettim; teslimat ve yetkinlik gelişimini üstlendim.",
+      "Finans, İK, Satış ve Tedarik Zinciri için yönetici Power BI paketi tasarladım — manuel raporlamayı %80 azalttım.",
+      "Microsoft Power Platform üzerinde YZ destekli otomasyonu yönettim; operasyonel verimliliği %67 artırdım.",
+      "9 lokasyondaki 450+ çalışan için SAP SuccessFactors İK dijitalleşmesini hayata geçirdim.",
+      "ERP, İK, CRM, İZ ve BT Servis Masası'nı tek çatı altında toplayan Dijital İş Yeri PWA'sını devreye aldım.",
+    ]},
+    { period: "2021 — 2022", role: "Dijital Dönüşüm Analisti", company: "Yiğitoğlu", location: "İstanbul", bullets: [
+      "Ortalama dönüşüm teslimatını 18 aydan 6 aya indirdim — %67 daha hızlı etki.",
+      "Otomasyon ve dijitalleşme fırsatlarını görünür kılmak için uçtan uca süreç haritaları çıkardım.",
+    ]},
+    { period: "2019 — 2021", role: "Dijital Dönüşüm Analisti", company: "Kiğılı", location: "İstanbul", bullets: [
+      "E-ticaret operasyonlarını ERP ile entegre ederek sipariş karşılamayı kolaylaştırdım.",
+      "Power Automate ile envanter & sipariş süreçlerini otomatikleştirdim — manuel süreyi %40 azalttım.",
+      "Müşteri etkileşimini ve pazarlama etkinliğini artıran CRM dönüşümünü destekledim.",
+    ]},
+    { period: "2019", role: "E-Ticaret Yöneticisi", company: "Edgers", location: "İstanbul", bullets: [
+      "Şirketin ilk B2B e-ticaret platformunu uçtan uca kurdum ve devreye aldım.",
+      "İran, Balkanlar, Mısır, ABD ve birçok Afrika pazarında uluslararası B2B operasyonlarını yönettim.",
+    ]},
+    { period: "2018", role: "Kıdemli İş Geliştirme Uzmanı", company: "Orka Holding — Damat / Tween / D'S", location: "İstanbul", bullets: [
+      "Birden fazla perakende markası için pazar ve rekabet analizi yoluyla yeni fırsatlar ortaya çıkardım.",
+    ]},
+    { period: "2016 — 2017", role: "İş Geliştirme Uzmanı", company: "Finesse", location: "İstanbul", bullets: [
+      "Büyümeyi desteklemek için stratejik ortaklıklar geliştirdim ve müşteri ilişkilerini yönettim.",
+    ]},
+    { period: "2013 — 2016", role: "BT Mühendisi → Kıdemli BT Mühendisi", company: "Mercedes-Benz AG", location: "Tebriz", bullets: [
+      "Yüksek erişilebilirlik ve kararlılığı sağlayarak kurumsal BT altyapı operasyonlarını yönettim.",
+      "Güvenlik ve süreç iyileştirmeleri uyguladım; olay çözüm süresini azalttım.",
+    ]},
+    { period: "2011 — 2013", role: "BT Sistem Mühendisi", company: "EghtesadNovin Bankası", location: "Tebriz", bullets: [] },
+  ],
+};
+
+export type EducationT = { period: string; title: string; school: string; loc: string };
+export const educationI18n: Record<Lang, EducationT[]> = {
+  en: [
+    { period: "2023 — 2024", title: "Digital Transformation Leadership", school: "Boston University · MicroMasters", loc: "Boston, USA (Online)" },
+    { period: "2010 — 2014", title: "Computer & Information Systems Security", school: "University of Applied Science and Technology · BASc", loc: "Tabriz, Iran" },
+  ],
+  tr: [
+    { period: "2023 — 2024", title: "Dijital Dönüşüm Liderliği", school: "Boston University · MicroMasters", loc: "Boston, ABD (Online)" },
+    { period: "2010 — 2014", title: "Bilgisayar & Bilgi Sistemleri Güvenliği", school: "University of Applied Science and Technology · BASc", loc: "Tebriz, İran" },
+  ],
+};
+
+export type CaseStudyContent = {
+  title: string;
+  tagline: string;
+  overview: string;
+  challenges: string[];
+  approach: string[];
+  outcomes: { value: string; label: string }[];
+  reflection: string;
+};
+
+export const caseStudyI18n: Record<Lang, Record<string, CaseStudyContent>> = {
+  en: {
+    "executive-bi-suite": {
+      title: "Executive Power BI Suite",
+      tagline: "Real-time KPI visibility for a 7-entity international group.",
+      overview: "Executive leadership across seven international entities was making decisions from static, hand-assembled slide decks stitched together from Finance, HR, Sales, and Supply Chain. Reporting was slow, brittle, and never quite trusted. The mandate was to give the executive team a single, real-time source of truth.",
+      challenges: [
+        "Seven entities, seven data cultures — different ERPs, different definitions of the same KPI.",
+        "Manual monthly reporting consumed a full week of analyst time across the group.",
+        "No shared governance model for metrics; every function defended its own numbers.",
+        "Executives needed depth without complexity — one dashboard, four functions, no training.",
+      ],
+      approach: [
+        "Ran a cross-entity KPI alignment programme with function heads to lock definitions before touching a chart.",
+        "Designed a governed semantic layer so every dashboard tile traced back to a single source of truth.",
+        "Shipped a Power BI suite spanning Finance, HR, Sales, and Supply Chain — layered from a one-page executive view down to operational detail.",
+        "Instrumented data refresh SLAs and a governance forum to keep the model honest as the business changed.",
+      ],
+      outcomes: [
+        { value: "80%", label: "Manual reporting effort removed" },
+        { value: "7", label: "Entities on a single model" },
+        { value: "4", label: "Functions unified" },
+      ],
+      reflection: "The wins weren't the charts — they were the definitions. Once leadership agreed on what a KPI meant, the dashboards stopped being political and started driving decisions.",
+    },
+    "ai-automation-platform": {
+      title: "AI-Enabled Automation Programme",
+      tagline: "Compounding productivity gains across back-office operations.",
+      overview: "Back-office functions were drowning in repetitive, low-judgement work — approvals, reconciliations, document extraction. Rather than run a one-off automation project, we built a programme: a portfolio of AI-enabled flows on Microsoft Power Platform with a shared operating model behind them.",
+      challenges: [
+        "Automation opportunities were scattered across every function; no shared prioritisation lens.",
+        "Business owners wanted magic, not maintenance — few were prepared for a citizen-developer model.",
+        "AI features carried real risk (extraction errors, model drift) that had to be governed, not ignored.",
+        "Every quick win had to compound, not create shadow IT.",
+      ],
+      approach: [
+        "Built an intake and scoring model to rank opportunities by hours saved, risk, and reusability.",
+        "Established a Power Platform Centre of Excellence: naming, environments, ALM, and reviews.",
+        "Rolled out AI Builder-powered flows for document extraction, approvals, and exception routing.",
+        "Coached function leads into co-owning their automations, with the team as reviewers, not bottlenecks.",
+      ],
+      outcomes: [
+        { value: "67%", label: "Lift in operational productivity" },
+        { value: "40%", label: "Cut in manual processing time on integrated flows" },
+        { value: "1", label: "Governed platform, no shadow IT" },
+      ],
+      reflection: "AI didn't replace anyone. It quietly removed the parts of the job nobody wanted, and gave the team back the hours where judgement actually matters.",
+    },
+    "digital-workplace-pwa": {
+      title: "Digital Workplace PWA",
+      tagline: "One AI-assisted environment for ERP, HR, CRM, BI, and IT.",
+      overview: "Employees juggled six or seven disconnected systems just to get through a normal day. We designed a company-wide Digital Workplace — a progressive web app that consolidates ERP, HR, CRM, BI, and IT Service Desk into a single, AI-assisted surface for 450+ employees across nine locations.",
+      challenges: [
+        "Nine locations, fragmented device fleets, and inconsistent connectivity — native apps were a non-starter.",
+        "Every underlying system had its own identity, permissions model, and design language.",
+        "The workforce spans field, retail, and office roles with very different daily journeys.",
+        "Change fatigue was real; adoption had to feel like relief, not another rollout.",
+      ],
+      approach: [
+        "Chose a PWA to hit every device with one codebase, offline-tolerant and installable.",
+        "Unified identity and role-based navigation so each employee saw only the workflows that matter to them.",
+        "Embedded AI assistance for search, requests, and self-service — the same intent, no matter which system answers.",
+        "Delivered SAP SuccessFactors HR digitalization for the same 450+ employees inside the same shell.",
+      ],
+      outcomes: [
+        { value: "450+", label: "Employees on one surface" },
+        { value: "9", label: "Locations unified" },
+        { value: "5", label: "Systems consolidated in-app" },
+      ],
+      reflection: "The right measure wasn't logins — it was how quickly a new hire could get productive without knowing which system did what.",
+    },
+    "b2b-ecommerce-launch": {
+      title: "B2B E-Commerce Platform Launch",
+      tagline: "A direct digital sales channel across five continents.",
+      overview: "Edgers had strong international demand but no direct digital sales channel — orders moved through email, spreadsheets, and phone calls. I built and launched the company's first proprietary B2B e-commerce platform, and ran international operations across Iran, the Balkans, Egypt, the United States, and multiple African markets.",
+      challenges: [
+        "Very different buyer behaviours, currencies, and compliance rules across five regions.",
+        "Existing sales team saw digital as a threat to their relationships.",
+        "No existing digital pricing, catalogue, or logistics data — everything had to be modelled from scratch.",
+        "Aggressive timeline: a working direct channel had to ship inside the same fiscal year.",
+      ],
+      approach: [
+        "Built the platform end-to-end: catalogue, quoting, order flow, and back-office integration.",
+        "Repositioned digital as a tool for existing sellers — they became the first power users, not the last.",
+        "Modelled a region-aware pricing and terms engine to respect local commercial reality.",
+        "Instrumented every order to feed learning back into sales and supply chain.",
+      ],
+      outcomes: [
+        { value: "1st", label: "Direct digital channel in company history" },
+        { value: "5", label: "Continents served from day one" },
+        { value: "0→∞", label: "Baseline digital revenue → new stream" },
+      ],
+      reflection: "The platform was the easy part. The real work was giving a traditional sales team a reason to want it.",
+    },
+  },
+  tr: {
+    "executive-bi-suite": {
+      title: "Yönetici Power BI Paketi",
+      tagline: "7 kuruluşlu uluslararası bir grup için gerçek zamanlı KPI görünürlüğü.",
+      overview: "Yedi uluslararası kuruluşun üst yönetimi; Finans, İK, Satış ve Tedarik Zinciri'nden elle birleştirilen statik sunumlarla karar veriyordu. Raporlama yavaş, kırılgan ve pek de güvenilir değildi. Görev, üst yönetime tek ve gerçek zamanlı bir doğruluk kaynağı sunmaktı.",
+      challenges: [
+        "Yedi kuruluş, yedi veri kültürü — farklı ERP'ler, aynı KPI için farklı tanımlar.",
+        "Aylık manuel raporlama grup çapında bir haftalık analist zamanını tüketiyordu.",
+        "Metrikler için ortak bir yönetişim modeli yoktu; her fonksiyon kendi sayısını savunuyordu.",
+        "Yöneticilerin karmaşa olmadan derinliğe ihtiyacı vardı — tek panel, dört fonksiyon, sıfır eğitim.",
+      ],
+      approach: [
+        "Grafiklere dokunmadan tanımları kilitlemek için fonksiyon liderleriyle kuruluşlar arası bir KPI hizalama programı yürüttüm.",
+        "Her panel bileşenini tek bir doğruluk kaynağına bağlayan yönetişimli bir semantik katman tasarladım.",
+        "Finans, İK, Satış ve Tedarik Zinciri'ni kapsayan; tek sayfalık yönetici görünümünden operasyonel detaya inen bir Power BI paketi teslim ettim.",
+        "İş değiştikçe modeli dürüst tutmak için veri yenileme SLA'ları ve bir yönetişim forumu kurguladım.",
+      ],
+      outcomes: [
+        { value: "80%", label: "Kaldırılan manuel raporlama eforu" },
+        { value: "7", label: "Tek model üzerinde kuruluş" },
+        { value: "4", label: "Birleştirilen fonksiyon" },
+      ],
+      reflection: "Kazanım grafikler değildi — tanımlardı. Yönetim bir KPI'nın ne anlama geldiğinde anlaştığında paneller siyasi olmaktan çıkıp kararı yönlendirmeye başladı.",
+    },
+    "ai-automation-platform": {
+      title: "YZ Destekli Otomasyon Programı",
+      tagline: "Back-office operasyonlarında birikimli verimlilik kazanımları.",
+      overview: "Back-office fonksiyonları; onaylar, mutabakatlar, belge çıkarımı gibi tekrarlı, düşük yargılı işlerde boğuluyordu. Tek seferlik bir otomasyon projesi yerine bir program kurduk: Microsoft Power Platform üzerinde YZ destekli akışlardan oluşan, arkasında ortak bir operasyon modeli bulunan bir portföy.",
+      challenges: [
+        "Otomasyon fırsatları her fonksiyona dağılmıştı; ortak bir önceliklendirme merceği yoktu.",
+        "İş sahipleri sihir istiyordu, bakım değil — çok azı citizen-developer modeline hazırdı.",
+        "YZ özellikleri gerçek riskler taşıyordu (çıkarım hataları, model kayması); göz ardı edilemez, yönetilmeliydi.",
+        "Her hızlı kazanımın birikmesi gerekiyordu, gölge BT üretmemesi lazımdı.",
+      ],
+      approach: [
+        "Fırsatları kazanılan saat, risk ve yeniden kullanılabilirlik ile sıralayan bir alım ve skorlama modeli kurdum.",
+        "İsimlendirme, ortamlar, ALM ve incelemeler dahil bir Power Platform Mükemmeliyet Merkezi oluşturdum.",
+        "Belge çıkarımı, onay ve istisna yönlendirmesi için AI Builder destekli akışları devreye aldım.",
+        "Fonksiyon liderlerini otomasyonlarının ortak sahibi olmaya yönlendirdim; ekip darboğaz değil, denetçi oldu.",
+      ],
+      outcomes: [
+        { value: "67%", label: "Operasyonel verimlilik artışı" },
+        { value: "40%", label: "Entegre akışlarda manuel süre azalması" },
+        { value: "1", label: "Yönetişimli platform, gölge BT yok" },
+      ],
+      reflection: "YZ kimseyi değiştirmedi. Kimsenin istemediği parçaları sessizce kaldırdı ve ekibin yargısının gerçekten önemli olduğu saatleri geri verdi.",
+    },
+    "digital-workplace-pwa": {
+      title: "Dijital İş Yeri PWA",
+      tagline: "ERP, İK, CRM, İZ ve BT için tek YZ destekli ortam.",
+      overview: "Çalışanlar normal bir günü geçirmek için altı ya da yedi kopuk sistemi jonglörlüyordu. Dokuz lokasyondaki 450+ çalışan için ERP, İK, CRM, İZ ve BT Servis Masası'nı tek YZ destekli yüzeyde birleştiren, şirket çapında bir Dijital İş Yeri progresif web uygulaması tasarladık.",
+      challenges: [
+        "Dokuz lokasyon, parçalı cihaz filoları ve tutarsız bağlantı — yerel uygulamalar seçenek dışıydı.",
+        "Her alt sistemin kendi kimliği, yetki modeli ve tasarım dili vardı.",
+        "Çalışanlar; saha, perakende ve ofis rollerini kapsıyor; günlük yolculukları çok farklıydı.",
+        "Değişim yorgunluğu gerçekti; benimsenme yeni bir yaygınlaştırma değil, rahatlama hissettirmeliydi.",
+      ],
+      approach: [
+        "Tek kod tabanıyla her cihaza ulaşan, çevrimdışı toleranslı ve kurulabilir bir PWA seçtim.",
+        "Her çalışanın yalnızca kendisi için önemli iş akışlarını görmesi için kimlik ve rol tabanlı gezinmeyi birleştirdim.",
+        "Arama, talep ve self-servis için YZ desteği yerleştirdim — hangi sistem yanıtlarsa yanıtlasın aynı niyet.",
+        "Aynı kabuk içinde 450+ çalışan için SAP SuccessFactors İK dijitalleşmesini teslim ettim.",
+      ],
+      outcomes: [
+        { value: "450+", label: "Tek yüzeyde çalışan" },
+        { value: "9", label: "Birleştirilen lokasyon" },
+        { value: "5", label: "Uygulama içinde birleştirilen sistem" },
+      ],
+      reflection: "Doğru ölçüt oturum açma değildi — yeni bir çalışanın hangi sistemin ne yaptığını bilmeden ne kadar hızlı üretken olduğuydu.",
+    },
+    "b2b-ecommerce-launch": {
+      title: "B2B E-Ticaret Platformu Lansmanı",
+      tagline: "Beş kıtaya yayılan doğrudan bir dijital satış kanalı.",
+      overview: "Edgers'ın güçlü uluslararası talebi vardı ama doğrudan dijital satış kanalı yoktu — siparişler e-posta, tablolar ve telefonla akıyordu. Şirketin ilk sahipli B2B e-ticaret platformunu kurup devreye aldım ve İran, Balkanlar, Mısır, ABD ve birçok Afrika pazarındaki uluslararası operasyonları yönettim.",
+      challenges: [
+        "Beş bölge boyunca çok farklı alıcı davranışları, para birimleri ve uyum kuralları.",
+        "Mevcut satış ekibi dijitali ilişkilerine bir tehdit olarak görüyordu.",
+        "Mevcut dijital fiyatlandırma, katalog veya lojistik verisi yoktu — her şey sıfırdan modellenmeliydi.",
+        "Agresif takvim: çalışan bir doğrudan kanalın aynı mali yıl içinde yayında olması gerekiyordu.",
+      ],
+      approach: [
+        "Platformu uçtan uca kurdum: katalog, teklif, sipariş akışı ve back-office entegrasyonu.",
+        "Dijitali mevcut satışçılar için bir araç olarak konumlandırdım — son değil, ilk power kullanıcılar oldular.",
+        "Yerel ticari gerçekliğe saygı duyan bölge farkındalıklı bir fiyatlandırma ve şart motoru modelledim.",
+        "Öğrenmeyi satış ve tedarik zincirine geri besleyecek şekilde her siparişi enstrümante ettim.",
+      ],
+      outcomes: [
+        { value: "1.", label: "Şirket tarihindeki ilk doğrudan dijital kanal" },
+        { value: "5", label: "İlk günden hizmet verilen kıta" },
+        { value: "0→∞", label: "Baz dijital gelir → yeni akış" },
+      ],
+      reflection: "Kolay olan platformdu. Asıl iş, geleneksel bir satış ekibine onu istemesi için bir sebep vermekti.",
+    },
+  },
+};
+
+export function tCase(lang: Lang, slug: string): CaseStudyContent | undefined {
+  return caseStudyI18n[lang][slug];
+}
