@@ -218,7 +218,7 @@ function Portfolio() {
                 {theme === "light" ? "☾" : "☀"}
               </span>
             </button>
-            <a href="mailto:itisbehrouz@outlook.com" className="hidden sm:inline-block text-xs px-3 py-1.5 border border-[var(--ember)]/40 text-[var(--ember)] hover:bg-[var(--ember)] hover:text-primary-foreground transition-colors" style={{ fontFamily: "var(--font-mono)" }}>
+            <a href="#contact" className="hidden sm:inline-block text-xs px-3 py-1.5 border border-[var(--ember)]/40 text-[var(--ember)] hover:bg-[var(--ember)] hover:text-primary-foreground transition-colors" style={{ fontFamily: "var(--font-mono)" }}>
               GET IN TOUCH
             </a>
           </div>
