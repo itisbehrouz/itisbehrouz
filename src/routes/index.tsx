@@ -509,13 +509,13 @@ function Portfolio() {
         </div>
       </section>
 
+      </main>
       <footer className="border-t border-border py-8 px-6 md:px-10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
           <div>© 2026 Behrouz Bagherzadeh</div>
           <div>Istanbul · Türkiye</div>
         </div>
       </footer>
-      </main>
     </div>
   );
 }
