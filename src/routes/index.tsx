@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { CASE_CATEGORIES, caseStudies, type CaseCategory } from "@/lib/case-studies";
 
 export const Route = createFileRoute("/")({
@@ -119,6 +119,24 @@ function Portfolio() {
   const [category, setCategory] = useState<CaseCategory | "All">("All");
   const [query, setQuery] = useState("");
   const q = query.trim().toLowerCase();
+  const chipRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  const chipValues = ["All", ...CASE_CATEGORIES] as const;
+
+  const handleChipKeyDown = (e: KeyboardEvent<HTMLButtonElement>, i: number) => {
+    const last = chipValues.length - 1;
+    let next = i;
+    if (e.key === "ArrowRight" || e.key === "ArrowDown") next = i === last ? 0 : i + 1;
+    else if (e.key === "ArrowLeft" || e.key === "ArrowUp") next = i === 0 ? last : i - 1;
+    else if (e.key === "Home") next = 0;
+    else if (e.key === "End") next = last;
+    else return;
+    e.preventDefault();
+    const btn = chipRefs.current[next];
+    if (btn) {
+      btn.focus();
+      setCategory(chipValues[next]);
+    }
+  };
 
   const filteredCases = useMemo(() => {
     return caseStudies.filter((c) => {
@@ -235,16 +253,34 @@ function Portfolio() {
             Four projects that turned enterprise ambition into measurable outcomes.
           </p>
 
-          <div className="mt-10 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-8">
-            <div className="flex flex-wrap gap-2">
-              {(["All", ...CASE_CATEGORIES] as const).map((cat) => {
+          <div
+            role="group"
+            aria-labelledby="work-filters-label"
+            className="mt-10 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-8"
+          >
+            <span id="work-filters-label" className="sr-only">
+              Filter and search case studies
+            </span>
+            <div
+              role="radiogroup"
+              aria-label="Filter case studies by category"
+              className="flex flex-wrap gap-2"
+            >
+              {chipValues.map((cat, i) => {
                 const active = category === cat;
                 return (
                   <button
                     key={cat}
+                    ref={(el) => {
+                      chipRefs.current[i] = el;
+                    }}
                     type="button"
+                    role="radio"
+                    aria-checked={active}
+                    tabIndex={active ? 0 : -1}
                     onClick={() => setCategory(cat)}
-                    className={`text-xs uppercase tracking-widest px-3 py-1.5 border transition-colors ${
+                    onKeyDown={(e) => handleChipKeyDown(e, i)}
+                    className={`text-xs uppercase tracking-widest px-3 py-1.5 border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                       active
                         ? "border-[var(--ember)] bg-[var(--ember)] text-primary-foreground"
                         : "border-border text-muted-foreground hover:border-[var(--ember)] hover:text-[var(--ember)]"
@@ -257,30 +293,52 @@ function Portfolio() {
               })}
             </div>
             <div className="relative lg:ml-auto lg:w-80">
+              <label htmlFor="work-search" className="sr-only">
+                Search case studies and roles
+              </label>
               <input
+                id="work-search"
                 type="search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Escape" && query) {
+                    e.preventDefault();
+                    setQuery("");
+                  }
+                }}
                 placeholder="Search projects, tools, outcomes…"
-                aria-label="Search work"
-                className="w-full bg-transparent border border-border focus:border-[var(--ember)] outline-none px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 transition-colors"
+                aria-describedby="work-search-hint work-results-count"
+                autoComplete="off"
+                spellCheck={false}
+                className="w-full bg-transparent border border-border focus:border-[var(--ember)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors"
                 style={{ fontFamily: "var(--font-mono)" }}
               />
+              <span id="work-search-hint" className="sr-only">
+                Press Escape to clear the search.
+              </span>
               {query && (
                 <button
                   type="button"
                   onClick={() => setQuery("")}
                   aria-label="Clear search"
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-muted-foreground hover:text-[var(--ember)]"
+                  aria-controls="work-search"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex items-center justify-center min-h-8 min-w-8 text-base text-muted-foreground hover:text-[var(--ember)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
-                  ×
+                  <span aria-hidden="true">×</span>
                 </button>
               )}
             </div>
           </div>
 
-          <div className="mt-4 text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
+          <div
+            id="work-results-count"
+            role="status"
+            aria-live="polite"
+            className="mt-4 text-xs uppercase tracking-widest text-muted-foreground"
+            style={{ fontFamily: "var(--font-mono)" }}
+          >
             {filteredCases.length} {filteredCases.length === 1 ? "case" : "cases"}
             {category !== "All" ? ` · ${category}` : ""}
             {q ? ` · "${query}"` : ""}
@@ -295,7 +353,7 @@ function Portfolio() {
                   setCategory("All");
                   setQuery("");
                 }}
-                className="text-[var(--ember)] hover:underline"
+                className="text-[var(--ember)] hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 Reset
               </button>
