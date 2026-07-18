@@ -19,7 +19,16 @@ export type CaseStudy = {
   approach: string[];
   outcomes: { value: string; label: string }[];
   reflection: string;
+  category: CaseCategory;
 };
+
+export const CASE_CATEGORIES = [
+  "Data & BI",
+  "Automation & AI",
+  "Digital Workplace",
+  "E-Commerce",
+] as const;
+export type CaseCategory = (typeof CASE_CATEGORIES)[number];
 
 export const caseStudies: CaseStudy[] = [
   {
@@ -33,6 +42,7 @@ export const caseStudies: CaseStudy[] = [
     location: "Istanbul, TR",
     stack: ["Power BI", "SQL", "Power Query", "Data Governance", "KPI Framework"],
     cover: caseBI,
+    category: "Data & BI",
     overview:
       "Executive leadership across seven international entities was making decisions from static, hand-assembled slide decks stitched together from Finance, HR, Sales, and Supply Chain. Reporting was slow, brittle, and never quite trusted. The mandate was to give the executive team a single, real-time source of truth.",
     challenges: [
@@ -66,6 +76,7 @@ export const caseStudies: CaseStudy[] = [
     location: "Istanbul, TR",
     stack: ["Power Automate", "Power Apps", "AI Builder", "SharePoint", "Dataverse"],
     cover: caseAutomation,
+    category: "Automation & AI",
     overview:
       "Back-office functions were drowning in repetitive, low-judgement work — approvals, reconciliations, document extraction. Rather than run a one-off automation project, we built a programme: a portfolio of AI-enabled flows on Microsoft Power Platform with a shared operating model behind them.",
     challenges: [
@@ -99,6 +110,7 @@ export const caseStudies: CaseStudy[] = [
     location: "Istanbul, TR",
     stack: ["PWA", "SAP SuccessFactors", "ERP", "CRM", "Power BI", "IT Service Desk"],
     cover: caseWorkplace,
+    category: "Digital Workplace",
     overview:
       "Employees juggled six or seven disconnected systems just to get through a normal day. We designed a company-wide Digital Workplace — a progressive web app that consolidates ERP, HR, CRM, BI, and IT Service Desk into a single, AI-assisted surface for 450+ employees across nine locations.",
     challenges: [
@@ -132,6 +144,7 @@ export const caseStudies: CaseStudy[] = [
     location: "Istanbul, TR",
     stack: ["B2B Commerce", "ERP Integration", "Payments", "International Ops"],
     cover: caseB2B,
+    category: "E-Commerce",
     overview:
       "Edgers had strong international demand but no direct digital sales channel — orders moved through email, spreadsheets, and phone calls. I built and launched the company's first proprietary B2B e-commerce platform, and ran international operations across Iran, the Balkans, Egypt, the United States, and multiple African markets.",
     challenges: [

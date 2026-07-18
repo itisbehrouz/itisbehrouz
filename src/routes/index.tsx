@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { caseStudies } from "@/lib/case-studies";
+import { useMemo, useState } from "react";
+import { CASE_CATEGORIES, caseStudies, type CaseCategory } from "@/lib/case-studies";
 
 export const Route = createFileRoute("/")({
   component: Portfolio,
@@ -115,6 +116,31 @@ const capabilities = [
 ];
 
 function Portfolio() {
+  const [category, setCategory] = useState<CaseCategory | "All">("All");
+  const [query, setQuery] = useState("");
+  const q = query.trim().toLowerCase();
+
+  const filteredCases = useMemo(() => {
+    return caseStudies.filter((c) => {
+      if (category !== "All" && c.category !== category) return false;
+      if (!q) return true;
+      const hay = [c.title, c.tagline, c.client, c.overview, c.category, ...c.stack]
+        .join(" ")
+        .toLowerCase();
+      return hay.includes(q);
+    });
+  }, [category, q]);
+
+  const filteredExperience = useMemo(() => {
+    if (!q) return experience;
+    return experience.filter((e) =>
+      [e.role, e.company, e.location, e.period, ...e.bullets]
+        .join(" ")
+        .toLowerCase()
+        .includes(q),
+    );
+  }, [q]);
+
   return (
     <div className="min-h-screen bg-background text-foreground" style={{ fontFamily: "var(--font-sans)" }}>
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
@@ -208,8 +234,75 @@ function Portfolio() {
           <p className="mt-6 max-w-2xl text-muted-foreground">
             Four projects that turned enterprise ambition into measurable outcomes.
           </p>
-          <div className="mt-16 grid md:grid-cols-2 gap-px bg-border border-y border-border">
-            {caseStudies.map((c) => (
+
+          <div className="mt-10 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-8">
+            <div className="flex flex-wrap gap-2">
+              {(["All", ...CASE_CATEGORIES] as const).map((cat) => {
+                const active = category === cat;
+                return (
+                  <button
+                    key={cat}
+                    type="button"
+                    onClick={() => setCategory(cat)}
+                    className={`text-xs uppercase tracking-widest px-3 py-1.5 border transition-colors ${
+                      active
+                        ? "border-[var(--ember)] bg-[var(--ember)] text-primary-foreground"
+                        : "border-border text-muted-foreground hover:border-[var(--ember)] hover:text-[var(--ember)]"
+                    }`}
+                    style={{ fontFamily: "var(--font-mono)" }}
+                  >
+                    {cat}
+                  </button>
+                );
+              })}
+            </div>
+            <div className="relative lg:ml-auto lg:w-80">
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search projects, tools, outcomes…"
+                aria-label="Search work"
+                className="w-full bg-transparent border border-border focus:border-[var(--ember)] outline-none px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 transition-colors"
+                style={{ fontFamily: "var(--font-mono)" }}
+              />
+              {query && (
+                <button
+                  type="button"
+                  onClick={() => setQuery("")}
+                  aria-label="Clear search"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-muted-foreground hover:text-[var(--ember)]"
+                  style={{ fontFamily: "var(--font-mono)" }}
+                >
+                  ×
+                </button>
+              )}
+            </div>
+          </div>
+
+          <div className="mt-4 text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
+            {filteredCases.length} {filteredCases.length === 1 ? "case" : "cases"}
+            {category !== "All" ? ` · ${category}` : ""}
+            {q ? ` · "${query}"` : ""}
+          </div>
+
+          {filteredCases.length === 0 ? (
+            <div className="mt-10 border border-dashed border-border p-10 text-center text-muted-foreground">
+              No case studies match your filters.{" "}
+              <button
+                type="button"
+                onClick={() => {
+                  setCategory("All");
+                  setQuery("");
+                }}
+                className="text-[var(--ember)] hover:underline"
+              >
+                Reset
+              </button>
+            </div>
+          ) : (
+          <div className="mt-10 grid md:grid-cols-2 gap-px bg-border border-y border-border">
+            {filteredCases.map((c) => (
               <Link
                 key={c.slug}
                 to="/work/$slug"
@@ -231,7 +324,7 @@ function Portfolio() {
                     / {c.index}
                   </span>
                   <span className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
-                    {c.client} · {c.period}
+                    {c.client} · {c.period} · {c.category}
                   </span>
                 </div>
                 <h3 className="mt-3 text-2xl md:text-3xl leading-tight group-hover:text-[var(--ember)] transition-colors" style={{ fontFamily: "var(--font-display)" }}>
@@ -244,12 +337,18 @@ function Portfolio() {
               </Link>
             ))}
           </div>
+          )}
 
           <div className="mt-24">
             <SectionLabel index="03·b" title="Career Timeline" />
           </div>
+          {filteredExperience.length === 0 ? (
+            <div className="mt-10 border border-dashed border-border p-10 text-center text-muted-foreground">
+              No roles match "{query}".
+            </div>
+          ) : (
           <div className="mt-16 space-y-px bg-border">
-            {experience.map((e, i) => (
+            {filteredExperience.map((e, i) => (
               <article key={i} className="group bg-background hover:bg-card transition-colors py-8 md:py-10 px-2 md:px-6">
                 <div className="grid md:grid-cols-12 gap-6">
                   <div className="md:col-span-2 text-xs uppercase tracking-widest text-muted-foreground pt-2" style={{ fontFamily: "var(--font-mono)" }}>
@@ -274,6 +373,7 @@ function Portfolio() {
               </article>
             ))}
           </div>
+          )}
         </div>
       </section>
 
