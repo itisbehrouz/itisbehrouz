@@ -17,9 +17,7 @@ export const Route = createFileRoute("/")({
       name: "Behrouz Bagherzadeh",
       jobTitle: "Digital Transformation & BI Manager",
       url,
-      sameAs: ["https://linkedin.com/in/itisbehrouz"],
       address: { "@type": "PostalAddress", addressLocality: "Istanbul", addressCountry: "TR" },
-      email: "mailto:itisbehrouz@outlook.com",
     };
     const websiteLd = {
       "@context": "https://schema.org",
