@@ -522,15 +522,130 @@ function Portfolio() {
         <div className="absolute inset-0 pointer-events-none opacity-[0.06]" style={{ backgroundImage: "radial-gradient(circle at 50% 50%, var(--ember) 0, transparent 60%)" }} />
         <div className="max-w-7xl mx-auto relative">
           <SectionLabel index="05" title="Contact" />
-          <h2 className="mt-12 font-normal leading-[0.95] tracking-tight" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 7vw, 6rem)" }}>
-            Let's build the <span className="italic text-[var(--ember)]">next</span>
-            <br />
-            transformation.
-          </h2>
-          <div className="mt-16 grid md:grid-cols-3 gap-8">
-            <ContactItem label="Email" value="itisbehrouz@outlook.com" href="mailto:itisbehrouz@outlook.com" />
-            <ContactItem label="Phone" value="+90 553 678 4486" href="tel:+905536784486" />
-            <ContactItem label="LinkedIn" value="linkedin.com/in/itisbehrouz" href="https://linkedin.com/in/itisbehrouz" />
+          <div className="mt-12 grid md:grid-cols-12 gap-12 md:gap-16">
+            <div className="md:col-span-5">
+              <h2 className="font-normal leading-[0.95] tracking-tight" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 7vw, 6rem)" }}>
+                Let's build the <span className="italic text-[var(--ember)]">next</span>
+                <br />
+                transformation.
+              </h2>
+              <p className="mt-8 text-muted-foreground leading-relaxed">
+                Send a message and I'll respond within two business days. No email or phone is displayed here — just fill in the form below.
+              </p>
+            </div>
+            <div className="md:col-span-6 md:col-start-7">
+              {contactStatus === "success" ? (
+                <div className="border border-[var(--ember)] p-8 md:p-10 bg-card/40">
+                  <div className="text-xs text-[var(--ember)] uppercase tracking-[0.3em] mb-4" style={{ fontFamily: "var(--font-mono)" }}>/ sent</div>
+                  <h3 className="text-2xl md:text-3xl mb-3" style={{ fontFamily: "var(--font-display)" }}>Message received</h3>
+                  <p className="text-muted-foreground">Thanks for reaching out. I'll get back to you soon.</p>
+                  <button
+                    type="button"
+                    onClick={() => setContactStatus("idle")}
+                    className="mt-6 text-xs uppercase tracking-widest text-[var(--ember)] border-b border-[var(--ember)]/40 pb-1 hover:text-primary hover:border-primary transition-colors"
+                    style={{ fontFamily: "var(--font-mono)" }}
+                  >
+                    Send another message
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={contactForm.handleSubmit(onContactSubmit)} className="space-y-6" aria-label="Contact form">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label htmlFor="contact-name" className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
+                        Name
+                      </label>
+                      <input
+                        id="contact-name"
+                        type="text"
+                        {...contactForm.register("name")}
+                        className="w-full bg-transparent border border-border focus:border-[var(--ember)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors"
+                        placeholder="Your name"
+                        aria-invalid={!!contactForm.formState.errors.name}
+                        aria-describedby={contactForm.formState.errors.name ? "contact-name-error" : undefined}
+                      />
+                      {contactForm.formState.errors.name && (
+                        <p id="contact-name-error" className="text-xs text-destructive-foreground" style={{ fontFamily: "var(--font-mono)" }}>
+                          {contactForm.formState.errors.name.message}
+                        </p>
+                      )}
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="contact-email" className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
+                        Email
+                      </label>
+                      <input
+                        id="contact-email"
+                        type="email"
+                        {...contactForm.register("email")}
+                        className="w-full bg-transparent border border-border focus:border-[var(--ember)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors"
+                        placeholder="you@company.com"
+                        aria-invalid={!!contactForm.formState.errors.email}
+                        aria-describedby={contactForm.formState.errors.email ? "contact-email-error" : undefined}
+                      />
+                      {contactForm.formState.errors.email && (
+                        <p id="contact-email-error" className="text-xs text-destructive-foreground" style={{ fontFamily: "var(--font-mono)" }}>
+                          {contactForm.formState.errors.email.message}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="contact-subject" className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
+                      Subject
+                    </label>
+                    <input
+                      id="contact-subject"
+                      type="text"
+                      {...contactForm.register("subject")}
+                      className="w-full bg-transparent border border-border focus:border-[var(--ember)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors"
+                      placeholder="How can I help?"
+                      aria-invalid={!!contactForm.formState.errors.subject}
+                      aria-describedby={contactForm.formState.errors.subject ? "contact-subject-error" : undefined}
+                    />
+                    {contactForm.formState.errors.subject && (
+                      <p id="contact-subject-error" className="text-xs text-destructive-foreground" style={{ fontFamily: "var(--font-mono)" }}>
+                        {contactForm.formState.errors.subject.message}
+                      </p>
+                    )}
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="contact-message" className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
+                      Message
+                    </label>
+                    <textarea
+                      id="contact-message"
+                      {...contactForm.register("message")}
+                      rows={5}
+                      className="w-full bg-transparent border border-border focus:border-[var(--ember)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors resize-none"
+                      placeholder="Tell me about your project, challenge, or role..."
+                      aria-invalid={!!contactForm.formState.errors.message}
+                      aria-describedby={contactForm.formState.errors.message ? "contact-message-error" : undefined}
+                    />
+                    {contactForm.formState.errors.message && (
+                      <p id="contact-message-error" className="text-xs text-destructive-foreground" style={{ fontFamily: "var(--font-mono)" }}>
+                        {contactForm.formState.errors.message.message}
+                      </p>
+                    )}
+                  </div>
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
+                    <button
+                      type="submit"
+                      disabled={contactStatus === "submitting"}
+                      className="inline-flex items-center justify-center text-xs uppercase tracking-[0.2em] px-6 py-3 border border-[var(--ember)] bg-[var(--ember)] text-primary-foreground hover:bg-[var(--ember)]/90 disabled:opacity-60 disabled:cursor-not-allowed transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      style={{ fontFamily: "var(--font-mono)" }}
+                    >
+                      {contactStatus === "submitting" ? "Sending..." : "Send message"}
+                    </button>
+                    {contactStatus === "error" && (
+                      <p className="text-sm text-destructive-foreground" role="alert">
+                        Something went wrong. Please try again.
+                      </p>
+                    )}
+                  </div>
+                </form>
+              )}
+            </div>
           </div>
         </div>
       </section>
