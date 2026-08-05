@@ -22,6 +22,7 @@ export type UI = {
     caseStudies: string;
     careerTimeline: string;
     education: string;
+    certifications: string;
     contact: string;
     impact: string;
   };
@@ -45,6 +46,7 @@ export type UI = {
     headingEm: string;
     headingB: string;
     intro: string;
+    cta: { email: string; linkedin: string; cv: string };
     sent: string;
     received: string;
     thanks: string;
@@ -103,8 +105,8 @@ export const ui: Record<Lang, UI> = {
       srSuffix: " — Digital Transformation & BI Leader",
       years: "15+ years",
       intro: (yrs) => (
-        <>Digital transformation & business intelligence leader with{" "}
-          <span className="text-[var(--ember)]">{yrs}</span> bridging enterprise technology and business strategy — turning AI and analytics investments into outcomes leadership can measure.</>
+        <>Digital transformation and business intelligence leader,{" "}
+          <span className="text-[var(--ember)]">{yrs}</span>. I build the layer between the data and the decision — turning analytics and AI investments into something leadership can act on, not just look at.</>
       ),
       role: "ROLE",
       based: "BASED",
@@ -113,13 +115,14 @@ export const ui: Record<Lang, UI> = {
       roleVal: "DX & BI Manager",
       basedVal: "Istanbul, TR",
       langsVal: "TR · FA · AZ · EN",
-      statusVal: "Open to leadership roles",
+      statusVal: "Available — Head of Digital Transformation / BI Director",
     },
     sections: {
       capabilities: "Capabilities",
       caseStudies: "Case Studies",
       careerTimeline: "Career Timeline",
       education: "Education",
+      certifications: "Certifications",
       contact: "Contact",
       impact: "Impact",
     },
@@ -142,7 +145,8 @@ export const ui: Record<Lang, UI> = {
       headingA: "Let's build the ",
       headingEm: "next",
       headingB: "transformation.",
-      intro: "Send a message and I'll respond within two business days. No email or phone is displayed here — just fill in the form below.",
+      intro: "The fastest way to reach me is email or LinkedIn. You can also use the form — I respond within two business days.",
+      cta: { email: "Email", linkedin: "LinkedIn", cv: "Download CV (PDF)" },
       sent: "/ sent",
       received: "Message received",
       thanks: "Thanks for reaching out. I'll get back to you soon.",
@@ -204,8 +208,7 @@ export const ui: Record<Lang, UI> = {
       srSuffix: " — Dijital Dönüşüm & İş Zekâsı Lideri",
       years: "15+ yıl",
       intro: (yrs) => (
-        <>Dijital dönüşüm ve iş zekâsı lideri;{" "}
-          <span className="text-[var(--ember)]">{yrs}</span> boyunca kurumsal teknoloji ile iş stratejisini birleştirerek yapay zekâ ve analitik yatırımlarını ölçülebilir sonuçlara dönüştürüyor.</>
+        <><span className="text-[var(--ember)]">{yrs}</span>lık dijital dönüşüm ve iş zekâsı lideri. Veri ile karar arasındaki katmanı kuruyorum — analitik ve yapay zekâ yatırımlarını yönetimin bakabildiği değil, üzerine hareket edebildiği bir şeye dönüştürüyorum.</>
       ),
       role: "ROL",
       based: "MERKEZ",
@@ -214,13 +217,14 @@ export const ui: Record<Lang, UI> = {
       roleVal: "Dijital Dönüşüm & İZ Yöneticisi",
       basedVal: "İstanbul, TR",
       langsVal: "TR · FA · AZ · EN",
-      statusVal: "Liderlik rollerine açık",
+      statusVal: "Müsait — Dijital Dönüşüm Direktörü / İş Zekâsı Direktörü",
     },
     sections: {
       capabilities: "Yetkinlikler",
       caseStudies: "Vaka Çalışmaları",
       careerTimeline: "Kariyer Zaman Çizelgesi",
       education: "Eğitim",
+      certifications: "Sertifikalar",
       contact: "İletişim",
       impact: "Etki",
     },
@@ -243,7 +247,8 @@ export const ui: Record<Lang, UI> = {
       headingA: "Bir sonraki ",
       headingEm: "dönüşümü",
       headingB: "birlikte kuralım.",
-      intro: "Mesaj gönderin, iki iş günü içinde dönüş yapıyorum. Burada e-posta veya telefon paylaşılmıyor — sadece aşağıdaki formu doldurun.",
+      intro: "Bana en hızlı ulaşım yolu e-posta veya LinkedIn. Formu da kullanabilirsiniz — iki iş günü içinde dönüş yapıyorum.",
+      cta: { email: "E-posta", linkedin: "LinkedIn", cv: "CV'yi indir (PDF)" },
       sent: "/ gönderildi",
       received: "Mesajınız alındı",
       thanks: "İletişime geçtiğiniz için teşekkürler. En kısa sürede dönüş yapacağım.",
@@ -344,10 +349,11 @@ export const experienceI18n: Record<Lang, ExperienceT[]> = {
       "Launched a company-wide Digital Workplace PWA consolidating ERP, HR, CRM, BI, and IT Service Desk.",
     ]},
     { period: "2021 — 2022", role: "Digital Transformation Analyst", company: "Yiğitoğlu", location: "Istanbul", bullets: [
-      "Compressed average transformation delivery from 18 to 6 months — a 67% faster path to impact.",
+      "Compressed average transformation delivery from 18 months to 6.",
       "Mapped end-to-end processes across departments to surface automation and digitalization opportunities.",
     ]},
-    { period: "2019 — 2021", role: "Digital Transformation Analyst", company: "Kiğılı", location: "Istanbul", bullets: [
+    { period: "2019 — 2021", role: "International E-Commerce Manager & Digital Transformation Analyst", company: "Kiğılı", location: "Istanbul", bullets: [
+      "Led a 10+ person e-commerce and digital operations team across international markets.",
       "Integrated e-commerce operations with ERP, streamlining order fulfillment.",
       "Automated inventory & order workflows with Power Automate — cutting manual processing time by 40%.",
       "Supported CRM transformation that lifted customer engagement and marketing effectiveness.",
@@ -378,10 +384,11 @@ export const experienceI18n: Record<Lang, ExperienceT[]> = {
       "ERP, İK, CRM, İZ ve BT Servis Masası'nı tek çatı altında toplayan Dijital İş Yeri PWA'sını devreye aldım.",
     ]},
     { period: "2021 — 2022", role: "Dijital Dönüşüm Analisti", company: "Yiğitoğlu", location: "İstanbul", bullets: [
-      "Ortalama dönüşüm teslimatını 18 aydan 6 aya indirdim — %67 daha hızlı etki.",
+      "Ortalama dönüşüm teslim süresini 18 aydan 6 aya indirdi.",
       "Otomasyon ve dijitalleşme fırsatlarını görünür kılmak için uçtan uca süreç haritaları çıkardım.",
     ]},
-    { period: "2019 — 2021", role: "Dijital Dönüşüm Analisti", company: "Kiğılı", location: "İstanbul", bullets: [
+    { period: "2019 — 2021", role: "Uluslararası E-Ticaret Müdürü ve Dijital Dönüşüm Analisti", company: "Kiğılı", location: "İstanbul", bullets: [
+      "Uluslararası pazarlarda 10+ kişilik e-ticaret ve dijital operasyon ekibini yönetti.",
       "E-ticaret operasyonlarını ERP ile entegre ederek sipariş karşılamayı kolaylaştırdım.",
       "Power Automate ile envanter & sipariş süreçlerini otomatikleştirdim — manuel süreyi %40 azalttım.",
       "Müşteri etkileşimini ve pazarlama etkinliğini artıran CRM dönüşümünü destekledim.",
@@ -413,6 +420,22 @@ export const educationI18n: Record<Lang, EducationT[]> = {
   tr: [
     { period: "2023 — 2024", title: "Dijital Dönüşüm Liderliği", school: "Boston University · MicroMasters", loc: "Boston, ABD (Online)" },
     { period: "2010 — 2014", title: "Bilgisayar & Bilgi Sistemleri Güvenliği", school: "University of Applied Science and Technology · BASc", loc: "Tebriz, İran" },
+  ],
+};
+
+export type CertificationT = { title: string; issuer: string; status: string };
+export const certificationsI18n: Record<Lang, CertificationT[]> = {
+  en: [
+    { title: "Microsoft PL-300 — Power BI Data Analyst", issuer: "Microsoft", status: "Exam scheduled September 2026" },
+    { title: "Career Essentials in Generative AI", issuer: "Microsoft / LinkedIn Learning", status: "2024" },
+    { title: "Agile Foundations", issuer: "IIBA / LinkedIn Learning", status: "2026" },
+    { title: "Telling Stories with Data", issuer: "LinkedIn Learning", status: "2021" },
+  ],
+  tr: [
+    { title: "Microsoft PL-300 — Power BI Veri Analisti", issuer: "Microsoft", status: "Sınav tarihi Eylül 2026" },
+    { title: "Career Essentials in Generative AI", issuer: "Microsoft / LinkedIn Learning", status: "2024" },
+    { title: "Agile Foundations (Çevik Temeller)", issuer: "IIBA / LinkedIn Learning", status: "2026" },
+    { title: "Veriyle Hikâye Anlatımı", issuer: "LinkedIn Learning", status: "2021" },
   ],
 };
 
