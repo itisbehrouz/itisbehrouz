@@ -274,7 +274,7 @@ function Portfolio() {
               return (
               <Link key={c.slug} to="/work/$slug" params={{ slug: c.slug }} className="group bg-background p-8 md:p-10 hover:bg-card transition-colors block">
                 <div className="relative overflow-hidden border border-border aspect-[16/10]">
-                  <img src={c.cover} alt={loc?.title ?? c.title} loading="lazy" width={1600} height={1000} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <CaseCover slug={c.slug} className="transition-transform duration-700 group-hover:scale-105" />
                 </div>
                 <div className="mt-6 flex items-baseline gap-4">
                   <span className="text-xs text-[var(--ember)] tracking-[0.3em]" style={{ fontFamily: "var(--font-mono)" }}>/ {c.index}</span>
