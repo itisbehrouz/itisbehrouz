@@ -49,13 +49,13 @@ function NotFound() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-background text-foreground px-6">
       <div className="max-w-md text-center">
-        <div className="text-xs tracking-[0.3em] uppercase text-foreground" style={{ fontFamily: "var(--font-mono)" }}>
+        <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
           / 404
         </div>
         <h1 className="mt-6 text-4xl md:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
           {t.notFound}
         </h1>
-        <Link to="/" className="inline-block mt-8 text-sm text-foreground border-b border-foreground/40 pb-1">
+        <Link to="/" className="inline-block mt-8 text-sm text-foreground underline decoration-1 underline-offset-4 hover:decoration-2">
           {t.back}
         </Link>
       </div>
@@ -181,7 +181,7 @@ function CaseStudyPage() {
           <ul className="md:col-span-8 md:col-start-5 divide-y divide-border">
             {(loc?.challenges ?? study.challenges).map((c, i) => (
               <li key={i} className="py-6 flex gap-6">
-                <span className="text-xs text-foreground tracking-widest pt-2" style={{ fontFamily: "var(--font-mono)" }}>
+                <span className="text-xs text-muted-foreground tracking-widest pt-2" style={{ fontFamily: "var(--font-mono)" }}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="text-lg md:text-xl leading-relaxed text-foreground/85" style={{ fontFamily: "var(--font-display)" }}>
@@ -255,9 +255,9 @@ function CaseStudyPage() {
               <h2 className="mt-4 font-normal tracking-tight" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 6vw, 5rem)" }}>
                 {nextLocalized?.title ?? next.title}
               </h2>
-              <p className="mt-2 text-sm text-foreground">{next.client}</p>
+              <p className="mt-2 text-sm text-muted-foreground">{next.client}</p>
             </div>
-            <div className="text-foreground text-sm tracking-widest uppercase group-hover:translate-x-2 transition-transform" style={{ fontFamily: "var(--font-mono)" }}>
+            <div className="text-foreground text-sm tracking-widest uppercase underline decoration-1 underline-offset-4 decoration-foreground/50 group-hover:decoration-2 group-hover:decoration-foreground group-hover:translate-x-2 transition-all" style={{ fontFamily: "var(--font-mono)" }}>
               {cs.read}
             </div>
           </div>
@@ -266,7 +266,7 @@ function CaseStudyPage() {
 
       <footer className="border-t border-border py-8 px-6 md:px-10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
-          <Link to="/" className="hover:text-foreground transition-colors">{cs.allWork}</Link>
+          <Link to="/" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{cs.allWork}</Link>
           <div className="flex items-center gap-4">
             <span>© 2026 Behrouz Bagherzadeh · {t.footerLoc}</span>
             <a
@@ -299,7 +299,7 @@ function Meta({ label, value }: { label: string; value: string }) {
 function SectionLabel({ index, title }: { index: string; title: string }) {
   return (
     <div className="md:sticky md:top-24">
-      <span className="text-xs text-foreground tracking-[0.3em]" style={{ fontFamily: "var(--font-mono)" }}>
+      <span className="text-xs text-muted-foreground tracking-[0.3em]" style={{ fontFamily: "var(--font-mono)" }}>
         / {index}
       </span>
       <h2 className="mt-3 text-3xl md:text-4xl font-normal tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
