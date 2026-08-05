@@ -3,6 +3,7 @@ import { caseStudies, getCaseStudy, type CaseStudy } from "@/lib/case-studies";
 import { useLang } from "@/hooks/use-lang";
 import { ui, tCase } from "@/lib/i18n";
 import { CaseCover } from "@/components/case-cover";
+import { SITE_URL } from "@/lib/site";
 
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }) => {
@@ -16,13 +17,13 @@ export const Route = createFileRoute("/work/$slug")({
     }
     const { study } = loaderData;
     const title = `${study.title} — Behrouz Bagherzadeh`;
-    const url = `https://itisbehrouz.lovable.app/work/${params.slug}`;
+    const url = `${SITE_URL}/work/${params.slug}`;
     const articleLd = {
       "@context": "https://schema.org",
       "@type": "Article",
       headline: study.title,
       description: study.tagline,
-      author: { "@type": "Person", name: "Behrouz Bagherzadeh", url: "https://itisbehrouz.lovable.app/" },
+      author: { "@type": "Person", name: "Behrouz Bagherzadeh", url: `${SITE_URL}/` },
       mainEntityOfPage: url,
     };
     return {
