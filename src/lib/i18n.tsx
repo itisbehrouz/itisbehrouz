@@ -112,7 +112,7 @@ export const ui: Record<Lang, UI> = {
       basedVal: "Istanbul, TR",
       langsVal: "TR · FA · AZ · EN",
       scopeVal: "EMEA · Balkans · GCC",
-      statusVal: "Open to a new role\u00a0",
+      statusVal: "Open to a new role",
     },
     sections: {
       capabilities: "Capabilities",
@@ -214,7 +214,7 @@ export const ui: Record<Lang, UI> = {
       basedVal: "İstanbul, TR",
       langsVal: "TR · FA · AZ · EN",
       scopeVal: "EMEA · Balkanlar · Körfez",
-      statusVal: "Yeni role açık\u00a0",
+      statusVal: "Yeni role açık",
     },
     sections: {
       capabilities: "Yetkinlikler",
