@@ -39,7 +39,7 @@ export type UI = {
     headingEm: string;
     headingB: string;
     intro: string;
-    cta: { email: string; showEmail: string; linkedin: string; bookCall: string; bookCallVal: string; cv: string };
+    cta: { linkedin: string; bookCall: string; bookCallVal: string; cv: string };
     sent: string;
     received: string;
     thanks: string;
@@ -131,10 +131,8 @@ export const ui: Record<Lang, UI> = {
       headingA: "Let's build the ",
       headingEm: "next",
       headingB: "transformation.",
-      intro: "The fastest way to reach me is email or LinkedIn. If you'd rather talk, you can book a 30-minute call directly. The form below works too — I respond within two business days.",
+      intro: "The fastest way to reach me is LinkedIn, or you can book a 30-minute call directly. The form below works too — I respond within two business days.",
       cta: {
-        email: "Email",
-        showEmail: "Show email address",
         linkedin: "LinkedIn",
         bookCall: "Book a call",
         bookCallVal: "30-minute intro call ↗",
@@ -233,10 +231,8 @@ export const ui: Record<Lang, UI> = {
       headingA: "Bir sonraki ",
       headingEm: "dönüşümü",
       headingB: "birlikte kuralım.",
-      intro: "Bana en hızlı ulaşım yolu e-posta veya LinkedIn. Konuşmayı tercih ederseniz doğrudan 30 dakikalık bir görüşme ayarlayabilirsiniz. Aşağıdaki form da çalışıyor — iki iş günü içinde dönüş yapıyorum.",
+      intro: "Bana en hızlı ulaşım yolu LinkedIn; dilerseniz doğrudan 30 dakikalık bir görüşme de ayarlayabilirsiniz. Aşağıdaki form da çalışıyor — iki iş günü içinde dönüş yapıyorum.",
       cta: {
-        email: "E-posta",
-        showEmail: "E-posta adresini göster",
         linkedin: "LinkedIn",
         bookCall: "Görüşme ayarla",
         bookCallVal: "30 dakikalık tanışma görüşmesi ↗",

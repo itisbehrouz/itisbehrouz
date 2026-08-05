@@ -12,11 +12,6 @@ import { submitContact, type ContactFormData } from "@/lib/contact.functions";
 const LINKEDIN_URL = "https://www.linkedin.com/in/itisbehrouz";
 const CV_URL = "/cv/behrouz-bagherzadeh-cv.pdf";
 const CALL_URL = "https://calendar.app.google/Ez1RC2T2CYESgqN8A";
-// Assembled at click time so the address is never a contiguous literal in the bundle.
-const EMAIL_PARTS = ["behruz", ".bagir", "zade", String.fromCharCode(64), "outlook", ".com"];
-function buildEmail() {
-  return EMAIL_PARTS.join("");
-}
 
 function LinkedInIcon() {
   return (
@@ -361,29 +356,7 @@ function Portfolio() {
               <p className="mt-8 text-muted-foreground leading-relaxed">{t.contact.intro}</p>
             </div>
             <div className="md:col-span-6 md:col-start-7">
-              <div className="mb-10 grid sm:grid-cols-3 gap-px bg-border border border-border">
-                <div className="bg-background p-5">
-                  <span className="block text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.cta.email}</span>
-                  {revealedEmail ? (
-                    <a
-                      href={`mailto:${revealedEmail}`}
-                      className="mt-2 block text-xs leading-relaxed text-foreground hover:text-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                      style={{ overflowWrap: "break-word", wordBreak: "normal", hyphens: "none" }}
-                    >
-                      <span className="whitespace-nowrap">{revealedEmail.split("@")[0]}</span>
-                      <wbr />
-                      <span className="whitespace-nowrap">{"@" + revealedEmail.split("@")[1]}</span>
-                    </a>
-                  ) : (
-                    <button
-                      type="button"
-                      onClick={() => setRevealedEmail(buildEmail())}
-                      className="mt-2 block text-left text-sm text-foreground hover:text-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                    >
-                      {t.contact.cta.showEmail}
-                    </button>
-                  )}
-                </div>
+              <div className="mb-10 grid sm:grid-cols-2 gap-px bg-border border border-border">
                 <a
                   href={LINKEDIN_URL}
                   target="_blank"
