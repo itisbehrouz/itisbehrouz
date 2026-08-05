@@ -6,8 +6,20 @@ import { z } from "zod";
 import { CASE_CATEGORIES, caseStudies, type CaseCategory } from "@/lib/case-studies";
 import { useTheme } from "@/hooks/use-theme";
 import { useLang } from "@/hooks/use-lang";
-import { ui, metricsI18n, capabilitiesI18n, experienceI18n, educationI18n, tCase } from "@/lib/i18n";
+import { ui, metricsI18n, capabilitiesI18n, experienceI18n, educationI18n, certificationsI18n, tCase } from "@/lib/i18n";
 import { submitContact, type ContactFormData } from "@/lib/contact.functions";
+
+const LINKEDIN_URL = "https://www.linkedin.com/in/itisbehrouz";
+const EMAIL = "behruz.bagirzade@outlook.com";
+const CV_URL = "/cv/behrouz-bagherzadeh-cv.pdf";
+
+function LinkedInIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true">
+      <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.82-1.95 3.75-1.95C21.1 8.75 22 11 22 14.1V21h-4v-6.1c0-1.5-.55-2.5-1.9-2.5-1.15 0-1.85.77-2.15 1.52-.1.27-.13.64-.13 1.02V21h-4z" />
+    </svg>
+  );
+}
 
 export const Route = createFileRoute("/")({
   component: Portfolio,
@@ -20,6 +32,7 @@ export const Route = createFileRoute("/")({
       jobTitle: "Digital Transformation & BI Manager",
       url,
       address: { "@type": "PostalAddress", addressLocality: "Istanbul", addressCountry: "TR" },
+      sameAs: ["https://www.linkedin.com/in/itisbehrouz"],
     };
     const websiteLd = {
       "@context": "https://schema.org",
@@ -28,7 +41,11 @@ export const Route = createFileRoute("/")({
       url,
     };
     return {
-      meta: [{ property: "og:url", content: url }],
+      meta: [
+        { property: "og:url", content: url },
+        { property: "og:image", content: "https://itisbehrouz.lovable.app/og-image.png" },
+        { name: "twitter:image", content: "https://itisbehrouz.lovable.app/og-image.png" },
+      ],
       links: [{ rel: "canonical", href: url }],
       scripts: [
         { type: "application/ld+json", children: JSON.stringify(personLd) },
@@ -40,8 +57,6 @@ export const Route = createFileRoute("/")({
 
 function Portfolio() {
   const [category, setCategory] = useState<CaseCategory | "All">("All");
-  const [query, setQuery] = useState("");
-  const q = query.trim().toLowerCase();
   const { theme, toggle } = useTheme();
   const { lang, toggle: toggleLang } = useLang();
   const t = ui[lang];
@@ -49,6 +64,7 @@ function Portfolio() {
   const capabilities = capabilitiesI18n[lang];
   const experience = experienceI18n[lang];
   const education = educationI18n[lang];
+  const certifications = certificationsI18n[lang];
 
   const chipRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const chipValues = ["All", ...CASE_CATEGORIES] as const;
@@ -94,31 +110,9 @@ function Portfolio() {
   };
 
   const filteredCases = useMemo(() => {
-    return caseStudies.filter((c) => {
-      if (category !== "All" && c.category !== category) return false;
-      if (!q) return true;
-      const localized = tCase(lang, c.slug);
-      const hay = [
-        localized?.title ?? c.title,
-        localized?.tagline ?? c.tagline,
-        c.client,
-        localized?.overview ?? c.overview,
-        t.categories[c.category] ?? c.category,
-        c.category,
-        ...c.stack,
-      ]
-        .join(" ")
-        .toLowerCase();
-      return hay.includes(q);
-    });
-  }, [category, q, lang, t]);
-
-  const filteredExperience = useMemo(() => {
-    if (!q) return experience;
-    return experience.filter((e) =>
-      [e.role, e.company, e.location, e.period, ...e.bullets].join(" ").toLowerCase().includes(q),
-    );
-  }, [q, experience]);
+    if (category === "All") return caseStudies;
+    return caseStudies.filter((c) => c.category === category);
+  }, [category]);
 
   const catLabel = (c: string) => (c === "All" ? t.work.all : t.categories[c] ?? c);
 
@@ -156,6 +150,16 @@ function Portfolio() {
             >
               <span aria-hidden="true" className="text-sm">{theme === "light" ? "☾" : "☀"}</span>
             </button>
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              title="LinkedIn"
+              className="inline-flex items-center justify-center min-h-9 min-w-9 border border-border text-muted-foreground hover:text-[var(--ember)] hover:border-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <LinkedInIcon />
+            </a>
             <a href="#contact" className="hidden sm:inline-block text-xs px-3 py-1.5 border border-[var(--ember)]/40 text-[var(--ember)] hover:bg-[var(--ember)] hover:text-primary-foreground transition-colors" style={{ fontFamily: "var(--font-mono)" }}>
               {t.nav.getInTouch}
             </a>
@@ -250,46 +254,6 @@ function Portfolio() {
                 );
               })}
             </div>
-            <div className="relative lg:ml-auto lg:w-80">
-              <label htmlFor="work-search" className="sr-only">{t.work.searchLabel}</label>
-              <input
-                id="work-search"
-                type="search"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Escape" && query) {
-                    e.preventDefault();
-                    setQuery("");
-                  }
-                }}
-                placeholder={t.work.searchPlaceholder}
-                aria-describedby="work-search-hint work-results-count"
-                autoComplete="off"
-                spellCheck={false}
-                className="w-full bg-transparent border border-border focus:border-[var(--ember)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors"
-                style={{ fontFamily: "var(--font-mono)" }}
-              />
-              <span id="work-search-hint" className="sr-only">{t.work.searchHint}</span>
-              {query && (
-                <button
-                  type="button"
-                  onClick={() => setQuery("")}
-                  aria-label={t.work.clearSearch}
-                  aria-controls="work-search"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex items-center justify-center min-h-8 min-w-8 text-base text-muted-foreground hover:text-[var(--ember)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                  style={{ fontFamily: "var(--font-mono)" }}
-                >
-                  <span aria-hidden="true">×</span>
-                </button>
-              )}
-            </div>
-          </div>
-
-          <div id="work-results-count" role="status" aria-live="polite" className="mt-4 text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
-            {filteredCases.length} {filteredCases.length === 1 ? t.work.caseSingular : t.work.casePlural}
-            {category !== "All" ? ` · ${catLabel(category)}` : ""}
-            {q ? ` · "${query}"` : ""}
           </div>
 
           {filteredCases.length === 0 ? (
@@ -297,7 +261,7 @@ function Portfolio() {
               {t.work.noMatches}{" "}
               <button
                 type="button"
-                onClick={() => { setCategory("All"); setQuery(""); }}
+                onClick={() => setCategory("All")}
                 className="text-[var(--ember)] hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 {t.work.reset}
@@ -328,11 +292,8 @@ function Portfolio() {
           )}
 
           <div className="mt-24"><SectionLabel index="03·b" title={t.sections.careerTimeline} /></div>
-          {filteredExperience.length === 0 ? (
-            <div className="mt-10 border border-dashed border-border p-10 text-center text-muted-foreground">{t.work.noRoles(query)}</div>
-          ) : (
           <div className="mt-16 space-y-px bg-border">
-            {filteredExperience.map((e, i) => (
+            {experience.map((e, i) => (
               <article key={i} className="group bg-background hover:bg-card transition-colors py-8 md:py-10 px-2 md:px-6">
                 <div className="grid md:grid-cols-12 gap-6">
                   <div className="md:col-span-2 text-xs uppercase tracking-widest text-muted-foreground pt-2" style={{ fontFamily: "var(--font-mono)" }}>{e.period}</div>
@@ -353,7 +314,6 @@ function Portfolio() {
               </article>
             ))}
           </div>
-          )}
         </div>
       </section>
 
@@ -363,6 +323,19 @@ function Portfolio() {
           <div className="mt-12 grid md:grid-cols-2 gap-8">
             {education.map((e, i) => (
               <EduCard key={i} period={e.period} title={e.title} school={e.school} loc={e.loc} />
+            ))}
+          </div>
+
+          <div className="mt-20">
+            <SectionLabel index="04·b" title={t.sections.certifications} />
+          </div>
+          <div className="mt-12 grid md:grid-cols-2 gap-8">
+            {certifications.map((c, i) => (
+              <div key={i} className="p-8 border border-border hover:border-[var(--ember)] transition-colors">
+                <div className="text-xs text-muted-foreground uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>{c.status}</div>
+                <h3 className="mt-4 text-2xl md:text-3xl" style={{ fontFamily: "var(--font-display)" }}>{c.title}</h3>
+                <div className="text-[var(--ember)] mt-2">{c.issuer}</div>
+              </div>
             ))}
           </div>
         </div>
@@ -382,6 +355,35 @@ function Portfolio() {
               <p className="mt-8 text-muted-foreground leading-relaxed">{t.contact.intro}</p>
             </div>
             <div className="md:col-span-6 md:col-start-7">
+              <div className="mb-10 grid sm:grid-cols-3 gap-px bg-border border border-border">
+                <a
+                  href={`mailto:${EMAIL}`}
+                  className="bg-background p-5 group hover:bg-card transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  <span className="block text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.cta.email}</span>
+                  <span className="mt-2 block text-sm text-foreground group-hover:text-[var(--ember)] transition-colors break-all">{EMAIL}</span>
+                </a>
+                <a
+                  href={LINKEDIN_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-background p-5 group hover:bg-card transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  <span className="block text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.cta.linkedin}</span>
+                  <span className="mt-2 flex items-center gap-2 text-sm text-foreground group-hover:text-[var(--ember)] transition-colors">
+                    <LinkedInIcon /> /itisbehrouz
+                  </span>
+                </a>
+                <a
+                  href={CV_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-background p-5 group hover:bg-card transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  <span className="block text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>PDF</span>
+                  <span className="mt-2 block text-sm text-foreground group-hover:text-[var(--ember)] transition-colors">{t.contact.cta.cv} ↓</span>
+                </a>
+              </div>
               {contactStatus === "success" ? (
                 <div className="border border-[var(--ember)] p-8 md:p-10 bg-card/40">
                   <div className="text-xs text-[var(--ember)] uppercase tracking-[0.3em] mb-4" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.sent}</div>
@@ -428,7 +430,18 @@ function Portfolio() {
       </main>
       <footer className="border-t border-border py-8 px-6 md:px-10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
-          <div>© 2026 Behrouz Bagherzadeh</div>
+          <div className="flex items-center gap-4">
+            <span>© 2026 Behrouz Bagherzadeh</span>
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              className="inline-flex items-center justify-center text-muted-foreground hover:text-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <LinkedInIcon />
+            </a>
+          </div>
           <div>{t.footerLoc}</div>
         </div>
       </footer>
