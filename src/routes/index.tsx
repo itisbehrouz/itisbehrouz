@@ -239,46 +239,6 @@ function Portfolio() {
                 );
               })}
             </div>
-            <div className="relative lg:ml-auto lg:w-80">
-              <label htmlFor="work-search" className="sr-only">{t.work.searchLabel}</label>
-              <input
-                id="work-search"
-                type="search"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Escape" && query) {
-                    e.preventDefault();
-                    setQuery("");
-                  }
-                }}
-                placeholder={t.work.searchPlaceholder}
-                aria-describedby="work-search-hint work-results-count"
-                autoComplete="off"
-                spellCheck={false}
-                className="w-full bg-transparent border border-border focus:border-[var(--ember)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground transition-colors"
-                style={{ fontFamily: "var(--font-mono)" }}
-              />
-              <span id="work-search-hint" className="sr-only">{t.work.searchHint}</span>
-              {query && (
-                <button
-                  type="button"
-                  onClick={() => setQuery("")}
-                  aria-label={t.work.clearSearch}
-                  aria-controls="work-search"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex items-center justify-center min-h-8 min-w-8 text-base text-muted-foreground hover:text-[var(--ember)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                  style={{ fontFamily: "var(--font-mono)" }}
-                >
-                  <span aria-hidden="true">×</span>
-                </button>
-              )}
-            </div>
-          </div>
-
-          <div id="work-results-count" role="status" aria-live="polite" className="mt-4 text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
-            {filteredCases.length} {filteredCases.length === 1 ? t.work.caseSingular : t.work.casePlural}
-            {category !== "All" ? ` · ${catLabel(category)}` : ""}
-            {q ? ` · "${query}"` : ""}
           </div>
 
           {filteredCases.length === 0 ? (
@@ -286,7 +246,7 @@ function Portfolio() {
               {t.work.noMatches}{" "}
               <button
                 type="button"
-                onClick={() => { setCategory("All"); setQuery(""); }}
+                onClick={() => setCategory("All")}
                 className="text-[var(--ember)] hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 {t.work.reset}
