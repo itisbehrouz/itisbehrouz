@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "sdk_version": "0.26.1",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "your-creative-spark",
+      "version": "0.1.0",
+      "title": "Your Creative Spark"
+    },
+    "tools": [
+      {
+        "name": "get_profile",
+        "title": "Get profile",
+        "description": "Get Behrouz Bagherzadeh's public professional profile: career timeline, capabilities, impact metrics and education.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "lang": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "en",
+                    "tr"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Content language: 'en' or 'tr'. Defaults to 'en'."
+            }
+          },
+          "required": [
+            "lang"
+          ]
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_case_studies",
+        "title": "List case studies",
+        "description": "List the published portfolio case studies with slug, title, tagline, client, period, category and tech stack.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "lang": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "en",
+                    "tr"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Content language: 'en' or 'tr'. Defaults to 'en'."
+            }
+          },
+          "required": [
+            "lang"
+          ]
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_case_study",
+        "title": "Get case study",
+        "description": "Get the full detail of one portfolio case study: overview, challenges, approach, measurable outcomes and reflection.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "slug": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Case study slug, e.g. 'executive-bi-suite'."
+            },
+            "lang": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "en",
+                    "tr"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Content language: 'en' or 'tr'. Defaults to 'en'."
+            }
+          },
+          "required": [
+            "slug",
+            "lang"
+          ]
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
