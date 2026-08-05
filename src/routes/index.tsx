@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useRef, useState, type KeyboardEvent } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -10,6 +11,11 @@ import { ui, metricsI18n, capabilitiesI18n, experienceI18n, educationI18n, certi
 import { submitContact, type ContactFormData } from "@/lib/contact.functions";
 import { CaseCover } from "@/components/case-cover";
 import { SITE_URL, absoluteUrl } from "@/lib/site";
+import { Reveal } from "@/components/motion/reveal";
+import { CursorGlow } from "@/components/motion/cursor-glow";
+import { CountUp } from "@/components/motion/count-up";
+import { HeroLineMotif } from "@/components/motion/hero-line-motif";
+import { TiltCard } from "@/components/motion/tilt-card";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/itisbehrouz";
 const CV_URL = "/cv/behrouz-bagherzadeh-cv.pdf";
@@ -60,6 +66,7 @@ export const Route = createFileRoute("/")({
 
 function Portfolio() {
   const [category, setCategory] = useState<CaseCategory | "All">("All");
+  const reduced = useReducedMotion();
   const { theme, toggle } = useTheme();
   const { lang, toggle: toggleLang } = useLang();
   const t = ui[lang];
@@ -119,8 +126,26 @@ function Portfolio() {
 
   const catLabel = (c: string) => (c === "All" ? t.work.all : t.categories[c] ?? c);
 
+  const heroContainer = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.12, delayChildren: 0.85 } },
+  };
+  const heroItem = reduced
+    ? { hidden: { opacity: 1, y: 0 }, show: { opacity: 1, y: 0 } }
+    : {
+        hidden: { opacity: 0, y: 16 },
+        show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } },
+      };
+  const lineVariant = reduced
+    ? { hidden: { y: "0%", opacity: 1 }, show: { y: "0%", opacity: 1 } }
+    : {
+        hidden: { y: "110%", opacity: 0 },
+        show: { y: "0%", opacity: 1, transition: { duration: 0.95, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } },
+      };
+
   return (
-    <div className="min-h-screen bg-background text-foreground" style={{ fontFamily: "var(--font-sans)" }}>
+    <div className="isolate min-h-screen bg-background text-foreground" style={{ fontFamily: "var(--font-sans)" }}>
+      <CursorGlow />
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
         <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
           <a href="#top" className="text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-[var(--ember)] transition-colors" style={{ fontFamily: "var(--font-mono)" }}>
@@ -173,39 +198,65 @@ function Portfolio() {
       <main id="main">
       <section id="top" className="relative pt-40 pb-24 md:pt-48 md:pb-32 px-6 md:px-10 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none opacity-[0.08]" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, var(--ember) 0, transparent 50%), radial-gradient(circle at 80% 70%, var(--ember) 0, transparent 40%)" }} />
+        <HeroLineMotif className="hero-motif" />
         <div className="max-w-7xl mx-auto relative">
-          <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground mb-10" style={{ fontFamily: "var(--font-mono)" }}>
+          <motion.div
+            initial={{ opacity: reduced ? 1 : 0, y: reduced ? 0 : 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: reduced ? 0 : 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground mb-10"
+            style={{ fontFamily: "var(--font-mono)" }}
+          >
             <span className="w-8 h-px bg-[var(--ember)]" />
             <span>{t.hero.location}</span>
-          </div>
-          <h1 className="font-normal leading-[0.95] tracking-tight" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(3rem, 9vw, 8.5rem)" }}>
-            Behrouz
-            <br />
-            <span className="italic text-[var(--ember)]">Bagher</span>zadeh
+          </motion.div>
+          <motion.h1
+            className="font-normal leading-[0.95] tracking-tight"
+            style={{ fontFamily: "var(--font-display)", fontSize: "clamp(3rem, 9vw, 8.5rem)" }}
+            initial="hidden"
+            animate="show"
+            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.14 } } }}
+          >
+            <span className="block overflow-hidden pb-[0.06em]">
+              <motion.span className="block" variants={lineVariant}>Behrouz</motion.span>
+            </span>
+            <span className="block overflow-hidden pb-[0.06em]">
+              <motion.span className="block" variants={lineVariant}>
+                <span className="italic text-[var(--ember)]">Bagher</span>zadeh
+              </motion.span>
+            </span>
             <span className="sr-only">{t.hero.srSuffix}</span>
-          </h1>
-          <div className="mt-12 grid md:grid-cols-12 gap-8">
-            <p className="md:col-span-7 text-xl md:text-2xl leading-relaxed text-foreground/90" style={{ fontFamily: "var(--font-display)" }}>
-              {t.hero.intro(t.hero.years)}
-            </p>
-            <div className="md:col-span-4 md:col-start-9 space-y-3 text-sm text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
-              <Row k={t.hero.role} v={t.hero.roleVal} />
-              <Row k={t.hero.based} v={t.hero.basedVal} />
-              <Row k={t.hero.langs} v={t.hero.langsVal} />
-              <Row k={t.hero.scope} v={t.hero.scopeVal} />
-              <Row k={t.hero.status} v={t.hero.statusVal} ember />
+          </motion.h1>
+          <motion.div initial="hidden" animate="show" variants={heroContainer}>
+            <div className="mt-12 grid md:grid-cols-12 gap-8">
+              <motion.p variants={heroItem} className="md:col-span-7 text-xl md:text-2xl leading-relaxed text-foreground/90" style={{ fontFamily: "var(--font-display)" }}>
+                {t.hero.intro(t.hero.years)}
+              </motion.p>
+              <div className="md:col-span-4 md:col-start-9 space-y-3 text-sm text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
+                {[
+                  { k: t.hero.role, v: t.hero.roleVal },
+                  { k: t.hero.based, v: t.hero.basedVal },
+                  { k: t.hero.langs, v: t.hero.langsVal },
+                  { k: t.hero.scope, v: t.hero.scopeVal },
+                  { k: t.hero.status, v: t.hero.statusVal, ember: true },
+                ].map((r) => (
+                  <motion.div key={r.k} variants={heroItem}>
+                    <Row k={r.k} v={r.v} ember={r.ember} />
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <section id="impact" className="border-y border-border bg-card/40">
         <div className="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-2 md:grid-cols-4">
           {metrics.map((m, i) => (
-            <div key={m.label} className={`py-10 md:py-14 px-4 ${i > 0 ? "md:border-l border-border" : ""} ${i === 1 || i === 3 ? "border-l border-border" : ""} ${i >= 2 ? "border-t md:border-t-0 border-border" : ""}`}>
-              <div className="text-5xl md:text-6xl font-normal text-[var(--ember)]" style={{ fontFamily: "var(--font-display)" }}>{m.value}</div>
+            <Reveal key={m.label} delay={i * 0.09} className={`py-10 md:py-14 px-4 ${i > 0 ? "md:border-l border-border" : ""} ${i === 1 || i === 3 ? "border-l border-border" : ""} ${i >= 2 ? "border-t md:border-t-0 border-border" : ""}`}>
+              <CountUp value={m.value} className="block text-5xl md:text-6xl font-normal text-[var(--ember)]" style={{ fontFamily: "var(--font-display)" }} />
               <div className="mt-3 text-sm text-muted-foreground max-w-[18ch]">{m.label}</div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -214,15 +265,15 @@ function Portfolio() {
         <div className="max-w-7xl mx-auto">
           <SectionLabel index="02" title={t.sections.capabilities} />
           <div className="mt-12 grid md:grid-cols-2 gap-px bg-border">
-            {capabilities.map((c) => (
-              <div key={c.title} className="bg-background p-8 md:p-10">
+            {capabilities.map((c, i) => (
+              <Reveal key={c.title} delay={(i % 2) * 0.1} className="bg-background p-8 md:p-10">
                 <h3 className="text-2xl md:text-3xl mb-6" style={{ fontFamily: "var(--font-display)" }}>{c.title}</h3>
                 <ul className="flex flex-wrap gap-2">
                   {c.items.map((it) => (
                     <li key={it} className="text-xs uppercase tracking-wider px-3 py-1.5 border border-border text-muted-foreground hover:border-[var(--ember)] hover:text-[var(--ember)] transition-colors" style={{ fontFamily: "var(--font-mono)" }}>{it}</li>
                   ))}
                 </ul>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -273,10 +324,12 @@ function Portfolio() {
             </div>
           ) : (
           <div className="mt-10 grid md:grid-cols-2 gap-px bg-border border-y border-border">
-            {filteredCases.map((c) => {
+            {filteredCases.map((c, i) => {
               const loc = tCase(lang, c.slug);
               return (
-              <Link key={c.slug} to="/work/$slug" params={{ slug: c.slug }} className="group bg-background p-8 md:p-10 hover:bg-card transition-colors block">
+              <Reveal key={c.slug} delay={(i % 2) * 0.1} className="bg-background">
+              <TiltCard className="h-full">
+              <Link to="/work/$slug" params={{ slug: c.slug }} className="group bg-background p-8 md:p-10 hover:bg-card transition-colors block h-full">
                 <div className="relative overflow-hidden border border-border aspect-[16/10]">
                   <CaseCover slug={c.slug} className="transition-transform duration-700 group-hover:scale-105" />
                 </div>
@@ -290,6 +343,8 @@ function Portfolio() {
                 <p className="mt-3 text-base text-foreground/80">{loc?.tagline ?? c.tagline}</p>
                 <div className="mt-6 text-xs tracking-[0.3em] uppercase text-[var(--ember)] group-hover:translate-x-1 transition-transform inline-flex items-center gap-2" style={{ fontFamily: "var(--font-mono)" }}>{t.work.readCase}</div>
               </Link>
+              </TiltCard>
+              </Reveal>
               );
             })}
           </div>
@@ -298,7 +353,7 @@ function Portfolio() {
           <div className="mt-24"><SectionLabel index="03·b" title={t.sections.careerTimeline} /></div>
           <div className="mt-16 space-y-px bg-border">
             {experience.map((e, i) => (
-              <article key={i} className="group bg-background hover:bg-card transition-colors py-8 md:py-10 px-2 md:px-6">
+              <Reveal key={i} as="article" delay={Math.min(i, 4) * 0.06} className="group bg-background hover:bg-card transition-colors py-8 md:py-10 px-2 md:px-6">
                 <div className="grid md:grid-cols-12 gap-6">
                   <div className="md:col-span-2 text-xs uppercase tracking-widest text-muted-foreground pt-2" style={{ fontFamily: "var(--font-mono)" }}>{e.period}</div>
                   <div className="md:col-span-4">
@@ -315,7 +370,7 @@ function Portfolio() {
                     ))}
                   </ul>
                 </div>
-              </article>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -326,7 +381,9 @@ function Portfolio() {
           <SectionLabel index="04" title={t.sections.education} />
           <div className="mt-12 grid md:grid-cols-2 gap-8">
             {education.map((e, i) => (
-              <EduCard key={i} period={e.period} title={e.title} school={e.school} loc={e.loc} />
+              <Reveal key={i} delay={(i % 2) * 0.1}>
+                <EduCard period={e.period} title={e.title} school={e.school} loc={e.loc} />
+              </Reveal>
             ))}
           </div>
 
@@ -335,11 +392,11 @@ function Portfolio() {
           </div>
           <div className="mt-12 grid md:grid-cols-2 gap-8">
             {certifications.map((c, i) => (
-              <div key={i} className="p-8 border border-border hover:border-[var(--ember)] transition-colors">
+              <Reveal key={i} delay={(i % 2) * 0.1} className="p-8 border border-border hover:border-[var(--ember)] transition-colors">
                 <div className="text-xs text-muted-foreground uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>{c.status}</div>
                 <h3 className="mt-4 text-2xl md:text-3xl" style={{ fontFamily: "var(--font-display)" }}>{c.title}</h3>
                 <div className="text-[var(--ember)] mt-2">{c.issuer}</div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -351,12 +408,14 @@ function Portfolio() {
           <SectionLabel index="05" title={t.sections.contact} />
           <div className="mt-12 grid md:grid-cols-12 gap-12 md:gap-16">
             <div className="md:col-span-5">
+              <Reveal>
               <h2 className="font-normal leading-[0.95] tracking-tight" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 7vw, 6rem)" }}>
                 {t.contact.headingA}<span className="italic text-[var(--ember)]">{t.contact.headingEm}</span>
                 <br />
                 {t.contact.headingB}
               </h2>
               <p className="mt-8 text-muted-foreground leading-relaxed">{t.contact.intro}</p>
+              </Reveal>
             </div>
             <div className="md:col-span-6 md:col-start-7">
               <div className="mb-10 grid sm:grid-cols-2 gap-px bg-border border border-border">
