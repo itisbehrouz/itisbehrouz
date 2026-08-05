@@ -96,6 +96,18 @@ function CaseStudyPage() {
             >
               {lang === "tr" ? "EN" : "TR"}
             </button>
+            <a
+              href="https://www.linkedin.com/in/itisbehrouz"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              title="LinkedIn"
+              className="inline-flex items-center justify-center min-h-9 min-w-9 border border-border text-muted-foreground hover:text-[var(--ember)] hover:border-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true">
+                <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.82-1.95 3.75-1.95C21.1 8.75 22 11 22 14.1V21h-4v-6.1c0-1.5-.55-2.5-1.9-2.5-1.15 0-1.85.77-2.15 1.52-.1.27-.13.64-.13 1.02V21h-4z" />
+              </svg>
+            </a>
             <Link to="/" hash="contact" className="text-xs px-3 py-1.5 border border-[var(--ember)]/40 text-[var(--ember)] hover:bg-[var(--ember)] hover:text-primary-foreground transition-colors" style={{ fontFamily: "var(--font-mono)" }}>
               {cs.getInTouch}
             </Link>
@@ -261,7 +273,20 @@ function CaseStudyPage() {
       <footer className="border-t border-border py-8 px-6 md:px-10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
           <Link to="/" className="hover:text-[var(--ember)] transition-colors">{cs.allWork}</Link>
-          <div>© 2026 Behrouz Bagherzadeh · {t.footerLoc}</div>
+          <div className="flex items-center gap-4">
+            <span>© 2026 Behrouz Bagherzadeh · {t.footerLoc}</span>
+            <a
+              href="https://www.linkedin.com/in/itisbehrouz"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              className="inline-flex items-center justify-center text-muted-foreground hover:text-[var(--ember)] transition-colors"
+            >
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
+                <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.82-1.95 3.75-1.95C21.1 8.75 22 11 22 14.1V21h-4v-6.1c0-1.5-.55-2.5-1.9-2.5-1.15 0-1.85.77-2.15 1.52-.1.27-.13.64-.13 1.02V21h-4z" />
+              </svg>
+            </a>
+          </div>
         </div>
       </footer>
     </div>

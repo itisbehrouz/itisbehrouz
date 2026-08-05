@@ -32,6 +32,7 @@ export const Route = createFileRoute("/")({
       jobTitle: "Digital Transformation & BI Manager",
       url,
       address: { "@type": "PostalAddress", addressLocality: "Istanbul", addressCountry: "TR" },
+      sameAs: ["https://www.linkedin.com/in/itisbehrouz"],
     };
     const websiteLd = {
       "@context": "https://schema.org",
@@ -40,7 +41,11 @@ export const Route = createFileRoute("/")({
       url,
     };
     return {
-      meta: [{ property: "og:url", content: url }],
+      meta: [
+        { property: "og:url", content: url },
+        { property: "og:image", content: "https://itisbehrouz.lovable.app/og-image.png" },
+        { name: "twitter:image", content: "https://itisbehrouz.lovable.app/og-image.png" },
+      ],
       links: [{ rel: "canonical", href: url }],
       scripts: [
         { type: "application/ld+json", children: JSON.stringify(personLd) },
