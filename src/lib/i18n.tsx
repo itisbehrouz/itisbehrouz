@@ -29,15 +29,8 @@ export type UI = {
   work: {
     intro: string;
     filterLabel: string;
-    searchLabel: string;
-    searchPlaceholder: string;
-    searchHint: string;
-    clearSearch: string;
-    caseSingular: string;
-    casePlural: string;
     noMatches: string;
     reset: string;
-    noRoles: (q: string) => string;
     readCase: string;
     all: string;
   };
@@ -46,7 +39,7 @@ export type UI = {
     headingEm: string;
     headingB: string;
     intro: string;
-    cta: { email: string; linkedin: string; cv: string };
+    cta: { email: string; showEmail: string; linkedin: string; bookCall: string; bookCallVal: string; cv: string };
     sent: string;
     received: string;
     thanks: string;
