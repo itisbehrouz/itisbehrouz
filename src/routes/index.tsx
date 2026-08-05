@@ -265,15 +265,15 @@ function Portfolio() {
         <div className="max-w-7xl mx-auto">
           <SectionLabel index="02" title={t.sections.capabilities} />
           <div className="mt-12 grid md:grid-cols-2 gap-px bg-border">
-            {capabilities.map((c) => (
-              <div key={c.title} className="bg-background p-8 md:p-10">
+            {capabilities.map((c, i) => (
+              <Reveal key={c.title} delay={(i % 2) * 0.1} className="bg-background p-8 md:p-10">
                 <h3 className="text-2xl md:text-3xl mb-6" style={{ fontFamily: "var(--font-display)" }}>{c.title}</h3>
                 <ul className="flex flex-wrap gap-2">
                   {c.items.map((it) => (
                     <li key={it} className="text-xs uppercase tracking-wider px-3 py-1.5 border border-border text-muted-foreground hover:border-[var(--ember)] hover:text-[var(--ember)] transition-colors" style={{ fontFamily: "var(--font-mono)" }}>{it}</li>
                   ))}
                 </ul>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -324,10 +324,12 @@ function Portfolio() {
             </div>
           ) : (
           <div className="mt-10 grid md:grid-cols-2 gap-px bg-border border-y border-border">
-            {filteredCases.map((c) => {
+            {filteredCases.map((c, i) => {
               const loc = tCase(lang, c.slug);
               return (
-              <Link key={c.slug} to="/work/$slug" params={{ slug: c.slug }} className="group bg-background p-8 md:p-10 hover:bg-card transition-colors block">
+              <Reveal key={c.slug} delay={(i % 2) * 0.1} className="bg-background">
+              <TiltCard className="h-full">
+              <Link to="/work/$slug" params={{ slug: c.slug }} className="group bg-background p-8 md:p-10 hover:bg-card transition-colors block h-full">
                 <div className="relative overflow-hidden border border-border aspect-[16/10]">
                   <CaseCover slug={c.slug} className="transition-transform duration-700 group-hover:scale-105" />
                 </div>
@@ -341,6 +343,8 @@ function Portfolio() {
                 <p className="mt-3 text-base text-foreground/80">{loc?.tagline ?? c.tagline}</p>
                 <div className="mt-6 text-xs tracking-[0.3em] uppercase text-[var(--ember)] group-hover:translate-x-1 transition-transform inline-flex items-center gap-2" style={{ fontFamily: "var(--font-mono)" }}>{t.work.readCase}</div>
               </Link>
+              </TiltCard>
+              </Reveal>
               );
             })}
           </div>
@@ -349,7 +353,7 @@ function Portfolio() {
           <div className="mt-24"><SectionLabel index="03·b" title={t.sections.careerTimeline} /></div>
           <div className="mt-16 space-y-px bg-border">
             {experience.map((e, i) => (
-              <article key={i} className="group bg-background hover:bg-card transition-colors py-8 md:py-10 px-2 md:px-6">
+              <Reveal key={i} delay={Math.min(i, 4) * 0.06} className="group bg-background hover:bg-card transition-colors py-8 md:py-10 px-2 md:px-6">
                 <div className="grid md:grid-cols-12 gap-6">
                   <div className="md:col-span-2 text-xs uppercase tracking-widest text-muted-foreground pt-2" style={{ fontFamily: "var(--font-mono)" }}>{e.period}</div>
                   <div className="md:col-span-4">
@@ -366,7 +370,7 @@ function Portfolio() {
                     ))}
                   </ul>
                 </div>
-              </article>
+              </Reveal>
             ))}
           </div>
         </div>
