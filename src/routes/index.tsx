@@ -81,7 +81,6 @@ function Portfolio() {
     defaultValues: { name: "", email: "", subject: "", message: "" },
   });
   const [contactStatus, setContactStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
-  const [revealedEmail, setRevealedEmail] = useState<string | null>(null);
 
   const onContactSubmit = async (data: ContactFormData) => {
     setContactStatus("submitting");
