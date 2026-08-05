@@ -5,6 +5,7 @@ import { useLocalizedMeta } from "@/hooks/use-localized-meta";
 import { ui, tCase } from "@/lib/i18n";
 import { CaseCover } from "@/components/case-cover";
 import { SITE_URL } from "@/lib/site";
+import { Logo } from "@/components/logo";
 
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }) => {
@@ -80,8 +81,17 @@ function CaseStudyPage() {
     <div className="min-h-screen bg-background text-foreground" style={{ fontFamily: "var(--font-sans)" }}>
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
         <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
-          <Link to="/" className="text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors" style={{ fontFamily: "var(--font-mono)" }}>
-            ← BB — 001
+          <Link
+            to="/"
+            aria-label={t.name.full}
+            className="flex items-center text-foreground hover:opacity-80 transition-opacity focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
+            style={{ gap: "10px" }}
+          >
+            <span className="text-xs text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }} aria-hidden="true">←</span>
+            <Logo title={t.name.full} height={22} width={17} />
+            <span className="hidden sm:inline text-xs tracking-[0.14em] uppercase" style={{ fontFamily: "var(--font-mono)" }}>
+              {t.name.full}
+            </span>
           </Link>
           <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
             {cs.caseLabel} · {study.index}
@@ -270,6 +280,7 @@ function CaseStudyPage() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
           <Link to="/" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{cs.allWork}</Link>
           <div className="flex items-center gap-4">
+            <Logo title={t.name.full} height={18} width={14} className="text-muted-foreground" />
             <span>© 2026 {t.name.full} · {t.footerLoc}</span>
             <a
               href="https://www.linkedin.com/in/itisbehrouz"
