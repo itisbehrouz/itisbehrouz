@@ -2,10 +2,18 @@
   "name": "Behruz Bagirzade",
   "short_name": "Behruz",
   "icons": [
-    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
   ],
-  "theme_color": "#14110d",
-  "background_color": "#f1eadc",
+  "theme_color": "#101A2B",
+  "background_color": "#ffffff",
   "display": "standalone"
 }

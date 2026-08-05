@@ -86,7 +86,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Behrouz Bagherzadeh — Digital Transformation & BI Leader" },
       { name: "twitter:description", content: "Behrouz Bagherzadeh — Digital transformation and business intelligence leader in Istanbul. 15+ years building the layer between enterprise data and executive decisions." },
-      { name: "theme-color", content: "#14110d" },
+      { name: "theme-color", content: "#101A2B" },
     ],
     links: [
       {

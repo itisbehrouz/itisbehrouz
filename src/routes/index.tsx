@@ -148,14 +148,14 @@ function Portfolio() {
       <CursorGlow />
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
         <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
-          <a href="#top" className="text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-[var(--ember)] transition-colors" style={{ fontFamily: "var(--font-mono)" }}>
+          <a href="#top" className="text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors" style={{ fontFamily: "var(--font-mono)" }}>
             BB — 001
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-            <a href="#work" className="hover:text-[var(--ember)] transition-colors">{t.nav.work}</a>
-            <a href="#capabilities" className="hover:text-[var(--ember)] transition-colors">{t.nav.capabilities}</a>
-            <a href="#impact" className="hover:text-[var(--ember)] transition-colors">{t.nav.impact}</a>
-            <a href="#contact" className="hover:text-[var(--ember)] transition-colors">{t.nav.contact}</a>
+            <a href="#work" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.work}</a>
+            <a href="#capabilities" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.capabilities}</a>
+            <a href="#impact" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.impact}</a>
+            <a href="#contact" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.contact}</a>
           </nav>
           <div className="flex items-center gap-2">
             <button
@@ -163,7 +163,7 @@ function Portfolio() {
               onClick={toggleLang}
               aria-label={`Switch language to ${lang === "tr" ? "English" : "Türkçe"}`}
               title={`Switch language to ${lang === "tr" ? "English" : "Türkçe"}`}
-              className="inline-flex items-center justify-center min-h-9 px-2 border border-border text-xs uppercase tracking-widest text-muted-foreground hover:text-[var(--ember)] hover:border-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="inline-flex items-center justify-center min-h-9 px-2 border border-border text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground hover:border-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
               style={{ fontFamily: "var(--font-mono)" }}
             >
               {lang === "tr" ? "EN" : "TR"}
@@ -174,7 +174,7 @@ function Portfolio() {
               aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
               aria-pressed={theme === "light"}
               title={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
-              className="inline-flex items-center justify-center min-h-9 min-w-9 border border-border text-muted-foreground hover:text-[var(--ember)] hover:border-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="inline-flex items-center justify-center min-h-9 min-w-9 border border-border text-muted-foreground hover:text-foreground hover:border-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
             >
               <span aria-hidden="true" className="text-sm">{theme === "light" ? "☾" : "☀"}</span>
             </button>
@@ -184,11 +184,11 @@ function Portfolio() {
               rel="noopener noreferrer"
               aria-label="LinkedIn profile"
               title="LinkedIn"
-              className="inline-flex items-center justify-center min-h-9 min-w-9 border border-border text-muted-foreground hover:text-[var(--ember)] hover:border-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="inline-flex items-center justify-center min-h-9 min-w-9 border border-border text-muted-foreground hover:text-foreground hover:border-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
             >
               <LinkedInIcon />
             </a>
-            <a href="#contact" className="hidden sm:inline-block text-xs px-3 py-1.5 border border-[var(--ember)]/40 text-[var(--ember)] hover:bg-[var(--ember)] hover:text-primary-foreground transition-colors" style={{ fontFamily: "var(--font-mono)" }}>
+            <a href="#contact" className="hidden sm:inline-block text-xs px-3 py-1.5 border border-foreground/40 text-foreground hover:bg-foreground hover:text-background transition-colors" style={{ fontFamily: "var(--font-mono)" }}>
               {t.nav.getInTouch}
             </a>
           </div>
@@ -197,7 +197,7 @@ function Portfolio() {
 
       <main id="main">
       <section id="top" className="relative pt-40 pb-24 md:pt-48 md:pb-32 px-6 md:px-10 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none opacity-[0.08]" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, var(--ember) 0, transparent 50%), radial-gradient(circle at 80% 70%, var(--ember) 0, transparent 40%)" }} />
+        <div className="absolute inset-0 pointer-events-none opacity-[0.08]" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, var(--muted-foreground) 0, transparent 50%), radial-gradient(circle at 80% 70%, var(--muted-foreground) 0, transparent 40%)" }} />
         <HeroLineMotif className="hero-motif" />
         <div className="max-w-7xl mx-auto relative">
           <motion.div
@@ -207,7 +207,7 @@ function Portfolio() {
             className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground mb-10"
             style={{ fontFamily: "var(--font-mono)" }}
           >
-            <span className="w-8 h-px bg-[var(--ember)]" />
+            <span className="w-8 h-px bg-foreground" />
             <span>{t.hero.location}</span>
           </motion.div>
           <motion.h1
@@ -222,7 +222,7 @@ function Portfolio() {
             </span>
             <span className="block overflow-hidden pb-[0.06em]">
               <motion.span className="block" variants={lineVariant}>
-                <span className="italic text-[var(--ember)]">Bagher</span>zadeh
+                <span className="italic text-foreground">Bagher</span>zadeh
               </motion.span>
             </span>
             <span className="sr-only">{t.hero.srSuffix}</span>
@@ -238,10 +238,10 @@ function Portfolio() {
                   { k: t.hero.based, v: t.hero.basedVal },
                   { k: t.hero.langs, v: t.hero.langsVal },
                   { k: t.hero.scope, v: t.hero.scopeVal },
-                  { k: t.hero.status, v: t.hero.statusVal, ember: true },
+                  { k: t.hero.status, v: t.hero.statusVal },
                 ].map((r) => (
                   <motion.div key={r.k} variants={heroItem}>
-                    <Row k={r.k} v={r.v} ember={r.ember} />
+                    <Row k={r.k} v={r.v} />
                   </motion.div>
                 ))}
               </div>
@@ -254,7 +254,7 @@ function Portfolio() {
         <div className="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-2 md:grid-cols-4">
           {metrics.map((m, i) => (
             <Reveal key={m.label} delay={i * 0.09} className={`py-10 md:py-14 px-4 ${i > 0 ? "md:border-l border-border" : ""} ${i === 1 || i === 3 ? "border-l border-border" : ""} ${i >= 2 ? "border-t md:border-t-0 border-border" : ""}`}>
-              <CountUp value={m.value} className="block text-5xl md:text-6xl font-normal text-[var(--ember)]" style={{ fontFamily: "var(--font-display)" }} />
+              <CountUp value={m.value} className="block text-5xl md:text-6xl font-normal text-foreground" style={{ fontFamily: "var(--font-display)" }} />
               <div className="mt-3 text-sm text-muted-foreground max-w-[18ch]">{m.label}</div>
             </Reveal>
           ))}
@@ -270,7 +270,7 @@ function Portfolio() {
                 <h3 className="text-2xl md:text-3xl mb-6" style={{ fontFamily: "var(--font-display)" }}>{c.title}</h3>
                 <ul className="flex flex-wrap gap-2">
                   {c.items.map((it) => (
-                    <li key={it} className="text-xs uppercase tracking-wider px-3 py-1.5 border border-border text-muted-foreground hover:border-[var(--ember)] hover:text-[var(--ember)] transition-colors" style={{ fontFamily: "var(--font-mono)" }}>{it}</li>
+                    <li key={it} className="text-xs uppercase tracking-wider px-3 py-1.5 border border-border text-muted-foreground hover:border-foreground hover:text-foreground transition-colors" style={{ fontFamily: "var(--font-mono)" }}>{it}</li>
                   ))}
                 </ul>
               </Reveal>
@@ -299,8 +299,8 @@ function Portfolio() {
                     tabIndex={active ? 0 : -1}
                     onClick={() => setCategory(cat)}
                     onKeyDown={(e) => handleChipKeyDown(e, i)}
-                    className={`text-xs uppercase tracking-widest px-3 py-1.5 border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
-                      active ? "border-[var(--ember)] bg-[var(--ember)] text-primary-foreground" : "border-border text-muted-foreground hover:border-[var(--ember)] hover:text-[var(--ember)]"
+                    className={`text-xs uppercase tracking-widest px-3 py-1.5 border transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground ${
+                      active ? "border-foreground bg-foreground text-background" : "border-border text-muted-foreground hover:border-foreground hover:text-foreground"
                     }`}
                     style={{ fontFamily: "var(--font-mono)" }}
                   >
@@ -317,7 +317,7 @@ function Portfolio() {
               <button
                 type="button"
                 onClick={() => setCategory("All")}
-                className="text-[var(--ember)] hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="text-foreground hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
               >
                 {t.work.reset}
               </button>
@@ -334,14 +334,14 @@ function Portfolio() {
                   <CaseCover slug={c.slug} className="transition-transform duration-700 group-hover:scale-105" />
                 </div>
                 <div className="mt-6 flex items-baseline gap-4">
-                  <span className="text-xs text-[var(--ember)] tracking-[0.3em]" style={{ fontFamily: "var(--font-mono)" }}>/ {c.index}</span>
+                  <span className="text-xs text-muted-foreground tracking-[0.3em]" style={{ fontFamily: "var(--font-mono)" }}>/ {c.index}</span>
                   <span className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
                     {c.client} · {c.period} · {t.categories[c.category] ?? c.category}
                   </span>
                 </div>
-                <h3 className="mt-3 text-2xl md:text-3xl leading-tight group-hover:text-[var(--ember)] transition-colors" style={{ fontFamily: "var(--font-display)" }}>{loc?.title ?? c.title}</h3>
+                <h3 className="mt-3 text-2xl md:text-3xl leading-tight group-hover:text-foreground transition-colors" style={{ fontFamily: "var(--font-display)" }}>{loc?.title ?? c.title}</h3>
                 <p className="mt-3 text-base text-foreground/80">{loc?.tagline ?? c.tagline}</p>
-                <div className="mt-6 text-xs tracking-[0.3em] uppercase text-[var(--ember)] group-hover:translate-x-1 transition-transform inline-flex items-center gap-2" style={{ fontFamily: "var(--font-mono)" }}>{t.work.readCase}</div>
+                <div className="mt-6 text-xs tracking-[0.3em] uppercase text-foreground underline decoration-1 underline-offset-4 decoration-foreground/50 group-hover:decoration-2 group-hover:decoration-foreground group-hover:translate-x-1 transition-all inline-flex items-center gap-2" style={{ fontFamily: "var(--font-mono)" }}>{t.work.readCase}</div>
               </Link>
               </TiltCard>
               </Reveal>
@@ -358,13 +358,13 @@ function Portfolio() {
                   <div className="md:col-span-2 text-xs uppercase tracking-widest text-muted-foreground pt-2" style={{ fontFamily: "var(--font-mono)" }}>{e.period}</div>
                   <div className="md:col-span-4">
                     <h3 className="text-2xl md:text-3xl leading-tight" style={{ fontFamily: "var(--font-display)" }}>{e.role}</h3>
-                    <div className="mt-2 text-sm text-[var(--ember)]">{e.company}</div>
+                    <div className="mt-2 text-sm text-foreground">{e.company}</div>
                     <div className="text-xs text-muted-foreground mt-1" style={{ fontFamily: "var(--font-mono)" }}>{e.location}</div>
                   </div>
                   <ul className="md:col-span-6 space-y-3">
                     {e.bullets.map((b, j) => (
                       <li key={j} className="flex gap-3 text-sm md:text-base leading-relaxed text-foreground/85">
-                        <span className="text-[var(--ember)] mt-2 shrink-0">—</span>
+                        <span className="text-muted-foreground mt-2 shrink-0">—</span>
                         <span>{b}</span>
                       </li>
                     ))}
@@ -392,10 +392,10 @@ function Portfolio() {
           </div>
           <div className="mt-12 grid md:grid-cols-2 gap-8">
             {certifications.map((c, i) => (
-              <Reveal key={i} delay={(i % 2) * 0.1} className="p-8 border border-border hover:border-[var(--ember)] transition-colors">
+              <Reveal key={i} delay={(i % 2) * 0.1} className="p-8 border border-border hover:border-foreground transition-colors">
                 <div className="text-xs text-muted-foreground uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>{c.status}</div>
                 <h3 className="mt-4 text-2xl md:text-3xl" style={{ fontFamily: "var(--font-display)" }}>{c.title}</h3>
-                <div className="text-[var(--ember)] mt-2">{c.issuer}</div>
+                <div className="text-muted-foreground mt-2">{c.issuer}</div>
               </Reveal>
             ))}
           </div>
@@ -403,14 +403,14 @@ function Portfolio() {
       </section>
 
       <section id="contact" className="py-24 md:py-40 px-6 md:px-10 border-t border-border relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none opacity-[0.06]" style={{ backgroundImage: "radial-gradient(circle at 50% 50%, var(--ember) 0, transparent 60%)" }} />
+        <div className="absolute inset-0 pointer-events-none opacity-[0.06]" style={{ backgroundImage: "radial-gradient(circle at 50% 50%, var(--muted-foreground) 0, transparent 60%)" }} />
         <div className="max-w-7xl mx-auto relative">
           <SectionLabel index="05" title={t.sections.contact} />
           <div className="mt-12 grid md:grid-cols-12 gap-12 md:gap-16">
             <div className="md:col-span-5">
               <Reveal>
               <h2 className="font-normal leading-[0.95] tracking-tight" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 7vw, 6rem)" }}>
-                {t.contact.headingA}<span className="italic text-[var(--ember)]">{t.contact.headingEm}</span>
+                {t.contact.headingA}<span className="italic text-foreground">{t.contact.headingEm}</span>
                 <br />
                 {t.contact.headingB}
               </h2>
@@ -423,10 +423,10 @@ function Portfolio() {
                   href={LINKEDIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-background p-5 group hover:bg-card transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  className="bg-background p-5 group hover:bg-card transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
                 >
                   <span className="block text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.cta.linkedin}</span>
-                  <span className="mt-2 flex items-center gap-2 text-sm text-foreground group-hover:text-[var(--ember)] transition-colors">
+                  <span className="mt-2 flex items-center gap-2 text-sm text-foreground group-hover:text-foreground transition-colors">
                     <LinkedInIcon /> /itisbehrouz
                   </span>
                 </a>
@@ -434,10 +434,10 @@ function Portfolio() {
                   href={CALL_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-background p-5 group hover:bg-card transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  className="bg-background p-5 group hover:bg-card transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
                 >
                   <span className="block text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.cta.bookCall}</span>
-                  <span className="mt-2 block text-sm text-foreground group-hover:text-[var(--ember)] transition-colors">{t.contact.cta.bookCallVal}</span>
+                  <span className="mt-2 block text-sm text-foreground group-hover:text-foreground transition-colors">{t.contact.cta.bookCallVal}</span>
                 </a>
               </div>
               <div className="-mt-6 mb-10">
@@ -445,44 +445,44 @@ function Portfolio() {
                   href={CV_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground hover:text-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  className="text-sm text-muted-foreground underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
                 >
                   {t.contact.cta.cv}
                 </a>
               </div>
               {contactStatus === "success" ? (
-                <div className="border border-[var(--ember)] p-8 md:p-10 bg-card/40">
-                  <div className="text-xs text-[var(--ember)] uppercase tracking-[0.3em] mb-4" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.sent}</div>
+                <div className="border border-foreground p-8 md:p-10 bg-card/40">
+                  <div className="text-xs text-foreground uppercase tracking-[0.3em] mb-4" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.sent}</div>
                   <h3 className="text-2xl md:text-3xl mb-3" style={{ fontFamily: "var(--font-display)" }}>{t.contact.received}</h3>
                   <p className="text-muted-foreground">{t.contact.thanks}</p>
-                  <button type="button" onClick={() => setContactStatus("idle")} className="mt-6 text-xs uppercase tracking-widest text-[var(--ember)] border-b border-[var(--ember)]/40 pb-1 hover:text-primary hover:border-primary transition-colors" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.sendAnother}</button>
+                  <button type="button" onClick={() => setContactStatus("idle")} className="mt-6 text-xs uppercase tracking-widest text-foreground border-b border-foreground/40 pb-1 hover:text-primary hover:border-primary transition-colors" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.sendAnother}</button>
                 </div>
               ) : (
                 <form onSubmit={contactForm.handleSubmit(onContactSubmit)} className="space-y-6" aria-label={t.contact.ariaForm}>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label htmlFor="contact-name" className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.name}</label>
-                      <input id="contact-name" type="text" {...contactForm.register("name")} className="w-full bg-transparent border border-border focus:border-[var(--ember)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors" placeholder={t.contact.namePh} aria-invalid={!!contactForm.formState.errors.name} aria-describedby={contactForm.formState.errors.name ? "contact-name-error" : undefined} />
+                      <input id="contact-name" type="text" {...contactForm.register("name")} className="w-full bg-transparent border border-border focus:border-foreground outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors" placeholder={t.contact.namePh} aria-invalid={!!contactForm.formState.errors.name} aria-describedby={contactForm.formState.errors.name ? "contact-name-error" : undefined} />
                       {contactForm.formState.errors.name && (<p id="contact-name-error" className="text-xs text-destructive-foreground" style={{ fontFamily: "var(--font-mono)" }}>{contactForm.formState.errors.name.message}</p>)}
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="contact-email" className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.email}</label>
-                      <input id="contact-email" type="email" {...contactForm.register("email")} className="w-full bg-transparent border border-border focus:border-[var(--ember)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors" placeholder={t.contact.emailPh} aria-invalid={!!contactForm.formState.errors.email} aria-describedby={contactForm.formState.errors.email ? "contact-email-error" : undefined} />
+                      <input id="contact-email" type="email" {...contactForm.register("email")} className="w-full bg-transparent border border-border focus:border-foreground outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors" placeholder={t.contact.emailPh} aria-invalid={!!contactForm.formState.errors.email} aria-describedby={contactForm.formState.errors.email ? "contact-email-error" : undefined} />
                       {contactForm.formState.errors.email && (<p id="contact-email-error" className="text-xs text-destructive-foreground" style={{ fontFamily: "var(--font-mono)" }}>{contactForm.formState.errors.email.message}</p>)}
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="contact-subject" className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.subject}</label>
-                    <input id="contact-subject" type="text" {...contactForm.register("subject")} className="w-full bg-transparent border border-border focus:border-[var(--ember)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors" placeholder={t.contact.subjectPh} aria-invalid={!!contactForm.formState.errors.subject} aria-describedby={contactForm.formState.errors.subject ? "contact-subject-error" : undefined} />
+                    <input id="contact-subject" type="text" {...contactForm.register("subject")} className="w-full bg-transparent border border-border focus:border-foreground outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors" placeholder={t.contact.subjectPh} aria-invalid={!!contactForm.formState.errors.subject} aria-describedby={contactForm.formState.errors.subject ? "contact-subject-error" : undefined} />
                     {contactForm.formState.errors.subject && (<p id="contact-subject-error" className="text-xs text-destructive-foreground" style={{ fontFamily: "var(--font-mono)" }}>{contactForm.formState.errors.subject.message}</p>)}
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="contact-message" className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.message}</label>
-                    <textarea id="contact-message" {...contactForm.register("message")} rows={5} className="w-full bg-transparent border border-border focus:border-[var(--ember)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors resize-none" placeholder={t.contact.messagePh} aria-invalid={!!contactForm.formState.errors.message} aria-describedby={contactForm.formState.errors.message ? "contact-message-error" : undefined} />
+                    <textarea id="contact-message" {...contactForm.register("message")} rows={5} className="w-full bg-transparent border border-border focus:border-foreground outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors resize-none" placeholder={t.contact.messagePh} aria-invalid={!!contactForm.formState.errors.message} aria-describedby={contactForm.formState.errors.message ? "contact-message-error" : undefined} />
                     {contactForm.formState.errors.message && (<p id="contact-message-error" className="text-xs text-destructive-foreground" style={{ fontFamily: "var(--font-mono)" }}>{contactForm.formState.errors.message.message}</p>)}
                   </div>
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
-                    <button type="submit" disabled={contactStatus === "submitting"} className="inline-flex items-center justify-center text-xs uppercase tracking-[0.2em] px-6 py-3 border border-[var(--ember)] bg-[var(--ember)] text-primary-foreground hover:bg-[var(--ember)]/90 disabled:opacity-60 disabled:cursor-not-allowed transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background" style={{ fontFamily: "var(--font-mono)" }}>
+                    <button type="submit" disabled={contactStatus === "submitting"} className="inline-flex items-center justify-center text-xs uppercase tracking-[0.2em] px-6 py-3 border border-foreground bg-foreground text-background hover:bg-foreground/90 disabled:opacity-60 disabled:cursor-not-allowed transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground" style={{ fontFamily: "var(--font-mono)" }}>
                       {contactStatus === "submitting" ? t.contact.submitting : t.contact.submit}
                     </button>
                     {contactStatus === "error" && (<p className="text-sm text-destructive-foreground" role="alert">{t.contact.errorMsg}</p>)}
@@ -503,7 +503,7 @@ function Portfolio() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn profile"
-              className="inline-flex items-center justify-center text-muted-foreground hover:text-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="inline-flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
             >
               <LinkedInIcon />
             </a>
@@ -515,11 +515,11 @@ function Portfolio() {
   );
 }
 
-function Row({ k, v, ember }: { k: string; v: string; ember?: boolean }) {
+function Row({ k, v }: { k: string; v: string }) {
   return (
     <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-border pb-2 last:border-b-0">
       <span className="whitespace-nowrap">{k}</span>
-      <span className={`min-w-0 text-right text-[0.85em] sm:text-[0.95em] sm:whitespace-nowrap ${ember ? "text-[var(--ember)]" : "text-foreground"}`}>{v}</span>
+      <span className={`min-w-0 text-right text-[0.85em] sm:text-[0.95em] sm:whitespace-nowrap text-foreground`}>{v}</span>
     </div>
   );
 }
@@ -527,7 +527,7 @@ function Row({ k, v, ember }: { k: string; v: string; ember?: boolean }) {
 function SectionLabel({ index, title }: { index: string; title: string }) {
   return (
     <div className="flex items-baseline gap-6">
-      <span className="text-xs text-[var(--ember)] tracking-[0.3em]" style={{ fontFamily: "var(--font-mono)" }}>/ {index}</span>
+      <span className="text-xs text-muted-foreground tracking-[0.3em]" style={{ fontFamily: "var(--font-mono)" }}>/ {index}</span>
       <h2 className="text-4xl md:text-6xl font-normal tracking-tight" style={{ fontFamily: "var(--font-display)" }}>{title}</h2>
     </div>
   );
@@ -535,10 +535,10 @@ function SectionLabel({ index, title }: { index: string; title: string }) {
 
 function EduCard({ period, title, school, loc }: { period: string; title: string; school: string; loc: string }) {
   return (
-    <div className="p-8 border border-border hover:border-[var(--ember)] transition-colors">
+    <div className="p-8 border border-border hover:border-foreground transition-colors">
       <div className="text-xs text-muted-foreground uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>{period}</div>
       <h3 className="mt-4 text-2xl md:text-3xl" style={{ fontFamily: "var(--font-display)" }}>{title}</h3>
-      <div className="text-[var(--ember)] mt-2">{school}</div>
+      <div className="text-muted-foreground mt-2">{school}</div>
       <div className="text-sm text-muted-foreground mt-1">{loc}</div>
     </div>
   );

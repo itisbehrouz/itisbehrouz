@@ -49,13 +49,13 @@ function NotFound() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-background text-foreground px-6">
       <div className="max-w-md text-center">
-        <div className="text-xs tracking-[0.3em] uppercase text-[var(--ember)]" style={{ fontFamily: "var(--font-mono)" }}>
+        <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
           / 404
         </div>
         <h1 className="mt-6 text-4xl md:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
           {t.notFound}
         </h1>
-        <Link to="/" className="inline-block mt-8 text-sm text-[var(--ember)] border-b border-[var(--ember)]/40 pb-1">
+        <Link to="/" className="inline-block mt-8 text-sm text-foreground underline decoration-1 underline-offset-4 hover:decoration-2">
           {t.back}
         </Link>
       </div>
@@ -78,7 +78,7 @@ function CaseStudyPage() {
     <div className="min-h-screen bg-background text-foreground" style={{ fontFamily: "var(--font-sans)" }}>
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
         <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
-          <Link to="/" className="text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-[var(--ember)] transition-colors" style={{ fontFamily: "var(--font-mono)" }}>
+          <Link to="/" className="text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors" style={{ fontFamily: "var(--font-mono)" }}>
             ← BB — 001
           </Link>
           <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
@@ -89,7 +89,7 @@ function CaseStudyPage() {
               type="button"
               onClick={toggleLang}
               aria-label={`Switch language to ${lang === "tr" ? "English" : "Türkçe"}`}
-              className="inline-flex items-center justify-center min-h-9 px-2 border border-border text-xs uppercase tracking-widest text-muted-foreground hover:text-[var(--ember)] hover:border-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="inline-flex items-center justify-center min-h-9 px-2 border border-border text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground hover:border-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
               style={{ fontFamily: "var(--font-mono)" }}
             >
               {lang === "tr" ? "EN" : "TR"}
@@ -100,13 +100,13 @@ function CaseStudyPage() {
               rel="noopener noreferrer"
               aria-label="LinkedIn profile"
               title="LinkedIn"
-              className="inline-flex items-center justify-center min-h-9 min-w-9 border border-border text-muted-foreground hover:text-[var(--ember)] hover:border-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="inline-flex items-center justify-center min-h-9 min-w-9 border border-border text-muted-foreground hover:text-foreground hover:border-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
             >
               <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true">
                 <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.82-1.95 3.75-1.95C21.1 8.75 22 11 22 14.1V21h-4v-6.1c0-1.5-.55-2.5-1.9-2.5-1.15 0-1.85.77-2.15 1.52-.1.27-.13.64-.13 1.02V21h-4z" />
               </svg>
             </a>
-            <Link to="/" hash="contact" className="text-xs px-3 py-1.5 border border-[var(--ember)]/40 text-[var(--ember)] hover:bg-[var(--ember)] hover:text-primary-foreground transition-colors" style={{ fontFamily: "var(--font-mono)" }}>
+            <Link to="/" hash="contact" className="text-xs px-3 py-1.5 border border-foreground/40 text-foreground hover:bg-foreground hover:text-background transition-colors" style={{ fontFamily: "var(--font-mono)" }}>
               {cs.getInTouch}
             </Link>
           </div>
@@ -115,10 +115,10 @@ function CaseStudyPage() {
 
       {/* Hero */}
       <section className="pt-32 md:pt-40 pb-16 px-6 md:px-10 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none opacity-[0.06]" style={{ backgroundImage: "radial-gradient(circle at 30% 20%, var(--ember) 0, transparent 50%)" }} />
+        <div className="absolute inset-0 pointer-events-none opacity-[0.06]" style={{ backgroundImage: "radial-gradient(circle at 30% 20%, var(--muted-foreground) 0, transparent 50%)" }} />
         <div className="max-w-7xl mx-auto relative">
           <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground mb-8" style={{ fontFamily: "var(--font-mono)" }}>
-            <span className="w-8 h-px bg-[var(--ember)]" />
+            <span className="w-8 h-px bg-foreground" />
             <span>{cs.caseLabel} {study.index} · {study.client}</span>
           </div>
           <h1 className="font-normal leading-[0.95] tracking-tight" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 7vw, 6.5rem)" }}>
@@ -181,7 +181,7 @@ function CaseStudyPage() {
           <ul className="md:col-span-8 md:col-start-5 divide-y divide-border">
             {(loc?.challenges ?? study.challenges).map((c, i) => (
               <li key={i} className="py-6 flex gap-6">
-                <span className="text-xs text-[var(--ember)] tracking-widest pt-2" style={{ fontFamily: "var(--font-mono)" }}>
+                <span className="text-xs text-muted-foreground tracking-widest pt-2" style={{ fontFamily: "var(--font-mono)" }}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="text-lg md:text-xl leading-relaxed text-foreground/85" style={{ fontFamily: "var(--font-display)" }}>
@@ -202,7 +202,7 @@ function CaseStudyPage() {
           <ol className="md:col-span-8 md:col-start-5 space-y-8">
             {(loc?.approach ?? study.approach).map((a, i) => (
               <li key={i} className="grid grid-cols-[auto_1fr] gap-6 items-start">
-                <span className="text-4xl md:text-5xl text-[var(--ember)] leading-none" style={{ fontFamily: "var(--font-display)" }}>
+                <span className="text-4xl md:text-5xl text-foreground leading-none" style={{ fontFamily: "var(--font-display)" }}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="text-lg md:text-xl leading-relaxed text-foreground/90 pt-2">
@@ -221,7 +221,7 @@ function CaseStudyPage() {
           <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-px bg-border border-y border-border">
             {(loc?.outcomes ?? study.outcomes).map((o) => (
               <div key={o.label} className="bg-background p-10 md:p-14">
-                <div className="text-6xl md:text-7xl font-normal text-[var(--ember)] leading-none" style={{ fontFamily: "var(--font-display)" }}>
+                <div className="text-6xl md:text-7xl font-normal text-foreground leading-none" style={{ fontFamily: "var(--font-display)" }}>
                   {o.value}
                 </div>
                 <div className="mt-5 text-sm text-muted-foreground max-w-[24ch]">{o.label}</div>
@@ -229,7 +229,7 @@ function CaseStudyPage() {
             ))}
           </div>
 
-          <blockquote className="mt-20 max-w-4xl border-l-2 border-[var(--ember)] pl-6 md:pl-10">
+          <blockquote className="mt-20 max-w-4xl border-l-2 border-foreground pl-6 md:pl-10">
             <p className="text-2xl md:text-3xl leading-relaxed italic text-foreground/90" style={{ fontFamily: "var(--font-display)" }}>
               "{loc?.reflection ?? study.reflection}"
             </p>
@@ -255,9 +255,9 @@ function CaseStudyPage() {
               <h2 className="mt-4 font-normal tracking-tight" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 6vw, 5rem)" }}>
                 {nextLocalized?.title ?? next.title}
               </h2>
-              <p className="mt-2 text-sm text-[var(--ember)]">{next.client}</p>
+              <p className="mt-2 text-sm text-muted-foreground">{next.client}</p>
             </div>
-            <div className="text-[var(--ember)] text-sm tracking-widest uppercase group-hover:translate-x-2 transition-transform" style={{ fontFamily: "var(--font-mono)" }}>
+            <div className="text-foreground text-sm tracking-widest uppercase underline decoration-1 underline-offset-4 decoration-foreground/50 group-hover:decoration-2 group-hover:decoration-foreground group-hover:translate-x-2 transition-all" style={{ fontFamily: "var(--font-mono)" }}>
               {cs.read}
             </div>
           </div>
@@ -266,7 +266,7 @@ function CaseStudyPage() {
 
       <footer className="border-t border-border py-8 px-6 md:px-10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
-          <Link to="/" className="hover:text-[var(--ember)] transition-colors">{cs.allWork}</Link>
+          <Link to="/" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{cs.allWork}</Link>
           <div className="flex items-center gap-4">
             <span>© 2026 Behrouz Bagherzadeh · {t.footerLoc}</span>
             <a
@@ -274,7 +274,7 @@ function CaseStudyPage() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn profile"
-              className="inline-flex items-center justify-center text-muted-foreground hover:text-[var(--ember)] transition-colors"
+              className="inline-flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
             >
               <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
                 <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.82-1.95 3.75-1.95C21.1 8.75 22 11 22 14.1V21h-4v-6.1c0-1.5-.55-2.5-1.9-2.5-1.15 0-1.85.77-2.15 1.52-.1.27-.13.64-.13 1.02V21h-4z" />
@@ -299,7 +299,7 @@ function Meta({ label, value }: { label: string; value: string }) {
 function SectionLabel({ index, title }: { index: string; title: string }) {
   return (
     <div className="md:sticky md:top-24">
-      <span className="text-xs text-[var(--ember)] tracking-[0.3em]" style={{ fontFamily: "var(--font-mono)" }}>
+      <span className="text-xs text-muted-foreground tracking-[0.3em]" style={{ fontFamily: "var(--font-mono)" }}>
         / {index}
       </span>
       <h2 className="mt-3 text-3xl md:text-4xl font-normal tracking-tight" style={{ fontFamily: "var(--font-display)" }}>

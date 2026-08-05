@@ -26,7 +26,7 @@ function BiCover({ className }: { className?: string }) {
   const gap = 38;
   return (
     <Frame label="Abstract bar chart with a single trend line" className={className}>
-      <line x1={x0 - 24} y1={baseY} x2={x0 + gap * (heights.length - 1) + 24} y2={baseY} stroke="var(--border)" strokeWidth={1.5} />
+      <line x1={x0 - 24} y1={baseY} x2={x0 + gap * (heights.length - 1) + 24} y2={baseY} stroke="var(--border)" strokeWidth={0.75} />
       {heights.map((h, i) => (
         <line
           key={i}
@@ -35,17 +35,17 @@ function BiCover({ className }: { className?: string }) {
           x2={x0 + i * gap}
           y2={baseY - h}
           stroke="var(--border)"
-          strokeWidth={6}
+          strokeWidth={5}
           strokeLinecap="butt"
         />
       ))}
       <polyline
         {...stroke}
         points={heights.map((h, i) => `${x0 + i * gap},${baseY - h - 44}`).join(" ")}
-        stroke="var(--ember)"
-        strokeWidth={1.5}
+        stroke="var(--foreground)"
+        strokeWidth={2}
       />
-      <circle cx={x0 + gap * (heights.length - 1)} cy={baseY - heights[heights.length - 1] - 44} r={4} fill="var(--ember)" />
+      <circle cx={x0 + gap * (heights.length - 1)} cy={baseY - heights[heights.length - 1] - 44} r={5} fill="var(--foreground)" />
     </Frame>
   );
 }
@@ -54,11 +54,11 @@ function BiCover({ className }: { className?: string }) {
 function AutomationCover({ className }: { className?: string }) {
   const x = 220, y = 130, w = 360, h = 240, r = 60;
   const nodes = [
-    { cx: x, cy: y, ember: true },
-    { cx: x + w, cy: y, ember: false },
-    { cx: x + w, cy: y + h, ember: false },
-    { cx: x + w / 2, cy: y + h, ember: false },
-    { cx: x, cy: y + h, ember: false },
+    { cx: x, cy: y, focal: true },
+    { cx: x + w, cy: y, focal: false },
+    { cx: x + w, cy: y + h, focal: false },
+    { cx: x + w / 2, cy: y + h, focal: false },
+    { cx: x, cy: y + h, focal: false },
   ];
   const arrow = (cx: number, cy: number, rot: number) => (
     <path
@@ -66,22 +66,22 @@ function AutomationCover({ className }: { className?: string }) {
       d="M -7 -6 L 0 0 L -7 6"
       {...stroke}
       stroke="var(--muted-foreground)"
-      strokeWidth={1.5}
+      strokeWidth={0.75}
       transform={`translate(${cx} ${cy}) rotate(${rot})`}
     />
   );
   return (
     <Frame label="Abstract cycle diagram of connected nodes in a loop" className={className}>
-      <rect x={x} y={y} width={w} height={h} rx={r} ry={r} {...stroke} stroke="var(--border)" strokeWidth={1.5} />
+      <rect x={x} y={y} width={w} height={h} rx={r} ry={r} {...stroke} stroke="var(--border)" strokeWidth={0.75} />
       {arrow(x + w * 0.55, y, 0)}
       {arrow(x + w, y + h * 0.55, 90)}
       {arrow(x + w * 0.3, y + h, 180)}
       {arrow(x, y + h * 0.45, 270)}
       {nodes.map((n) =>
-        n.ember ? (
-          <circle key={`${n.cx}-${n.cy}`} cx={n.cx} cy={n.cy} r={11} fill="var(--ember)" />
+        n.focal ? (
+          <circle key={`${n.cx}-${n.cy}`} cx={n.cx} cy={n.cy} r={13} fill="var(--foreground)" />
         ) : (
-          <circle key={`${n.cx}-${n.cy}`} cx={n.cx} cy={n.cy} r={11} fill="var(--card)" stroke="var(--muted-foreground)" strokeWidth={1.5} />
+          <circle key={`${n.cx}-${n.cy}`} cx={n.cx} cy={n.cy} r={11} fill="var(--card)" stroke="var(--muted-foreground)" strokeWidth={0.75} />
         )
       )}
     </Frame>
@@ -98,7 +98,7 @@ function WorkplaceCover({ className }: { className?: string }) {
     <Frame label="Abstract diagram of five systems converging into one surface" className={className}>
       {smalls.map((s) => (
         <g key={s.cy}>
-          <rect x={s.x} y={s.y} width={s.w} height={s.h} rx={8} {...stroke} stroke="var(--border)" strokeWidth={1.5} />
+          <rect x={s.x} y={s.y} width={s.w} height={s.h} rx={8} {...stroke} stroke="var(--border)" strokeWidth={0.75} />
           <path
             d={`M ${s.x + s.w} ${s.cy} C ${s.x + s.w + 110} ${s.cy}, ${tx - 110} ${tcy}, ${tx} ${tcy}`}
             {...stroke}
@@ -107,7 +107,7 @@ function WorkplaceCover({ className }: { className?: string }) {
           />
         </g>
       ))}
-      <rect x={target.x} y={target.y} width={target.w} height={target.h} rx={12} {...stroke} stroke="var(--ember)" strokeWidth={1.5} />
+      <rect x={target.x} y={target.y} width={target.w} height={target.h} rx={12} {...stroke} stroke="var(--foreground)" strokeWidth={2} />
     </Frame>
   );
 }
@@ -120,7 +120,7 @@ function B2BCover({ className }: { className?: string }) {
   const lifts = [90, 150, 200, 245, 285];
   return (
     <Frame label="Abstract diagram of arcs radiating from a single origin point" className={className}>
-      <line x1={70} y1={baseY} x2={730} y2={baseY} stroke="var(--border)" strokeWidth={1.5} />
+      <line x1={70} y1={baseY} x2={730} y2={baseY} stroke="var(--border)" strokeWidth={0.75} />
       {spans.map((s, i) => {
         const ex = ox + s;
         return (
@@ -131,11 +131,11 @@ function B2BCover({ className }: { className?: string }) {
               stroke="var(--muted-foreground)"
               strokeWidth={1}
             />
-            <circle cx={ex} cy={baseY} r={4} fill="var(--card)" stroke="var(--border)" strokeWidth={1.5} />
+            <circle cx={ex} cy={baseY} r={4} fill="var(--card)" stroke="var(--border)" strokeWidth={0.75} />
           </g>
         );
       })}
-      <circle cx={ox} cy={baseY} r={8} fill="var(--ember)" />
+      <circle cx={ox} cy={baseY} r={10} fill="var(--foreground)" />
     </Frame>
   );
 }

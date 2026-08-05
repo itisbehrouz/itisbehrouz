@@ -25,7 +25,7 @@ export function HeroLineMotif({ className }: { className?: string }) {
     >
       <motion.path
         d="M0 320 C 90 320, 120 90, 200 250 S 300 60, 380 260 C 450 380, 500 120, 580 210 C 660 300, 720 150, 820 190 C 930 232, 1040 196, 1200 200"
-        stroke="var(--ember)"
+        stroke="var(--muted-foreground)"
         strokeWidth="2"
         strokeLinecap="round"
         initial={{ pathLength: reduced ? 1 : 0 }}
@@ -33,7 +33,7 @@ export function HeroLineMotif({ className }: { className?: string }) {
       />
       <motion.path
         d="M0 360 C 120 360, 160 200, 260 300 S 380 180, 500 280 C 620 360, 700 220, 840 250 C 980 278, 1060 252, 1200 258"
-        stroke="var(--chart-2)"
+        stroke="var(--border)"
         strokeWidth="1"
         strokeLinecap="round"
         initial={{ pathLength: reduced ? 1 : 0 }}
@@ -41,7 +41,7 @@ export function HeroLineMotif({ className }: { className?: string }) {
       />
       <motion.path
         d="M0 120 C 140 120, 220 40, 360 110 S 560 170, 760 130 C 940 96, 1060 140, 1200 128"
-        stroke="var(--chart-3)"
+        stroke="var(--border)"
         strokeWidth="1"
         strokeLinecap="round"
         initial={{ pathLength: reduced ? 1 : 0 }}
