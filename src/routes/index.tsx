@@ -17,6 +17,7 @@ import { CursorGlow } from "@/components/motion/cursor-glow";
 import { CountUp } from "@/components/motion/count-up";
 import { HeroLineMotif } from "@/components/motion/hero-line-motif";
 import { TiltCard } from "@/components/motion/tilt-card";
+import { Logo } from "@/components/logo";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/itisbehrouz";
 const CV_URL = "/cv/behrouz-bagherzadeh-cv.pdf";
@@ -151,8 +152,16 @@ function Portfolio() {
       <CursorGlow />
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
         <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
-          <a href="#top" className="text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors" style={{ fontFamily: "var(--font-mono)" }}>
-            BB — 001
+          <a
+            href="#top"
+            aria-label={t.name.full}
+            className="flex items-center text-foreground hover:opacity-80 transition-opacity focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
+            style={{ gap: "10px" }}
+          >
+            <Logo title={t.name.full} height={22} width={17} aria-hidden="false" />
+            <span className="hidden xs:inline sm:inline text-xs tracking-[0.14em] uppercase" style={{ fontFamily: "var(--font-mono)" }}>
+              {t.name.full}
+            </span>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             <a href="#work" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.work}</a>
@@ -500,6 +509,7 @@ function Portfolio() {
       <footer className="border-t border-border py-8 px-6 md:px-10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
           <div className="flex items-center gap-4">
+            <Logo title={t.name.full} height={18} width={14} className="text-muted-foreground" />
             <span>© 2026 {t.name.full}</span>
             <a
               href={LINKEDIN_URL}
