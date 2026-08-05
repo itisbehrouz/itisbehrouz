@@ -223,54 +223,55 @@ function Portfolio() {
             <span className="w-8 h-px bg-foreground" />
             <span>{t.hero.location}</span>
           </motion.div>
-          <motion.h1
-            className="font-normal leading-[0.95] tracking-tight"
-            style={{ fontFamily: "var(--font-display)", fontSize: "clamp(3rem, 9vw, 8.5rem)" }}
+          <motion.div
+            className="mt-12 grid md:grid-cols-12 gap-8 items-start"
             initial="hidden"
             animate="show"
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.14 } } }}
+            variants={heroContainer}
           >
-            <span className="block overflow-hidden pb-[0.06em]">
-              <motion.span className="block" variants={lineVariant}>{t.name.first}</motion.span>
-            </span>
-            <span className="block overflow-hidden pb-[0.06em]">
-              <motion.span className="block" variants={lineVariant}>
-                <span className="italic text-foreground">{t.name.italic}</span>{t.name.rest}
-              </motion.span>
-            </span>
-            <span className="sr-only">{t.hero.srSuffix}</span>
-          </motion.h1>
-          <motion.div initial="hidden" animate="show" variants={heroContainer}>
-            <div className="mt-12 grid md:grid-cols-12 gap-8 items-start">
-              <motion.p variants={heroItem} className="md:col-span-7 text-xl md:text-2xl leading-relaxed text-foreground/90" style={{ fontFamily: "var(--font-display)" }}>
-                {t.hero.intro(t.hero.years)}
-              </motion.p>
-              <div className="md:col-span-4 md:col-start-9 space-y-6">
-                <motion.div variants={heroItem} className="overflow-hidden border border-border">
-                  <img
-                    src={portraitAsset.url}
-                    alt={t.name.full}
-                    className="w-full max-h-[280px] object-cover object-top grayscale hover:grayscale-0 transition-[filter] duration-500"
-                    width="600"
-                    height="800"
-                    loading="eager"
-                  />
-                </motion.div>
-                <div className="space-y-3 text-sm text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
-                  {[
-                    { k: t.hero.role, v: t.hero.roleVal },
-                    { k: t.hero.based, v: t.hero.basedVal },
-                    { k: t.hero.langs, v: t.hero.langsVal },
-                    { k: t.hero.scope, v: t.hero.scopeVal },
-                    { k: t.hero.status, v: t.hero.statusVal },
-                  ].map((r) => (
-                    <motion.div key={r.k} variants={heroItem}>
-                      <Row k={r.k} v={r.v} />
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
+            <div className="md:col-span-7">
+              <motion.h1
+                className="font-normal leading-[0.95] tracking-tight"
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(3rem, 9vw, 8.5rem)" }}
+                initial="hidden"
+                animate="show"
+                variants={{ hidden: {}, show: { transition: { staggerChildren: 0.14 } } }}
+              >
+                <span className="block overflow-hidden pb-[0.06em]">
+                  <motion.span className="block" variants={lineVariant}>{t.name.first}</motion.span>
+                </span>
+                <span className="block overflow-hidden pb-[0.06em]">
+                  <motion.span className="block" variants={lineVariant}>
+                    <span className="italic text-foreground">{t.name.italic}</span>{t.name.rest}
+                  </motion.span>
+                </span>
+                <span className="sr-only">{t.hero.srSuffix}</span>
+              </motion.h1>
             </div>
+            <motion.div variants={heroItem} className="md:col-span-4 md:col-start-9 overflow-hidden border border-border">
+              <img
+                src={portraitAsset.url}
+                alt={t.name.full}
+                className="w-full max-h-[280px] object-cover object-top grayscale hover:grayscale-0 transition-[filter] duration-500"
+                width="600"
+                height="800"
+                loading="eager"
+              />
+            </motion.div>
+            <motion.p variants={heroItem} className="md:col-span-7 text-xl md:text-2xl leading-relaxed text-foreground/90" style={{ fontFamily: "var(--font-display)" }}>
+              {t.hero.intro(t.hero.years)}
+            </motion.p>
+            <motion.div variants={heroItem} className="md:col-span-4 md:col-start-9 space-y-3 text-sm text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
+              {[
+                { k: t.hero.role, v: t.hero.roleVal },
+                { k: t.hero.based, v: t.hero.basedVal },
+                { k: t.hero.langs, v: t.hero.langsVal },
+                { k: t.hero.scope, v: t.hero.scopeVal },
+                { k: t.hero.status, v: t.hero.statusVal },
+              ].map((r) => (
+                <Row key={r.k} k={r.k} v={r.v} />
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </section>
