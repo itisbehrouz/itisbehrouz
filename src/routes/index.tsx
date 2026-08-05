@@ -6,8 +6,20 @@ import { z } from "zod";
 import { CASE_CATEGORIES, caseStudies, type CaseCategory } from "@/lib/case-studies";
 import { useTheme } from "@/hooks/use-theme";
 import { useLang } from "@/hooks/use-lang";
-import { ui, metricsI18n, capabilitiesI18n, experienceI18n, educationI18n, tCase } from "@/lib/i18n";
+import { ui, metricsI18n, capabilitiesI18n, experienceI18n, educationI18n, certificationsI18n, tCase } from "@/lib/i18n";
 import { submitContact, type ContactFormData } from "@/lib/contact.functions";
+
+const LINKEDIN_URL = "https://www.linkedin.com/in/itisbehrouz";
+const EMAIL = "behruz.bagirzade@outlook.com";
+const CV_URL = "/cv/behrouz-bagherzadeh-cv.pdf";
+
+function LinkedInIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true">
+      <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.82-1.95 3.75-1.95C21.1 8.75 22 11 22 14.1V21h-4v-6.1c0-1.5-.55-2.5-1.9-2.5-1.15 0-1.85.77-2.15 1.52-.1.27-.13.64-.13 1.02V21h-4z" />
+    </svg>
+  );
+}
 
 export const Route = createFileRoute("/")({
   component: Portfolio,
@@ -40,8 +52,6 @@ export const Route = createFileRoute("/")({
 
 function Portfolio() {
   const [category, setCategory] = useState<CaseCategory | "All">("All");
-  const [query, setQuery] = useState("");
-  const q = query.trim().toLowerCase();
   const { theme, toggle } = useTheme();
   const { lang, toggle: toggleLang } = useLang();
   const t = ui[lang];
@@ -49,6 +59,7 @@ function Portfolio() {
   const capabilities = capabilitiesI18n[lang];
   const experience = experienceI18n[lang];
   const education = educationI18n[lang];
+  const certifications = certificationsI18n[lang];
 
   const chipRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const chipValues = ["All", ...CASE_CATEGORIES] as const;
@@ -94,31 +105,9 @@ function Portfolio() {
   };
 
   const filteredCases = useMemo(() => {
-    return caseStudies.filter((c) => {
-      if (category !== "All" && c.category !== category) return false;
-      if (!q) return true;
-      const localized = tCase(lang, c.slug);
-      const hay = [
-        localized?.title ?? c.title,
-        localized?.tagline ?? c.tagline,
-        c.client,
-        localized?.overview ?? c.overview,
-        t.categories[c.category] ?? c.category,
-        c.category,
-        ...c.stack,
-      ]
-        .join(" ")
-        .toLowerCase();
-      return hay.includes(q);
-    });
-  }, [category, q, lang, t]);
-
-  const filteredExperience = useMemo(() => {
-    if (!q) return experience;
-    return experience.filter((e) =>
-      [e.role, e.company, e.location, e.period, ...e.bullets].join(" ").toLowerCase().includes(q),
-    );
-  }, [q, experience]);
+    if (category === "All") return caseStudies;
+    return caseStudies.filter((c) => c.category === category);
+  }, [category]);
 
   const catLabel = (c: string) => (c === "All" ? t.work.all : t.categories[c] ?? c);
 
