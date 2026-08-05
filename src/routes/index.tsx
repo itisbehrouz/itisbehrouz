@@ -190,6 +190,7 @@ function Portfolio() {
               <Row k={t.hero.role} v={t.hero.roleVal} />
               <Row k={t.hero.based} v={t.hero.basedVal} />
               <Row k={t.hero.langs} v={t.hero.langsVal} />
+              <Row k={t.hero.scope} v={t.hero.scopeVal} />
               <Row k={t.hero.status} v={t.hero.statusVal} ember />
             </div>
           </div>
@@ -455,9 +456,9 @@ function Portfolio() {
 
 function Row({ k, v, ember }: { k: string; v: string; ember?: boolean }) {
   return (
-    <div className="flex justify-between border-b border-border pb-2 last:border-b-0">
-      <span>{k}</span>
-      <span className={ember ? "text-[var(--ember)]" : "text-foreground"}>{v}</span>
+    <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-border pb-2 last:border-b-0">
+      <span className="whitespace-nowrap">{k}</span>
+      <span className={`min-w-0 text-right ${ember ? "text-[var(--ember)]" : "text-foreground"}`}>{v}</span>
     </div>
   );
 }
