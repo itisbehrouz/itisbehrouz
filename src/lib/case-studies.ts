@@ -101,7 +101,6 @@ export const caseStudies: CaseStudy[] = [
     period: "2024 — 2026",
     location: "Istanbul, TR",
     stack: ["PWA", "SAP SuccessFactors", "ERP", "CRM", "Power BI", "IT Service Desk"],
-    cover: caseWorkplace,
     category: "Digital Workplace",
     overview:
       "Employees juggled six or seven disconnected systems just to get through a normal day. We designed a company-wide Digital Workplace — a progressive web app that consolidates ERP, HR, CRM, BI, and IT Service Desk into a single, AI-assisted surface for 450+ employees across nine locations.",
@@ -135,7 +134,6 @@ export const caseStudies: CaseStudy[] = [
     period: "2019",
     location: "Istanbul, TR",
     stack: ["B2B Commerce", "ERP Integration", "Payments", "International Ops"],
-    cover: caseB2B,
     category: "E-Commerce",
     overview:
       "Edgers had strong international demand but no direct digital sales channel — orders moved through email, spreadsheets, and phone calls. I built and launched the company's first proprietary B2B e-commerce platform, and ran international operations across Iran, the Balkans, Egypt, the United States, and multiple African markets.",
