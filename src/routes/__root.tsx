@@ -105,17 +105,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <head>
+    <html lang="en" suppressHydrationWarning>
+      <head suppressHydrationWarning>
         <HeadContent />
         <script
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}if(t==='light'){document.documentElement.classList.add('light');}document.documentElement.style.colorScheme=t;}catch(e){}})();`,
-          }}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var l=localStorage.getItem('lang');if(!l){l=(navigator.language||'en').toLowerCase().indexOf('tr')===0?'tr':'en';}document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l;}catch(e){}})();`,
+            __html: `(function(){var d=document.documentElement;try{var s=null;try{s=localStorage.getItem('theme')}catch(e){}var t=(s==='light'||s==='dark')?s:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');d.classList.toggle('light',t==='light');d.style.colorScheme=t;if(!s){d.setAttribute('data-theme-auto','1')}else{d.removeAttribute('data-theme-auto')}}catch(e){}try{var sl=null;try{sl=localStorage.getItem('lang')}catch(e){}var l;if(sl==='tr'||sl==='en'){l=sl}else{var list=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'en']);l='en';for(var i=0;i<list.length;i++){if(String(list[i]||'').toLowerCase().indexOf('tr')===0){l='tr';break}}}d.setAttribute('data-lang',l);d.lang=l;if(!sl){d.setAttribute('data-lang-auto','1')}else{d.removeAttribute('data-lang-auto')}}catch(e){}})();`,
           }}
         />
       </head>

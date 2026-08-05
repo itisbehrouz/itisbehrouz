@@ -12,15 +12,12 @@ export function useLang() {
   const [lang, setLangState] = useState<Lang>("en");
 
   useEffect(() => {
-    try {
-      const stored = localStorage.getItem("lang");
-      const initial: Lang = stored === "tr" ? "tr" : stored === "en" ? "en" : readLang();
-      document.documentElement.setAttribute("data-lang", initial);
-      document.documentElement.lang = initial;
-      setLangState(initial);
-    } catch {
-      setLangState(readLang());
-    }
+    // The blocking head script already resolved stored choice / browser detection
+    // and wrote it onto <html>. Just adopt it after hydration.
+    const initial = readLang();
+    document.documentElement.setAttribute("data-lang", initial);
+    document.documentElement.lang = initial;
+    setLangState(initial);
   }, []);
 
   const setLang = (next: Lang) => {
@@ -30,6 +27,7 @@ export function useLang() {
     try {
       localStorage.setItem("lang", next);
     } catch {}
+    root.removeAttribute("data-lang-auto");
     setLangState(next);
   };
 
