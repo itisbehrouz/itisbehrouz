@@ -277,11 +277,8 @@ function Portfolio() {
           )}
 
           <div className="mt-24"><SectionLabel index="03·b" title={t.sections.careerTimeline} /></div>
-          {filteredExperience.length === 0 ? (
-            <div className="mt-10 border border-dashed border-border p-10 text-center text-muted-foreground">{t.work.noRoles(query)}</div>
-          ) : (
           <div className="mt-16 space-y-px bg-border">
-            {filteredExperience.map((e, i) => (
+            {experience.map((e, i) => (
               <article key={i} className="group bg-background hover:bg-card transition-colors py-8 md:py-10 px-2 md:px-6">
                 <div className="grid md:grid-cols-12 gap-6">
                   <div className="md:col-span-2 text-xs uppercase tracking-widest text-muted-foreground pt-2" style={{ fontFamily: "var(--font-mono)" }}>{e.period}</div>
@@ -302,7 +299,6 @@ function Portfolio() {
               </article>
             ))}
           </div>
-          )}
         </div>
       </section>
 
@@ -312,6 +308,19 @@ function Portfolio() {
           <div className="mt-12 grid md:grid-cols-2 gap-8">
             {education.map((e, i) => (
               <EduCard key={i} period={e.period} title={e.title} school={e.school} loc={e.loc} />
+            ))}
+          </div>
+
+          <div className="mt-20">
+            <SectionLabel index="04·b" title={t.sections.certifications} />
+          </div>
+          <div className="mt-12 grid md:grid-cols-2 gap-8">
+            {certifications.map((c, i) => (
+              <div key={i} className="p-8 border border-border hover:border-[var(--ember)] transition-colors">
+                <div className="text-xs text-muted-foreground uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>{c.status}</div>
+                <h3 className="mt-4 text-2xl md:text-3xl" style={{ fontFamily: "var(--font-display)" }}>{c.title}</h3>
+                <div className="text-[var(--ember)] mt-2">{c.issuer}</div>
+              </div>
             ))}
           </div>
         </div>
