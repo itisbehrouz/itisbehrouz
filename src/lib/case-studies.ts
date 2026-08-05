@@ -1,8 +1,3 @@
-import caseBI from "@/assets/case-bi.jpg";
-import caseAutomation from "@/assets/case-automation.jpg";
-import caseWorkplace from "@/assets/case-workplace.jpg";
-import caseB2B from "@/assets/case-b2b.jpg";
-
 export type CaseStudy = {
   slug: string;
   index: string;
@@ -13,7 +8,6 @@ export type CaseStudy = {
   period: string;
   location: string;
   stack: string[];
-  cover: string;
   overview: string;
   challenges: string[];
   approach: string[];
@@ -41,7 +35,6 @@ export const caseStudies: CaseStudy[] = [
     period: "2022 — 2024",
     location: "Istanbul, TR",
     stack: ["Power BI", "SQL", "Power Query", "Data Governance", "KPI Framework"],
-    cover: caseBI,
     category: "Data & BI",
     overview:
       "Executive leadership across seven international entities was making decisions from static, hand-assembled slide decks stitched together from Finance, HR, Sales, and Supply Chain. Reporting was slow, brittle, and never quite trusted. The mandate was to give the executive team a single, real-time source of truth.",
@@ -75,7 +68,6 @@ export const caseStudies: CaseStudy[] = [
     period: "2023 — 2026",
     location: "Istanbul, TR",
     stack: ["Power Automate", "Power Apps", "AI Builder", "SharePoint", "Dataverse"],
-    cover: caseAutomation,
     category: "Automation & AI",
     overview:
       "Back-office functions were drowning in repetitive, low-judgement work — approvals, reconciliations, document extraction. Rather than run a one-off automation project, we built a programme: a portfolio of AI-enabled flows on Microsoft Power Platform with a shared operating model behind them.",
