@@ -1,3 +1,4 @@
+import portraitAsset from "@/assets/behrouz-bagherzadeh.jpeg.asset.json";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { motion, useReducedMotion } from "framer-motion";
@@ -240,22 +241,34 @@ function Portfolio() {
             <span className="sr-only">{t.hero.srSuffix}</span>
           </motion.h1>
           <motion.div initial="hidden" animate="show" variants={heroContainer}>
-            <div className="mt-12 grid md:grid-cols-12 gap-8">
+            <div className="mt-12 grid md:grid-cols-12 gap-8 items-start">
               <motion.p variants={heroItem} className="md:col-span-7 text-xl md:text-2xl leading-relaxed text-foreground/90" style={{ fontFamily: "var(--font-display)" }}>
                 {t.hero.intro(t.hero.years)}
               </motion.p>
-              <div className="md:col-span-4 md:col-start-9 space-y-3 text-sm text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
-                {[
-                  { k: t.hero.role, v: t.hero.roleVal },
-                  { k: t.hero.based, v: t.hero.basedVal },
-                  { k: t.hero.langs, v: t.hero.langsVal },
-                  { k: t.hero.scope, v: t.hero.scopeVal },
-                  { k: t.hero.status, v: t.hero.statusVal },
-                ].map((r) => (
-                  <motion.div key={r.k} variants={heroItem}>
-                    <Row k={r.k} v={r.v} />
-                  </motion.div>
-                ))}
+              <div className="md:col-span-4 md:col-start-9 space-y-6">
+                <motion.div variants={heroItem} className="overflow-hidden border border-border">
+                  <img
+                    src={portraitAsset.url}
+                    alt={t.name.full}
+                    className="w-full max-h-[280px] object-cover object-top grayscale hover:grayscale-0 transition-[filter] duration-500"
+                    width="600"
+                    height="800"
+                    loading="eager"
+                  />
+                </motion.div>
+                <div className="space-y-3 text-sm text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
+                  {[
+                    { k: t.hero.role, v: t.hero.roleVal },
+                    { k: t.hero.based, v: t.hero.basedVal },
+                    { k: t.hero.langs, v: t.hero.langsVal },
+                    { k: t.hero.scope, v: t.hero.scopeVal },
+                    { k: t.hero.status, v: t.hero.statusVal },
+                  ].map((r) => (
+                    <motion.div key={r.k} variants={heroItem}>
+                      <Row k={r.k} v={r.v} />
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
