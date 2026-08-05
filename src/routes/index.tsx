@@ -353,7 +353,7 @@ function Portfolio() {
           <div className="mt-24"><SectionLabel index="03·b" title={t.sections.careerTimeline} /></div>
           <div className="mt-16 space-y-px bg-border">
             {experience.map((e, i) => (
-              <Reveal key={i} delay={Math.min(i, 4) * 0.06} className="group bg-background hover:bg-card transition-colors py-8 md:py-10 px-2 md:px-6">
+              <Reveal key={i} as="article" delay={Math.min(i, 4) * 0.06} className="group bg-background hover:bg-card transition-colors py-8 md:py-10 px-2 md:px-6">
                 <div className="grid md:grid-cols-12 gap-6">
                   <div className="md:col-span-2 text-xs uppercase tracking-widest text-muted-foreground pt-2" style={{ fontFamily: "var(--font-mono)" }}>{e.period}</div>
                   <div className="md:col-span-4">
@@ -381,7 +381,9 @@ function Portfolio() {
           <SectionLabel index="04" title={t.sections.education} />
           <div className="mt-12 grid md:grid-cols-2 gap-8">
             {education.map((e, i) => (
-              <EduCard key={i} period={e.period} title={e.title} school={e.school} loc={e.loc} />
+              <Reveal key={i} delay={(i % 2) * 0.1}>
+                <EduCard period={e.period} title={e.title} school={e.school} loc={e.loc} />
+              </Reveal>
             ))}
           </div>
 
@@ -390,11 +392,11 @@ function Portfolio() {
           </div>
           <div className="mt-12 grid md:grid-cols-2 gap-8">
             {certifications.map((c, i) => (
-              <div key={i} className="p-8 border border-border hover:border-[var(--ember)] transition-colors">
+              <Reveal key={i} delay={(i % 2) * 0.1} className="p-8 border border-border hover:border-[var(--ember)] transition-colors">
                 <div className="text-xs text-muted-foreground uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>{c.status}</div>
                 <h3 className="mt-4 text-2xl md:text-3xl" style={{ fontFamily: "var(--font-display)" }}>{c.title}</h3>
                 <div className="text-[var(--ember)] mt-2">{c.issuer}</div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -406,12 +408,14 @@ function Portfolio() {
           <SectionLabel index="05" title={t.sections.contact} />
           <div className="mt-12 grid md:grid-cols-12 gap-12 md:gap-16">
             <div className="md:col-span-5">
+              <Reveal>
               <h2 className="font-normal leading-[0.95] tracking-tight" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 7vw, 6rem)" }}>
                 {t.contact.headingA}<span className="italic text-[var(--ember)]">{t.contact.headingEm}</span>
                 <br />
                 {t.contact.headingB}
               </h2>
               <p className="mt-8 text-muted-foreground leading-relaxed">{t.contact.intro}</p>
+              </Reveal>
             </div>
             <div className="md:col-span-6 md:col-start-7">
               <div className="mb-10 grid sm:grid-cols-2 gap-px bg-border border border-border">

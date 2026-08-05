@@ -20,7 +20,8 @@ export function Reveal({
   const Comp = motion[as];
 
   if (reduced) {
-    return <div className={className}>{children}</div>;
+    const Plain = as;
+    return <Plain className={className}>{children}</Plain>;
   }
 
   return (
