@@ -9,6 +9,7 @@ import { useLang } from "@/hooks/use-lang";
 import { ui, metricsI18n, capabilitiesI18n, experienceI18n, educationI18n, certificationsI18n, tCase } from "@/lib/i18n";
 import { submitContact, type ContactFormData } from "@/lib/contact.functions";
 import { CaseCover } from "@/components/case-cover";
+import { SITE_URL, absoluteUrl } from "@/lib/site";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/itisbehrouz";
 const CV_URL = "/cv/behrouz-bagherzadeh-cv.pdf";
@@ -25,7 +26,8 @@ function LinkedInIcon() {
 export const Route = createFileRoute("/")({
   component: Portfolio,
   head: () => {
-    const url = "https://itisbehrouz.lovable.app/";
+    const url = `${SITE_URL}/`;
+    const ogImage = absoluteUrl("/og-image.png");
     const personLd = {
       "@context": "https://schema.org",
       "@type": "Person",
@@ -44,8 +46,8 @@ export const Route = createFileRoute("/")({
     return {
       meta: [
         { property: "og:url", content: url },
-        { property: "og:image", content: "https://itisbehrouz.lovable.app/og-image.png" },
-        { name: "twitter:image", content: "https://itisbehrouz.lovable.app/og-image.png" },
+        { property: "og:image", content: ogImage },
+        { name: "twitter:image", content: ogImage },
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: [
