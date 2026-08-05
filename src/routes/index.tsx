@@ -10,8 +10,13 @@ import { ui, metricsI18n, capabilitiesI18n, experienceI18n, educationI18n, certi
 import { submitContact, type ContactFormData } from "@/lib/contact.functions";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/itisbehrouz";
-const EMAIL = "behruz.bagirzade@outlook.com";
 const CV_URL = "/cv/behrouz-bagherzadeh-cv.pdf";
+const CALL_URL = "https://calendar.app.google/Ez1RC2T2CYESgqN8A";
+// Assembled at click time so the address is never a contiguous literal in the bundle.
+const EMAIL_PARTS = ["behruz", ".bagir", "zade", String.fromCharCode(64), "outlook", ".com"];
+function buildEmail() {
+  return EMAIL_PARTS.join("");
+}
 
 function LinkedInIcon() {
   return (
@@ -81,6 +86,7 @@ function Portfolio() {
     defaultValues: { name: "", email: "", subject: "", message: "" },
   });
   const [contactStatus, setContactStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [revealedEmail, setRevealedEmail] = useState<string | null>(null);
 
   const onContactSubmit = async (data: ContactFormData) => {
     setContactStatus("submitting");
