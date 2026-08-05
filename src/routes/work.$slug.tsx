@@ -74,7 +74,7 @@ function CaseStudyPage() {
   const currentIdx = caseStudies.findIndex((c) => c.slug === study.slug);
   const next = caseStudies[(currentIdx + 1) % caseStudies.length];
   const nextLocalized = nextLoc(next);
-  useLocalizedMeta(`${loc.title} — ${t.name.full}`, loc.tagline ?? study.tagline);
+  useLocalizedMeta(`${loc?.title ?? study.title} — ${t.name.full}`, loc?.tagline ?? study.tagline);
 
   return (
     <div className="min-h-screen bg-background text-foreground" style={{ fontFamily: "var(--font-sans)" }}>
