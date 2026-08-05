@@ -101,7 +101,7 @@ export const ui: Record<Lang, UI> = {
       years: "15+ years",
       intro: (yrs) => (
         <>Digital transformation and business intelligence leader,{" "}
-          <span className="text-[var(--ember)]">{yrs}</span>. I build the layer between the data and the decision — turning analytics and AI investments into something leadership can act on, not just look at.</>
+          <span className="text-foreground">{yrs}</span>. I build the layer between the data and the decision — turning analytics and AI investments into something leadership can act on, not just look at.</>
       ),
       role: "ROLE",
       based: "BASED",
@@ -203,7 +203,7 @@ export const ui: Record<Lang, UI> = {
       srSuffix: " — Dijital Dönüşüm & İş Zekâsı Lideri",
       years: "15+ yıl",
       intro: (yrs) => (
-        <><span className="text-[var(--ember)]">{yrs}</span>lık dijital dönüşüm ve iş zekâsı lideri. Veri ile karar arasındaki katmanı kuruyorum — analitik ve yapay zekâ yatırımlarını yönetimin bakabildiği değil, üzerine hareket edebildiği bir şeye dönüştürüyorum.</>
+        <><span className="text-foreground">{yrs}</span>lık dijital dönüşüm ve iş zekâsı lideri. Veri ile karar arasındaki katmanı kuruyorum — analitik ve yapay zekâ yatırımlarını yönetimin bakabildiği değil, üzerine hareket edebildiği bir şeye dönüştürüyorum.</>
       ),
       role: "ROL",
       based: "MERKEZ",
