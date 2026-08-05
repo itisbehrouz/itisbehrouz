@@ -10,10 +10,12 @@ export type UI = {
     role: string;
     based: string;
     langs: string;
+    scope: string;
     status: string;
     roleVal: string;
     basedVal: string;
     langsVal: string;
+    scopeVal: string;
     statusVal: string;
     years: string;
   };
@@ -104,10 +106,12 @@ export const ui: Record<Lang, UI> = {
       role: "ROLE",
       based: "BASED",
       langs: "LANGS",
+      scope: "SCOPE",
       status: "STATUS",
       roleVal: "DX & BI Manager",
       basedVal: "Istanbul, TR",
       langsVal: "TR · FA · AZ · EN",
+      scopeVal: "EMEA · Balkans · GCC",
       statusVal: "Available — Head of Digital Transformation / BI Director",
     },
     sections: {
@@ -204,10 +208,12 @@ export const ui: Record<Lang, UI> = {
       role: "ROL",
       based: "MERKEZ",
       langs: "DİLLER",
+      scope: "KAPSAM",
       status: "DURUM",
       roleVal: "Dijital Dönüşüm & İZ Yöneticisi",
       basedVal: "İstanbul, TR",
       langsVal: "TR · FA · AZ · EN",
+      scopeVal: "EMEA · Balkanlar · Körfez",
       statusVal: "Müsait — Dijital Dönüşüm Direktörü / İş Zekâsı Direktörü",
     },
     sections: {
@@ -313,13 +319,13 @@ export const metricsI18n: Record<Lang, MetricT[]> = {
 export type CapabilityT = { title: string; items: string[] };
 export const capabilitiesI18n: Record<Lang, CapabilityT[]> = {
   en: [
-    { title: "Transformation & Strategy", items: ["Digital Transformation Strategy", "AI Strategy & Adoption", "Change Management", "Business Process Reengineering", "Operating Model Design", "Executive Stakeholder Management"] },
+    { title: "Transformation & Strategy", items: ["Digital Transformation Strategy", "AI Strategy & Adoption", "Change Management", "Business Process Reengineering", "Operating Model Design", "Executive Stakeholder Management", "Multi-Entity Governance"] },
     { title: "Data & Analytics", items: ["Power BI", "Data Strategy & Governance", "KPI Framework Design", "Executive Reporting", "Data Analytics"] },
     { title: "Automation & Systems", items: ["Microsoft Power Platform", "Power Automate", "ERP / CRM Integration", "SAP SuccessFactors", "E-Commerce & B2B Platforms", "IT Infrastructure"] },
     { title: "Leadership", items: ["Team Building", "Cross-Functional Leadership", "Multi-Entity Delivery", "Project Management", "Requirements Analysis"] },
   ],
   tr: [
-    { title: "Dönüşüm & Strateji", items: ["Dijital Dönüşüm Stratejisi", "YZ Stratejisi & Benimsenmesi", "Değişim Yönetimi", "İş Süreçleri Yeniden Tasarımı", "Operasyon Modeli Tasarımı", "Üst Düzey Paydaş Yönetimi"] },
+    { title: "Dönüşüm & Strateji", items: ["Dijital Dönüşüm Stratejisi", "YZ Stratejisi & Benimsenmesi", "Değişim Yönetimi", "İş Süreçleri Yeniden Tasarımı", "Operasyon Modeli Tasarımı", "Üst Düzey Paydaş Yönetimi", "Çoklu Birim Yönetişimi"] },
     { title: "Veri & Analitik", items: ["Power BI", "Veri Stratejisi & Yönetişim", "KPI Çerçevesi Tasarımı", "Yönetici Raporlama", "Veri Analitiği"] },
     { title: "Otomasyon & Sistemler", items: ["Microsoft Power Platform", "Power Automate", "ERP / CRM Entegrasyonu", "SAP SuccessFactors", "E-Ticaret & B2B Platformlar", "BT Altyapısı"] },
     { title: "Liderlik", items: ["Ekip Kurma", "Fonksiyonlar Arası Liderlik", "Çoklu Kuruluş Teslimatı", "Proje Yönetimi", "Gereksinim Analizi"] },
@@ -336,10 +342,15 @@ export const experienceI18n: Record<Lang, ExperienceT[]> = {
       "Directed AI-enabled automation on Microsoft Power Platform, lifting operational productivity by 67%.",
       "Delivered SAP SuccessFactors HR digitalization for 450+ employees across 9 locations.",
       "Launched a company-wide Digital Workplace PWA consolidating ERP, HR, CRM, BI, and IT Service Desk.",
+      "Standardized operational processes across 7 international entities, reducing execution variance and strengthening cross-functional governance.",
+      "Redesigned processes across Sales, Finance and Operations, reducing handoff delays between departments.",
+      "Partnered directly with executive leadership to align the transformation roadmap with multi-year strategic objectives.",
     ]},
     { period: "2021 — 2022", role: "Digital Transformation Analyst", company: "Yiğitoğlu", location: "Istanbul", bullets: [
       "Compressed average transformation delivery from 18 months to 6.",
       "Mapped end-to-end processes across departments to surface automation and digitalization opportunities.",
+      "Implemented AI-powered solutions that improved operational efficiency and customer experience.",
+      "Evaluated digital initiatives against performance metrics and business KPIs to guide leadership decision-making.",
     ]},
     { period: "2019 — 2021", role: "International E-Commerce Manager & Digital Transformation Analyst", company: "Kiğılı", location: "Istanbul", bullets: [
       "Led a 10+ person e-commerce and digital operations team across international markets.",
@@ -350,6 +361,8 @@ export const experienceI18n: Record<Lang, ExperienceT[]> = {
     { period: "2019", role: "E-Commerce Manager", company: "Edgers", location: "Istanbul", bullets: [
       "Built and launched the company's first B2B e-commerce platform end-to-end.",
       "Managed international B2B operations across Iran, the Balkans, Egypt, the US, and multiple African markets.",
+      "Owned the end-to-end digital order journey — platform architecture, product catalogue, customer onboarding and fulfilment coordination.",
+      "Adapted the platform and commercial approach to the payment, logistics and compliance requirements of each export market.",
     ]},
     { period: "2018", role: "Senior Business Developer", company: "Orka Holding — Damat / Tween / D'S", location: "Istanbul", bullets: [
       "Surfaced new opportunities through market and competitive analysis across multiple retail brands.",
@@ -360,8 +373,13 @@ export const experienceI18n: Record<Lang, ExperienceT[]> = {
     { period: "2013 — 2016", role: "IT Engineer → Senior IT Engineer", company: "Mercedes-Benz AG", location: "Tabriz", bullets: [
       "Led enterprise IT infrastructure operations, ensuring high availability and stability.",
       "Implemented security and process improvements, reducing incident resolution time.",
+      "Supported business-critical IT environments in close collaboration with engineering teams.",
     ]},
-    { period: "2011 — 2013", role: "IT System Engineer", company: "EghtesadNovin Bank", location: "Tabriz", bullets: [] },
+    { period: "2011 — 2013", role: "IT System Engineer", company: "EghtesadNovin Bank", location: "Tabriz", bullets: [
+      "Designed and maintained enterprise IT infrastructure supporting banking operations and business continuity.",
+      "Improved system stability and reliability through proactive maintenance and infrastructure modernization.",
+      "Delivered technical support for mission-critical banking applications.",
+    ]},
   ],
   tr: [
     { period: "2022 — 2026", role: "Dijital Dönüşüm & İZ Yöneticisi", company: "Yiğitoğlu", location: "İstanbul", bullets: [
@@ -371,10 +389,15 @@ export const experienceI18n: Record<Lang, ExperienceT[]> = {
       "Microsoft Power Platform üzerinde YZ destekli otomasyonu yönettim; operasyonel verimliliği %67 artırdım.",
       "9 lokasyondaki 450+ çalışan için SAP SuccessFactors İK dijitalleşmesini hayata geçirdim.",
       "ERP, İK, CRM, İZ ve BT Servis Masası'nı tek çatı altında toplayan Dijital İş Yeri PWA'sını devreye aldım.",
+      "7 uluslararası birim genelinde operasyonel süreçleri standartlaştırarak uygulama farklılıklarını azalttım ve fonksiyonlar arası yönetişimi güçlendirdim.",
+      "Satış, Finans ve Operasyon süreçlerini yeniden tasarlayarak departmanlar arası devir gecikmelerini azalttım.",
+      "Dönüşüm yol haritasını üst yönetimin çok yıllı stratejik hedefleriyle doğrudan hizaladım.",
     ]},
     { period: "2021 — 2022", role: "Dijital Dönüşüm Analisti", company: "Yiğitoğlu", location: "İstanbul", bullets: [
       "Ortalama dönüşüm teslim süresini 18 aydan 6 aya indirdim.",
       "Otomasyon ve dijitalleşme fırsatlarını görünür kılmak için uçtan uca süreç haritaları çıkardım.",
+      "Operasyonel verimliliği ve müşteri deneyimini iyileştiren yapay zekâ destekli çözümler uyguladım.",
+      "Dijital girişimleri performans metrikleri ve iş KPI'ları üzerinden değerlendirerek yönetim kararlarına girdi sağladım.",
     ]},
     { period: "2019 — 2021", role: "Uluslararası E-Ticaret Müdürü ve Dijital Dönüşüm Analisti", company: "Kiğılı", location: "İstanbul", bullets: [
       "Uluslararası pazarlarda 10+ kişilik e-ticaret ve dijital operasyon ekibini yönettim.",
@@ -385,6 +408,8 @@ export const experienceI18n: Record<Lang, ExperienceT[]> = {
     { period: "2019", role: "E-Ticaret Yöneticisi", company: "Edgers", location: "İstanbul", bullets: [
       "Şirketin ilk B2B e-ticaret platformunu uçtan uca kurdum ve devreye aldım.",
       "İran, Balkanlar, Mısır, ABD ve birçok Afrika pazarında uluslararası B2B operasyonlarını yönettim.",
+      "Platform mimarisinden ürün kataloğuna, müşteri kazanımından sipariş karşılamaya kadar uçtan uca dijital sipariş yolculuğunu yönettim.",
+      "Platformu ve ticari yaklaşımı her ihracat pazarının ödeme, lojistik ve mevzuat gereksinimlerine uyarladım.",
     ]},
     { period: "2018", role: "Kıdemli İş Geliştirme Uzmanı", company: "Orka Holding — Damat / Tween / D'S", location: "İstanbul", bullets: [
       "Birden fazla perakende markası için pazar ve rekabet analizi yoluyla yeni fırsatlar ortaya çıkardım.",
@@ -395,8 +420,13 @@ export const experienceI18n: Record<Lang, ExperienceT[]> = {
     { period: "2013 — 2016", role: "BT Mühendisi → Kıdemli BT Mühendisi", company: "Mercedes-Benz AG", location: "Tebriz", bullets: [
       "Yüksek erişilebilirlik ve kararlılığı sağlayarak kurumsal BT altyapı operasyonlarını yönettim.",
       "Güvenlik ve süreç iyileştirmeleri uyguladım; olay çözüm süresini azalttım.",
+      "İş açısından kritik BT ortamlarını mühendislik ekipleriyle yakın iş birliği içinde destekledim.",
     ]},
-    { period: "2011 — 2013", role: "BT Sistem Mühendisi", company: "EghtesadNovin Bankası", location: "Tebriz", bullets: [] },
+    { period: "2011 — 2013", role: "BT Sistem Mühendisi", company: "EghtesadNovin Bankası", location: "Tebriz", bullets: [
+      "Bankacılık operasyonlarını ve iş sürekliliğini destekleyen kurumsal BT altyapısını tasarladım ve sürdürdüm.",
+      "Proaktif bakım ve altyapı modernizasyonuyla sistem kararlılığını ve güvenilirliğini artırdım.",
+      "Kritik bankacılık uygulamaları için teknik destek sağladım.",
+    ]},
   ],
 };
 
