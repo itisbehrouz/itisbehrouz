@@ -1,3 +1,4 @@
+import portraitAsset from "@/assets/behrouz-bagherzadeh.jpeg.asset.json";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { motion, useReducedMotion } from "framer-motion";
