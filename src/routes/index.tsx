@@ -10,8 +10,13 @@ import { ui, metricsI18n, capabilitiesI18n, experienceI18n, educationI18n, certi
 import { submitContact, type ContactFormData } from "@/lib/contact.functions";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/itisbehrouz";
-const EMAIL = "behruz.bagirzade@outlook.com";
 const CV_URL = "/cv/behrouz-bagherzadeh-cv.pdf";
+const CALL_URL = "https://calendar.app.google/Ez1RC2T2CYESgqN8A";
+// Assembled at click time so the address is never a contiguous literal in the bundle.
+const EMAIL_PARTS = ["behruz", ".bagir", "zade", String.fromCharCode(64), "outlook", ".com"];
+function buildEmail() {
+  return EMAIL_PARTS.join("");
+}
 
 function LinkedInIcon() {
   return (
@@ -81,6 +86,7 @@ function Portfolio() {
     defaultValues: { name: "", email: "", subject: "", message: "" },
   });
   const [contactStatus, setContactStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [revealedEmail, setRevealedEmail] = useState<string | null>(null);
 
   const onContactSubmit = async (data: ContactFormData) => {
     setContactStatus("submitting");
@@ -356,13 +362,28 @@ function Portfolio() {
             </div>
             <div className="md:col-span-6 md:col-start-7">
               <div className="mb-10 grid sm:grid-cols-3 gap-px bg-border border border-border">
-                <a
-                  href={`mailto:${EMAIL}`}
-                  className="bg-background p-5 group hover:bg-card transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                >
+                <div className="bg-background p-5">
                   <span className="block text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.cta.email}</span>
-                  <span className="mt-2 block text-sm text-foreground group-hover:text-[var(--ember)] transition-colors break-all">{EMAIL}</span>
-                </a>
+                  {revealedEmail ? (
+                    <a
+                      href={`mailto:${revealedEmail}`}
+                      className="mt-2 block text-xs leading-relaxed text-foreground hover:text-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      style={{ overflowWrap: "break-word", wordBreak: "normal", hyphens: "none" }}
+                    >
+                      <span className="whitespace-nowrap">{revealedEmail.split("@")[0]}</span>
+                      <wbr />
+                      <span className="whitespace-nowrap">{"@" + revealedEmail.split("@")[1]}</span>
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => setRevealedEmail(buildEmail())}
+                      className="mt-2 block text-left text-sm text-foreground hover:text-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                    >
+                      {t.contact.cta.showEmail}
+                    </button>
+                  )}
+                </div>
                 <a
                   href={LINKEDIN_URL}
                   target="_blank"
@@ -375,13 +396,23 @@ function Portfolio() {
                   </span>
                 </a>
                 <a
-                  href={CV_URL}
+                  href={CALL_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-background p-5 group hover:bg-card transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
-                  <span className="block text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>PDF</span>
-                  <span className="mt-2 block text-sm text-foreground group-hover:text-[var(--ember)] transition-colors">{t.contact.cta.cv} ↓</span>
+                  <span className="block text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.cta.bookCall}</span>
+                  <span className="mt-2 block text-sm text-foreground group-hover:text-[var(--ember)] transition-colors">{t.contact.cta.bookCallVal}</span>
+                </a>
+              </div>
+              <div className="-mt-6 mb-10">
+                <a
+                  href={CV_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  {t.contact.cta.cv}
                 </a>
               </div>
               {contactStatus === "success" ? (
