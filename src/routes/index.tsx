@@ -145,6 +145,16 @@ function Portfolio() {
             >
               <span aria-hidden="true" className="text-sm">{theme === "light" ? "☾" : "☀"}</span>
             </button>
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              title="LinkedIn"
+              className="inline-flex items-center justify-center min-h-9 min-w-9 border border-border text-muted-foreground hover:text-[var(--ember)] hover:border-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <LinkedInIcon />
+            </a>
             <a href="#contact" className="hidden sm:inline-block text-xs px-3 py-1.5 border border-[var(--ember)]/40 text-[var(--ember)] hover:bg-[var(--ember)] hover:text-primary-foreground transition-colors" style={{ fontFamily: "var(--font-mono)" }}>
               {t.nav.getInTouch}
             </a>
@@ -340,6 +350,35 @@ function Portfolio() {
               <p className="mt-8 text-muted-foreground leading-relaxed">{t.contact.intro}</p>
             </div>
             <div className="md:col-span-6 md:col-start-7">
+              <div className="mb-10 grid sm:grid-cols-3 gap-px bg-border border border-border">
+                <a
+                  href={`mailto:${EMAIL}`}
+                  className="bg-background p-5 group hover:bg-card transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  <span className="block text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.cta.email}</span>
+                  <span className="mt-2 block text-sm text-foreground group-hover:text-[var(--ember)] transition-colors break-all">{EMAIL}</span>
+                </a>
+                <a
+                  href={LINKEDIN_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-background p-5 group hover:bg-card transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  <span className="block text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.cta.linkedin}</span>
+                  <span className="mt-2 flex items-center gap-2 text-sm text-foreground group-hover:text-[var(--ember)] transition-colors">
+                    <LinkedInIcon /> /itisbehrouz
+                  </span>
+                </a>
+                <a
+                  href={CV_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-background p-5 group hover:bg-card transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  <span className="block text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>PDF</span>
+                  <span className="mt-2 block text-sm text-foreground group-hover:text-[var(--ember)] transition-colors">{t.contact.cta.cv} ↓</span>
+                </a>
+              </div>
               {contactStatus === "success" ? (
                 <div className="border border-[var(--ember)] p-8 md:p-10 bg-card/40">
                   <div className="text-xs text-[var(--ember)] uppercase tracking-[0.3em] mb-4" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.sent}</div>
@@ -386,7 +425,18 @@ function Portfolio() {
       </main>
       <footer className="border-t border-border py-8 px-6 md:px-10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
-          <div>© 2026 Behrouz Bagherzadeh</div>
+          <div className="flex items-center gap-4">
+            <span>© 2026 Behrouz Bagherzadeh</span>
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              className="inline-flex items-center justify-center text-muted-foreground hover:text-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <LinkedInIcon />
+            </a>
+          </div>
           <div>{t.footerLoc}</div>
         </div>
       </footer>
