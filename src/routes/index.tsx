@@ -367,8 +367,8 @@ function Portfolio() {
                   {revealedEmail ? (
                     <a
                       href={`mailto:${revealedEmail}`}
-                      className="mt-2 block text-xs md:text-[0.8125rem] leading-relaxed text-foreground hover:text-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                      style={{ overflowWrap: "break-word", wordBreak: "break-word" }}
+                      className="mt-2 block text-[0.6875rem] leading-relaxed text-foreground hover:text-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      style={{ overflowWrap: "break-word", wordBreak: "break-word", hyphens: "none" }}
                     >
                       {revealedEmail}
                     </a>
