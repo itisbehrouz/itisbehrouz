@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useRef, useState, type KeyboardEvent } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -10,6 +11,11 @@ import { ui, metricsI18n, capabilitiesI18n, experienceI18n, educationI18n, certi
 import { submitContact, type ContactFormData } from "@/lib/contact.functions";
 import { CaseCover } from "@/components/case-cover";
 import { SITE_URL, absoluteUrl } from "@/lib/site";
+import { Reveal } from "@/components/motion/reveal";
+import { CursorGlow } from "@/components/motion/cursor-glow";
+import { CountUp } from "@/components/motion/count-up";
+import { HeroLineMotif } from "@/components/motion/hero-line-motif";
+import { TiltCard } from "@/components/motion/tilt-card";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/itisbehrouz";
 const CV_URL = "/cv/behrouz-bagherzadeh-cv.pdf";
@@ -60,6 +66,7 @@ export const Route = createFileRoute("/")({
 
 function Portfolio() {
   const [category, setCategory] = useState<CaseCategory | "All">("All");
+  const reduced = useReducedMotion();
   const { theme, toggle } = useTheme();
   const { lang, toggle: toggleLang } = useLang();
   const t = ui[lang];
@@ -119,8 +126,26 @@ function Portfolio() {
 
   const catLabel = (c: string) => (c === "All" ? t.work.all : t.categories[c] ?? c);
 
+  const heroContainer = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.12, delayChildren: 0.85 } },
+  };
+  const heroItem = reduced
+    ? { hidden: { opacity: 1, y: 0 }, show: { opacity: 1, y: 0 } }
+    : {
+        hidden: { opacity: 0, y: 16 },
+        show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } },
+      };
+  const lineVariant = reduced
+    ? { hidden: { y: "0%", opacity: 1 }, show: { y: "0%", opacity: 1 } }
+    : {
+        hidden: { y: "110%", opacity: 0 },
+        show: { y: "0%", opacity: 1, transition: { duration: 0.95, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } },
+      };
+
   return (
     <div className="min-h-screen bg-background text-foreground" style={{ fontFamily: "var(--font-sans)" }}>
+      <CursorGlow />
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
         <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
           <a href="#top" className="text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-[var(--ember)] transition-colors" style={{ fontFamily: "var(--font-mono)" }}>
