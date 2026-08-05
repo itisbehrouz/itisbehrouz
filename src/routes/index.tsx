@@ -8,6 +8,7 @@ import { useTheme } from "@/hooks/use-theme";
 import { useLang } from "@/hooks/use-lang";
 import { ui, metricsI18n, capabilitiesI18n, experienceI18n, educationI18n, certificationsI18n, tCase } from "@/lib/i18n";
 import { submitContact, type ContactFormData } from "@/lib/contact.functions";
+import { CaseCover } from "@/components/case-cover";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/itisbehrouz";
 const CV_URL = "/cv/behrouz-bagherzadeh-cv.pdf";
