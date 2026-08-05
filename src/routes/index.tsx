@@ -200,6 +200,16 @@ function Portfolio() {
         <div className="absolute inset-0 pointer-events-none opacity-[0.08]" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, var(--ember) 0, transparent 50%), radial-gradient(circle at 80% 70%, var(--ember) 0, transparent 40%)" }} />
         <HeroLineMotif className="hero-motif" />
         <div className="max-w-7xl mx-auto relative">
+          <motion.div
+            initial={heroItem.hidden}
+            animate={heroItem.show}
+            transition={{ duration: 0.6, delay: reduced ? 0 : 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground mb-10"
+            style={{ fontFamily: "var(--font-mono)" }}
+          >
+            <span className="w-8 h-px bg-[var(--ember)]" />
+            <span>{t.hero.location}</span>
+          </motion.div>
           <motion.h1
             className="font-normal leading-[0.95] tracking-tight"
             style={{ fontFamily: "var(--font-display)", fontSize: "clamp(3rem, 9vw, 8.5rem)" }}
@@ -218,14 +228,6 @@ function Portfolio() {
             <span className="sr-only">{t.hero.srSuffix}</span>
           </motion.h1>
           <motion.div initial="hidden" animate="show" variants={heroContainer}>
-            <motion.div
-              variants={heroItem}
-              className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground mt-10"
-              style={{ fontFamily: "var(--font-mono)" }}
-            >
-              <span className="w-8 h-px bg-[var(--ember)]" />
-              <span>{t.hero.location}</span>
-            </motion.div>
             <div className="mt-12 grid md:grid-cols-12 gap-8">
               <motion.p variants={heroItem} className="md:col-span-7 text-xl md:text-2xl leading-relaxed text-foreground/90" style={{ fontFamily: "var(--font-display)" }}>
                 {t.hero.intro(t.hero.years)}
