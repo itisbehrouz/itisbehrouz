@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { CASE_CATEGORIES, caseStudies, type CaseCategory } from "@/lib/case-studies";
 import { useTheme } from "@/hooks/use-theme";
+import { useLocalizedMeta } from "@/hooks/use-localized-meta";
 import { useLang } from "@/hooks/use-lang";
 import { ui, metricsI18n, capabilitiesI18n, experienceI18n, educationI18n, certificationsI18n, tCase } from "@/lib/i18n";
 import { submitContact, type ContactFormData } from "@/lib/contact.functions";
@@ -37,7 +38,8 @@ export const Route = createFileRoute("/")({
     const personLd = {
       "@context": "https://schema.org",
       "@type": "Person",
-      name: "Behrouz Bagherzadeh",
+      name: "Behruz Bagirzade",
+      alternateName: "Behrouz Bagherzadeh",
       jobTitle: "Digital Transformation & BI Manager",
       url,
       address: { "@type": "PostalAddress", addressLocality: "Istanbul", addressCountry: "TR" },
@@ -46,7 +48,7 @@ export const Route = createFileRoute("/")({
     const websiteLd = {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      name: "Behrouz Bagherzadeh — Portfolio",
+      name: "Behruz Bagirzade — Portfolio",
       url,
     };
     return {
@@ -75,6 +77,7 @@ function Portfolio() {
   const experience = experienceI18n[lang];
   const education = educationI18n[lang];
   const certifications = certificationsI18n[lang];
+  useLocalizedMeta(t.metaTitle, t.metaDesc);
 
   const chipRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const chipValues = ["All", ...CASE_CATEGORIES] as const;
@@ -218,11 +221,11 @@ function Portfolio() {
             variants={{ hidden: {}, show: { transition: { staggerChildren: 0.14 } } }}
           >
             <span className="block overflow-hidden pb-[0.06em]">
-              <motion.span className="block" variants={lineVariant}>Behrouz</motion.span>
+              <motion.span className="block" variants={lineVariant}>{t.name.first}</motion.span>
             </span>
             <span className="block overflow-hidden pb-[0.06em]">
               <motion.span className="block" variants={lineVariant}>
-                <span className="italic text-foreground">Bagher</span>zadeh
+                <span className="italic text-foreground">{t.name.italic}</span>{t.name.rest}
               </motion.span>
             </span>
             <span className="sr-only">{t.hero.srSuffix}</span>
@@ -497,7 +500,7 @@ function Portfolio() {
       <footer className="border-t border-border py-8 px-6 md:px-10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
           <div className="flex items-center gap-4">
-            <span>© 2026 Behrouz Bagherzadeh</span>
+            <span>© 2026 {t.name.full}</span>
             <a
               href={LINKEDIN_URL}
               target="_blank"

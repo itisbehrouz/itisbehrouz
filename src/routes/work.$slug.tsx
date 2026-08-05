@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { caseStudies, getCaseStudy, type CaseStudy } from "@/lib/case-studies";
 import { useLang } from "@/hooks/use-lang";
+import { useLocalizedMeta } from "@/hooks/use-localized-meta";
 import { ui, tCase } from "@/lib/i18n";
 import { CaseCover } from "@/components/case-cover";
 import { SITE_URL } from "@/lib/site";
@@ -16,14 +17,14 @@ export const Route = createFileRoute("/work/$slug")({
       return { meta: [{ title: "Case study not found" }, { name: "robots", content: "noindex" }] };
     }
     const { study } = loaderData;
-    const title = `${study.title} — Behrouz Bagherzadeh`;
+    const title = `${study.title} — Behruz Bagirzade`;
     const url = `${SITE_URL}/work/${params.slug}`;
     const articleLd = {
       "@context": "https://schema.org",
       "@type": "Article",
       headline: study.title,
       description: study.tagline,
-      author: { "@type": "Person", name: "Behrouz Bagherzadeh", url: `${SITE_URL}/` },
+      author: { "@type": "Person", name: "Behruz Bagirzade", alternateName: "Behrouz Bagherzadeh", url: `${SITE_URL}/` },
       mainEntityOfPage: url,
     };
     return {
@@ -268,7 +269,7 @@ function CaseStudyPage() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
           <Link to="/" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{cs.allWork}</Link>
           <div className="flex items-center gap-4">
-            <span>© 2026 Behrouz Bagherzadeh · {t.footerLoc}</span>
+            <span>© 2026 {t.name.full} · {t.footerLoc}</span>
             <a
               href="https://www.linkedin.com/in/itisbehrouz"
               target="_blank"
