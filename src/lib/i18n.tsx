@@ -112,7 +112,7 @@ export const ui: Record<Lang, UI> = {
       basedVal: "Istanbul, TR",
       langsVal: "TR · FA · AZ · EN",
       scopeVal: "EMEA · Balkans · GCC",
-      statusVal: "Available — Head of Digital Transformation / BI Director",
+      statusVal: "Open to a new role · Available immediately",
     },
     sections: {
       capabilities: "Capabilities",
@@ -214,7 +214,7 @@ export const ui: Record<Lang, UI> = {
       basedVal: "İstanbul, TR",
       langsVal: "TR · FA · AZ · EN",
       scopeVal: "EMEA · Balkanlar · Körfez",
-      statusVal: "Müsait — Dijital Dönüşüm Direktörü / İş Zekâsı Direktörü",
+      statusVal: "Yeni role açık · Hemen başlayabilir",
     },
     sections: {
       capabilities: "Yetkinlikler",
