@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { caseStudies, getCaseStudy, type CaseStudy } from "@/lib/case-studies";
 import { useLang } from "@/hooks/use-lang";
 import { ui, tCase } from "@/lib/i18n";
+import { CaseCover } from "@/components/case-cover";
 
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }) => {
@@ -16,13 +17,11 @@ export const Route = createFileRoute("/work/$slug")({
     const { study } = loaderData;
     const title = `${study.title} — Behrouz Bagherzadeh`;
     const url = `https://itisbehrouz.lovable.app/work/${params.slug}`;
-    const image = `https://itisbehrouz.lovable.app${study.cover}`;
     const articleLd = {
       "@context": "https://schema.org",
       "@type": "Article",
       headline: study.title,
       description: study.tagline,
-      image,
       author: { "@type": "Person", name: "Behrouz Bagherzadeh", url: "https://itisbehrouz.lovable.app/" },
       mainEntityOfPage: url,
     };
@@ -34,8 +33,6 @@ export const Route = createFileRoute("/work/$slug")({
         { property: "og:description", content: study.tagline },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
-        { property: "og:image", content: image },
-        { name: "twitter:image", content: image },
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: [{ type: "application/ld+json", children: JSON.stringify(articleLd) }],
@@ -143,13 +140,9 @@ function CaseStudyPage() {
       <section className="px-6 md:px-10">
         <div className="max-w-7xl mx-auto">
           <figure className="relative overflow-hidden border border-border">
-            <img
-              src={study.cover}
-              alt={`${loc?.title ?? study.title} — visual`}
-              width={1600}
-              height={1000}
-              className="w-full h-auto object-cover"
-            />
+            <div className="w-full aspect-[16/10]">
+              <CaseCover slug={study.slug} />
+            </div>
             <figcaption className="absolute bottom-4 left-4 text-xs uppercase tracking-widest text-foreground/70 bg-background/60 backdrop-blur px-2 py-1" style={{ fontFamily: "var(--font-mono)" }}>
               {cs.figPrefix} {study.index} — {study.client}
             </figcaption>
