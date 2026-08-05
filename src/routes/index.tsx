@@ -159,7 +159,7 @@ function Portfolio() {
             style={{ gap: "10px" }}
           >
             <Logo title={t.name.full} height={22} width={17} aria-hidden="false" />
-            <span className="hidden xs:inline sm:inline text-xs tracking-[0.14em] uppercase" style={{ fontFamily: "var(--font-mono)" }}>
+            <span className="hidden sm:inline text-xs tracking-[0.14em] uppercase" style={{ fontFamily: "var(--font-mono)" }}>
               {t.name.full}
             </span>
           </a>
