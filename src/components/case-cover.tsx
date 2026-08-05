@@ -42,10 +42,10 @@ function BiCover({ className }: { className?: string }) {
       <polyline
         {...stroke}
         points={heights.map((h, i) => `${x0 + i * gap},${baseY - h - 44}`).join(" ")}
-        stroke="var(--ember)"
-        strokeWidth={1.5}
+        stroke="var(--foreground)"
+        strokeWidth={2}
       />
-      <circle cx={x0 + gap * (heights.length - 1)} cy={baseY - heights[heights.length - 1] - 44} r={4} fill="var(--ember)" />
+      <circle cx={x0 + gap * (heights.length - 1)} cy={baseY - heights[heights.length - 1] - 44} r={5} fill="var(--foreground)" />
     </Frame>
   );
 }
@@ -79,7 +79,7 @@ function AutomationCover({ className }: { className?: string }) {
       {arrow(x, y + h * 0.45, 270)}
       {nodes.map((n) =>
         n.focal ? (
-          <circle key={`${n.cx}-${n.cy}`} cx={n.cx} cy={n.cy} r={11} fill="var(--ember)" />
+          <circle key={`${n.cx}-${n.cy}`} cx={n.cx} cy={n.cy} r={13} fill="var(--foreground)" />
         ) : (
           <circle key={`${n.cx}-${n.cy}`} cx={n.cx} cy={n.cy} r={11} fill="var(--card)" stroke="var(--muted-foreground)" strokeWidth={0.75} />
         )
@@ -107,7 +107,7 @@ function WorkplaceCover({ className }: { className?: string }) {
           />
         </g>
       ))}
-      <rect x={target.x} y={target.y} width={target.w} height={target.h} rx={12} {...stroke} stroke="var(--ember)" strokeWidth={1.5} />
+      <rect x={target.x} y={target.y} width={target.w} height={target.h} rx={12} {...stroke} stroke="var(--foreground)" strokeWidth={2} />
     </Frame>
   );
 }
@@ -135,7 +135,7 @@ function B2BCover({ className }: { className?: string }) {
           </g>
         );
       })}
-      <circle cx={ox} cy={baseY} r={8} fill="var(--ember)" />
+      <circle cx={ox} cy={baseY} r={10} fill="var(--foreground)" />
     </Frame>
   );
 }
