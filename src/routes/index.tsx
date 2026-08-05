@@ -152,10 +152,10 @@ function Portfolio() {
             BB — 001
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-            <a href="#work" className="hover:text-foreground transition-colors">{t.nav.work}</a>
-            <a href="#capabilities" className="hover:text-foreground transition-colors">{t.nav.capabilities}</a>
-            <a href="#impact" className="hover:text-foreground transition-colors">{t.nav.impact}</a>
-            <a href="#contact" className="hover:text-foreground transition-colors">{t.nav.contact}</a>
+            <a href="#work" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.work}</a>
+            <a href="#capabilities" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.capabilities}</a>
+            <a href="#impact" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.impact}</a>
+            <a href="#contact" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.contact}</a>
           </nav>
           <div className="flex items-center gap-2">
             <button
@@ -238,10 +238,10 @@ function Portfolio() {
                   { k: t.hero.based, v: t.hero.basedVal },
                   { k: t.hero.langs, v: t.hero.langsVal },
                   { k: t.hero.scope, v: t.hero.scopeVal },
-                  { k: t.hero.status, v: t.hero.statusVal, ember: true },
+                  { k: t.hero.status, v: t.hero.statusVal },
                 ].map((r) => (
                   <motion.div key={r.k} variants={heroItem}>
-                    <Row k={r.k} v={r.v} ember={r.ember} />
+                    <Row k={r.k} v={r.v} />
                   </motion.div>
                 ))}
               </div>
@@ -334,14 +334,14 @@ function Portfolio() {
                   <CaseCover slug={c.slug} className="transition-transform duration-700 group-hover:scale-105" />
                 </div>
                 <div className="mt-6 flex items-baseline gap-4">
-                  <span className="text-xs text-foreground tracking-[0.3em]" style={{ fontFamily: "var(--font-mono)" }}>/ {c.index}</span>
+                  <span className="text-xs text-muted-foreground tracking-[0.3em]" style={{ fontFamily: "var(--font-mono)" }}>/ {c.index}</span>
                   <span className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
                     {c.client} · {c.period} · {t.categories[c.category] ?? c.category}
                   </span>
                 </div>
                 <h3 className="mt-3 text-2xl md:text-3xl leading-tight group-hover:text-foreground transition-colors" style={{ fontFamily: "var(--font-display)" }}>{loc?.title ?? c.title}</h3>
                 <p className="mt-3 text-base text-foreground/80">{loc?.tagline ?? c.tagline}</p>
-                <div className="mt-6 text-xs tracking-[0.3em] uppercase text-foreground group-hover:translate-x-1 transition-transform inline-flex items-center gap-2" style={{ fontFamily: "var(--font-mono)" }}>{t.work.readCase}</div>
+                <div className="mt-6 text-xs tracking-[0.3em] uppercase text-foreground underline decoration-1 underline-offset-4 decoration-foreground/50 group-hover:decoration-2 group-hover:decoration-foreground group-hover:translate-x-1 transition-all inline-flex items-center gap-2" style={{ fontFamily: "var(--font-mono)" }}>{t.work.readCase}</div>
               </Link>
               </TiltCard>
               </Reveal>
@@ -364,7 +364,7 @@ function Portfolio() {
                   <ul className="md:col-span-6 space-y-3">
                     {e.bullets.map((b, j) => (
                       <li key={j} className="flex gap-3 text-sm md:text-base leading-relaxed text-foreground/85">
-                        <span className="text-foreground mt-2 shrink-0">—</span>
+                        <span className="text-muted-foreground mt-2 shrink-0">—</span>
                         <span>{b}</span>
                       </li>
                     ))}
@@ -395,7 +395,7 @@ function Portfolio() {
               <Reveal key={i} delay={(i % 2) * 0.1} className="p-8 border border-border hover:border-foreground transition-colors">
                 <div className="text-xs text-muted-foreground uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>{c.status}</div>
                 <h3 className="mt-4 text-2xl md:text-3xl" style={{ fontFamily: "var(--font-display)" }}>{c.title}</h3>
-                <div className="text-foreground mt-2">{c.issuer}</div>
+                <div className="text-muted-foreground mt-2">{c.issuer}</div>
               </Reveal>
             ))}
           </div>
@@ -445,7 +445,7 @@ function Portfolio() {
                   href={CV_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
+                  className="text-sm text-muted-foreground underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
                 >
                   {t.contact.cta.cv}
                 </a>
@@ -515,11 +515,11 @@ function Portfolio() {
   );
 }
 
-function Row({ k, v, ember }: { k: string; v: string; ember?: boolean }) {
+function Row({ k, v }: { k: string; v: string }) {
   return (
     <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-border pb-2 last:border-b-0">
       <span className="whitespace-nowrap">{k}</span>
-      <span className={`min-w-0 text-right text-[0.85em] sm:text-[0.95em] sm:whitespace-nowrap ${ember ? "text-foreground" : "text-foreground"}`}>{v}</span>
+      <span className={`min-w-0 text-right text-[0.85em] sm:text-[0.95em] sm:whitespace-nowrap text-foreground`}>{v}</span>
     </div>
   );
 }
@@ -527,7 +527,7 @@ function Row({ k, v, ember }: { k: string; v: string; ember?: boolean }) {
 function SectionLabel({ index, title }: { index: string; title: string }) {
   return (
     <div className="flex items-baseline gap-6">
-      <span className="text-xs text-foreground tracking-[0.3em]" style={{ fontFamily: "var(--font-mono)" }}>/ {index}</span>
+      <span className="text-xs text-muted-foreground tracking-[0.3em]" style={{ fontFamily: "var(--font-mono)" }}>/ {index}</span>
       <h2 className="text-4xl md:text-6xl font-normal tracking-tight" style={{ fontFamily: "var(--font-display)" }}>{title}</h2>
     </div>
   );
@@ -538,7 +538,7 @@ function EduCard({ period, title, school, loc }: { period: string; title: string
     <div className="p-8 border border-border hover:border-foreground transition-colors">
       <div className="text-xs text-muted-foreground uppercase tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>{period}</div>
       <h3 className="mt-4 text-2xl md:text-3xl" style={{ fontFamily: "var(--font-display)" }}>{title}</h3>
-      <div className="text-foreground mt-2">{school}</div>
+      <div className="text-muted-foreground mt-2">{school}</div>
       <div className="text-sm text-muted-foreground mt-1">{loc}</div>
     </div>
   );
