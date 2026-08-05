@@ -201,8 +201,8 @@ function Portfolio() {
         <HeroLineMotif className="hero-motif" />
         <div className="max-w-7xl mx-auto relative">
           <motion.div
-            initial={heroItem.hidden}
-            animate={heroItem.show}
+            initial={{ opacity: reduced ? 1 : 0, y: reduced ? 0 : 16 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: reduced ? 0 : 0.85, ease: [0.16, 1, 0.3, 1] }}
             className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground mb-10"
             style={{ fontFamily: "var(--font-mono)" }}
