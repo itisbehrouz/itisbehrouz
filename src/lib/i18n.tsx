@@ -2,6 +2,10 @@ import type { ReactNode } from "react";
 import type { Lang } from "@/hooks/use-lang";
 
 export type UI = {
+  /** Localized spelling of the name. TR uses official Turkish spelling. */
+  name: { full: string; first: string; italic: string; rest: string };
+  metaTitle: string;
+  metaDesc: string;
   nav: { work: string; capabilities: string; impact: string; contact: string; getInTouch: string };
   hero: {
     location: string;
@@ -94,6 +98,10 @@ export type UI = {
 
 export const ui: Record<Lang, UI> = {
   en: {
+    name: { full: "Behrouz Bagherzadeh", first: "Behrouz", italic: "Bagher", rest: "zadeh" },
+    metaTitle: "Behrouz Bagherzadeh — Digital Transformation & BI Leader",
+    metaDesc:
+      "Behrouz Bagherzadeh — Digital transformation and business intelligence leader in Istanbul. 15+ years building the layer between enterprise data and executive decisions.",
     nav: { work: "Work", capabilities: "Capabilities", impact: "Impact", contact: "Contact", getInTouch: "GET IN TOUCH" },
     hero: {
       location: "Portfolio · Istanbul, TR",
@@ -197,6 +205,10 @@ export const ui: Record<Lang, UI> = {
     },
   },
   tr: {
+    name: { full: "Behruz Bagirzade", first: "Behruz", italic: "Bagir", rest: "zade" },
+    metaTitle: "Behruz Bagirzade — Dijital Dönüşüm & İş Zekâsı Lideri",
+    metaDesc:
+      "Behruz Bagirzade — İstanbul'da dijital dönüşüm ve iş zekâsı lideri. 15+ yıldır kurumsal veri ile yönetim kararları arasındaki katmanı kuruyorum.",
     nav: { work: "Projeler", capabilities: "Yetkinlikler", impact: "Etki", contact: "İletişim", getInTouch: "İLETİŞİME GEÇ" },
     hero: {
       location: "Portfolyo · İstanbul, TR",
@@ -289,7 +301,7 @@ export const ui: Record<Lang, UI> = {
       nextCase: "Sonraki vaka",
       read: "Oku →",
       allWork: "← Tüm projeler",
-      quoteBy: "— Behrouz Bagherzadeh, proje hakkında",
+      quoteBy: "— Behruz Bagirzade, proje hakkında",
     },
     categories: {
       "Data & BI": "Veri & İZ",
