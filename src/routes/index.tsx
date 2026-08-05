@@ -144,7 +144,7 @@ function Portfolio() {
       };
 
   return (
-    <div className="min-h-screen bg-background text-foreground" style={{ fontFamily: "var(--font-sans)" }}>
+    <div className="isolate min-h-screen bg-background text-foreground" style={{ fontFamily: "var(--font-sans)" }}>
       <CursorGlow />
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
         <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
@@ -198,39 +198,63 @@ function Portfolio() {
       <main id="main">
       <section id="top" className="relative pt-40 pb-24 md:pt-48 md:pb-32 px-6 md:px-10 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none opacity-[0.08]" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, var(--ember) 0, transparent 50%), radial-gradient(circle at 80% 70%, var(--ember) 0, transparent 40%)" }} />
+        <HeroLineMotif className="hero-motif" />
         <div className="max-w-7xl mx-auto relative">
-          <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground mb-10" style={{ fontFamily: "var(--font-mono)" }}>
-            <span className="w-8 h-px bg-[var(--ember)]" />
-            <span>{t.hero.location}</span>
-          </div>
-          <h1 className="font-normal leading-[0.95] tracking-tight" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(3rem, 9vw, 8.5rem)" }}>
-            Behrouz
-            <br />
-            <span className="italic text-[var(--ember)]">Bagher</span>zadeh
+          <motion.h1
+            className="font-normal leading-[0.95] tracking-tight"
+            style={{ fontFamily: "var(--font-display)", fontSize: "clamp(3rem, 9vw, 8.5rem)" }}
+            initial="hidden"
+            animate="show"
+            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.14 } } }}
+          >
+            <span className="block overflow-hidden pb-[0.06em]">
+              <motion.span className="block" variants={lineVariant}>Behrouz</motion.span>
+            </span>
+            <span className="block overflow-hidden pb-[0.06em]">
+              <motion.span className="block" variants={lineVariant}>
+                <span className="italic text-[var(--ember)]">Bagher</span>zadeh
+              </motion.span>
+            </span>
             <span className="sr-only">{t.hero.srSuffix}</span>
-          </h1>
-          <div className="mt-12 grid md:grid-cols-12 gap-8">
-            <p className="md:col-span-7 text-xl md:text-2xl leading-relaxed text-foreground/90" style={{ fontFamily: "var(--font-display)" }}>
-              {t.hero.intro(t.hero.years)}
-            </p>
-            <div className="md:col-span-4 md:col-start-9 space-y-3 text-sm text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
-              <Row k={t.hero.role} v={t.hero.roleVal} />
-              <Row k={t.hero.based} v={t.hero.basedVal} />
-              <Row k={t.hero.langs} v={t.hero.langsVal} />
-              <Row k={t.hero.scope} v={t.hero.scopeVal} />
-              <Row k={t.hero.status} v={t.hero.statusVal} ember />
+          </motion.h1>
+          <motion.div initial="hidden" animate="show" variants={heroContainer}>
+            <motion.div
+              variants={heroItem}
+              className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground mt-10"
+              style={{ fontFamily: "var(--font-mono)" }}
+            >
+              <span className="w-8 h-px bg-[var(--ember)]" />
+              <span>{t.hero.location}</span>
+            </motion.div>
+            <div className="mt-12 grid md:grid-cols-12 gap-8">
+              <motion.p variants={heroItem} className="md:col-span-7 text-xl md:text-2xl leading-relaxed text-foreground/90" style={{ fontFamily: "var(--font-display)" }}>
+                {t.hero.intro(t.hero.years)}
+              </motion.p>
+              <div className="md:col-span-4 md:col-start-9 space-y-3 text-sm text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
+                {[
+                  { k: t.hero.role, v: t.hero.roleVal },
+                  { k: t.hero.based, v: t.hero.basedVal },
+                  { k: t.hero.langs, v: t.hero.langsVal },
+                  { k: t.hero.scope, v: t.hero.scopeVal },
+                  { k: t.hero.status, v: t.hero.statusVal, ember: true },
+                ].map((r) => (
+                  <motion.div key={r.k} variants={heroItem}>
+                    <Row k={r.k} v={r.v} ember={r.ember} />
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <section id="impact" className="border-y border-border bg-card/40">
         <div className="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-2 md:grid-cols-4">
           {metrics.map((m, i) => (
-            <div key={m.label} className={`py-10 md:py-14 px-4 ${i > 0 ? "md:border-l border-border" : ""} ${i === 1 || i === 3 ? "border-l border-border" : ""} ${i >= 2 ? "border-t md:border-t-0 border-border" : ""}`}>
-              <div className="text-5xl md:text-6xl font-normal text-[var(--ember)]" style={{ fontFamily: "var(--font-display)" }}>{m.value}</div>
+            <Reveal key={m.label} delay={i * 0.09} className={`py-10 md:py-14 px-4 ${i > 0 ? "md:border-l border-border" : ""} ${i === 1 || i === 3 ? "border-l border-border" : ""} ${i >= 2 ? "border-t md:border-t-0 border-border" : ""}`}>
+              <CountUp value={m.value} className="block text-5xl md:text-6xl font-normal text-[var(--ember)]" style={{ fontFamily: "var(--font-display)" }} />
               <div className="mt-3 text-sm text-muted-foreground max-w-[18ch]">{m.label}</div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
