@@ -25,7 +25,7 @@ export function HeroLineMotif({ className }: { className?: string }) {
     >
       <motion.path
         d="M0 320 C 90 320, 120 90, 200 250 S 300 60, 380 260 C 450 380, 500 120, 580 210 C 660 300, 720 150, 820 190 C 930 232, 1040 196, 1200 200"
-        stroke="var(--ember)"
+        stroke="var(--muted-foreground)"
         strokeWidth="2"
         strokeLinecap="round"
         initial={{ pathLength: reduced ? 1 : 0 }}
