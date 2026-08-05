@@ -362,13 +362,26 @@ function Portfolio() {
             </div>
             <div className="md:col-span-6 md:col-start-7">
               <div className="mb-10 grid sm:grid-cols-3 gap-px bg-border border border-border">
-                <a
-                  href={`mailto:${EMAIL}`}
-                  className="bg-background p-5 group hover:bg-card transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                >
+                <div className="bg-background p-5">
                   <span className="block text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.cta.email}</span>
-                  <span className="mt-2 block text-sm text-foreground group-hover:text-[var(--ember)] transition-colors break-all">{EMAIL}</span>
-                </a>
+                  {revealedEmail ? (
+                    <a
+                      href={`mailto:${revealedEmail}`}
+                      className="mt-2 block text-xs md:text-[0.8125rem] leading-relaxed text-foreground hover:text-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      style={{ overflowWrap: "break-word", wordBreak: "break-word" }}
+                    >
+                      {revealedEmail}
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => setRevealedEmail(buildEmail())}
+                      className="mt-2 block text-left text-sm text-foreground hover:text-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                    >
+                      {t.contact.cta.showEmail}
+                    </button>
+                  )}
+                </div>
                 <a
                   href={LINKEDIN_URL}
                   target="_blank"
@@ -381,13 +394,23 @@ function Portfolio() {
                   </span>
                 </a>
                 <a
-                  href={CV_URL}
+                  href={CALL_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-background p-5 group hover:bg-card transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
-                  <span className="block text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>PDF</span>
-                  <span className="mt-2 block text-sm text-foreground group-hover:text-[var(--ember)] transition-colors">{t.contact.cta.cv} ↓</span>
+                  <span className="block text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.cta.bookCall}</span>
+                  <span className="mt-2 block text-sm text-foreground group-hover:text-[var(--ember)] transition-colors">{t.contact.cta.bookCallVal}</span>
+                </a>
+              </div>
+              <div className="-mt-6 mb-10">
+                <a
+                  href={CV_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-[var(--ember)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  {t.contact.cta.cv}
                 </a>
               </div>
               {contactStatus === "success" ? (
