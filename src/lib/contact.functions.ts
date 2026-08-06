@@ -1,5 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
-import { getRequestIP } from "@tanstack/react-start/server";
+import { getRequestHost, getRequestIP } from "@tanstack/react-start/server";
 import { z } from "zod";
 import { sendContactEmail, verifyTurnstile } from "./contact.server";
 
@@ -28,7 +28,9 @@ export const submitContact = createServerFn({ method: "POST" })
     if (data.elapsedMs < 2000) throw new Error("Submission rejected");
 
     const ip = getRequestIP({ xForwardedFor: true });
-    const human = await verifyTurnstile(data.token, ip);
+    const hostname = getRequestHost({ xForwardedHost: true }).split(":")[0];
+    const isPreview = hostname === "localhost" || hostname.endsWith(".lovableproject.com");
+    const human = await verifyTurnstile(data.token, ip, isPreview);
     if (!human) throw new Error("Verification failed");
 
     await sendContactEmail({

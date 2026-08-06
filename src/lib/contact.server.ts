@@ -1,8 +1,9 @@
 const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 const RESEND_GATEWAY_URL = "https://connector-gateway.lovable.dev/resend";
+const TURNSTILE_TEST_SECRET = "1x0000000000000000000000000000000AA";
 
-export async function verifyTurnstile(token: string, ip?: string | null): Promise<boolean> {
-  const secret = process.env["TURNSTILE_SECRET_KEY"];
+export async function verifyTurnstile(token: string, ip?: string | null, useTestKey = false): Promise<boolean> {
+  const secret = useTestKey ? TURNSTILE_TEST_SECRET : process.env["TURNSTILE_SECRET_KEY"];
   if (!secret) {
     // No secret configured yet — fail closed in production, allow locally.
     return process.env["NODE_ENV"] !== "production";

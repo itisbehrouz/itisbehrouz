@@ -8,8 +8,16 @@ import { useLang } from "@/hooks/use-lang";
 import { ui } from "@/lib/i18n";
 import { submitContact } from "@/lib/contact.functions";
 
-// Public Turnstile site key (safe to ship in client code).
-const SITE_KEY = (import.meta.env["VITE_TURNSTILE_SITE_KEY"] as string | undefined) ?? "0x4AAAAAAEImyigxYGfih4oJ";
+// Cloudflare's documented always-pass key is limited to local/Lovable previews.
+// Published domains continue to use the production widget key.
+const PRODUCTION_SITE_KEY = (import.meta.env["VITE_TURNSTILE_SITE_KEY"] as string | undefined) ?? "0x4AAAAAAEImyigxYGfih4oJ";
+const TEST_SITE_KEY = "1x00000000000000000000AA";
+
+function getSiteKey() {
+  const hostname = window.location.hostname;
+  const isPreview = hostname === "localhost" || hostname.endsWith(".lovableproject.com");
+  return isPreview ? TEST_SITE_KEY : PRODUCTION_SITE_KEY;
+}
 
 declare global {
   interface Window {
@@ -29,7 +37,7 @@ function Turnstile({ onToken, theme }: { onToken: (token: string) => void; theme
     const render = () => {
       if (cancelled || !ref.current || !window.turnstile) return;
       widgetId = window.turnstile.render(ref.current, {
-        sitekey: SITE_KEY,
+        sitekey: getSiteKey(),
         theme,
         callback: (token: string) => onToken(token),
         "expired-callback": () => onToken(""),
