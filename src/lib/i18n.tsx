@@ -45,11 +45,14 @@ export type UI = {
     headingEm: string;
     headingB: string;
     intro: string;
-    cta: { linkedin: string; bookCall: string; bookCallVal: string; cv: string };
+    cta: { linkedin: string; bookCall: string; bookCallVal: string };
+    openForm: string;
+    dialogTitle: string;
+    dialogDesc: string;
+    verifyMsg: string;
     sent: string;
     received: string;
     thanks: string;
-    sendAnother: string;
     name: string;
     email: string;
     subject: string;
@@ -143,17 +146,19 @@ export const ui: Record<Lang, UI> = {
       headingA: "Let's build the ",
       headingEm: "next",
       headingB: "transformation.",
-      intro: "The fastest way to reach me is LinkedIn, or you can book a 30-minute call directly. The form below works too — I respond within two business days.",
+      intro: "The fastest way to reach me is LinkedIn, or you can book a 30-minute call directly. You can also send me a message — I respond within two business days.",
       cta: {
         linkedin: "LinkedIn",
         bookCall: "Book a call",
         bookCallVal: "30-minute intro call ↗",
-        cv: "Download CV (PDF) ↓",
       },
+      openForm: "Send a message",
+      dialogTitle: "Send a message",
+      dialogDesc: "Fill in the form and I'll get back to you within two business days.",
+      verifyMsg: "Please complete the verification first.",
       sent: "/ sent",
       received: "Message received",
       thanks: "Thanks for reaching out. I'll get back to you soon.",
-      sendAnother: "Send another message",
       name: "Name",
       email: "Email",
       subject: "Subject",
@@ -249,17 +254,19 @@ export const ui: Record<Lang, UI> = {
       headingA: "Bir sonraki ",
       headingEm: "dönüşümü",
       headingB: "birlikte kuralım.",
-      intro: "Bana en hızlı ulaşım yolu LinkedIn; dilerseniz doğrudan 30 dakikalık bir görüşme de ayarlayabilirsiniz. Aşağıdaki form da çalışıyor — iki iş günü içinde dönüş yapıyorum.",
+      intro: "Bana en hızlı ulaşım yolu LinkedIn; dilerseniz doğrudan 30 dakikalık bir görüşme de ayarlayabilirsiniz. Mesaj da bırakabilirsiniz — iki iş günü içinde dönüş yapıyorum.",
       cta: {
         linkedin: "LinkedIn",
         bookCall: "Görüşme ayarla",
         bookCallVal: "30 dakikalık tanışma görüşmesi ↗",
-        cv: "CV'yi indir (PDF) ↓",
       },
+      openForm: "Mesaj gönder",
+      dialogTitle: "Mesaj gönder",
+      dialogDesc: "Formu doldurun, iki iş günü içinde size dönüş yapacağım.",
+      verifyMsg: "Lütfen önce doğrulamayı tamamlayın.",
       sent: "/ gönderildi",
       received: "Mesajınız alındı",
       thanks: "İletişime geçtiğiniz için teşekkürler. En kısa sürede dönüş yapacağım.",
-      sendAnother: "Yeni bir mesaj gönder",
       name: "İsim",
       email: "E-posta",
       subject: "Konu",
