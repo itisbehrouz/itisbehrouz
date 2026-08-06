@@ -303,10 +303,10 @@ export const ui: Record<Lang, UI> = {
       messageMax: "Mesaj çok uzun",
     },
     cookie: {
-      text: "Bu site tema, dil ve spam korumasi icin yalnizca gerekli yerel verileri kullanir. Takip veya reklam cerezi yok.",
+      text: "Bu site tema, dil ve spam koruması için yalnızca gerekli yerel verileri kullanır. Takip veya reklam çerezi yok.",
       accept: "Kabul et",
       reject: "Reddet",
-      aria: "Cerez bildirimi",
+      aria: "Çerez bildirimi",
     },
     footerLoc: "İstanbul · Türkiye",
     caseStudy: {
