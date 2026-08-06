@@ -3,6 +3,11 @@ import { getRequestHost, getRequestIP } from "@tanstack/react-start/server";
 import { z } from "zod";
 import { sendContactEmail, verifyTurnstile } from "./contact.server";
 
+const TURNSTILE_TEST_HOSTS = new Set([
+  "localhost",
+  "85bb88d5-3025-4146-9ed5-610b6d3f829b.lovableproject.com",
+]);
+
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Name is required").max(100, "Name is too long"),
   email: z.string().trim().email("Invalid email address").max(255, "Email is too long"),
@@ -28,8 +33,8 @@ export const submitContact = createServerFn({ method: "POST" })
     if (data.elapsedMs < 2000) throw new Error("Submission rejected");
 
     const ip = getRequestIP({ xForwardedFor: true });
-    const hostname = getRequestHost({ xForwardedHost: true }).split(":")[0];
-    const isPreview = hostname === "localhost" || hostname.endsWith(".lovableproject.com");
+    const hostname = getRequestHost().split(":")[0];
+    const isPreview = TURNSTILE_TEST_HOSTS.has(hostname);
     const human = await verifyTurnstile(data.token, ip, isPreview);
     if (!human) throw new Error("Verification failed");
 
