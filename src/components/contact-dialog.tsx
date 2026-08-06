@@ -9,7 +9,7 @@ import { ui } from "@/lib/i18n";
 import { submitContact } from "@/lib/contact.functions";
 
 // Public Turnstile site key (safe to ship in client code).
-const SITE_KEY = (import.meta.env["VITE_TURNSTILE_SITE_KEY"] as string | undefined) ?? "0x4AAAAAAEImRogTeffNrB78";
+const SITE_KEY = (import.meta.env["VITE_TURNSTILE_SITE_KEY"] as string | undefined) ?? "0x4AAAAAAEImyigxYGfih4oJ";
 
 declare global {
   interface Window {
