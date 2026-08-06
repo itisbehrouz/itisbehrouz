@@ -2,16 +2,13 @@ import portraitAsset from "@/assets/behrouz-bagherzadeh.jpeg.asset.json";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { CASE_CATEGORIES, caseStudies, type CaseCategory } from "@/lib/case-studies";
 import { useTheme } from "@/hooks/use-theme";
 import { useLocalizedMeta } from "@/hooks/use-localized-meta";
 import { useLang } from "@/hooks/use-lang";
 import { ui, metricsI18n, capabilitiesI18n, experienceI18n, educationI18n, certificationsI18n, tCase } from "@/lib/i18n";
-import { submitContact, type ContactFormData } from "@/lib/contact.functions";
 import { CaseCover } from "@/components/case-cover";
+import { ContactDialog } from "@/components/contact-dialog";
 import { SITE_URL, absoluteUrl } from "@/lib/site";
 import { Reveal } from "@/components/motion/reveal";
 import { CursorGlow } from "@/components/motion/cursor-glow";
@@ -21,7 +18,6 @@ import { TiltCard } from "@/components/motion/tilt-card";
 import { Logo } from "@/components/logo";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/itisbehrouz";
-const CV_URL = "/cv/behrouz-bagherzadeh-cv.pdf";
 const CALL_URL = "https://calendar.app.google/Ez1RC2T2CYESgqN8A";
 
 function LinkedInIcon() {
@@ -83,30 +79,6 @@ function Portfolio() {
 
   const chipRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const chipValues = ["All", ...CASE_CATEGORIES] as const;
-
-  const contactForm = useForm<ContactFormData>({
-    resolver: zodResolver(
-      z.object({
-        name: z.string().trim().min(2, t.errors.nameReq).max(100, t.errors.nameLong),
-        email: z.string().trim().email(t.errors.emailInv).max(255, t.errors.emailLong),
-        subject: z.string().trim().min(2, t.errors.subjectReq).max(200, t.errors.subjectLong),
-        message: z.string().trim().min(10, t.errors.messageMin).max(2000, t.errors.messageMax),
-      }),
-    ),
-    defaultValues: { name: "", email: "", subject: "", message: "" },
-  });
-  const [contactStatus, setContactStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
-
-  const onContactSubmit = async (data: ContactFormData) => {
-    setContactStatus("submitting");
-    try {
-      await submitContact({ data });
-      setContactStatus("success");
-      contactForm.reset();
-    } catch {
-      setContactStatus("error");
-    }
-  };
 
   const handleChipKeyDown = (e: KeyboardEvent<HTMLButtonElement>, i: number) => {
     const last = chipValues.length - 1;
@@ -466,55 +438,7 @@ function Portfolio() {
                   <span className="mt-2 block text-sm text-foreground group-hover:text-foreground transition-colors">{t.contact.cta.bookCallVal}</span>
                 </a>
               </div>
-              <div className="-mt-6 mb-10">
-                <a
-                  href={CV_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
-                >
-                  {t.contact.cta.cv}
-                </a>
-              </div>
-              {contactStatus === "success" ? (
-                <div className="border border-foreground p-8 md:p-10 bg-card/40">
-                  <div className="text-xs text-foreground uppercase tracking-[0.3em] mb-4" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.sent}</div>
-                  <h3 className="text-2xl md:text-3xl mb-3" style={{ fontFamily: "var(--font-display)" }}>{t.contact.received}</h3>
-                  <p className="text-muted-foreground">{t.contact.thanks}</p>
-                  <button type="button" onClick={() => setContactStatus("idle")} className="mt-6 text-xs uppercase tracking-widest text-foreground border-b border-foreground/40 pb-1 hover:text-primary hover:border-primary transition-colors" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.sendAnother}</button>
-                </div>
-              ) : (
-                <form onSubmit={contactForm.handleSubmit(onContactSubmit)} className="space-y-6" aria-label={t.contact.ariaForm}>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label htmlFor="contact-name" className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.name}</label>
-                      <input id="contact-name" type="text" {...contactForm.register("name")} className="w-full bg-transparent border border-border focus:border-foreground outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors" placeholder={t.contact.namePh} aria-invalid={!!contactForm.formState.errors.name} aria-describedby={contactForm.formState.errors.name ? "contact-name-error" : undefined} />
-                      {contactForm.formState.errors.name && (<p id="contact-name-error" className="text-xs text-destructive-foreground" style={{ fontFamily: "var(--font-mono)" }}>{contactForm.formState.errors.name.message}</p>)}
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="contact-email" className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.email}</label>
-                      <input id="contact-email" type="email" {...contactForm.register("email")} className="w-full bg-transparent border border-border focus:border-foreground outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors" placeholder={t.contact.emailPh} aria-invalid={!!contactForm.formState.errors.email} aria-describedby={contactForm.formState.errors.email ? "contact-email-error" : undefined} />
-                      {contactForm.formState.errors.email && (<p id="contact-email-error" className="text-xs text-destructive-foreground" style={{ fontFamily: "var(--font-mono)" }}>{contactForm.formState.errors.email.message}</p>)}
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="contact-subject" className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.subject}</label>
-                    <input id="contact-subject" type="text" {...contactForm.register("subject")} className="w-full bg-transparent border border-border focus:border-foreground outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors" placeholder={t.contact.subjectPh} aria-invalid={!!contactForm.formState.errors.subject} aria-describedby={contactForm.formState.errors.subject ? "contact-subject-error" : undefined} />
-                    {contactForm.formState.errors.subject && (<p id="contact-subject-error" className="text-xs text-destructive-foreground" style={{ fontFamily: "var(--font-mono)" }}>{contactForm.formState.errors.subject.message}</p>)}
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="contact-message" className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>{t.contact.message}</label>
-                    <textarea id="contact-message" {...contactForm.register("message")} rows={5} className="w-full bg-transparent border border-border focus:border-foreground outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors resize-none" placeholder={t.contact.messagePh} aria-invalid={!!contactForm.formState.errors.message} aria-describedby={contactForm.formState.errors.message ? "contact-message-error" : undefined} />
-                    {contactForm.formState.errors.message && (<p id="contact-message-error" className="text-xs text-destructive-foreground" style={{ fontFamily: "var(--font-mono)" }}>{contactForm.formState.errors.message.message}</p>)}
-                  </div>
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
-                    <button type="submit" disabled={contactStatus === "submitting"} className="inline-flex items-center justify-center text-xs uppercase tracking-[0.2em] px-6 py-3 border border-foreground bg-foreground text-background hover:bg-foreground/90 disabled:opacity-60 disabled:cursor-not-allowed transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground" style={{ fontFamily: "var(--font-mono)" }}>
-                      {contactStatus === "submitting" ? t.contact.submitting : t.contact.submit}
-                    </button>
-                    {contactStatus === "error" && (<p className="text-sm text-destructive-foreground" role="alert">{t.contact.errorMsg}</p>)}
-                  </div>
-                </form>
-              )}
+              <ContactDialog theme={theme} />
             </div>
           </div>
         </div>
