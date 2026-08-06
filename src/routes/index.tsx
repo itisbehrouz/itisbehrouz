@@ -2,16 +2,13 @@ import portraitAsset from "@/assets/behrouz-bagherzadeh.jpeg.asset.json";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { CASE_CATEGORIES, caseStudies, type CaseCategory } from "@/lib/case-studies";
 import { useTheme } from "@/hooks/use-theme";
 import { useLocalizedMeta } from "@/hooks/use-localized-meta";
 import { useLang } from "@/hooks/use-lang";
 import { ui, metricsI18n, capabilitiesI18n, experienceI18n, educationI18n, certificationsI18n, tCase } from "@/lib/i18n";
-import { submitContact, type ContactFormData } from "@/lib/contact.functions";
 import { CaseCover } from "@/components/case-cover";
+import { ContactDialog } from "@/components/contact-dialog";
 import { SITE_URL, absoluteUrl } from "@/lib/site";
 import { Reveal } from "@/components/motion/reveal";
 import { CursorGlow } from "@/components/motion/cursor-glow";
@@ -21,7 +18,6 @@ import { TiltCard } from "@/components/motion/tilt-card";
 import { Logo } from "@/components/logo";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/itisbehrouz";
-const CV_URL = "/cv/behrouz-bagherzadeh-cv.pdf";
 const CALL_URL = "https://calendar.app.google/Ez1RC2T2CYESgqN8A";
 
 function LinkedInIcon() {
@@ -83,30 +79,6 @@ function Portfolio() {
 
   const chipRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const chipValues = ["All", ...CASE_CATEGORIES] as const;
-
-  const contactForm = useForm<ContactFormData>({
-    resolver: zodResolver(
-      z.object({
-        name: z.string().trim().min(2, t.errors.nameReq).max(100, t.errors.nameLong),
-        email: z.string().trim().email(t.errors.emailInv).max(255, t.errors.emailLong),
-        subject: z.string().trim().min(2, t.errors.subjectReq).max(200, t.errors.subjectLong),
-        message: z.string().trim().min(10, t.errors.messageMin).max(2000, t.errors.messageMax),
-      }),
-    ),
-    defaultValues: { name: "", email: "", subject: "", message: "" },
-  });
-  const [contactStatus, setContactStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
-
-  const onContactSubmit = async (data: ContactFormData) => {
-    setContactStatus("submitting");
-    try {
-      await submitContact({ data });
-      setContactStatus("success");
-      contactForm.reset();
-    } catch {
-      setContactStatus("error");
-    }
-  };
 
   const handleChipKeyDown = (e: KeyboardEvent<HTMLButtonElement>, i: number) => {
     const last = chipValues.length - 1;
