@@ -12,11 +12,13 @@ import { submitContact } from "@/lib/contact.functions";
 // Published domains continue to use the production widget key.
 const PRODUCTION_SITE_KEY = (import.meta.env["VITE_TURNSTILE_SITE_KEY"] as string | undefined) ?? "0x4AAAAAAEImyigxYGfih4oJ";
 const TEST_SITE_KEY = "1x00000000000000000000AA";
+const TEST_HOSTS = new Set([
+  "localhost",
+  "85bb88d5-3025-4146-9ed5-610b6d3f829b.lovableproject.com",
+]);
 
 function getSiteKey() {
-  const hostname = window.location.hostname;
-  const isPreview = hostname === "localhost" || hostname.endsWith(".lovableproject.com");
-  return isPreview ? TEST_SITE_KEY : PRODUCTION_SITE_KEY;
+  return TEST_HOSTS.has(window.location.hostname) ? TEST_SITE_KEY : PRODUCTION_SITE_KEY;
 }
 
 declare global {
