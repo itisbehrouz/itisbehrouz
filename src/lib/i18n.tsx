@@ -76,6 +76,12 @@ export type UI = {
     messageMin: string;
     messageMax: string;
   };
+  cookie: {
+    text: string;
+    accept: string;
+    reject: string;
+    aria: string;
+  };
   footerLoc: string;
   caseStudy: {
     notFound: string;
@@ -181,6 +187,12 @@ export const ui: Record<Lang, UI> = {
       subjectLong: "Subject is too long",
       messageMin: "Message must be at least 10 characters",
       messageMax: "Message is too long",
+    },
+    cookie: {
+      text: "This site uses minimal local storage for theme, language and spam protection. No tracking or advertising cookies.",
+      accept: "Accept",
+      reject: "Reject",
+      aria: "Cookie notice",
     },
     footerLoc: "Istanbul · Türkiye",
     caseStudy: {
@@ -289,6 +301,12 @@ export const ui: Record<Lang, UI> = {
       subjectLong: "Konu çok uzun",
       messageMin: "Mesaj en az 10 karakter olmalı",
       messageMax: "Mesaj çok uzun",
+    },
+    cookie: {
+      text: "Bu site tema, dil ve spam koruması için yalnızca gerekli yerel verileri kullanır. Takip veya reklam çerezi yok.",
+      accept: "Kabul et",
+      reject: "Reddet",
+      aria: "Çerez bildirimi",
     },
     footerLoc: "İstanbul · Türkiye",
     caseStudy: {
