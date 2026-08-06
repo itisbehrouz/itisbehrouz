@@ -8,8 +8,8 @@ import { useLang } from "@/hooks/use-lang";
 import { ui } from "@/lib/i18n";
 import { submitContact } from "@/lib/contact.functions";
 
-// Cloudflare's always-passing test key is used until a real site key is configured.
-const SITE_KEY = (import.meta.env["VITE_TURNSTILE_SITE_KEY"] as string | undefined) ?? "1x00000000000000000000AA";
+// Public Turnstile site key (safe to ship in client code).
+const SITE_KEY = (import.meta.env["VITE_TURNSTILE_SITE_KEY"] as string | undefined) ?? "0x4AAAAAAEImRogTeffNrB78";
 
 declare global {
   interface Window {
