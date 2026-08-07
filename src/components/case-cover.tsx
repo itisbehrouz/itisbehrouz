@@ -259,12 +259,31 @@ function SupplyChainCover({ className }: { className?: string }) {
   const h = 120;
   return (
     <Frame label="Abstract supply chain flow with connected stages" className={className}>
-      {stages.map((x, i) => (
-        <g key={i}>
-          <rect x={x} y={y} width={120} height={h} rx={10} {...stroke} stroke={i === 0 ? "var(--foreground)" : "var(--border)"} strokeWidth={i === 0 ? 2 : 0.75} />
-          <circle cx={x + 60} cy={y + h / 2} r={i === 0 ? 8 : 5} fill={i === 0 ? "var(--foreground)" : "var(--card)" stroke="var(--border)" strokeWidth={0.75} />
-        </g>
-      ))}
+      {stages.map((x, i) => {
+        const isFirst = i === 0;
+        return (
+          <g key={i}>
+            <rect
+              x={x}
+              y={y}
+              width={120}
+              height={h}
+              rx={10}
+              {...stroke}
+              stroke={isFirst ? "var(--foreground)" : "var(--border)"}
+              strokeWidth={isFirst ? 2 : 0.75}
+            />
+            <circle
+              cx={x + 60}
+              cy={y + h / 2}
+              r={isFirst ? 8 : 5}
+              fill={isFirst ? "var(--foreground)" : "var(--card)"}
+              stroke="var(--border)"
+              strokeWidth={0.75}
+            />
+          </g>
+        );
+      })}
       {stages.slice(0, -1).map((x, i) => {
         const sx = x + 120;
         const ex = stages[i + 1];
