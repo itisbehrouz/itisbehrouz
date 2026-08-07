@@ -179,9 +179,14 @@ function Portfolio() {
             >
               <LinkedInIcon />
             </a>
-            <a href="#contact" className="hidden sm:inline-block text-xs px-3 py-1.5 border border-foreground/40 text-foreground hover:bg-foreground hover:text-background transition-colors" style={{ fontFamily: "var(--font-mono)" }}>
+            <button
+              type="button"
+              onClick={() => setContactOpen(true)}
+              className="hidden sm:inline-block text-xs px-3 py-1.5 border border-foreground/40 text-foreground hover:bg-foreground hover:text-background transition-colors"
+              style={{ fontFamily: "var(--font-mono)" }}
+            >
               {t.nav.getInTouch}
-            </a>
+            </button>
           </div>
         </div>
       </header>
