@@ -78,13 +78,33 @@ const inputCls =
 const labelCls = "text-xs uppercase tracking-widest text-muted-foreground";
 const mono = { fontFamily: "var(--font-mono)" } as const;
 
-export function ContactDialog({ theme }: { theme: "light" | "dark" }) {
+export function ContactDialog({
+  theme,
+  open: openProp,
+  onOpenChange,
+}: {
+  theme: "light" | "dark";
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
+}) {
   const { lang } = useLang();
   const t = ui[lang];
-  const [open, setOpen] = useState(false);
+  const [internalOpen, setInternalOpen] = useState(false);
+  const open = openProp !== undefined ? openProp : internalOpen;
   const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
   const [token, setToken] = useState("");
   const openedAt = useRef<number>(Date.now());
+
+  const setOpen = (next: boolean) => {
+    if (next) {
+      openedAt.current = Date.now();
+      setStatus("idle");
+    }
+    if (openProp === undefined) {
+      setInternalOpen(next);
+    }
+    onOpenChange?.(next);
+  };
 
   const form = useForm({
     resolver: zodResolver(
@@ -130,16 +150,7 @@ export function ContactDialog({ theme }: { theme: "light" | "dark" }) {
   });
 
   return (
-    <Dialog
-      open={open}
-      onOpenChange={(next) => {
-        setOpen(next);
-        if (next) {
-          openedAt.current = Date.now();
-          setStatus("idle");
-        }
-      }}
-    >
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <button
           type="button"
