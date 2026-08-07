@@ -336,6 +336,9 @@ export const ui: Record<Lang, UI> = {
       "Automation & AI": "Otomasyon & YZ",
       "Digital Workplace": "Dijital İş Yeri",
       "E-Commerce": "E-Ticaret",
+      "Web & Branding": "Web & Marka",
+      "HR Tech": "İK Teknolojisi",
+      "Product & ERP": "Ürün & ERP",
     },
   },
 };
