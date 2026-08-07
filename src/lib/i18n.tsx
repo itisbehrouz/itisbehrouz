@@ -141,7 +141,7 @@ export const ui: Record<Lang, UI> = {
       impact: "Impact",
     },
     work: {
-      intro: "Four projects that turned enterprise ambition into measurable outcomes.",
+      intro: "Ten projects that turned enterprise ambition into measurable outcomes.",
       filterLabel: "Filter case studies by category",
       noMatches: "No case studies match your filters.",
       reset: "Reset",
@@ -219,6 +219,9 @@ export const ui: Record<Lang, UI> = {
       "Automation & AI": "Automation & AI",
       "Digital Workplace": "Digital Workplace",
       "E-Commerce": "E-Commerce",
+      "Web & Branding": "Web & Branding",
+      "HR Tech": "HR Tech",
+      "Product & ERP": "Product & ERP",
     },
   },
   tr: {
@@ -255,7 +258,7 @@ export const ui: Record<Lang, UI> = {
       impact: "Etki",
     },
     work: {
-      intro: "Kurumsal hedefleri ölçülebilir sonuçlara dönüştüren dört proje.",
+      intro: "Kurumsal hedefleri ölçülebilir sonuçlara dönüştüren on proje.",
       filterLabel: "Vaka çalışmalarını kategoriye göre filtrele",
       noMatches: "Filtrelerinize uygun vaka bulunamadı.",
       reset: "Sıfırla",
