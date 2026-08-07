@@ -2,6 +2,7 @@ import portraitAsset from "@/assets/behrouz-bagherzadeh.jpeg.asset.json";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { motion, useReducedMotion } from "framer-motion";
+import { Moon, Sun } from "lucide-react";
 import { CASE_CATEGORIES, caseStudies, type CaseCategory } from "@/lib/case-studies";
 import { useTheme } from "@/hooks/use-theme";
 import { useLocalizedMeta } from "@/hooks/use-localized-meta";
