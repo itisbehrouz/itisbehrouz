@@ -21,6 +21,9 @@ export const CASE_CATEGORIES = [
   "Automation & AI",
   "Digital Workplace",
   "E-Commerce",
+  "Web & Branding",
+  "HR Tech",
+  "Product & ERP",
 ] as const;
 export type CaseCategory = (typeof CASE_CATEGORIES)[number];
 
@@ -156,6 +159,204 @@ export const caseStudies: CaseStudy[] = [
     ],
     reflection:
       "The platform was the easy part. The real work was giving a traditional sales team a reason to want it.",
+  },
+  {
+    slug: "rubin-kimya-rebranding",
+    index: "05",
+    title: "Rubin Kimya — Rebranding & Web Development",
+    tagline: "A complete corporate identity and digital presence built from scratch.",
+    client: "Rubin Kimya",
+    role: "Digital Transformation & BI Manager",
+    period: "Jun 2025 — Dec 2025",
+    location: "Istanbul, TR",
+    stack: ["Brand Identity", "UI/UX Design", "Custom Web Development", "Responsive Design"],
+    category: "Web & Branding",
+    overview:
+      "Rubin Kimya needed a modern face for an industrial legacy. Working under Yiğitoğlu, I led the full digital transformation of the brand: a refreshed logo and visual identity system, accessible UI/UX, and a custom-built, high-performance website that matches the company's technical standards.",
+    challenges: [
+      "The brand had no unified digital identity — logo, website, and visual language were fragmented or outdated.",
+      "Industrial buyers expect precision and credibility; the design had to feel modern without losing authority.",
+      "The website needed to be performant and accessible across devices, not a template-heavy brochure.",
+      "Stakeholders needed confidence that a B2B industrial site could also be visually distinctive.",
+    ],
+    approach: [
+      "Designed a new logo and visual identity system that balanced industrial heritage with contemporary clarity.",
+      "Created accessible, intuitive interfaces focused on product credibility and easy navigation.",
+      "Built a responsive, custom-coded website with performance and maintainability in mind.",
+      "Aligned the digital experience with the company's commercial goals and technical expectations.",
+    ],
+    outcomes: [
+      { value: "1", label: "Unified brand identity system" },
+      { value: "100%", label: "Custom-coded website" },
+      { value: "End-to-end", label: "Design-to-deployment delivery" },
+    ],
+    reflection:
+      "Industrial brands often hide behind old aesthetics. The real win was proving that credibility and modern design can share the same page.",
+  },
+  {
+    slug: "valory-vista-digital-branding",
+    index: "06",
+    title: "Valory Vista — Digital Branding",
+    tagline: "Architecture, lifestyle, and a digital presence built to convert.",
+    client: "Valory Vista",
+    role: "Digital Transformation & BI Manager",
+    period: "Apr 2025 — May 2025",
+    location: "Istanbul, TR",
+    stack: ["Brand Identity", "Web Design", "Social Media", "Digital Ads", "Lead Generation"],
+    category: "Web & Branding",
+    overview:
+      "Valory Vista needed a digital presence that matched the quality of its architecture and lifestyle positioning. I crafted a distinctive visual identity, built a cohesive online experience across website and social channels, and designed data-driven campaigns to attract qualified buyers.",
+    challenges: [
+      "The project needed a visual identity that reflected premium architecture and lifestyle appeal, not generic real estate styling.",
+      "Multiple touchpoints — website, social, ads — had to tell the same story without silos.",
+      "Campaigns needed to generate leads, not just impressions.",
+      "Timeline was short; the brand had to go to market quickly and coherently.",
+    ],
+    approach: [
+      "Developed a visual identity system rooted in the project's architecture and lifestyle promise.",
+      "Built a cohesive digital presence across website, social media, and digital advertising.",
+      "Used data-driven content and targeted campaigns to engage buyers at each stage of the journey.",
+      "Tracked conversion signals to iterate messaging and media placement quickly.",
+    ],
+    outcomes: [
+      { value: "Cohesive", label: "Cross-channel brand presence" },
+      { value: "Targeted", label: "Data-driven campaigns" },
+      { value: "Qualified", label: "Lead generation focus" },
+    ],
+    reflection:
+      "In real estate, the product is already premium. The work is making sure the digital experience feels just as considered before the first visit.",
+  },
+  {
+    slug: "insight360",
+    index: "07",
+    title: "Insight360 — Performance Evaluation System",
+    tagline: "360-degree feedback designed to improve accountability and growth.",
+    client: "Yiğitoğlu",
+    role: "Digital Transformation & BI Manager",
+    period: "Feb 2025 — Mar 2025",
+    location: "Istanbul, TR",
+    stack: ["360° Feedback", "Performance Management", "HR Tech", "Process Design"],
+    category: "HR Tech",
+    overview:
+      "Performance reviews were one-directional and infrequent. We built Insight360, a comprehensive 360-degree performance evaluation system that enables cross-departmental feedback, manager reviews, upward evaluations, and peer-to-peer assessments in one structured process.",
+    challenges: [
+      "Performance feedback was limited to top-down reviews, missing peer and upward perspectives.",
+      "Different departments used different criteria, making comparisons and decisions inconsistent.",
+      "The process was manual and time-consuming, creating resistance rather than engagement.",
+      "Feedback had to be actionable, not just a scorecard, to drive real development.",
+    ],
+    approach: [
+      "Designed a structured evaluation workflow covering manager, peer, upward, and cross-departmental feedback.",
+      "Standardized competency criteria so reviews could be compared fairly across teams.",
+      "Built a digital interface that made giving and receiving feedback easier and more transparent.",
+      "Positioned insights as development inputs, not just evaluation outputs.",
+    ],
+    outcomes: [
+      { value: "360°", label: "Multi-source feedback model" },
+      { value: "Org-wide", label: "Cross-departmental coverage" },
+      { value: "Actionable", label: "Development-focused insights" },
+    ],
+    reflection:
+      "Feedback systems fail when people feel judged. The design had to make the process feel like a mirror, not a verdict.",
+  },
+  {
+    slug: "yigitoglu-digital-evolution",
+    index: "08",
+    title: "Yiğitoğlu Digital Evolution",
+    tagline: "A user-centric, globally visible web platform for an industry leader.",
+    client: "Yiğitoğlu",
+    role: "Digital Transformation & BI Manager",
+    period: "May 2024 — Dec 2024",
+    location: "Istanbul, TR",
+    stack: ["Web Platform", "UX/UI Design", "Accessibility", "Global SEO"],
+    category: "Web & Branding",
+    overview:
+      "Yiğitoğlu's digital presence no longer reflected the scale of its industrial leadership. I led the transformation into a user-centric, accessible, and globally visible web platform that positions the company as a leader in the chemical industry's digital transformation.",
+    challenges: [
+      "The existing web presence was dated and did not reflect the company's strategic position.",
+      "Global visibility required a platform that worked across languages, devices, and accessibility standards.",
+      "Internal stakeholders needed a site that served both credibility and commercial conversion.",
+      "The project had to modernize without losing the trust built over decades.",
+    ],
+    approach: [
+      "Ran a user-centric design process to restructure information architecture and navigation.",
+      "Built a high-performance, accessible, and responsive web platform with global standards.",
+      "Aligned the digital experience with Yiğitoğlu's brand authority and multi-market reach.",
+      "Instrumented analytics to continuously improve content and conversion paths.",
+    ],
+    outcomes: [
+      { value: "Global", label: "Accessible, multi-market platform" },
+      { value: "Modern", label: "Industry-leading digital presence" },
+      { value: "User-centric", label: "Design and information architecture" },
+    ],
+    reflection:
+      "A corporate website is often treated as a signpost. The real value is turning it into a proof point for the transformation you claim to lead.",
+  },
+  {
+    slug: "digital-product-management-app",
+    index: "09",
+    title: "Digital Product Management App",
+    tagline: "Centralized product data integrated with ERP and BI.",
+    client: "Yiğitoğlu",
+    role: "Digital Transformation & BI Manager",
+    period: "2024",
+    location: "Istanbul, TR",
+    stack: ["Product Information Management", "ERP Integration", "Power BI", "Data Architecture"],
+    category: "Product & ERP",
+    overview:
+      "Product information was scattered across systems, making it hard for Sales, Marketing, and Supply Chain to rely on a single source. I built a digital product management application that centralizes product data and integrates it directly with ERP and business intelligence systems.",
+    challenges: [
+      "Product data lived in multiple systems, creating version conflicts and delays.",
+      "Sales and Marketing teams struggled to access accurate, up-to-date technical and commercial details.",
+      "The product data model had to align with ERP structures without duplicating master records.",
+      "Adoption depended on the app being faster than the spreadsheets it replaced.",
+    ],
+    approach: [
+      "Centralized product information into a single application with clear ownership and update workflows.",
+      "Integrated the app with ERP to keep master data consistent and authoritative.",
+      "Connected product data to BI so commercial and operational teams could analyze it in context.",
+      "Designed the interface around speed and clarity so teams would choose it over informal tools.",
+    ],
+    outcomes: [
+      { value: "1", label: "Single source of product truth" },
+      { value: "ERP", label: "Integrated master data" },
+      { value: "BI-ready", label: "Contextual analytics access" },
+    ],
+    reflection:
+      "The hardest part of product data is not building the database; it is getting every function to agree on who owns each field.",
+  },
+  {
+    slug: "supply-chain-bi-dashboard",
+    index: "10",
+    title: "BI Dashboard for Supply Chain Optimization",
+    tagline: "Real-time procurement visibility by integrating ERP and CRM data.",
+    client: "Yiğitoğlu",
+    role: "Digital Transformation & BI Manager",
+    period: "2023",
+    location: "Istanbul, TR",
+    stack: ["Power BI", "ERP", "CRM", "Supply Chain Analytics", "Procurement"],
+    category: "Data & BI",
+    overview:
+      "Purchasing and supply chain decisions were slowed by disconnected ERP and CRM data. I designed a BI dashboard that integrated both sources to give procurement and operations a real-time view of purchasing performance, supplier behaviour, and inventory signals.",
+    challenges: [
+      "ERP and CRM data were siloed, making end-to-end supply chain visibility impossible.",
+      "Procurement teams relied on static reports that were outdated by the time they were reviewed.",
+      "Key metrics like supplier performance and inventory health were calculated differently across functions.",
+      "The dashboard had to serve both operational buyers and strategic planning.",
+    ],
+    approach: [
+      "Mapped the full procurement data flow from ERP orders and CRM supplier interactions to inventory signals.",
+      "Built a unified data model that aligned purchasing, operations, and finance on the same definitions.",
+      "Delivered a Power BI dashboard with real-time refresh and role-based views.",
+      "Focused the interface on decisions: what to buy, from whom, and when.",
+    ],
+    outcomes: [
+      { value: "Real-time", label: "Procurement visibility" },
+      { value: "ERP+CRM", label: "Unified data model" },
+      { value: "Faster", label: "Purchasing decisions" },
+    ],
+    reflection:
+      "Supply chain dashboards are only useful when they answer the next question before the buyer has to ask it.",
   },
 ];
 
