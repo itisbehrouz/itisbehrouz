@@ -67,6 +67,7 @@ export const Route = createFileRoute("/")({
 
 function Portfolio() {
   const [category, setCategory] = useState<CaseCategory | "All">("All");
+  const [contactOpen, setContactOpen] = useState(false);
   const reduced = useReducedMotion();
   const { theme, toggle } = useTheme();
   const { lang, toggle: toggleLang } = useLang();
