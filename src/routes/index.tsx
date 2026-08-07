@@ -34,6 +34,9 @@ export const Route = createFileRoute("/")({
   head: () => {
     const url = `${SITE_URL}/`;
     const ogImage = absoluteUrl("/og-image.png");
+    const metaTitle = "Behrouz Bagherzadeh — Digital Transformation & BI Leader";
+    const metaDesc =
+      "Behrouz Bagherzadeh (Behruz Bagirzade) — digital transformation and BI leader in Istanbul, linking enterprise data to executive decisions.";
     const personLd = {
       "@context": "https://schema.org",
       "@type": "Person",
@@ -52,6 +55,13 @@ export const Route = createFileRoute("/")({
     };
     return {
       meta: [
+        { title: metaTitle },
+        { name: "description", content: metaDesc },
+        { property: "og:title", content: metaTitle },
+        { property: "og:description", content: metaDesc },
+        { property: "og:type", content: "website" },
+        { name: "twitter:title", content: metaTitle },
+        { name: "twitter:description", content: metaDesc },
         { property: "og:url", content: url },
         { property: "og:image", content: ogImage },
         { name: "twitter:image", content: ogImage },
