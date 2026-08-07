@@ -449,7 +449,7 @@ function Portfolio() {
                   <span className="mt-2 block text-sm text-foreground group-hover:text-foreground transition-colors">{t.contact.cta.bookCallVal}</span>
                 </a>
               </div>
-              <ContactDialog theme={theme} />
+              <ContactDialog theme={theme} open={contactOpen} onOpenChange={setContactOpen} />
             </div>
           </div>
         </div>
