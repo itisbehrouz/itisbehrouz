@@ -161,7 +161,11 @@ function Portfolio() {
               title={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
               className="inline-flex items-center justify-center min-h-9 min-w-9 border border-border text-muted-foreground hover:text-foreground hover:border-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
             >
-              <span aria-hidden="true" className="text-sm">{theme === "light" ? "☾" : "☀"}</span>
+              {theme === "light" ? (
+                <Moon aria-hidden="true" strokeWidth={1.5} className="h-4 w-4" />
+              ) : (
+                <Sun aria-hidden="true" strokeWidth={1.5} className="h-4 w-4" />
+              )}
             </button>
             <a
               href={LINKEDIN_URL}
