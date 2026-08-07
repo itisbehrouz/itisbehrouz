@@ -2,6 +2,8 @@ export type CaseStudy = {
   slug: string;
   index: string;
   title: string;
+  /** Shorter title used for the <title> tag when the display title is long. */
+  metaTitle?: string;
   tagline: string;
   client: string;
   role: string;
@@ -164,6 +166,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "rubin-kimya-rebranding",
     index: "05",
     title: "Rubin Kimya — Rebranding & Web Development",
+    metaTitle: "Rubin Kimya Rebranding",
     tagline: "A complete corporate identity and digital presence built from scratch.",
     client: "Rubin Kimya",
     role: "Digital Transformation & BI Manager",
@@ -230,6 +233,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "insight360",
     index: "07",
     title: "Insight360 — Performance Evaluation System",
+    metaTitle: "Insight360 Performance Reviews",
     tagline: "360-degree feedback designed to improve accountability and growth.",
     client: "Yiğitoğlu",
     role: "Digital Transformation & BI Manager",
