@@ -2,6 +2,7 @@ import portraitAsset from "@/assets/behrouz-bagherzadeh.jpeg.asset.json";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { motion, useReducedMotion } from "framer-motion";
+import { Moon, Sun } from "lucide-react";
 import { CASE_CATEGORIES, caseStudies, type CaseCategory } from "@/lib/case-studies";
 import { useTheme } from "@/hooks/use-theme";
 import { useLocalizedMeta } from "@/hooks/use-localized-meta";
@@ -161,7 +162,11 @@ function Portfolio() {
               title={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
               className="inline-flex items-center justify-center min-h-9 min-w-9 border border-border text-muted-foreground hover:text-foreground hover:border-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
             >
-              <span aria-hidden="true" className="text-sm">{theme === "light" ? "☾" : "☀"}</span>
+              {theme === "light" ? (
+                <Moon aria-hidden="true" strokeWidth={1.5} className="h-4 w-4" />
+              ) : (
+                <Sun aria-hidden="true" strokeWidth={1.5} className="h-4 w-4" />
+              )}
             </button>
             <a
               href={LINKEDIN_URL}
