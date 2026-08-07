@@ -79,15 +79,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Behrouz Bagherzadeh — Digital Transformation & BI Leader" },
-      { name: "description", content: "Behruz Bagirzade (Behrouz Bagherzadeh) — Digital transformation and business intelligence leader in Istanbul. 15+ years building the layer between enterprise data and executive decisions." },
       { name: "author", content: "Behruz Bagirzade" },
-      { property: "og:title", content: "Behrouz Bagherzadeh — Digital Transformation & BI Leader" },
-      { property: "og:description", content: "Behruz Bagirzade (Behrouz Bagherzadeh) — Digital transformation and business intelligence leader in Istanbul. 15+ years building the layer between enterprise data and executive decisions." },
-      { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Behruz Bagirzade" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Behrouz Bagherzadeh — Digital Transformation & BI Leader" },
-      { name: "twitter:description", content: "Behruz Bagirzade (Behrouz Bagherzadeh) — Digital transformation and business intelligence leader in Istanbul. 15+ years building the layer between enterprise data and executive decisions." },
       { name: "theme-color", content: "#101A2B" },
     ],
     links: [

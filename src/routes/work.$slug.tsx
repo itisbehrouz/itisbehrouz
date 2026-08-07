@@ -4,7 +4,7 @@ import { useLang } from "@/hooks/use-lang";
 import { useLocalizedMeta } from "@/hooks/use-localized-meta";
 import { ui, tCase } from "@/lib/i18n";
 import { CaseCover } from "@/components/case-cover";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, absoluteUrl } from "@/lib/site";
 import { Logo } from "@/components/logo";
 
 export const Route = createFileRoute("/work/$slug")({
@@ -18,8 +18,9 @@ export const Route = createFileRoute("/work/$slug")({
       return { meta: [{ title: "Case study not found" }, { name: "robots", content: "noindex" }] };
     }
     const { study } = loaderData;
-    const title = `${study.title} — Behruz Bagirzade`;
+    const title = `${study.metaTitle ?? study.title} — Behruz Bagirzade`;
     const url = `${SITE_URL}/work/${params.slug}`;
+    const ogImage = absoluteUrl("/og-image.png");
     const articleLd = {
       "@context": "https://schema.org",
       "@type": "Article",
@@ -36,6 +37,10 @@ export const Route = createFileRoute("/work/$slug")({
         { property: "og:description", content: study.tagline },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
+        { property: "og:image", content: ogImage },
+        { name: "twitter:image", content: ogImage },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: study.tagline },
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: [{ type: "application/ld+json", children: JSON.stringify(articleLd) }],
