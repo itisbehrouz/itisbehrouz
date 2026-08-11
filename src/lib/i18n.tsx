@@ -991,7 +991,7 @@ export type AdvisoryContent = {
   services: { title: string; desc: string; proof: string }[];
   formatLabel: string;
   formatText: string;
-  achordNote: { before: string; link: string; after: string };
+  
   ctaLabel: string;
   ctaSubject: string;
   backHome: string;
@@ -1032,11 +1032,6 @@ export const advisoryI18n: Record<Lang, AdvisoryContent> = {
     formatLabel: "Engagement format",
     formatText:
       "Engagements are scoped per project — either a fixed-scope advisory project or a fractional weekly/monthly commitment. Details are discussed based on your specific needs.",
-    achordNote: {
-      before: "For larger-scope, multi-workstream transformation programs, engagements are delivered through ",
-      link: "Achord Solution",
-      after: ".",
-    },
     ctaLabel: "Discuss an engagement",
     ctaSubject: "Advisory inquiry",
     backHome: "← Portfolio",
@@ -1076,11 +1071,6 @@ export const advisoryI18n: Record<Lang, AdvisoryContent> = {
     formatLabel: "Çalışma biçimi",
     formatText:
       "Çalışmalar projeye göre kapsamlandırılır — ya sabit kapsamlı bir danışmanlık projesi ya da haftalık/aylık fractional bir taahhüt. Detaylar ihtiyacınıza göre görüşülür.",
-    achordNote: {
-      before: "Daha geniş kapsamlı, çok iş kollu dönüşüm programları ",
-      link: "Achord Solution",
-      after: " üzerinden yürütülür.",
-    },
     ctaLabel: "Bir çalışmayı görüşün",
     ctaSubject: "Danışmanlık talebi",
     backHome: "← Portfolyo",

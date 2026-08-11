@@ -12,7 +12,7 @@ import { HeroLineMotif } from "@/components/motion/hero-line-motif";
 import { CursorGlow } from "@/components/motion/cursor-glow";
 import { Logo } from "@/components/logo";
 
-const ACHORD_URL = "https://achordsolution.lovable.app";
+
 
 export const Route = createFileRoute("/advisory")({
   component: AdvisoryPage,
@@ -148,18 +148,6 @@ function AdvisoryPage() {
             <div className="md:col-span-7 md:col-start-6">
               <Reveal>
                 <p className="text-lg md:text-xl leading-relaxed text-foreground/90">{a.formatText}</p>
-                <p className="mt-8 text-muted-foreground leading-relaxed">
-                  {a.achordNote.before}
-                  <a
-                    href={ACHORD_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-foreground underline decoration-1 underline-offset-4 decoration-border hover:decoration-2 hover:decoration-foreground transition-colors"
-                  >
-                    {a.achordNote.link}
-                  </a>
-                  {a.achordNote.after}
-                </p>
               </Reveal>
             </div>
           </div>
