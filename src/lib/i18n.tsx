@@ -981,3 +981,111 @@ export const caseStudyI18n: Record<Lang, Record<string, CaseStudyContent>> = {
 export function tCase(lang: Lang, slug: string): CaseStudyContent | undefined {
   return caseStudyI18n[lang][slug];
 }
+
+export type AdvisoryContent = {
+  label: string;
+  headline: string;
+  subtext: string;
+  servicesLabel: string;
+  drawsOn: string;
+  services: { title: string; desc: string; proof: string }[];
+  formatLabel: string;
+  formatText: string;
+  achordNote: { before: string; link: string; after: string };
+  ctaLabel: string;
+  ctaSubject: string;
+  backHome: string;
+  metaTitle: string;
+  metaDesc: string;
+};
+
+export const advisoryI18n: Record<Lang, AdvisoryContent> = {
+  en: {
+    label: "ADVISORY · SELECTIVE ENGAGEMENTS",
+    headline: "Advisory & Fractional Leadership",
+    subtext:
+      "Alongside my search for a full-time leadership role, I take on a small number of focused advisory and fractional engagements in digital transformation and BI — for teams that need senior direction without a full-time hire yet.",
+    servicesLabel: "Services",
+    drawsOn: "Draws on",
+    services: [
+      {
+        title: "Digital Transformation Roadmap & Advisory",
+        desc: "Strategic roadmapping and governance for multi-unit organizations.",
+        proof: "Compressed a transformation cycle from 18 months to 6.",
+      },
+      {
+        title: "BI & Reporting Modernization",
+        desc: "Power BI architecture and automation to cut manual reporting work.",
+        proof: "80% reduction in manual reporting through Power BI automation.",
+      },
+      {
+        title: "AI-Driven Process Automation",
+        desc: "Identifying and automating operational workflows with AI.",
+        proof: "67% increase in operational efficiency through AI automation.",
+      },
+      {
+        title: "Fractional / Interim Transformation Leadership",
+        desc: "Short-term, embedded leadership for a defined program or system rollout.",
+        proof: "Led SAP SuccessFactors rollout across 9 locations, 450+ employees.",
+      },
+    ],
+    formatLabel: "Engagement format",
+    formatText:
+      "Engagements are scoped per project — either a fixed-scope advisory project or a fractional weekly/monthly commitment. Details are discussed based on your specific needs.",
+    achordNote: {
+      before: "For larger-scope, multi-workstream transformation programs, engagements are delivered through ",
+      link: "Achord Solution",
+      after: ".",
+    },
+    ctaLabel: "Discuss an engagement",
+    ctaSubject: "Advisory inquiry",
+    backHome: "← Portfolio",
+    metaTitle: "Advisory & Fractional Leadership — Behrouz Bagherzadeh",
+    metaDesc:
+      "Selective advisory and fractional leadership engagements in digital transformation, BI and AI-driven process automation.",
+  },
+  tr: {
+    label: "DANIŞMANLIK · SEÇİLİ ÇALIŞMALAR",
+    headline: "Danışmanlık & Fractional Liderlik",
+    subtext:
+      "Tam zamanlı bir liderlik rolü arayışımın yanında, dijital dönüşüm ve iş zekâsı alanında sınırlı sayıda odaklı danışmanlık ve fractional çalışma alıyorum — henüz tam zamanlı bir işe alım yapmadan üst düzey yönlendirmeye ihtiyaç duyan ekipler için.",
+    servicesLabel: "Hizmetler",
+    drawsOn: "Dayandığı sonuç",
+    services: [
+      {
+        title: "Dijital Dönüşüm Yol Haritası & Danışmanlık",
+        desc: "Çok birimli organizasyonlar için stratejik yol haritası ve yönetişim.",
+        proof: "Bir dönüşüm döngüsünü 18 aydan 6 aya indirdim.",
+      },
+      {
+        title: "İş Zekâsı & Raporlama Modernizasyonu",
+        desc: "Manuel raporlama yükünü azaltmak için Power BI mimarisi ve otomasyon.",
+        proof: "Power BI otomasyonu ile manuel raporlamada %80 azalma.",
+      },
+      {
+        title: "Yapay Zekâ Destekli Süreç Otomasyonu",
+        desc: "Operasyonel iş akışlarının yapay zekâ ile belirlenmesi ve otomasyonu.",
+        proof: "Yapay zekâ otomasyonu ile operasyonel verimlilikte %67 artış.",
+      },
+      {
+        title: "Fractional / Geçici Dönüşüm Liderliği",
+        desc: "Belirli bir program veya sistem devreye alımı için kısa süreli, ekip içi liderlik.",
+        proof: "9 lokasyonda, 450+ çalışan için SAP SuccessFactors devreye alımını yönettim.",
+      },
+    ],
+    formatLabel: "Çalışma biçimi",
+    formatText:
+      "Çalışmalar projeye göre kapsamlandırılır — ya sabit kapsamlı bir danışmanlık projesi ya da haftalık/aylık fractional bir taahhüt. Detaylar ihtiyacınıza göre görüşülür.",
+    achordNote: {
+      before: "Daha geniş kapsamlı, çok iş kollu dönüşüm programları ",
+      link: "Achord Solution",
+      after: " üzerinden yürütülür.",
+    },
+    ctaLabel: "Bir çalışmayı görüşün",
+    ctaSubject: "Danışmanlık talebi",
+    backHome: "← Portfolyo",
+    metaTitle: "Danışmanlık & Fractional Liderlik — Behruz Bagirzade",
+    metaDesc:
+      "Dijital dönüşüm, iş zekâsı ve yapay zekâ destekli süreç otomasyonunda seçili danışmanlık ve fractional liderlik çalışmaları.",
+  },
+};
