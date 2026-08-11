@@ -82,10 +82,14 @@ export function ContactDialog({
   theme,
   open: openProp,
   onOpenChange,
+  defaultSubject,
+  triggerLabel,
 }: {
   theme: "light" | "dark";
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
+  defaultSubject?: string;
+  triggerLabel?: string;
 }) {
   const { lang } = useLang();
   const t = ui[lang];
@@ -116,7 +120,7 @@ export function ContactDialog({
         honeypot: z.string().max(0).optional(),
       }),
     ),
-    defaultValues: { name: "", email: "", subject: "", message: "", honeypot: "" },
+    defaultValues: { name: "", email: "", subject: defaultSubject ?? "", message: "", honeypot: "" },
   });
 
   const errors = form.formState.errors;
@@ -157,7 +161,7 @@ export function ContactDialog({
           className="inline-flex items-center justify-center text-xs uppercase tracking-[0.2em] px-6 py-3 border border-foreground bg-foreground text-background hover:bg-foreground/90 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
           style={mono}
         >
-          {t.contact.openForm}
+          {triggerLabel ?? t.contact.openForm}
         </button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto rounded-none border-border bg-background">
