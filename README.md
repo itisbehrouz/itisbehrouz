@@ -1,3 +1,5 @@
+![Behrouz Bagherzadeh — Group BI & Enterprise Automation Executive: 80% reduction in manual reporting, 67% increase in operational efficiency, 18 to 6 months transformation impact, 7 international organizations led](./banner.png)
+
 Istanbul, Türkiye · [behruzbagirzade.com](https://behruzbagirzade.com) · [LinkedIn](https://linkedin.com/in/itisbehrouz) · [X](https://x.com/itisbehrouz)
 
 ---
@@ -45,4 +47,4 @@ Turkish, Persian, Azerbaijani (native) · English (professional)
 
 ---
 
-Open to a conversation: [behruzbagirzade.com](https://behruzbagirzade.com) · [LinkedIn](https://linkedin.com/in/itisbehrouz)
+Let's talk — [LinkedIn](https://linkedin.com/in/itisbehrouz).
