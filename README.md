@@ -1,4 +1,5 @@
-![Behrouz Bagherzadeh — Digital Transformation & BI Leadership: 80% reduction in manual reporting, 67% increase in operational efficiency, 450+ employees across 9 locations, transformation cycle compressed from 18 to 6 months](./assets/banner.png)
+### Behrouz Bagherzadeh
+**Digital Transformation & AI Strategy Leader · Group BI & Enterprise Automation Executive**
 
 Istanbul, Türkiye · [behruzbagirzade.com](https://behruzbagirzade.com) · [LinkedIn](https://linkedin.com/in/itisbehrouz) · [X](https://x.com/itisbehrouz)
 
