@@ -47,4 +47,4 @@ Turkish, Persian, Azerbaijani (native) · English (professional)
 
 ---
 
-Open to a conversation: [LinkedIn](https://linkedin.com/in/itisbehrouz) · [be.bagherzadeh@gmail.com](mailto:be.bagherzadeh@gmail.com)
+Open to a conversation: [website](https://behruzbagirzade.com) 
