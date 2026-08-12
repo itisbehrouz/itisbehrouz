@@ -1,5 +1,4 @@
 
-
 Istanbul, Türkiye · [behruzbagirzade.com](https://behruzbagirzade.com) · [LinkedIn](https://linkedin.com/in/itisbehrouz) · [X](https://x.com/itisbehrouz)
 
 ---
@@ -24,7 +23,7 @@ The four numbers below are the ones I keep coming back to, because they're the o
 #### Where I've done this
 
 - **Yiğitoğlu** — Digital Transformation & BI Manager (2022–2026), Digital Transformation Analyst (2021–2022) · 12 projects delivered. Built and led a 5-person DX/BI team across 7 international business units; launched the Digital Workplace platform unifying ERP, HR, CRM, BI, and IT service desk.
-- **Kiğılı** — International E-Commerce Manager & Digital Transformation Analyst (2019–2021). Led a 10+ person team; integrated e-commerce operations with ERP and automated inventory/order flows via Power Automate.
+- **Kiğılı** — International E-Commerce Manager & Digital Transformation Analyst (2019–2021). Led a 10+ person team; integrated e-commerce operations with ERP and automated inventory/order flows via Power Automate, cutting manual processing time by 40%.
 - **Edgers** — E-Commerce Manager (2019). Designed and launched the company's first B2B e-commerce platform, spanning five international markets.
 - Earlier: Orka Holding, Finesse, Mercedes-Benz AG, EghtesadNovin Bank (2011–2018) — enterprise IT infrastructure and business development.
 
@@ -48,3 +47,5 @@ The four numbers below are the ones I keep coming back to, because they're the o
 Turkish, Persian, Azerbaijani (native) · English (professional)
 
 ---
+
+Let's talk — [LinkedIn](https://linkedin.com/in/itisbehrouz).
