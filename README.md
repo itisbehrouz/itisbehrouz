@@ -45,6 +45,6 @@ The four numbers below are the ones I keep coming back to, because they're the o
 
 Turkish, Persian, Azerbaijani (native) · English (professional)
 
----
+--- 
 
 Open to a conversation: [LinkedIn](https://linkedin.com/in/itisbehrouz) · [be.bagherzadeh@gmail.com](mailto:be.bagherzadeh@gmail.com)
