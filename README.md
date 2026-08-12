@@ -8,6 +8,8 @@ I spend most of my career at the point where enterprise technology meets busines
 
 The four numbers below are the ones I keep coming back to, because they're the ones that changed how the organizations I worked in actually operated.
 
+#### Impact
+
 | | |
 |---|---|
 | **80%** | reduction in manual reporting — Power BI rollout across Finance, HR, Sales, and Supply Chain |
@@ -21,7 +23,7 @@ The four numbers below are the ones I keep coming back to, because they're the o
 
 #### Where I've done this
 
-- **Yiğitoğlu** — Digital Transformation & BI Manager (2022–2026), Digital Transformation Analyst (2021–2022). Built and led a 5-person DX/BI team across 7 international business units; launched the Digital Workplace platform unifying ERP, HR, CRM, BI, and IT service desk.
+- **Yiğitoğlu** — Digital Transformation & BI Manager (2022–2026), Digital Transformation Analyst (2021–2022) · 12 projects delivered. Built and led a 5-person DX/BI team across 7 international business units; launched the Digital Workplace platform unifying ERP, HR, CRM, BI, and IT service desk.
 - **Kiğılı** — International E-Commerce Manager & Digital Transformation Analyst (2019–2021). Led a 10+ person team; integrated e-commerce operations with ERP and automated inventory/order flows via Power Automate.
 - **Edgers** — E-Commerce Manager (2019). Designed and launched the company's first B2B e-commerce platform, spanning five international markets.
 - Earlier: Orka Holding, Finesse, Mercedes-Benz AG, EghtesadNovin Bank (2011–2018) — enterprise IT infrastructure and business development.
