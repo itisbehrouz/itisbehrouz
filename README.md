@@ -1,5 +1,3 @@
-
-
 Istanbul, Türkiye · [behruzbagirzade.com](https://behruzbagirzade.com) · [LinkedIn](https://linkedin.com/in/itisbehrouz) · [X](https://x.com/itisbehrouz)
 
 ---
@@ -15,7 +13,7 @@ The four numbers below are the ones I keep coming back to, because they're the o
 | **450+** | employees across 9 locations — SAP SuccessFactors HR digitalization, delivered end to end |
 | **18 → 6 months** | transformation delivery cycle, compressed through standardized program design |
 
-**Right now:** I'm looking at Head of Digital Transformation and BI Director roles — AI Transformation Lead and Digital Transformation Officer too — at large, multi-unit enterprise organizations. If that's a conversation worth having on your end, LinkedIn or email below is the fastest way to reach me.
+**Right now:** I'm looking at Head of Digital Transformation and BI Director roles — AI Transformation Lead and Digital Transformation Officer too — at large, multi-unit enterprise organizations. If that's a conversation worth having on your end, LinkedIn below is the fastest way to reach me.
 
 ---
 
@@ -47,4 +45,4 @@ Turkish, Persian, Azerbaijani (native) · English (professional)
 
 ---
 
-Open to a conversation: [website](https://behruzbagirzade.com) 
+Open to a conversation: [behruzbagirzade.com](https://behruzbagirzade.com) · [LinkedIn](https://linkedin.com/in/itisbehrouz)
