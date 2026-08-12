@@ -1,5 +1,4 @@
-### Behrouz Bagherzadeh
-**Digital Transformation & AI Strategy Leader · Group BI & Enterprise Automation Executive**
+![Behrouz Bagherzadeh — Digital Transformation & BI Leadership: 80% reduction in manual reporting, 67% increase in operational efficiency, 450+ employees across 9 locations, transformation cycle compressed from 18 to 6 months](./src/banner.png)
 
 Istanbul, Türkiye · [behruzbagirzade.com](https://behruzbagirzade.com) · [LinkedIn](https://linkedin.com/in/itisbehrouz) · [X](https://x.com/itisbehrouz)
 
@@ -29,7 +28,11 @@ The four numbers below are the ones I keep coming back to, because they're the o
 
 #### Toolkit
 
-Power BI · Power Platform · Power Automate · SAP SuccessFactors · ERP/CRM Integration · Data Governance · KPI Frameworks · Change Management · Cross-Functional Leadership
+**Enterprise & BI** — Power BI · Power Platform · Power Automate · SAP SuccessFactors · ERP/CRM Integration · Data Governance · KPI Frameworks
+
+**Hands-on build & automation** — TypeScript/JavaScript · Next.js/React · Node.js · Kotlin (Android) · AI-assisted automation & rapid prototyping
+
+**Leadership** — Change Management · Cross-Functional Leadership · Multi-Unit Program Delivery
 
 #### Education & credentials
 
