@@ -10,7 +10,7 @@ The four numbers below are the ones I keep coming back to, because they're the o
 
 #### Impact
 
-| | |
+| Metric | What it means |
 |---|---|
 | **80%** | reduction in manual reporting — Power BI rollout across Finance, HR, Sales, and Supply Chain |
 | **67%** | increase in operational efficiency — AI-driven automation built on Power Platform |
@@ -48,5 +48,3 @@ The four numbers below are the ones I keep coming back to, because they're the o
 Turkish, Persian, Azerbaijani (native) · English (professional)
 
 ---
-
-Let's talk — [LinkedIn](https://linkedin.com/in/itisbehrouz).
