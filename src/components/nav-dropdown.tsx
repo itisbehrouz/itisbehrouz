@@ -143,6 +143,7 @@ export function NavDropdown({ label, items }: { label: string; items: NavDropdow
                 key={item.label + item.to}
                 to={item.to as never}
                 hash={item.hash}
+                params={item.params as never}
                 {...commonProps}
               >
                 {content}
