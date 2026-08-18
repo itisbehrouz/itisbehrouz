@@ -433,7 +433,7 @@ function Portfolio() {
           </div>
 
           <div className="mt-20">
-            <SectionLabel index="04·b" title={t.sections.certifications} />
+            <SectionLabel index="05·b" title={t.sections.certifications} />
           </div>
           <div className="mt-12 grid md:grid-cols-2 gap-8">
             {certifications.map((c, i) => (
