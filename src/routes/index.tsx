@@ -302,7 +302,7 @@ function Portfolio() {
 
       <section id="work" className="py-24 md:py-32 px-6 md:px-10 border-t border-border">
         <div className="max-w-7xl mx-auto">
-          <SectionLabel index="03" title={t.sections.caseStudies} />
+          <SectionLabel index="04" title={t.sections.caseStudies} />
           <p className="mt-6 max-w-2xl text-muted-foreground">{t.work.intro}</p>
 
           <div role="group" aria-labelledby="work-filters-label" className="mt-10 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-8">
