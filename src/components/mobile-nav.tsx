@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useLang } from "@/hooks/use-lang";
@@ -18,7 +19,10 @@ export function MobileNav({
   const { lang } = useLang();
   const t = ui[lang];
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const panelRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     if (!open) return;
@@ -57,7 +61,7 @@ export function MobileNav({
         )}
       </button>
 
-      {open && (
+      {mounted && open && createPortal(
         <div
           id="mobile-nav-panel"
           ref={panelRef}
@@ -117,7 +121,8 @@ export function MobileNav({
               {t.nav.getInTouch}
             </button>
           </nav>
-        </div>
+        </div>,
+        document.body,
       )}
     </div>
   );
