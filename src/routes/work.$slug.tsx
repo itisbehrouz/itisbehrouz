@@ -118,7 +118,6 @@ function CaseStudyPage() {
               label={t.nav.projects}
               items={[
                 { type: "route", to: "/luma", label: t.navDropdowns.projects.luma, summary: t.navDropdowns.projects.lumaSummary },
-                { type: "external", href: "https://apps.apple.com/app/luma-ambient-display/id1234567890", label: t.navDropdowns.projects.appStore, summary: t.navDropdowns.projects.appStoreSummary },
               ]}
             />
             <a href="/#impact" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.impact}</a>
