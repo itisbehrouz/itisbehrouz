@@ -152,6 +152,7 @@ function Portfolio() {
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             <a href="#work" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.work}</a>
             <a href="#capabilities" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.capabilities}</a>
+            <a href="#projects" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.projects}</a>
             <a href="#impact" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.impact}</a>
             <a href="#contact" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.contact}</a>
           </nav>
@@ -299,9 +300,33 @@ function Portfolio() {
         </div>
       </section>
 
+      <section id="projects" className="py-24 md:py-32 px-6 md:px-10 border-t border-border">
+        <div className="max-w-7xl mx-auto">
+          <SectionLabel index="03" title={t.sections.projects} />
+          <p className="mt-6 max-w-2xl text-muted-foreground">{t.projects.intro}</p>
+          <div className="mt-10 grid md:grid-cols-2 gap-px bg-border border-y border-border">
+            <Reveal className="bg-background">
+              <TiltCard className="h-full">
+                <Link to="/luma" className="group bg-background p-8 md:p-10 hover:bg-card transition-colors block h-full">
+                  <div className="flex items-baseline gap-4">
+                    <span className="text-xs text-muted-foreground tracking-[0.3em]" style={{ fontFamily: "var(--font-mono)" }}>/ 01</span>
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
+                      {luma.home.meta}
+                    </span>
+                  </div>
+                  <h3 className="mt-3 text-2xl md:text-3xl leading-tight" style={{ fontFamily: "var(--font-display)" }}>{luma.name}</h3>
+                  <p className="mt-3 text-base text-foreground/80">{luma.tagline}</p>
+                  <div className="mt-6 text-xs tracking-[0.3em] uppercase text-foreground underline decoration-1 underline-offset-4 decoration-foreground/50 group-hover:decoration-2 group-hover:decoration-foreground group-hover:translate-x-1 transition-all inline-flex items-center gap-2" style={{ fontFamily: "var(--font-mono)" }}>{t.projects.viewProject}</div>
+                </Link>
+              </TiltCard>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       <section id="work" className="py-24 md:py-32 px-6 md:px-10 border-t border-border">
         <div className="max-w-7xl mx-auto">
-          <SectionLabel index="03" title={t.sections.caseStudies} />
+          <SectionLabel index="04" title={t.sections.caseStudies} />
           <p className="mt-6 max-w-2xl text-muted-foreground">{t.work.intro}</p>
 
           <div role="group" aria-labelledby="work-filters-label" className="mt-10 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-8">
@@ -370,7 +395,7 @@ function Portfolio() {
           </div>
           )}
 
-          <div className="mt-24"><SectionLabel index="03·b" title={t.sections.careerTimeline} /></div>
+          <div className="mt-24"><SectionLabel index="04·b" title={t.sections.careerTimeline} /></div>
           <div className="mt-16 space-y-px bg-border">
             {experience.map((e, i) => (
               <Reveal key={i} as="article" delay={Math.min(i, 4) * 0.06} className="group bg-background hover:bg-card transition-colors py-8 md:py-10 px-2 md:px-6">
@@ -396,33 +421,9 @@ function Portfolio() {
         </div>
       </section>
 
-      <section id="projects" className="py-24 md:py-32 px-6 md:px-10 border-t border-border">
-        <div className="max-w-7xl mx-auto">
-          <SectionLabel index="03·c" title={luma.home.sectionTitle} />
-          <p className="mt-6 max-w-2xl text-muted-foreground">{luma.home.intro}</p>
-          <div className="mt-10 grid md:grid-cols-2 gap-px bg-border border-y border-border">
-            <Reveal className="bg-background">
-              <TiltCard className="h-full">
-                <Link to="/luma" className="group bg-background p-8 md:p-10 hover:bg-card transition-colors block h-full">
-                  <div className="flex items-baseline gap-4">
-                    <span className="text-xs text-muted-foreground tracking-[0.3em]" style={{ fontFamily: "var(--font-mono)" }}>/ 01</span>
-                    <span className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
-                      {luma.home.meta}
-                    </span>
-                  </div>
-                  <h3 className="mt-3 text-2xl md:text-3xl leading-tight" style={{ fontFamily: "var(--font-display)" }}>{luma.name}</h3>
-                  <p className="mt-3 text-base text-foreground/80">{luma.tagline}</p>
-                  <div className="mt-6 text-xs tracking-[0.3em] uppercase text-foreground underline decoration-1 underline-offset-4 decoration-foreground/50 group-hover:decoration-2 group-hover:decoration-foreground group-hover:translate-x-1 transition-all inline-flex items-center gap-2" style={{ fontFamily: "var(--font-mono)" }}>{luma.home.cta}</div>
-                </Link>
-              </TiltCard>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
       <section className="py-24 md:py-32 px-6 md:px-10 border-t border-border">
         <div className="max-w-7xl mx-auto">
-          <SectionLabel index="04" title={t.sections.education} />
+          <SectionLabel index="05" title={t.sections.education} />
           <div className="mt-12 grid md:grid-cols-2 gap-8">
             {education.map((e, i) => (
               <Reveal key={i} delay={(i % 2) * 0.1}>
@@ -432,7 +433,7 @@ function Portfolio() {
           </div>
 
           <div className="mt-20">
-            <SectionLabel index="04·b" title={t.sections.certifications} />
+            <SectionLabel index="05·b" title={t.sections.certifications} />
           </div>
           <div className="mt-12 grid md:grid-cols-2 gap-8">
             {certifications.map((c, i) => (
@@ -449,7 +450,7 @@ function Portfolio() {
       <section id="contact" className="py-24 md:py-40 px-6 md:px-10 border-t border-border relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none opacity-[0.06]" style={{ backgroundImage: "radial-gradient(circle at 50% 50%, var(--muted-foreground) 0, transparent 60%)" }} />
         <div className="max-w-7xl mx-auto relative">
-          <SectionLabel index="05" title={t.sections.contact} />
+          <SectionLabel index="06" title={t.sections.contact} />
           <div className="mt-12 grid md:grid-cols-12 gap-12 md:gap-16">
             <div className="md:col-span-5">
               <Reveal>

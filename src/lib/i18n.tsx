@@ -6,7 +6,7 @@ export type UI = {
   name: { full: string; first: string; italic: string; rest: string };
   metaTitle: string;
   metaDesc: string;
-  nav: { work: string; capabilities: string; impact: string; contact: string; getInTouch: string };
+  nav: { work: string; capabilities: string; impact: string; projects: string; contact: string; getInTouch: string };
   hero: {
     location: string;
     srSuffix: string;
@@ -25,6 +25,7 @@ export type UI = {
   };
   sections: {
     capabilities: string;
+    projects: string;
     caseStudies: string;
     careerTimeline: string;
     education: string;
@@ -39,6 +40,10 @@ export type UI = {
     reset: string;
     readCase: string;
     all: string;
+  };
+  projects: {
+    intro: string;
+    viewProject: string;
   };
   contact: {
     headingA: string;
@@ -111,7 +116,7 @@ export const ui: Record<Lang, UI> = {
     metaTitle: "Behrouz Bagherzadeh — Digital Transformation & BI Leader",
     metaDesc:
       "Behrouz Bagherzadeh — digital transformation and BI leader in Istanbul, building the layer between enterprise data and executive decisions.",
-    nav: { work: "Work", capabilities: "Capabilities", impact: "Impact", contact: "Contact", getInTouch: "GET IN TOUCH" },
+    nav: { work: "Work", capabilities: "Capabilities", impact: "Impact", projects: "Projects / Apps", contact: "Contact", getInTouch: "GET IN TOUCH" },
     hero: {
       location: "Portfolio · Istanbul, TR",
       srSuffix: " — Digital Transformation & BI Leader",
@@ -133,6 +138,7 @@ export const ui: Record<Lang, UI> = {
     },
     sections: {
       capabilities: "Capabilities",
+      projects: "Projects / Apps",
       caseStudies: "Case Studies",
       careerTimeline: "Career Timeline",
       education: "Education",
@@ -147,6 +153,10 @@ export const ui: Record<Lang, UI> = {
       reset: "Reset",
       readCase: "Read case →",
       all: "All",
+    },
+    projects: {
+      intro: "Side projects and apps built outside of client work.",
+      viewProject: "View app →",
     },
     contact: {
       headingA: "Let's build the ",
@@ -229,7 +239,7 @@ export const ui: Record<Lang, UI> = {
     metaTitle: "Behruz Bagirzade — Dijital Dönüşüm & İş Zekâsı Lideri",
     metaDesc:
       "Behruz Bagirzade — İstanbul'da dijital dönüşüm ve iş zekâsı lideri. 15+ yıldır kurumsal veri ile yönetim kararları arasındaki katmanı kuruyorum.",
-    nav: { work: "Projeler", capabilities: "Yetkinlikler", impact: "Etki", contact: "İletişim", getInTouch: "İLETİŞİME GEÇ" },
+    nav: { work: "Projeler", capabilities: "Yetkinlikler", impact: "Etki", projects: "Projeler / Uygulamalar", contact: "İletişim", getInTouch: "İLETİŞİME GEÇ" },
     hero: {
       location: "Portfolyo · İstanbul, TR",
       srSuffix: " — Dijital Dönüşüm & İş Zekâsı Lideri",
@@ -250,6 +260,7 @@ export const ui: Record<Lang, UI> = {
     },
     sections: {
       capabilities: "Yetkinlikler",
+      projects: "Projeler / Uygulamalar",
       caseStudies: "Vaka Çalışmaları",
       careerTimeline: "Kariyer Zaman Çizelgesi",
       education: "Eğitim",
@@ -264,6 +275,10 @@ export const ui: Record<Lang, UI> = {
       reset: "Sıfırla",
       readCase: "Vakayı oku →",
       all: "Tümü",
+    },
+    projects: {
+      intro: "Müşteri projelerinin dışında geliştirdiğim yan projeler ve uygulamalar.",
+      viewProject: "Uygulamayı gör →",
     },
     contact: {
       headingA: "Bir sonraki ",
