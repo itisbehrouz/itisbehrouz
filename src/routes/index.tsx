@@ -11,6 +11,7 @@ import { useLang } from "@/hooks/use-lang";
 import { ui, metricsI18n, capabilitiesI18n, experienceI18n, educationI18n, certificationsI18n, lumaI18n, tCase } from "@/lib/i18n";
 import { CaseCover } from "@/components/case-cover";
 import { ContactDialog } from "@/components/contact-dialog";
+import { MobileNav } from "@/components/mobile-nav";
 import { SITE_URL, absoluteUrl } from "@/lib/site";
 import { Reveal } from "@/components/motion/reveal";
 import { CursorGlow } from "@/components/motion/cursor-glow";
@@ -226,6 +227,7 @@ function Portfolio() {
             >
               {t.nav.getInTouch}
             </button>
+            <MobileNav onGetInTouch={() => setContactOpen(true)} />
           </div>
         </div>
       </header>
