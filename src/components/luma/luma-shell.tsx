@@ -4,7 +4,9 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "@/hooks/use-theme";
 import { useLang } from "@/hooks/use-lang";
 import { ui } from "@/lib/i18n";
+import { caseStudies } from "@/lib/case-studies";
 import { Logo } from "@/components/logo";
+import { NavDropdown } from "@/components/nav-dropdown";
 import { CursorGlow } from "@/components/motion/cursor-glow";
 
 const mono = { fontFamily: "var(--font-mono)" } as const;
