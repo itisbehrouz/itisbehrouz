@@ -450,7 +450,7 @@ function Portfolio() {
       <section id="contact" className="py-24 md:py-40 px-6 md:px-10 border-t border-border relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none opacity-[0.06]" style={{ backgroundImage: "radial-gradient(circle at 50% 50%, var(--muted-foreground) 0, transparent 60%)" }} />
         <div className="max-w-7xl mx-auto relative">
-          <SectionLabel index="05" title={t.sections.contact} />
+          <SectionLabel index="06" title={t.sections.contact} />
           <div className="mt-12 grid md:grid-cols-12 gap-12 md:gap-16">
             <div className="md:col-span-5">
               <Reveal>
