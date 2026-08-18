@@ -6,6 +6,7 @@ import { ui, tCase } from "@/lib/i18n";
 import { CaseCover } from "@/components/case-cover";
 import { SITE_URL, absoluteUrl } from "@/lib/site";
 import { Logo } from "@/components/logo";
+import { NavDropdown } from "@/components/nav-dropdown";
 
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }) => {
