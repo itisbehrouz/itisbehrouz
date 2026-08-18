@@ -18,6 +18,7 @@ import { CountUp } from "@/components/motion/count-up";
 import { HeroLineMotif } from "@/components/motion/hero-line-motif";
 import { TiltCard } from "@/components/motion/tilt-card";
 import { Logo } from "@/components/logo";
+import { NavDropdown } from "@/components/nav-dropdown";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/itisbehrouz";
 const CALL_URL = "https://calendar.app.google/Ez1RC2T2CYESgqN8A";
