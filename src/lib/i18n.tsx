@@ -41,6 +41,10 @@ export type UI = {
     readCase: string;
     all: string;
   };
+  projects: {
+    intro: string;
+    viewProject: string;
+  };
   contact: {
     headingA: string;
     headingEm: string;
