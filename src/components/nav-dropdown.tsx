@@ -11,6 +11,14 @@ export function NavDropdown({ label, items }: { label: string; items: NavDropdow
   const panelRef = useRef<HTMLDivElement | null>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  useEffect(() => {
+    console.log("NavDropdown mounted", label);
+  }, [label]);
+
+  useEffect(() => {
+    console.log("open changed", label, open);
+  }, [open, label]);
+
   const openMenu = () => {
     if (timerRef.current) clearTimeout(timerRef.current);
     setOpen(true);
