@@ -276,6 +276,10 @@ export const ui: Record<Lang, UI> = {
       readCase: "Vakayı oku →",
       all: "Tümü",
     },
+    projects: {
+      intro: "Müşteri projelerinin dışında geliştirdiğim yan projeler ve uygulamalar.",
+      viewProject: "Uygulamayı gör →",
+    },
     contact: {
       headingA: "Bir sonraki ",
       headingEm: "dönüşümü",
