@@ -116,7 +116,7 @@ export const ui: Record<Lang, UI> = {
     metaTitle: "Behrouz Bagherzadeh — Digital Transformation & BI Leader",
     metaDesc:
       "Behrouz Bagherzadeh — digital transformation and BI leader in Istanbul, building the layer between enterprise data and executive decisions.",
-    nav: { work: "Work", capabilities: "Capabilities", impact: "Impact", contact: "Contact", getInTouch: "GET IN TOUCH" },
+    nav: { work: "Work", capabilities: "Capabilities", impact: "Impact", projects: "Projects / Apps", contact: "Contact", getInTouch: "GET IN TOUCH" },
     hero: {
       location: "Portfolio · Istanbul, TR",
       srSuffix: " — Digital Transformation & BI Leader",
