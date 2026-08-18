@@ -99,7 +99,32 @@ function CaseStudyPage() {
               {t.name.full}
             </span>
           </Link>
-          <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
+          <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+            <NavDropdown
+              label={t.nav.work}
+              items={[
+                { type: "route", to: "/", hash: "work", label: t.navDropdowns.work.all, summary: t.navDropdowns.work.allSummary },
+                ...caseStudies.slice(0, 3).map((c) => ({
+                  type: "route" as const,
+                  to: "/work/$slug" as const,
+                  params: { slug: c.slug },
+                  label: c.title,
+                  summary: c.tagline,
+                })),
+              ]}
+            />
+            <a href="/" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.capabilities}</a>
+            <NavDropdown
+              label={t.nav.projects}
+              items={[
+                { type: "route", to: "/luma", label: t.navDropdowns.projects.luma, summary: t.navDropdowns.projects.lumaSummary },
+                { type: "external", href: "https://apps.apple.com/app/luma-ambient-display/id1234567890", label: t.navDropdowns.projects.appStore, summary: t.navDropdowns.projects.appStoreSummary },
+              ]}
+            />
+            <a href="/" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.impact}</a>
+            <a href="/" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.contact}</a>
+          </div>
+          <div className="hidden md:flex items-center text-xs tracking-[0.2em] uppercase text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
             {cs.caseLabel} · {study.index}
           </div>
           <div className="flex items-center gap-2">
