@@ -138,6 +138,7 @@ export const ui: Record<Lang, UI> = {
     },
     sections: {
       capabilities: "Capabilities",
+      projects: "Projects / Apps",
       caseStudies: "Case Studies",
       careerTimeline: "Career Timeline",
       education: "Education",
