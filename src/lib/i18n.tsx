@@ -373,6 +373,20 @@ export const ui: Record<Lang, UI> = {
       "HR Tech": "İK Teknolojisi",
       "Product & ERP": "Ürün & ERP",
     },
+    navDropdowns: {
+      work: {
+        summary: "Kurumsal hedefleri ölçülebilir sonuçlara dönüştüren on proje.",
+        all: "Tüm vaka çalışmaları",
+        allSummary: "Tüm proje arşivini görüntüleyin.",
+      },
+      projects: {
+        summary: "Müşteri projelerinin dışında geliştirdiğim yan projeler ve uygulamalar.",
+        luma: "Luma",
+        lumaSummary: "Apple TV için ambient display uygulaması.",
+        appStore: "App Store",
+        appStoreSummary: "Luma'yı App Store'dan indirin.",
+      },
+    },
   },
 };
 
