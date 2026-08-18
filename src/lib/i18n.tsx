@@ -154,6 +154,10 @@ export const ui: Record<Lang, UI> = {
       readCase: "Read case →",
       all: "All",
     },
+    projects: {
+      intro: "Side projects and apps built outside of client work.",
+      viewProject: "View app →",
+    },
     contact: {
       headingA: "Let's build the ",
       headingEm: "next",
