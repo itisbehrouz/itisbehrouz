@@ -239,7 +239,7 @@ export const ui: Record<Lang, UI> = {
     metaTitle: "Behruz Bagirzade — Dijital Dönüşüm & İş Zekâsı Lideri",
     metaDesc:
       "Behruz Bagirzade — İstanbul'da dijital dönüşüm ve iş zekâsı lideri. 15+ yıldır kurumsal veri ile yönetim kararları arasındaki katmanı kuruyorum.",
-    nav: { work: "Projeler", capabilities: "Yetkinlikler", impact: "Etki", contact: "İletişim", getInTouch: "İLETİŞİME GEÇ" },
+    nav: { work: "Projeler", capabilities: "Yetkinlikler", impact: "Etki", projects: "Projeler / Uygulamalar", contact: "İletişim", getInTouch: "İLETİŞİME GEÇ" },
     hero: {
       location: "Portfolyo · İstanbul, TR",
       srSuffix: " — Dijital Dönüşüm & İş Zekâsı Lideri",
