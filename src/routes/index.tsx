@@ -395,6 +395,30 @@ function Portfolio() {
         </div>
       </section>
 
+      <section id="projects" className="py-24 md:py-32 px-6 md:px-10 border-t border-border">
+        <div className="max-w-7xl mx-auto">
+          <SectionLabel index="03·c" title={luma.home.sectionTitle} />
+          <p className="mt-6 max-w-2xl text-muted-foreground">{luma.home.intro}</p>
+          <div className="mt-10 grid md:grid-cols-2 gap-px bg-border border-y border-border">
+            <Reveal className="bg-background">
+              <TiltCard className="h-full">
+                <Link to="/luma" className="group bg-background p-8 md:p-10 hover:bg-card transition-colors block h-full">
+                  <div className="flex items-baseline gap-4">
+                    <span className="text-xs text-muted-foreground tracking-[0.3em]" style={{ fontFamily: "var(--font-mono)" }}>/ 01</span>
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
+                      {luma.home.meta}
+                    </span>
+                  </div>
+                  <h3 className="mt-3 text-2xl md:text-3xl leading-tight" style={{ fontFamily: "var(--font-display)" }}>{luma.name}</h3>
+                  <p className="mt-3 text-base text-foreground/80">{luma.tagline}</p>
+                  <div className="mt-6 text-xs tracking-[0.3em] uppercase text-foreground underline decoration-1 underline-offset-4 decoration-foreground/50 group-hover:decoration-2 group-hover:decoration-foreground group-hover:translate-x-1 transition-all inline-flex items-center gap-2" style={{ fontFamily: "var(--font-mono)" }}>{luma.home.cta}</div>
+                </Link>
+              </TiltCard>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 md:py-32 px-6 md:px-10 border-t border-border">
         <div className="max-w-7xl mx-auto">
           <SectionLabel index="04" title={t.sections.education} />
