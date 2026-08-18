@@ -1079,3 +1079,405 @@ export const advisoryI18n: Record<Lang, AdvisoryContent> = {
       "Dijital dönüşüm, iş zekâsı ve yapay zekâ destekli süreç otomasyonunda seçili danışmanlık ve fractional liderlik çalışmaları.",
   },
 };
+
+export type LumaContent = {
+  label: string;
+  name: string;
+  tagline: string;
+  subtext: string;
+  platform: string;
+  platformVal: string;
+  category: string;
+  categoryVal: string;
+  price: string;
+  priceVal: string;
+  statusLabel: string;
+  statusVal: string;
+  featuresLabel: string;
+  features: { title: string; desc: string }[];
+  legalLabel: string;
+  privacyLink: string;
+  supportLink: string;
+  termsLink: string;
+  backHome: string;
+  backApp: string;
+  metaTitle: string;
+  metaDesc: string;
+  updated: string;
+  privacy: { title: string; intro: string; sections: { h: string; p: string[] }[]; metaTitle: string; metaDesc: string };
+  terms: { title: string; intro: string; sections: { h: string; p: string[] }[]; metaTitle: string; metaDesc: string };
+  support: {
+    title: string;
+    intro: string;
+    faqLabel: string;
+    faq: { q: string; a: string }[];
+    contactLabel: string;
+    contactSubject: string;
+    metaTitle: string;
+    metaDesc: string;
+  };
+  home: { sectionTitle: string; intro: string; meta: string; cta: string };
+};
+
+export const lumaI18n: Record<Lang, LumaContent> = {
+  en: {
+    label: "PROJECT · APPLE TVOS",
+    name: "Luma",
+    tagline: "An ambient display for the largest screen in your home.",
+    subtext:
+      "Luma turns an idle Apple TV into a calm ambient display — slow-moving light, time and a quiet sense of place, designed to be looked at for hours without demanding attention.",
+    platform: "PLATFORM",
+    platformVal: "Apple tvOS",
+    category: "CATEGORY",
+    categoryVal: "Ambient display",
+    price: "MODEL",
+    priceVal: "One-time purchase",
+    statusLabel: "STATUS",
+    statusVal: "In development",
+    featuresLabel: "What it does",
+    features: [
+      { title: "Ambient scenes", desc: "Slow, continuously shifting light compositions built for long viewing." },
+      { title: "Time & place", desc: "An unobtrusive clock and location layer that stays readable across the room." },
+      { title: "Screen-friendly", desc: "Low-motion rendering designed to be gentle on large panels and on the eyes." },
+      { title: "No account needed", desc: "Luma works out of the box — no sign-up, no profile, no tracking." },
+    ],
+    legalLabel: "App Store information",
+    privacyLink: "Privacy Policy",
+    supportLink: "Support & FAQ",
+    termsLink: "Terms of Use",
+    backHome: "← Portfolio",
+    backApp: "← Luma",
+    metaTitle: "Luma — Ambient display app for Apple TV",
+    metaDesc:
+      "Luma is an ambient display app for Apple tvOS: slow-moving light, time and place on the largest screen in your home.",
+    updated: "Last updated: August 2026",
+    privacy: {
+      title: "Privacy Policy",
+      intro:
+        "This Privacy Policy explains how Luma (\"the app\") handles information. Luma is designed to work without collecting personal data.",
+      sections: [
+        {
+          h: "Information we collect",
+          p: [
+            "Luma does not require an account and does not ask for your name, email address, or any other personal identifier.",
+            "Luma does not collect, store, or transmit personal data to us or to any third party.",
+          ],
+        },
+        {
+          h: "Diagnostics and analytics",
+          p: [
+            "Luma includes no third-party analytics or advertising software development kits.",
+            "If you have enabled sharing of crash and usage data with developers in your Apple device settings, Apple may provide us with aggregated, anonymous diagnostic reports. These reports cannot be used to identify you and are used only to fix defects.",
+          ],
+        },
+        {
+          h: "Data stored on your device",
+          p: [
+            "Your app preferences (for example the selected scene or display options) are stored locally on your device and are removed when the app is deleted.",
+          ],
+        },
+        {
+          h: "Purchases",
+          p: [
+            "Any purchase is processed by Apple. We never receive or store your payment details. Apple's own privacy policy governs the transaction.",
+          ],
+        },
+        {
+          h: "Children",
+          p: [
+            "Luma is suitable for all ages and does not knowingly collect information from anyone, including children under 13.",
+          ],
+        },
+        {
+          h: "Changes to this policy",
+          p: [
+            "If this policy changes, the updated version will be published on this page with a new revision date.",
+          ],
+        },
+        {
+          h: "Contact",
+          p: ["For any privacy question, use the contact form on the Luma support page."],
+        },
+      ],
+      metaTitle: "Luma — Privacy Policy",
+      metaDesc: "Privacy Policy for Luma, an ambient display app for Apple tvOS. Luma collects no personal data.",
+    },
+    terms: {
+      title: "Terms of Use",
+      intro:
+        "These Terms of Use (the \"Agreement\") govern your use of Luma. By downloading or using the app you agree to these terms.",
+      sections: [
+        {
+          h: "Licence",
+          p: [
+            "You are granted a non-transferable, revocable licence to use Luma on any Apple-branded device that you own or control, as permitted by the Apple Media Services Terms and Conditions.",
+          ],
+        },
+        {
+          h: "Permitted use",
+          p: [
+            "You may not reverse engineer, decompile, modify, redistribute, rent, sublicense or resell the app, except where such restriction is prohibited by applicable law.",
+          ],
+        },
+        {
+          h: "Ownership",
+          p: [
+            "Luma, including its design, visuals and source code, remains the property of its developer. No intellectual property rights are transferred to you.",
+          ],
+        },
+        {
+          h: "Disclaimer of warranty",
+          p: [
+            "The app is provided \"as is\" and \"as available\", without warranty of any kind, whether express or implied, including fitness for a particular purpose and uninterrupted or error-free operation.",
+          ],
+        },
+        {
+          h: "Limitation of liability",
+          p: [
+            "To the maximum extent permitted by law, the developer is not liable for any indirect, incidental or consequential damages arising from the use of, or inability to use, the app.",
+          ],
+        },
+        {
+          h: "Termination",
+          p: [
+            "This licence remains in effect until terminated. It terminates automatically if you breach any of these terms; you may terminate it at any time by deleting the app.",
+          ],
+        },
+        {
+          h: "Governing law",
+          p: [
+            "This Agreement is governed by the laws of the Republic of Türkiye, without regard to its conflict-of-law provisions.",
+          ],
+        },
+        {
+          h: "Contact",
+          p: ["Questions about this Agreement can be sent through the Luma support page."],
+        },
+      ],
+      metaTitle: "Luma — Terms of Use",
+      metaDesc: "Terms of Use and end user licence agreement for Luma, an ambient display app for Apple tvOS.",
+    },
+    support: {
+      title: "Support",
+      intro:
+        "Answers to the most common questions are below. If something is still unclear, or you want to report a defect, send a message and you will get a reply within two business days.",
+      faqLabel: "Frequently asked questions",
+      faq: [
+        {
+          q: "Which devices does Luma support?",
+          a: "Luma runs on Apple TV HD and Apple TV 4K with a current version of tvOS. It is not available for iPhone, iPad or Mac.",
+        },
+        {
+          q: "Do I need an account or internet connection?",
+          a: "No account is required. Luma runs locally on your Apple TV; an internet connection is only needed for the initial download and for updates.",
+        },
+        {
+          q: "Is my data collected?",
+          a: "No. Luma collects no personal data and includes no analytics or advertising software. See the Privacy Policy for details.",
+        },
+        {
+          q: "Can Luma stay on all day?",
+          a: "Luma uses low-motion, slowly changing scenes intended for long viewing. As with any static content, it is still sensible to follow your television manufacturer's guidance on prolonged display.",
+        },
+        {
+          q: "How do I request a refund?",
+          a: "Purchases and refunds are handled by Apple. Refund requests can be submitted through reportaproblem.apple.com.",
+        },
+        {
+          q: "How do I report a bug or request a feature?",
+          a: "Send a message using the form on this page and describe your device model, tvOS version and what you were doing when the issue occurred.",
+        },
+      ],
+      contactLabel: "Contact support",
+      contactSubject: "Luma support request",
+      metaTitle: "Luma — Support & FAQ",
+      metaDesc: "Support, frequently asked questions and contact form for Luma, the ambient display app for Apple tvOS.",
+    },
+    home: {
+      sectionTitle: "Projects / Apps",
+      intro: "Products I design and build outside client work.",
+      meta: "Apple tvOS · Ambient display",
+      cta: "View app →",
+    },
+  },
+  tr: {
+    label: "PROJE · APPLE TVOS",
+    name: "Luma",
+    tagline: "Evinizdeki en büyük ekran için ortam görüntüsü.",
+    subtext:
+      "Luma, boşta duran bir Apple TV'yi sakin bir ortam ekranına dönüştürür — yavaş akan ışık, saat ve hafif bir mekân hissi; dikkat talep etmeden saatlerce izlenmek üzere tasarlandı.",
+    platform: "PLATFORM",
+    platformVal: "Apple tvOS",
+    category: "KATEGORİ",
+    categoryVal: "Ortam ekranı",
+    price: "MODEL",
+    priceVal: "Tek seferlik satın alma",
+    statusLabel: "DURUM",
+    statusVal: "Geliştirme aşamasında",
+    featuresLabel: "Neler yapar",
+    features: [
+      { title: "Ortam sahneleri", desc: "Uzun süreli izleme için yavaş ve sürekli değişen ışık kompozisyonları." },
+      { title: "Saat & mekân", desc: "Odanın her yerinden okunabilen, öne çıkmayan saat ve konum katmanı." },
+      { title: "Ekran dostu", desc: "Büyük panellere ve göze nazik, düşük hareketli render." },
+      { title: "Hesap gerekmez", desc: "Luma kutudan çıktığı gibi çalışır — kayıt yok, profil yok, izleme yok." },
+    ],
+    legalLabel: "App Store bilgileri",
+    privacyLink: "Gizlilik Politikası",
+    supportLink: "Destek & SSS",
+    termsLink: "Kullanım Koşulları",
+    backHome: "← Portfolyo",
+    backApp: "← Luma",
+    metaTitle: "Luma — Apple TV için ortam ekranı uygulaması",
+    metaDesc:
+      "Luma, Apple tvOS için bir ortam ekranı uygulaması: evinizdeki en büyük ekranda yavaş akan ışık, saat ve mekân.",
+    updated: "Son güncelleme: Ağustos 2026",
+    privacy: {
+      title: "Gizlilik Politikası",
+      intro:
+        "Bu Gizlilik Politikası, Luma'nın (\"uygulama\") bilgileri nasıl ele aldığını açıklar. Luma, kişisel veri toplamadan çalışacak şekilde tasarlanmıştır.",
+      sections: [
+        {
+          h: "Topladığımız bilgiler",
+          p: [
+            "Luma hesap gerektirmez; adınızı, e-posta adresinizi veya başka bir kişisel kimlik bilgisini istemez.",
+            "Luma kişisel veri toplamaz, saklamaz ve bize ya da üçüncü taraflara iletmez.",
+          ],
+        },
+        {
+          h: "Tanılama ve analitik",
+          p: [
+            "Luma üçüncü taraf analitik veya reklam yazılım geliştirme kitleri içermez.",
+            "Apple cihaz ayarlarınızda çökme ve kullanım verilerinin geliştiricilerle paylaşılmasına izin verdiyseniz, Apple bize toplu ve anonim tanılama raporları sağlayabilir. Bu raporlarla kimliğiniz belirlenemez ve yalnızca hataların giderilmesi için kullanılır.",
+          ],
+        },
+        {
+          h: "Cihazınızda saklanan veriler",
+          p: [
+            "Uygulama tercihleriniz (örneğin seçili sahne veya görüntü seçenekleri) yalnızca cihazınızda yerel olarak saklanır ve uygulama silindiğinde kaldırılır.",
+          ],
+        },
+        {
+          h: "Satın almalar",
+          p: [
+            "Satın alma işlemleri Apple tarafından yürütülür. Ödeme bilgilerinizi hiçbir zaman almayız veya saklamayız. İşlem Apple'ın gizlilik politikasına tabidir.",
+          ],
+        },
+        {
+          h: "Çocuklar",
+          p: [
+            "Luma her yaş için uygundur ve 13 yaş altı çocuklar dahil hiç kimseden bilerek bilgi toplamaz.",
+          ],
+        },
+        {
+          h: "Politikadaki değişiklikler",
+          p: [
+            "Bu politika değişirse, güncel sürüm yeni revizyon tarihiyle bu sayfada yayınlanır.",
+          ],
+        },
+        {
+          h: "İletişim",
+          p: ["Gizlilikle ilgili sorular için Luma destek sayfasındaki iletişim formunu kullanabilirsiniz."],
+        },
+      ],
+      metaTitle: "Luma — Gizlilik Politikası",
+      metaDesc: "Apple tvOS için ortam ekranı uygulaması Luma'nın Gizlilik Politikası. Luma kişisel veri toplamaz.",
+    },
+    terms: {
+      title: "Kullanım Koşulları",
+      intro:
+        "Bu Kullanım Koşulları (\"Sözleşme\"), Luma'yı kullanımınızı düzenler. Uygulamayı indirerek veya kullanarak bu koşulları kabul etmiş olursunuz.",
+      sections: [
+        {
+          h: "Lisans",
+          p: [
+            "Apple Medya Hizmetleri Şart ve Koşulları'nın izin verdiği ölçüde, sahip olduğunuz veya kontrol ettiğiniz Apple markalı cihazlarda Luma'yı kullanmak için devredilemez ve geri alınabilir bir lisans verilir.",
+          ],
+        },
+        {
+          h: "İzin verilen kullanım",
+          p: [
+            "Yürürlükteki hukukun bu kısıtlamayı yasakladığı haller dışında; uygulamayı tersine mühendisliğe tabi tutamaz, kaynak koda dönüştüremez, değiştiremez, yeniden dağıtamaz, kiralayamaz, alt lisanslayamaz veya yeniden satamazsınız.",
+          ],
+        },
+        {
+          h: "Mülkiyet",
+          p: [
+            "Tasarımı, görselleri ve kaynak kodu dahil olmak üzere Luma, geliştiricisinin mülkiyetinde kalır. Size hiçbir fikri mülkiyet hakkı devredilmez.",
+          ],
+        },
+        {
+          h: "Garanti reddi",
+          p: [
+            "Uygulama, belirli bir amaca uygunluk ile kesintisiz veya hatasız çalışma dahil olmak üzere açık ya da zımni hiçbir garanti verilmeksizin \"olduğu gibi\" ve \"mevcut olduğu şekilde\" sunulur.",
+          ],
+        },
+        {
+          h: "Sorumluluğun sınırlandırılması",
+          p: [
+            "Hukukun izin verdiği en geniş ölçüde, geliştirici uygulamanın kullanımından veya kullanılamamasından doğan dolaylı, arızi veya sonuç niteliğindeki zararlardan sorumlu değildir.",
+          ],
+        },
+        {
+          h: "Sona erme",
+          p: [
+            "Bu lisans, sona erdirilene kadar geçerlidir. Bu koşullardan herhangi birini ihlal etmeniz halinde otomatik olarak sona erer; uygulamayı silerek dilediğiniz zaman sona erdirebilirsiniz.",
+          ],
+        },
+        {
+          h: "Uygulanacak hukuk",
+          p: [
+            "Bu Sözleşme, kanunlar ihtilafı kuralları hariç olmak üzere Türkiye Cumhuriyeti hukukuna tabidir.",
+          ],
+        },
+        {
+          h: "İletişim",
+          p: ["Bu Sözleşme hakkındaki sorular Luma destek sayfası üzerinden iletilebilir."],
+        },
+      ],
+      metaTitle: "Luma — Kullanım Koşulları",
+      metaDesc: "Apple tvOS için ortam ekranı uygulaması Luma'nın Kullanım Koşulları ve son kullanıcı lisans sözleşmesi.",
+    },
+    support: {
+      title: "Destek",
+      intro:
+        "En sık sorulan soruların yanıtları aşağıda. Yine de net olmayan bir konu varsa veya bir hata bildirmek isterseniz mesaj gönderin; iki iş günü içinde yanıt alırsınız.",
+      faqLabel: "Sık sorulan sorular",
+      faq: [
+        {
+          q: "Luma hangi cihazları destekler?",
+          a: "Luma, güncel bir tvOS sürümüne sahip Apple TV HD ve Apple TV 4K üzerinde çalışır. iPhone, iPad veya Mac için sunulmaz.",
+        },
+        {
+          q: "Hesap veya internet bağlantısı gerekir mi?",
+          a: "Hesap gerekmez. Luma Apple TV'nizde yerel olarak çalışır; internet bağlantısı yalnızca ilk indirme ve güncellemeler için gereklidir.",
+        },
+        {
+          q: "Verilerim toplanıyor mu?",
+          a: "Hayır. Luma kişisel veri toplamaz ve analitik ya da reklam yazılımı içermez. Ayrıntılar için Gizlilik Politikası'na bakın.",
+        },
+        {
+          q: "Luma gün boyu açık kalabilir mi?",
+          a: "Luma, uzun izleme için düşük hareketli ve yavaş değişen sahneler kullanır. Yine de her sabit içerikte olduğu gibi televizyon üreticinizin uzun süreli görüntüleme önerilerini izlemek yerinde olur.",
+        },
+        {
+          q: "İade nasıl talep edilir?",
+          a: "Satın alma ve iade işlemleri Apple tarafından yürütülür. İade talepleri reportaproblem.apple.com üzerinden iletilebilir.",
+        },
+        {
+          q: "Hata bildirimi veya özellik talebi nasıl iletilir?",
+          a: "Bu sayfadaki formu kullanarak mesaj gönderin; cihaz modelinizi, tvOS sürümünü ve sorunun oluştuğu durumu belirtin.",
+        },
+      ],
+      contactLabel: "Destek ile iletişim",
+      contactSubject: "Luma destek talebi",
+      metaTitle: "Luma — Destek & SSS",
+      metaDesc: "Apple tvOS için ortam ekranı uygulaması Luma'nın destek sayfası, sık sorulan sorular ve iletişim formu.",
+    },
+    home: {
+      sectionTitle: "Projeler / Uygulamalar",
+      intro: "Müşteri işlerinin dışında tasarlayıp geliştirdiğim ürünler.",
+      meta: "Apple tvOS · Ortam ekranı",
+      cta: "Uygulamaya bak →",
+    },
+  },
+};
