@@ -7,6 +7,7 @@ import { ui } from "@/lib/i18n";
 import { caseStudies } from "@/lib/case-studies";
 import { Logo } from "@/components/logo";
 import { NavDropdown } from "@/components/nav-dropdown";
+import { MobileNav } from "@/components/mobile-nav";
 import { CursorGlow } from "@/components/motion/cursor-glow";
 
 const mono = { fontFamily: "var(--font-mono)" } as const;
@@ -78,6 +79,7 @@ export function LumaShell({ children }: { children: ReactNode }) {
                 <Sun aria-hidden="true" strokeWidth={1.5} className="h-4 w-4" />
               )}
             </button>
+            <MobileNav hashPrefix="/" />
           </div>
         </div>
       </header>

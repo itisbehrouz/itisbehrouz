@@ -7,6 +7,7 @@ import { CaseCover } from "@/components/case-cover";
 import { SITE_URL, absoluteUrl } from "@/lib/site";
 import { Logo } from "@/components/logo";
 import { NavDropdown } from "@/components/nav-dropdown";
+import { MobileNav } from "@/components/mobile-nav";
 
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }) => {
@@ -148,6 +149,7 @@ function CaseStudyPage() {
             <Link to="/" hash="contact" className="text-xs px-3 py-1.5 border border-foreground/40 text-foreground hover:bg-foreground hover:text-background transition-colors" style={{ fontFamily: "var(--font-mono)" }}>
               {cs.getInTouch}
             </Link>
+            <MobileNav hashPrefix="/" />
           </div>
         </div>
       </header>
