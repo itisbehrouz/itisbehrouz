@@ -1,4 +1,5 @@
 import portraitAsset from "@/assets/behrouz-bagherzadeh.jpeg.asset.json";
+import tvosIconAsset from "@/assets/tvos-icon.png.asset.json";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { motion, useReducedMotion } from "framer-motion";
@@ -25,6 +26,14 @@ function LinkedInIcon() {
   return (
     <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true">
       <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.82-1.95 3.75-1.95C21.1 8.75 22 11 22 14.1V21h-4v-6.1c0-1.5-.55-2.5-1.9-2.5-1.15 0-1.85.77-2.15 1.52-.1.27-.13.64-.13 1.02V21h-4z" />
+    </svg>
+  );
+}
+
+function AppleLogo({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
     </svg>
   );
 }
@@ -304,19 +313,31 @@ function Portfolio() {
         <div className="max-w-7xl mx-auto">
           <SectionLabel index="03" title={t.sections.projects} />
           <p className="mt-6 max-w-2xl text-muted-foreground">{t.projects.intro}</p>
-          <div className="mt-10 grid md:grid-cols-2 gap-px bg-border border-y border-border">
+          <div className="mt-10 bg-border border-y border-border">
             <Reveal className="bg-background">
               <TiltCard className="h-full">
-                <Link to="/luma" className="group bg-background p-8 md:p-10 hover:bg-card transition-colors block h-full">
-                  <div className="flex items-baseline gap-4">
-                    <span className="text-xs text-muted-foreground tracking-[0.3em]" style={{ fontFamily: "var(--font-mono)" }}>/ 01</span>
-                    <span className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
-                      {luma.home.meta}
-                    </span>
+                <Link to="/luma" className="group bg-background hover:bg-card transition-colors block h-full">
+                  <div className="grid md:grid-cols-2 h-full">
+                    <div className="p-8 md:p-10 flex flex-col justify-between">
+                      <div>
+                        <div className="flex items-baseline gap-4">
+                          <span className="text-xs text-muted-foreground tracking-[0.3em]" style={{ fontFamily: "var(--font-mono)" }}>/ 01</span>
+                          <span className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
+                            {luma.home.meta}
+                          </span>
+                        </div>
+                        <h3 className="mt-3 text-2xl md:text-3xl leading-tight" style={{ fontFamily: "var(--font-display)" }}>{luma.name}</h3>
+                        <p className="mt-3 text-base text-foreground/80">{luma.tagline}</p>
+                      </div>
+                      <div className="mt-6 text-xs tracking-[0.3em] uppercase text-foreground underline decoration-1 underline-offset-4 decoration-foreground/50 group-hover:decoration-2 group-hover:decoration-foreground group-hover:translate-x-1 transition-all inline-flex items-center gap-2" style={{ fontFamily: "var(--font-mono)" }}>{t.projects.viewProject}</div>
+                    </div>
+                    <div className="relative bg-muted/30 border-t md:border-t-0 md:border-l border-border flex items-center justify-center p-8 md:p-10 min-h-[200px] md:min-h-0">
+                      <div className="flex items-center gap-8 md:gap-10">
+                        <AppleLogo className="w-16 h-16 md:w-20 md:h-20 text-foreground" />
+                        <img src={tvosIconAsset.url} alt="tvOS" className="w-16 h-16 md:w-20 md:h-20 object-contain" />
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="mt-3 text-2xl md:text-3xl leading-tight" style={{ fontFamily: "var(--font-display)" }}>{luma.name}</h3>
-                  <p className="mt-3 text-base text-foreground/80">{luma.tagline}</p>
-                  <div className="mt-6 text-xs tracking-[0.3em] uppercase text-foreground underline decoration-1 underline-offset-4 decoration-foreground/50 group-hover:decoration-2 group-hover:decoration-foreground group-hover:translate-x-1 transition-all inline-flex items-center gap-2" style={{ fontFamily: "var(--font-mono)" }}>{t.projects.viewProject}</div>
                 </Link>
               </TiltCard>
             </Reveal>
