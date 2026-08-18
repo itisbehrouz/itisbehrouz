@@ -99,7 +99,7 @@ function CaseStudyPage() {
               {t.name.full}
             </span>
           </Link>
-          <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+          <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             <NavDropdown
               label={t.nav.work}
               items={[
@@ -122,7 +122,7 @@ function CaseStudyPage() {
             />
             <a href="/#impact" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.impact}</a>
             <a href="/#contact" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.contact}</a>
-          </div>
+          </nav>
           <div className="flex items-center gap-2">
             <button
               type="button"
