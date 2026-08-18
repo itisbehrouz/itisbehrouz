@@ -313,19 +313,31 @@ function Portfolio() {
         <div className="max-w-7xl mx-auto">
           <SectionLabel index="03" title={t.sections.projects} />
           <p className="mt-6 max-w-2xl text-muted-foreground">{t.projects.intro}</p>
-          <div className="mt-10 grid md:grid-cols-2 gap-px bg-border border-y border-border">
+          <div className="mt-10 bg-border border-y border-border">
             <Reveal className="bg-background">
               <TiltCard className="h-full">
-                <Link to="/luma" className="group bg-background p-8 md:p-10 hover:bg-card transition-colors block h-full">
-                  <div className="flex items-baseline gap-4">
-                    <span className="text-xs text-muted-foreground tracking-[0.3em]" style={{ fontFamily: "var(--font-mono)" }}>/ 01</span>
-                    <span className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
-                      {luma.home.meta}
-                    </span>
+                <Link to="/luma" className="group bg-background hover:bg-card transition-colors block h-full">
+                  <div className="grid md:grid-cols-2 h-full">
+                    <div className="p-8 md:p-10 flex flex-col justify-between">
+                      <div>
+                        <div className="flex items-baseline gap-4">
+                          <span className="text-xs text-muted-foreground tracking-[0.3em]" style={{ fontFamily: "var(--font-mono)" }}>/ 01</span>
+                          <span className="text-xs uppercase tracking-widest text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
+                            {luma.home.meta}
+                          </span>
+                        </div>
+                        <h3 className="mt-3 text-2xl md:text-3xl leading-tight" style={{ fontFamily: "var(--font-display)" }}>{luma.name}</h3>
+                        <p className="mt-3 text-base text-foreground/80">{luma.tagline}</p>
+                      </div>
+                      <div className="mt-6 text-xs tracking-[0.3em] uppercase text-foreground underline decoration-1 underline-offset-4 decoration-foreground/50 group-hover:decoration-2 group-hover:decoration-foreground group-hover:translate-x-1 transition-all inline-flex items-center gap-2" style={{ fontFamily: "var(--font-mono)" }}>{t.projects.viewProject}</div>
+                    </div>
+                    <div className="relative bg-muted/30 border-t md:border-t-0 md:border-l border-border flex items-center justify-center p-8 md:p-10 min-h-[200px] md:min-h-0">
+                      <div className="flex items-center gap-8 md:gap-10">
+                        <AppleLogo className="w-16 h-16 md:w-20 md:h-20 text-foreground" />
+                        <img src={tvosIconAsset.url} alt="tvOS" className="w-16 h-16 md:w-20 md:h-20 object-contain" />
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="mt-3 text-2xl md:text-3xl leading-tight" style={{ fontFamily: "var(--font-display)" }}>{luma.name}</h3>
-                  <p className="mt-3 text-base text-foreground/80">{luma.tagline}</p>
-                  <div className="mt-6 text-xs tracking-[0.3em] uppercase text-foreground underline decoration-1 underline-offset-4 decoration-foreground/50 group-hover:decoration-2 group-hover:decoration-foreground group-hover:translate-x-1 transition-all inline-flex items-center gap-2" style={{ fontFamily: "var(--font-mono)" }}>{t.projects.viewProject}</div>
                 </Link>
               </TiltCard>
             </Reveal>
