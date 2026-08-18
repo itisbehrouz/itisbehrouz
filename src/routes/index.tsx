@@ -7,7 +7,7 @@ import { CASE_CATEGORIES, caseStudies, type CaseCategory } from "@/lib/case-stud
 import { useTheme } from "@/hooks/use-theme";
 import { useLocalizedMeta } from "@/hooks/use-localized-meta";
 import { useLang } from "@/hooks/use-lang";
-import { ui, metricsI18n, capabilitiesI18n, experienceI18n, educationI18n, certificationsI18n, tCase } from "@/lib/i18n";
+import { ui, metricsI18n, capabilitiesI18n, experienceI18n, educationI18n, certificationsI18n, lumaI18n, tCase } from "@/lib/i18n";
 import { CaseCover } from "@/components/case-cover";
 import { ContactDialog } from "@/components/contact-dialog";
 import { SITE_URL, absoluteUrl } from "@/lib/site";
@@ -87,6 +87,7 @@ function Portfolio() {
   const experience = experienceI18n[lang];
   const education = educationI18n[lang];
   const certifications = certificationsI18n[lang];
+  const luma = lumaI18n[lang];
   useLocalizedMeta(t.metaTitle, t.metaDesc);
 
   const chipRefs = useRef<Array<HTMLButtonElement | null>>([]);
