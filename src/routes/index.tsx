@@ -152,6 +152,7 @@ function Portfolio() {
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             <a href="#work" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.work}</a>
             <a href="#capabilities" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.capabilities}</a>
+            <a href="#projects" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.projects}</a>
             <a href="#impact" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.impact}</a>
             <a href="#contact" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.contact}</a>
           </nav>
