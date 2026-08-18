@@ -6,7 +6,7 @@ export type UI = {
   name: { full: string; first: string; italic: string; rest: string };
   metaTitle: string;
   metaDesc: string;
-  nav: { work: string; capabilities: string; impact: string; contact: string; getInTouch: string };
+  nav: { work: string; capabilities: string; impact: string; projects: string; contact: string; getInTouch: string };
   hero: {
     location: string;
     srSuffix: string;
