@@ -25,6 +25,7 @@ export type UI = {
   };
   sections: {
     capabilities: string;
+    projects: string;
     caseStudies: string;
     careerTimeline: string;
     education: string;
