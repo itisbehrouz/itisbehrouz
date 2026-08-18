@@ -423,7 +423,7 @@ function Portfolio() {
 
       <section className="py-24 md:py-32 px-6 md:px-10 border-t border-border">
         <div className="max-w-7xl mx-auto">
-          <SectionLabel index="04" title={t.sections.education} />
+          <SectionLabel index="05" title={t.sections.education} />
           <div className="mt-12 grid md:grid-cols-2 gap-8">
             {education.map((e, i) => (
               <Reveal key={i} delay={(i % 2) * 0.1}>
