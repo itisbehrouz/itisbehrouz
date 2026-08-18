@@ -113,7 +113,7 @@ function CaseStudyPage() {
                 })),
               ]}
             />
-            <a href="/" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.capabilities}</a>
+            <a href="/#capabilities" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.capabilities}</a>
             <NavDropdown
               label={t.nav.projects}
               items={[
@@ -121,11 +121,8 @@ function CaseStudyPage() {
                 { type: "external", href: "https://apps.apple.com/app/luma-ambient-display/id1234567890", label: t.navDropdowns.projects.appStore, summary: t.navDropdowns.projects.appStoreSummary },
               ]}
             />
-            <a href="/" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.impact}</a>
-            <a href="/" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.contact}</a>
-          </div>
-          <div className="hidden md:flex items-center text-xs tracking-[0.2em] uppercase text-muted-foreground" style={{ fontFamily: "var(--font-mono)" }}>
-            {cs.caseLabel} · {study.index}
+            <a href="/#impact" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.impact}</a>
+            <a href="/#contact" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.contact}</a>
           </div>
           <div className="flex items-center gap-2">
             <button
