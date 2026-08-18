@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type KeyboardEvent, type ReactNode } from 
 import { Link } from "@tanstack/react-router";
 
 export type NavDropdownItem =
-  | { type: "route"; to: string; hash?: string; label: string; summary: string }
+  | { type: "route"; to: string; hash?: string; params?: Record<string, string>; label: string; summary: string }
   | { type: "external"; href: string; label: string; summary: string };
 
 export function NavDropdown({ label, items }: { label: string; items: NavDropdownItem[] }) {
