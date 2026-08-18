@@ -6,7 +6,7 @@ import { useLocalizedMeta } from "@/hooks/use-localized-meta";
 import { lumaI18n, ui } from "@/lib/i18n";
 import { LumaShell } from "@/components/luma/luma-shell";
 import { ContactDialog } from "@/components/contact-dialog";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { ChevronDown } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
 import { SITE_URL } from "@/lib/site";
 
@@ -73,16 +73,17 @@ function LumaSupportPage() {
       <section className="pb-20 md:pb-28 px-6 md:px-10">
         <div className="max-w-3xl mx-auto">
           <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground" style={mono}>{l.support.faqLabel}</span>
-          <Accordion type="single" collapsible className="mt-8 border-t border-border">
+          <div className="mt-8 border-t border-border">
             {l.support.faq.map((f, i) => (
-              <AccordionItem key={i} value={`faq-${i}`}>
-                <AccordionTrigger className="text-left text-lg md:text-xl" style={{ fontFamily: "var(--font-display)" }}>
+              <details key={i} className="group border-b border-border">
+                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none py-4 text-left text-lg md:text-xl hover:underline decoration-1 underline-offset-4" style={{ fontFamily: "var(--font-display)" }}>
                   {f.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed">{f.a}</AccordionContent>
-              </AccordionItem>
+                  <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" />
+                </summary>
+                <p className="pb-4 text-muted-foreground leading-relaxed">{f.a}</p>
+              </details>
             ))}
-          </Accordion>
+          </div>
         </div>
       </section>
 
