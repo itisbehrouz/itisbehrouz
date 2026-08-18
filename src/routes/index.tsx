@@ -18,6 +18,7 @@ import { CountUp } from "@/components/motion/count-up";
 import { HeroLineMotif } from "@/components/motion/hero-line-motif";
 import { TiltCard } from "@/components/motion/tilt-card";
 import { Logo } from "@/components/logo";
+import { NavDropdown } from "@/components/nav-dropdown";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/itisbehrouz";
 const CALL_URL = "https://calendar.app.google/Ez1RC2T2CYESgqN8A";
@@ -159,9 +160,26 @@ function Portfolio() {
             </span>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-            <a href="#work" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.work}</a>
+            <NavDropdown
+              label={t.nav.work}
+              items={[
+                { type: "route", to: "/", hash: "work", label: t.navDropdowns.work.all, summary: t.navDropdowns.work.allSummary },
+                ...caseStudies.slice(0, 3).map((c) => ({
+                  type: "route" as const,
+                  to: "/work/$slug" as const,
+                  params: { slug: c.slug },
+                  label: c.title,
+                  summary: c.tagline,
+                })),
+              ]}
+            />
             <a href="#capabilities" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.capabilities}</a>
-            <a href="#projects" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.projects}</a>
+            <NavDropdown
+              label={t.nav.projects}
+              items={[
+                { type: "route", to: "/luma", label: t.navDropdowns.projects.luma, summary: t.navDropdowns.projects.lumaSummary },
+              ]}
+            />
             <a href="#impact" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.impact}</a>
             <a href="#contact" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.contact}</a>
           </nav>

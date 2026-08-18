@@ -108,6 +108,10 @@ export type UI = {
     quoteBy: string;
   };
   categories: Record<string, string>;
+  navDropdowns: {
+    work: { summary: string; all: string; allSummary: string };
+    projects: { summary: string; luma: string; lumaSummary: string; appStore: string; appStoreSummary: string };
+  };
 };
 
 export const ui: Record<Lang, UI> = {
@@ -233,6 +237,20 @@ export const ui: Record<Lang, UI> = {
       "HR Tech": "HR Tech",
       "Product & ERP": "Product & ERP",
     },
+    navDropdowns: {
+      work: {
+        summary: "Ten projects that turned enterprise ambition into measurable outcomes.",
+        all: "All case studies",
+        allSummary: "Browse the full project archive.",
+      },
+      projects: {
+        summary: "Side projects and apps built outside of client work.",
+        luma: "Luma",
+        lumaSummary: "Ambient display app for Apple TV.",
+        appStore: "App Store",
+        appStoreSummary: "Download Luma on the App Store.",
+      },
+    },
   },
   tr: {
     name: { full: "Behruz Bagirzade", first: "Behruz", italic: "Bagir", rest: "zade" },
@@ -354,6 +372,20 @@ export const ui: Record<Lang, UI> = {
       "Web & Branding": "Web & Marka",
       "HR Tech": "İK Teknolojisi",
       "Product & ERP": "Ürün & ERP",
+    },
+    navDropdowns: {
+      work: {
+        summary: "Kurumsal hedefleri ölçülebilir sonuçlara dönüştüren on proje.",
+        all: "Tüm vaka çalışmaları",
+        allSummary: "Tüm proje arşivini görüntüleyin.",
+      },
+      projects: {
+        summary: "Müşteri projelerinin dışında geliştirdiğim yan projeler ve uygulamalar.",
+        luma: "Luma",
+        lumaSummary: "Apple TV için ambient display uygulaması.",
+        appStore: "App Store",
+        appStoreSummary: "Luma'yı App Store'dan indirin.",
+      },
     },
   },
 };

@@ -4,7 +4,9 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "@/hooks/use-theme";
 import { useLang } from "@/hooks/use-lang";
 import { ui } from "@/lib/i18n";
+import { caseStudies } from "@/lib/case-studies";
 import { Logo } from "@/components/logo";
+import { NavDropdown } from "@/components/nav-dropdown";
 import { CursorGlow } from "@/components/motion/cursor-glow";
 
 const mono = { fontFamily: "var(--font-mono)" } as const;
@@ -29,6 +31,30 @@ export function LumaShell({ children }: { children: ReactNode }) {
               {t.name.full}
             </span>
           </Link>
+          <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+            <NavDropdown
+              label={t.nav.work}
+              items={[
+                { type: "route", to: "/", hash: "work", label: t.navDropdowns.work.all, summary: t.navDropdowns.work.allSummary },
+                ...caseStudies.slice(0, 3).map((c) => ({
+                  type: "route" as const,
+                  to: "/work/$slug" as const,
+                  params: { slug: c.slug },
+                  label: c.title,
+                  summary: c.tagline,
+                })),
+              ]}
+            />
+            <a href="/#capabilities" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.capabilities}</a>
+            <NavDropdown
+              label={t.nav.projects}
+              items={[
+                { type: "route", to: "/luma", label: t.navDropdowns.projects.luma, summary: t.navDropdowns.projects.lumaSummary },
+              ]}
+            />
+            <a href="/#impact" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.impact}</a>
+            <a href="/#contact" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.contact}</a>
+          </nav>
           <div className="flex items-center gap-2">
             <button
               type="button"
