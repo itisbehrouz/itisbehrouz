@@ -260,6 +260,7 @@ export const ui: Record<Lang, UI> = {
     },
     sections: {
       capabilities: "Yetkinlikler",
+      projects: "Projeler / Uygulamalar",
       caseStudies: "Vaka Çalışmaları",
       careerTimeline: "Kariyer Zaman Çizelgesi",
       education: "Eğitim",
