@@ -108,6 +108,10 @@ export type UI = {
     quoteBy: string;
   };
   categories: Record<string, string>;
+  navDropdowns: {
+    work: { summary: string; all: string; allSummary: string };
+    projects: { summary: string; luma: string; lumaSummary: string; appStore: string; appStoreSummary: string };
+  };
 };
 
 export const ui: Record<Lang, UI> = {
