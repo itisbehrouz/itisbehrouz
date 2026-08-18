@@ -237,6 +237,20 @@ export const ui: Record<Lang, UI> = {
       "HR Tech": "HR Tech",
       "Product & ERP": "Product & ERP",
     },
+    navDropdowns: {
+      work: {
+        summary: "Ten projects that turned enterprise ambition into measurable outcomes.",
+        all: "All case studies",
+        allSummary: "Browse the full project archive.",
+      },
+      projects: {
+        summary: "Side projects and apps built outside of client work.",
+        luma: "Luma",
+        lumaSummary: "Ambient display app for Apple TV.",
+        appStore: "App Store",
+        appStoreSummary: "Download Luma on the App Store.",
+      },
+    },
   },
   tr: {
     name: { full: "Behruz Bagirzade", first: "Behruz", italic: "Bagir", rest: "zade" },
