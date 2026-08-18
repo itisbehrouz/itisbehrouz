@@ -371,7 +371,7 @@ function Portfolio() {
           </div>
           )}
 
-          <div className="mt-24"><SectionLabel index="03·b" title={t.sections.careerTimeline} /></div>
+          <div className="mt-24"><SectionLabel index="04·b" title={t.sections.careerTimeline} /></div>
           <div className="mt-16 space-y-px bg-border">
             {experience.map((e, i) => (
               <Reveal key={i} as="article" delay={Math.min(i, 4) * 0.06} className="group bg-background hover:bg-card transition-colors py-8 md:py-10 px-2 md:px-6">
