@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "@/hooks/use-theme";
 import { useLang } from "@/hooks/use-lang";
-import { ui, tCase } from "@/lib/i18n";
+import { ui, tCase, lumaI18n } from "@/lib/i18n";
 import { caseStudies } from "@/lib/case-studies";
 import { Logo } from "@/components/logo";
 import { NavDropdown } from "@/components/nav-dropdown";
@@ -16,6 +16,7 @@ export function LumaShell({ children }: { children: ReactNode }) {
   const { theme, toggle } = useTheme();
   const { lang, toggle: toggleLang } = useLang();
   const t = ui[lang];
+  const l = lumaI18n[lang];
 
   return (
     <div className="isolate min-h-screen bg-background text-foreground" style={{ fontFamily: "var(--font-sans)" }}>
@@ -96,9 +97,9 @@ export function LumaShell({ children }: { children: ReactNode }) {
             <span>© 2026 {t.name.full}</span>
           </div>
           <div className="flex items-center gap-4">
-            <Link to="/luma/privacy" className="hover:text-foreground transition-colors">Privacy</Link>
-            <Link to="/luma/support" className="hover:text-foreground transition-colors">Support</Link>
-            <Link to="/luma/terms" className="hover:text-foreground transition-colors">Terms</Link>
+            <Link to="/luma/privacy" className="hover:text-foreground transition-colors">{l.privacyLink}</Link>
+            <Link to="/luma/support" className="hover:text-foreground transition-colors">{l.supportLink}</Link>
+            <Link to="/luma/terms" className="hover:text-foreground transition-colors">{l.termsLink}</Link>
           </div>
         </div>
       </footer>
