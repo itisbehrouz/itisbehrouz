@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useLang } from "@/hooks/use-lang";
-import { ui } from "@/lib/i18n";
+import { ui, tCase } from "@/lib/i18n";
 import { caseStudies } from "@/lib/case-studies";
 
 const mono = { fontFamily: "var(--font-mono)" } as const;
@@ -84,7 +84,7 @@ export function MobileNav({
                 className={sectionClass}
                 style={mono}
               >
-                {c.title}
+                {tCase(lang, c.slug)?.title ?? c.title}
               </Link>
             ))}
 

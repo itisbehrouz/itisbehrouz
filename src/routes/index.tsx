@@ -165,13 +165,16 @@ function Portfolio() {
               label={t.nav.work}
               items={[
                 { type: "route", to: "/", hash: "work", label: t.navDropdowns.work.all, summary: t.navDropdowns.work.allSummary },
-                ...caseStudies.slice(0, 3).map((c) => ({
-                  type: "route" as const,
-                  to: "/work/$slug" as const,
-                  params: { slug: c.slug },
-                  label: c.title,
-                  summary: c.tagline,
-                })),
+                ...caseStudies.slice(0, 3).map((c) => {
+                  const lc = tCase(lang, c.slug);
+                  return {
+                    type: "route" as const,
+                    to: "/work/$slug" as const,
+                    params: { slug: c.slug },
+                    label: lc?.title ?? c.title,
+                    summary: lc?.tagline ?? c.tagline,
+                  };
+                }),
               ]}
             />
             <a href="#capabilities" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.capabilities}</a>

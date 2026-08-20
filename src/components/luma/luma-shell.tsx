@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "@/hooks/use-theme";
 import { useLang } from "@/hooks/use-lang";
-import { ui } from "@/lib/i18n";
+import { ui, tCase } from "@/lib/i18n";
 import { caseStudies } from "@/lib/case-studies";
 import { Logo } from "@/components/logo";
 import { NavDropdown } from "@/components/nav-dropdown";
@@ -37,13 +37,16 @@ export function LumaShell({ children }: { children: ReactNode }) {
               label={t.nav.work}
               items={[
                 { type: "route", to: "/", hash: "work", label: t.navDropdowns.work.all, summary: t.navDropdowns.work.allSummary },
-                ...caseStudies.slice(0, 3).map((c) => ({
-                  type: "route" as const,
-                  to: "/work/$slug" as const,
-                  params: { slug: c.slug },
-                  label: c.title,
-                  summary: c.tagline,
-                })),
+                ...caseStudies.slice(0, 3).map((c) => {
+                  const lc = tCase(lang, c.slug);
+                  return {
+                    type: "route" as const,
+                    to: "/work/$slug" as const,
+                    params: { slug: c.slug },
+                    label: lc?.title ?? c.title,
+                    summary: lc?.tagline ?? c.tagline,
+                  };
+                }),
               ]}
             />
             <a href="/#capabilities" className="underline decoration-1 underline-offset-4 decoration-border hover:text-foreground hover:decoration-2 hover:decoration-foreground transition-colors">{t.nav.capabilities}</a>
