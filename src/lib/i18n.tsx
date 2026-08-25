@@ -260,7 +260,7 @@ export const ui: Record<Lang, UI> = {
     nav: { work: "Projeler", capabilities: "Yetkinlikler", impact: "Etki", projects: "Projeler / Uygulamalar", contact: "İletişim", getInTouch: "İLETİŞİME GEÇ", openMenu: "Menüyü aç", closeMenu: "Menüyü kapat" },
     hero: {
       location: "Portfolyo · İstanbul, TR",
-      srSuffix: " — Dijital Dönüşüm, İş Zekâsı & Kurumsal YZ Başkanı",
+      srSuffix: " — Dijital Dönüşüm, İş Zekâsı & Kurumsal YZ Yöneticisi",
       years: "15+ yıl",
       intro: (yrs) => (
         <><span className="text-foreground">{yrs}</span>lık dijital dönüşüm ve iş zekâsı lideri. Veri ile karar arasındaki katmanı kuruyorum — analitik ve yapay zekâ yatırımlarını yönetimin bakabildiği değil, üzerine hareket edebildiği bir şeye dönüştürüyorum.</>
