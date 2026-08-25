@@ -270,7 +270,7 @@ export const ui: Record<Lang, UI> = {
       langs: "DİLLER",
       scope: "KAPSAM",
       status: "DURUM",
-      roleVal: "DX, İZ & Kurumsal YZ Başkanı",
+      roleVal: "DX, İZ & Kurumsal YZ Yöneticisi",
       basedVal: "İstanbul, TR",
       langsVal: "TR · FA · AZ · EN",
       scopeVal: "EMEA · Balkanlar · Körfez",
