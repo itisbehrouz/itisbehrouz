@@ -530,53 +530,6 @@ export const experienceI18n: Record<Lang, ExperienceT[]> = {
       "Kritik bankacılık uygulamaları için teknik destek sağladım.",
     ]},
   ],
-  tr: [
-    { period: "2022 — 2026", role: "Dijital Dönüşüm & İZ Yöneticisi", company: "Yiğitoğlu", location: "İstanbul", bullets: [
-      "7 uluslararası kuruluşta strateji, veri ve teknolojiyi hizalayan kurum çapında dönüşümü yönettim.",
-      "5 kişilik dönüşüm & iş zekâsı ekibini kurup yönettim; teslimat ve yetkinlik gelişimini üstlendim.",
-      "Finans, İK, Satış ve Tedarik Zinciri için yönetici Power BI paketi tasarladım — manuel raporlamayı %80 azalttım.",
-      "Microsoft Power Platform üzerinde YZ destekli otomasyonu yönettim; operasyonel verimliliği %67 artırdım.",
-      "9 lokasyondaki 450+ çalışan için SAP SuccessFactors İK dijitalleşmesini hayata geçirdim.",
-      "ERP, İK, CRM, İZ ve BT Servis Masası'nı tek çatı altında toplayan Dijital İş Yeri PWA'sını devreye aldım.",
-      "7 uluslararası birim genelinde operasyonel süreçleri standartlaştırarak uygulama farklılıklarını azalttım ve fonksiyonlar arası yönetişimi güçlendirdim.",
-      "Satış, Finans ve Operasyon süreçlerini yeniden tasarlayarak departmanlar arası devir gecikmelerini azalttım.",
-      "Dönüşüm yol haritasını üst yönetimin çok yıllı stratejik hedefleriyle doğrudan hizaladım.",
-    ]},
-    { period: "2021 — 2022", role: "Dijital Dönüşüm Analisti", company: "Yiğitoğlu", location: "İstanbul", bullets: [
-      "Ortalama dönüşüm teslim süresini 18 aydan 6 aya indirdim.",
-      "Otomasyon ve dijitalleşme fırsatlarını görünür kılmak için uçtan uca süreç haritaları çıkardım.",
-      "Operasyonel verimliliği ve müşteri deneyimini iyileştiren yapay zekâ destekli çözümler uyguladım.",
-      "Dijital girişimleri performans metrikleri ve iş KPI'ları üzerinden değerlendirerek yönetim kararlarına girdi sağladım.",
-    ]},
-    { period: "2019 — 2021", role: "Uluslararası E-Ticaret Müdürü ve Dijital Dönüşüm Analisti", company: "Kiğılı", location: "İstanbul", bullets: [
-      "Uluslararası pazarlarda 10+ kişilik e-ticaret ve dijital operasyon ekibini yönettim.",
-      "E-ticaret operasyonlarını ERP ile entegre ederek sipariş karşılamayı kolaylaştırdım.",
-      "Power Automate ile envanter & sipariş süreçlerini otomatikleştirdim — manuel süreyi %40 azalttım.",
-      "Müşteri etkileşimini ve pazarlama etkinliğini artıran CRM dönüşümünü destekledim.",
-    ]},
-    { period: "2019", role: "E-Ticaret Yöneticisi", company: "Edgers", location: "İstanbul", bullets: [
-      "Şirketin ilk B2B e-ticaret platformunu uçtan uca kurdum ve devreye aldım.",
-      "İran, Balkanlar, Mısır, ABD ve birçok Afrika pazarında uluslararası B2B operasyonlarını yönettim.",
-      "Platform mimarisinden ürün kataloğuna, müşteri kazanımından sipariş karşılamaya kadar uçtan uca dijital sipariş yolculuğunu yönettim.",
-      "Platformu ve ticari yaklaşımı her ihracat pazarının ödeme, lojistik ve mevzuat gereksinimlerine uyarladım.",
-    ]},
-    { period: "2018", role: "Kıdemli İş Geliştirme Uzmanı", company: "Orka Holding — Damat / Tween / D'S", location: "İstanbul", bullets: [
-      "Birden fazla perakende markası için pazar ve rekabet analizi yoluyla yeni fırsatlar ortaya çıkardım.",
-    ]},
-    { period: "2016 — 2017", role: "İş Geliştirme Uzmanı", company: "Finesse", location: "İstanbul", bullets: [
-      "Büyümeyi desteklemek için stratejik ortaklıklar geliştirdim ve müşteri ilişkilerini yönettim.",
-    ]},
-    { period: "2013 — 2016", role: "BT Mühendisi → Kıdemli BT Mühendisi", company: "Mercedes-Benz AG", location: "Tebriz", bullets: [
-      "Yüksek erişilebilirlik ve kararlılığı sağlayarak kurumsal BT altyapı operasyonlarını yönettim.",
-      "Güvenlik ve süreç iyileştirmeleri uyguladım; olay çözüm süresini azalttım.",
-      "İş açısından kritik BT ortamlarını mühendislik ekipleriyle yakın iş birliği içinde destekledim.",
-    ]},
-    { period: "2011 — 2013", role: "BT Sistem Mühendisi", company: "EghtesadNovin Bankası", location: "Tebriz", bullets: [
-      "Bankacılık operasyonlarını ve iş sürekliliğini destekleyen kurumsal BT altyapısını tasarladım ve sürdürdüm.",
-      "Proaktif bakım ve altyapı modernizasyonuyla sistem kararlılığını ve güvenilirliğini artırdım.",
-      "Kritik bankacılık uygulamaları için teknik destek sağladım.",
-    ]},
-  ],
 };
 
 export type EducationT = { period: string; title: string; school: string; loc: string };
