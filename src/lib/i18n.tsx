@@ -483,7 +483,7 @@ export const experienceI18n: Record<Lang, ExperienceT[]> = {
       "YZ devreye alma stratejisi, iş zekâsı ekosistem mimarisi ve çoklu birim dijital yönetişimi.",
       "Danışmanlığın yanında kendi ürünlerimi tasarlayıp yayına alıyorum.",
     ]},
-    { period: "2022 — 2026", role: "Dijital Dönüşüm, İş Zekâsı & Kurumsal YZ Başkanı", company: "Yiğitoğlu Grup", location: "İstanbul", bullets: [
+    { period: "2022 — 2026", role: "Dijital Dönüşüm, İş Zekâsı & Kurumsal YZ Yöneticisi", company: "Yiğitoğlu Grup", location: "İstanbul", bullets: [
       "Almanya, Rusya, Hindistan, Çin, Malezya ve Türkiye (Rubin Kimya dâhil) olmak üzere 7 uluslararası kuruluşta grup BT, ERP ve dijital dönüşüm yol haritasını yönettim.",
       "Grup çapında BT mimarisi, ERP seçimi ve yazılım devreye alma kararlarında yönlendirme yetkisini üstlendim; 12+ departman arasında süreçleri koordine ettim.",
       "İK, Finans, Satış ve Satın Alma verilerini entegre eden LLM tabanlı kurumsal bilgi asistanı \"Yigi AI\"ı tamamen kurum içinde ve gizliliği koruyarak devreye aldım; rutin sorgu yükünü azalttım ve işe alım uyumunu hızlandırdım.",
