@@ -260,7 +260,7 @@ export const ui: Record<Lang, UI> = {
     nav: { work: "Projeler", capabilities: "Yetkinlikler", impact: "Etki", projects: "Projeler / Uygulamalar", contact: "İletişim", getInTouch: "İLETİŞİME GEÇ", openMenu: "Menüyü aç", closeMenu: "Menüyü kapat" },
     hero: {
       location: "Portfolyo · İstanbul, TR",
-      srSuffix: " — Dijital Dönüşüm, İş Zekâsı & Kurumsal YZ Başkanı",
+      srSuffix: " — Dijital Dönüşüm, İş Zekâsı & Kurumsal YZ Yöneticisi",
       years: "15+ yıl",
       intro: (yrs) => (
         <><span className="text-foreground">{yrs}</span>lık dijital dönüşüm ve iş zekâsı lideri. Veri ile karar arasındaki katmanı kuruyorum — analitik ve yapay zekâ yatırımlarını yönetimin bakabildiği değil, üzerine hareket edebildiği bir şeye dönüştürüyorum.</>
@@ -270,7 +270,7 @@ export const ui: Record<Lang, UI> = {
       langs: "DİLLER",
       scope: "KAPSAM",
       status: "DURUM",
-      roleVal: "DX, İZ & Kurumsal YZ Başkanı",
+      roleVal: "DX, İZ & Kurumsal YZ Yöneticisi",
       basedVal: "İstanbul, TR",
       langsVal: "TR · FA · AZ · EN",
       scopeVal: "EMEA · Balkanlar · Körfez",
@@ -483,7 +483,7 @@ export const experienceI18n: Record<Lang, ExperienceT[]> = {
       "YZ devreye alma stratejisi, iş zekâsı ekosistem mimarisi ve çoklu birim dijital yönetişimi.",
       "Danışmanlığın yanında kendi ürünlerimi tasarlayıp yayına alıyorum.",
     ]},
-    { period: "2022 — 2026", role: "Dijital Dönüşüm, İş Zekâsı & Kurumsal YZ Başkanı", company: "Yiğitoğlu Grup", location: "İstanbul", bullets: [
+    { period: "2022 — 2026", role: "Dijital Dönüşüm, İş Zekâsı & Kurumsal YZ Yöneticisi", company: "Yiğitoğlu Grup", location: "İstanbul", bullets: [
       "Almanya, Rusya, Hindistan, Çin, Malezya ve Türkiye (Rubin Kimya dâhil) olmak üzere 7 uluslararası kuruluşta grup BT, ERP ve dijital dönüşüm yol haritasını yönettim.",
       "Grup çapında BT mimarisi, ERP seçimi ve yazılım devreye alma kararlarında yönlendirme yetkisini üstlendim; 12+ departman arasında süreçleri koordine ettim.",
       "İK, Finans, Satış ve Satın Alma verilerini entegre eden LLM tabanlı kurumsal bilgi asistanı \"Yigi AI\"ı tamamen kurum içinde ve gizliliği koruyarak devreye aldım; rutin sorgu yükünü azalttım ve işe alım uyumunu hızlandırdım.",
