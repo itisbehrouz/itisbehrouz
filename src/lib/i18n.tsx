@@ -123,7 +123,7 @@ export const ui: Record<Lang, UI> = {
     nav: { work: "Work", capabilities: "Capabilities", impact: "Impact", projects: "Projects / Apps", contact: "Contact", getInTouch: "GET IN TOUCH", openMenu: "Open menu", closeMenu: "Close menu" },
     hero: {
       location: "Portfolio · Istanbul, TR",
-      srSuffix: " — Digital Transformation & BI Leader",
+      srSuffix: " — Head of Digital Transformation, BI & Enterprise AI",
       years: "15+ years",
       intro: (yrs) => (
         <>Digital transformation and business intelligence leader,{" "}
@@ -134,7 +134,7 @@ export const ui: Record<Lang, UI> = {
       langs: "LANGS",
       scope: "SCOPE",
       status: "STATUS",
-      roleVal: "DX & BI Manager",
+      roleVal: "Head of DX, BI & Enterprise AI",
       basedVal: "Istanbul, TR",
       langsVal: "TR · FA · AZ · EN",
       scopeVal: "EMEA · Balkans · GCC",
@@ -260,7 +260,7 @@ export const ui: Record<Lang, UI> = {
     nav: { work: "Projeler", capabilities: "Yetkinlikler", impact: "Etki", projects: "Projeler / Uygulamalar", contact: "İletişim", getInTouch: "İLETİŞİME GEÇ", openMenu: "Menüyü aç", closeMenu: "Menüyü kapat" },
     hero: {
       location: "Portfolyo · İstanbul, TR",
-      srSuffix: " — Dijital Dönüşüm & İş Zekâsı Lideri",
+      srSuffix: " — Dijital Dönüşüm, İş Zekâsı & Kurumsal YZ Başkanı",
       years: "15+ yıl",
       intro: (yrs) => (
         <><span className="text-foreground">{yrs}</span>lık dijital dönüşüm ve iş zekâsı lideri. Veri ile karar arasındaki katmanı kuruyorum — analitik ve yapay zekâ yatırımlarını yönetimin bakabildiği değil, üzerine hareket edebildiği bir şeye dönüştürüyorum.</>
@@ -270,7 +270,7 @@ export const ui: Record<Lang, UI> = {
       langs: "DİLLER",
       scope: "KAPSAM",
       status: "DURUM",
-      roleVal: "Dijital Dönüşüm & İZ Yöneticisi",
+      roleVal: "DX, İZ & Kurumsal YZ Başkanı",
       basedVal: "İstanbul, TR",
       langsVal: "TR · FA · AZ · EN",
       scopeVal: "EMEA · Balkanlar · Körfez",
@@ -409,15 +409,15 @@ export const metricsI18n: Record<Lang, MetricT[]> = {
 export type CapabilityT = { title: string; items: string[] };
 export const capabilitiesI18n: Record<Lang, CapabilityT[]> = {
   en: [
-    { title: "Transformation & Strategy", items: ["Digital Transformation Strategy", "AI Strategy & Adoption", "Change Management", "Business Process Reengineering", "Operating Model Design", "Executive Stakeholder Management", "Multi-Entity Governance"] },
+    { title: "Transformation & Strategy", items: ["Digital Transformation Strategy", "Enterprise AI & LLM Deployment", "Technology Roadmap Design", "PMO Re-engineering", "Change Management", "Business Process Reengineering", "Operating Model Design", "Executive Stakeholder Management", "Multi-Entity Governance"] },
     { title: "Data & Analytics", items: ["Power BI", "Data Strategy & Governance", "KPI Framework Design", "Executive Reporting", "Data Analytics"] },
-    { title: "Automation & Systems", items: ["Microsoft Power Platform", "Power Automate", "ERP / CRM Integration", "SAP SuccessFactors", "E-Commerce & B2B Platforms", "IT Infrastructure"] },
+    { title: "Automation & Systems", items: ["Microsoft Power Platform", "Power Automate", "ERP / CRM Integration", "SAP SuccessFactors", "Vendor & SLA Management", "E-Commerce & B2B Platforms", "IT Infrastructure"] },
     { title: "Leadership", items: ["Team Building", "Cross-Functional Leadership", "Multi-Entity Delivery", "Project Management", "Requirements Analysis"] },
   ],
   tr: [
-    { title: "Dönüşüm & Strateji", items: ["Dijital Dönüşüm Stratejisi", "YZ Stratejisi & Benimsenmesi", "Değişim Yönetimi", "İş Süreçleri Yeniden Tasarımı", "Operasyon Modeli Tasarımı", "Üst Düzey Paydaş Yönetimi", "Çoklu Birim Yönetişimi"] },
+    { title: "Dönüşüm & Strateji", items: ["Dijital Dönüşüm Stratejisi", "Kurumsal YZ & LLM Devreye Alma", "Teknoloji Yol Haritası Tasarımı", "PMO Yeniden Yapılandırma", "Değişim Yönetimi", "İş Süreçleri Yeniden Tasarımı", "Operasyon Modeli Tasarımı", "Üst Düzey Paydaş Yönetimi", "Çoklu Birim Yönetişimi"] },
     { title: "Veri & Analitik", items: ["Power BI", "Veri Stratejisi & Yönetişim", "KPI Çerçevesi Tasarımı", "Yönetici Raporlama", "Veri Analitiği"] },
-    { title: "Otomasyon & Sistemler", items: ["Microsoft Power Platform", "Power Automate", "ERP / CRM Entegrasyonu", "SAP SuccessFactors", "E-Ticaret & B2B Platformlar", "BT Altyapısı"] },
+    { title: "Otomasyon & Sistemler", items: ["Microsoft Power Platform", "Power Automate", "ERP / CRM Entegrasyonu", "SAP SuccessFactors", "Tedarikçi & SLA Yönetimi", "E-Ticaret & B2B Platformlar", "BT Altyapısı"] },
     { title: "Liderlik", items: ["Ekip Kurma", "Fonksiyonlar Arası Liderlik", "Çoklu Kuruluş Teslimatı", "Proje Yönetimi", "Gereksinim Analizi"] },
   ],
 };
@@ -425,96 +425,108 @@ export const capabilitiesI18n: Record<Lang, CapabilityT[]> = {
 export type ExperienceT = { period: string; role: string; company: string; location: string; bullets: string[] };
 export const experienceI18n: Record<Lang, ExperienceT[]> = {
   en: [
-    { period: "2022 — 2026", role: "Digital Transformation & BI Manager", company: "Yiğitoğlu", location: "Istanbul", bullets: [
-      "Led enterprise-wide transformation across 7 international entities, aligning strategy, data, and technology.",
-      "Built and led a 5-person transformation & BI team, owning delivery and capability development.",
-      "Architected an executive Power BI suite across Finance, HR, Sales, and Supply Chain — cutting manual reporting by 80%.",
-      "Directed AI-enabled automation on Microsoft Power Platform, lifting operational productivity by 67%.",
-      "Delivered SAP SuccessFactors HR digitalization for 450+ employees across 9 locations.",
-      "Launched a company-wide Digital Workplace PWA consolidating ERP, HR, CRM, BI, and IT Service Desk.",
-      "Standardized operational processes across 7 international entities, reducing execution variance and strengthening cross-functional governance.",
-      "Redesigned processes across Sales, Finance and Operations, reducing handoff delays between departments.",
-      "Partnered directly with executive leadership to align the transformation roadmap with multi-year strategic objectives.",
+    { period: "2026 — Present", role: "Independent Consulting / Product Development", company: "Independent", location: "Istanbul", bullets: [
+      "Advising organizations on digital transformation, enterprise AI and business intelligence on a project basis.",
+      "AI deployment strategy, BI ecosystem architecture and multi-entity digital governance.",
+      "Designing and shipping own products alongside advisory engagements.",
     ]},
-    { period: "2021 — 2022", role: "Digital Transformation Analyst", company: "Yiğitoğlu", location: "Istanbul", bullets: [
-      "Compressed average transformation delivery from 18 months to 6.",
-      "Mapped end-to-end processes across departments to surface automation and digitalization opportunities.",
-      "Implemented AI-powered solutions that improved operational efficiency and customer experience.",
-      "Evaluated digital initiatives against performance metrics and business KPIs to guide leadership decision-making.",
+    { period: "2022 — 2026", role: "Head of Digital Transformation, BI & Enterprise AI", company: "Yiğitoğlu Group", location: "Istanbul", bullets: [
+      "Directed the group IT, ERP and digital transformation roadmap across 7 international entities — Germany, Russia, India, China, Malaysia and Türkiye (incl. Rubin Kimya).",
+      "Held steering authority over group-wide IT architecture, ERP selection and software deployment, coordinating processes across 12+ departments.",
+      "Led the secure in-house deployment of \"Yigi AI\", an LLM-powered enterprise knowledge assistant integrating HR, Finance, Sales and Purchasing data — fully private, cutting routine query overhead and accelerating onboarding.",
+      "Made the build-vs-buy call to develop the regional Power BI ecosystem entirely in-house, keeping custom architecture and full data ownership.",
+      "Directed in-house engineering of a custom PWA Digital Workplace, removing recurring licensing and vendor maintenance dependencies.",
+      "Evaluated in-house build against licensed platforms for enterprise CRM and logistics tracking, then procured and integrated the licensed option to accelerate deployment.",
+      "Designed and engineered \"Insight360\", a performance evaluation and incentive platform with automated data harvesting and real-time Power BI tracking — accelerating evaluation-to-reward workflows by 70%.",
+      "Built the Valory Vista digital brand and technology stack end to end: web platforms, CRM pipeline and automated Power BI reporting for executive steering.",
+      "Steered the in-house digital rebranding and web development of Rubin Kimya.",
+      "Built, coached and upskilled a 5-person DX & BI team; established a company-wide data literacy framework and promoted from within.",
+      "Rolled out SAP SuccessFactors for 450+ employees across 9 corporate offices, unifying ERP, HRIS, CRM and BI into one Digital Workplace.",
+      "Standardized operational workflows across EMEA/MENA business units with shared data-governance models.",
     ]},
-    { period: "2019 — 2021", role: "International E-Commerce Manager & Digital Transformation Analyst", company: "Kiğılı", location: "Istanbul", bullets: [
-      "Led a 10+ person e-commerce and digital operations team across international markets.",
-      "Integrated e-commerce operations with ERP, streamlining order fulfillment.",
-      "Automated inventory & order workflows with Power Automate — cutting manual processing time by 40%.",
-      "Supported CRM transformation that lifted customer engagement and marketing effectiveness.",
+    { period: "2021 — 2022", role: "Digital Transformation & BI Analyst", company: "Yiğitoğlu Group", location: "Istanbul", bullets: [
+      "Re-engineered the corporate PMO delivery framework, compressing project lifecycles from 18 months to 6 — a 67% acceleration.",
+      "Ran end-to-end process reviews across commercial and operational departments to build targeted automation roadmaps.",
+      "Delivered tailored automations and data visualization that lifted team productivity and internal satisfaction.",
     ]},
-    { period: "2019", role: "E-Commerce Manager", company: "Edgers", location: "Istanbul", bullets: [
-      "Built and launched the company's first B2B e-commerce platform end-to-end.",
-      "Managed international B2B operations across Iran, the Balkans, Egypt, the US, and multiple African markets.",
-      "Owned the end-to-end digital order journey — platform architecture, product catalogue, customer onboarding and fulfilment coordination.",
-      "Adapted the platform and commercial approach to the payment, logistics and compliance requirements of each export market.",
+    { period: "2019 — 2021", role: "International E-Commerce & Digital Transformation Lead", company: "Kiğılı", location: "Istanbul", bullets: [
+      "Partnered with international logistics and software engineering teams to integrate cross-border e-commerce operations with core ERP stacks, improving order-to-fulfilment speed.",
+      "Automated inventory, logistics and order workflows with Power Automate — cutting manual processing effort by 40%.",
+      "Supported the international migration and rollout of a localized CRM platform across regional marketing units.",
+      "Mapped technical processes to align localized retail practices with central ERP and inventory tracking.",
     ]},
-    { period: "2018", role: "Senior Business Developer", company: "Orka Holding — Damat / Tween / D'S", location: "Istanbul", bullets: [
-      "Surfaced new opportunities through market and competitive analysis across multiple retail brands.",
+    { period: "2019", role: "E-Commerce Platform Director (D2C Launch)", company: "Edgers", location: "Istanbul", bullets: [
+      "Led the zero-to-one design, build and launch of the company's first direct digital sales channel and proprietary B2B platform.",
+      "Expanded digital sales across EMEA/MENA, the US and the Balkans.",
+      "Designed payment and logistics systems around the financial regulations, customs duties, VAT rules and data-privacy laws of each export region.",
     ]},
-    { period: "2016 — 2017", role: "Business Development Specialist", company: "Finesse", location: "Istanbul", bullets: [
-      "Developed strategic partnerships and managed client relationships to support expansion.",
+    { period: "2018", role: "Senior Business Developer — Digital Commerce Strategy", company: "Orka Holding — Damat / Tween / D'S", location: "Istanbul", bullets: [
+      "Executed global market and competitor research, presenting data-backed strategic recommendations to executive leadership.",
     ]},
-    { period: "2013 — 2016", role: "IT Engineer → Senior IT Engineer", company: "Mercedes-Benz AG", location: "Tabriz", bullets: [
-      "Led enterprise IT infrastructure operations, ensuring high availability and stability.",
-      "Implemented security and process improvements, reducing incident resolution time.",
-      "Supported business-critical IT environments in close collaboration with engineering teams.",
+    { period: "2016 — 2017", role: "Business Development Specialist & Technical Liaison", company: "Finesse", location: "Istanbul", bullets: [
+      "Bridged technical and commercial teams, translating complex software specifications into value-driven proposals.",
     ]},
-    { period: "2011 — 2013", role: "IT System Engineer", company: "EghtesadNovin Bank", location: "Tabriz", bullets: [
-      "Designed and maintained enterprise IT infrastructure supporting banking operations and business continuity.",
-      "Improved system stability and reliability through proactive maintenance and infrastructure modernization.",
+    { period: "2013 — 2016", role: "Senior IT Infrastructure Lead & Specialist", company: "Mercedes-Benz AG", location: "Tabriz", bullets: [
+      "Managed and optimized IT infrastructure for heavy assembly operations, guaranteeing 99.9% uptime.",
+      "Collaborated closely with European corporate departments on standards and security improvements.",
+      "Supported business-critical IT environments alongside engineering teams.",
+    ]},
+    { period: "2011 — 2013", role: "IT Systems Engineer", company: "EghtesadNovin Bank", location: "Tabriz", bullets: [
+      "Designed secure regional bank network architectures safeguarding data integrity.",
+      "Directed branch network modernization projects.",
       "Delivered technical support for mission-critical banking applications.",
     ]},
   ],
   tr: [
-    { period: "2022 — 2026", role: "Dijital Dönüşüm & İZ Yöneticisi", company: "Yiğitoğlu", location: "İstanbul", bullets: [
-      "7 uluslararası kuruluşta strateji, veri ve teknolojiyi hizalayan kurum çapında dönüşümü yönettim.",
-      "5 kişilik dönüşüm & iş zekâsı ekibini kurup yönettim; teslimat ve yetkinlik gelişimini üstlendim.",
-      "Finans, İK, Satış ve Tedarik Zinciri için yönetici Power BI paketi tasarladım — manuel raporlamayı %80 azalttım.",
-      "Microsoft Power Platform üzerinde YZ destekli otomasyonu yönettim; operasyonel verimliliği %67 artırdım.",
-      "9 lokasyondaki 450+ çalışan için SAP SuccessFactors İK dijitalleşmesini hayata geçirdim.",
-      "ERP, İK, CRM, İZ ve BT Servis Masası'nı tek çatı altında toplayan Dijital İş Yeri PWA'sını devreye aldım.",
-      "7 uluslararası birim genelinde operasyonel süreçleri standartlaştırarak uygulama farklılıklarını azalttım ve fonksiyonlar arası yönetişimi güçlendirdim.",
-      "Satış, Finans ve Operasyon süreçlerini yeniden tasarlayarak departmanlar arası devir gecikmelerini azalttım.",
-      "Dönüşüm yol haritasını üst yönetimin çok yıllı stratejik hedefleriyle doğrudan hizaladım.",
+    { period: "2026 — Halen", role: "Bağımsız Danışmanlık / Ürün Geliştirme", company: "Bağımsız", location: "İstanbul", bullets: [
+      "Kurumlara proje bazlı dijital dönüşüm, kurumsal yapay zekâ ve iş zekâsı danışmanlığı veriyorum.",
+      "YZ devreye alma stratejisi, iş zekâsı ekosistem mimarisi ve çoklu birim dijital yönetişimi.",
+      "Danışmanlığın yanında kendi ürünlerimi tasarlayıp yayına alıyorum.",
     ]},
-    { period: "2021 — 2022", role: "Dijital Dönüşüm Analisti", company: "Yiğitoğlu", location: "İstanbul", bullets: [
-      "Ortalama dönüşüm teslim süresini 18 aydan 6 aya indirdim.",
-      "Otomasyon ve dijitalleşme fırsatlarını görünür kılmak için uçtan uca süreç haritaları çıkardım.",
-      "Operasyonel verimliliği ve müşteri deneyimini iyileştiren yapay zekâ destekli çözümler uyguladım.",
-      "Dijital girişimleri performans metrikleri ve iş KPI'ları üzerinden değerlendirerek yönetim kararlarına girdi sağladım.",
+    { period: "2022 — 2026", role: "Dijital Dönüşüm, İş Zekâsı & Kurumsal YZ Başkanı", company: "Yiğitoğlu Grup", location: "İstanbul", bullets: [
+      "Almanya, Rusya, Hindistan, Çin, Malezya ve Türkiye (Rubin Kimya dâhil) olmak üzere 7 uluslararası kuruluşta grup BT, ERP ve dijital dönüşüm yol haritasını yönettim.",
+      "Grup çapında BT mimarisi, ERP seçimi ve yazılım devreye alma kararlarında yönlendirme yetkisini üstlendim; 12+ departman arasında süreçleri koordine ettim.",
+      "İK, Finans, Satış ve Satın Alma verilerini entegre eden LLM tabanlı kurumsal bilgi asistanı \"Yigi AI\"ı tamamen kurum içinde ve gizliliği koruyarak devreye aldım; rutin sorgu yükünü azalttım ve işe alım uyumunu hızlandırdım.",
+      "Bölgesel Power BI ekosistemini tamamen kurum içinde geliştirme kararını aldım; özel mimari ve tam veri sahipliğini korudum.",
+      "Özel bir PWA Dijital İş Yeri çözümünün kurum içi geliştirmesini yönettim; yinelenen lisans ve tedarikçi bakım bağımlılığını ortadan kaldırdım.",
+      "Kurumsal CRM ve lojistik takibi için kurum içi geliştirme ile lisanslı platformları karşılaştırdım; devreye alma süresini kısaltmak için lisanslı çözümü temin edip entegre ettim.",
+      "Otomatik veri toplama ve gerçek zamanlı Power BI takibi içeren performans değerlendirme ve teşvik platformu \"Insight360\"ı tasarlayıp geliştirdim — değerlendirme-ödül akışını %70 hızlandırdım.",
+      "Valory Vista'nın dijital marka ve teknoloji altyapısını uçtan uca kurdum: web platformları, CRM hattı ve yönetim için otomatik Power BI raporlaması.",
+      "Rubin Kimya'nın kurum içi dijital yeniden markalaşma ve web geliştirme sürecini yönettim.",
+      "5 kişilik dijital dönüşüm & iş zekâsı ekibini kurdum, koçluk yaptım ve geliştirdim; şirket çapında veri okuryazarlığı çerçevesi oluşturdum ve içeriden terfi sağladım.",
+      "9 kurumsal ofisteki 450+ çalışan için SAP SuccessFactors'ı devreye alarak ERP, İK, CRM ve iş zekâsını tek Dijital İş Yeri altında birleştirdim.",
+      "EMEA/MENA birimlerinde operasyonel süreçleri standartlaştırdım ve ortak veri yönetişim modelleri kurdum.",
     ]},
-    { period: "2019 — 2021", role: "Uluslararası E-Ticaret Müdürü ve Dijital Dönüşüm Analisti", company: "Kiğılı", location: "İstanbul", bullets: [
-      "Uluslararası pazarlarda 10+ kişilik e-ticaret ve dijital operasyon ekibini yönettim.",
-      "E-ticaret operasyonlarını ERP ile entegre ederek sipariş karşılamayı kolaylaştırdım.",
-      "Power Automate ile envanter & sipariş süreçlerini otomatikleştirdim — manuel süreyi %40 azalttım.",
-      "Müşteri etkileşimini ve pazarlama etkinliğini artıran CRM dönüşümünü destekledim.",
+    { period: "2021 — 2022", role: "Dijital Dönüşüm & İş Zekâsı Analisti", company: "Yiğitoğlu Grup", location: "İstanbul", bullets: [
+      "Kurumsal PMO teslim çerçevesini yeniden tasarladım; proje yaşam döngülerini 18 aydan 6 aya indirdim (%67 hızlanma).",
+      "Ticari ve operasyonel departmanlarda uçtan uca süreç incelemeleri yaparak hedefli otomasyon yol haritaları oluşturdum.",
+      "Ekip verimliliğini ve iç memnuniyeti artıran özel otomasyonlar ve veri görselleştirmeleri hayata geçirdim.",
     ]},
-    { period: "2019", role: "E-Ticaret Yöneticisi", company: "Edgers", location: "İstanbul", bullets: [
-      "Şirketin ilk B2B e-ticaret platformunu uçtan uca kurdum ve devreye aldım.",
-      "İran, Balkanlar, Mısır, ABD ve birçok Afrika pazarında uluslararası B2B operasyonlarını yönettim.",
-      "Platform mimarisinden ürün kataloğuna, müşteri kazanımından sipariş karşılamaya kadar uçtan uca dijital sipariş yolculuğunu yönettim.",
-      "Platformu ve ticari yaklaşımı her ihracat pazarının ödeme, lojistik ve mevzuat gereksinimlerine uyarladım.",
+    { period: "2019 — 2021", role: "Uluslararası E-Ticaret & Dijital Dönüşüm Lideri", company: "Kiğılı", location: "İstanbul", bullets: [
+      "Uluslararası lojistik ve yazılım mühendisliği ekipleriyle birlikte sınır ötesi e-ticaret operasyonlarını ERP altyapısıyla entegre ettim; sipariş karşılama hızını artırdım.",
+      "Power Automate ile envanter, lojistik ve sipariş süreçlerini otomatikleştirdim — manuel eforu %40 azalttım.",
+      "Yerelleştirilmiş bir CRM platformunun uluslararası göçünü ve bölgesel pazarlama birimlerinde devreye alınmasını destekledim.",
+      "Yerel perakende uygulamalarını merkezi ERP ve envanter takibiyle hizalamak için teknik süreç haritaları çıkardım.",
     ]},
-    { period: "2018", role: "Kıdemli İş Geliştirme Uzmanı", company: "Orka Holding — Damat / Tween / D'S", location: "İstanbul", bullets: [
-      "Birden fazla perakende markası için pazar ve rekabet analizi yoluyla yeni fırsatlar ortaya çıkardım.",
+    { period: "2019", role: "E-Ticaret Platform Direktörü (D2C Lansmanı)", company: "Edgers", location: "İstanbul", bullets: [
+      "Şirketin ilk doğrudan dijital satış kanalını ve kendi B2B platformunu sıfırdan tasarlayıp devreye aldım.",
+      "Dijital satışı EMEA/MENA, ABD ve Balkanlar'a genişlettim.",
+      "Ödeme ve lojistik sistemlerini her ihracat bölgesinin finansal mevzuatı, gümrük vergileri, KDV kuralları ve veri gizliliği yasalarına göre tasarladım.",
     ]},
-    { period: "2016 — 2017", role: "İş Geliştirme Uzmanı", company: "Finesse", location: "İstanbul", bullets: [
-      "Büyümeyi desteklemek için stratejik ortaklıklar geliştirdim ve müşteri ilişkilerini yönettim.",
+    { period: "2018", role: "Kıdemli İş Geliştirme Uzmanı — Dijital Ticaret Stratejisi", company: "Orka Holding — Damat / Tween / D'S", location: "İstanbul", bullets: [
+      "Global pazar ve rekabet araştırmaları yürüttüm; üst yönetime veriye dayalı stratejik öneriler sundum.",
     ]},
-    { period: "2013 — 2016", role: "BT Mühendisi → Kıdemli BT Mühendisi", company: "Mercedes-Benz AG", location: "Tebriz", bullets: [
-      "Yüksek erişilebilirlik ve kararlılığı sağlayarak kurumsal BT altyapı operasyonlarını yönettim.",
-      "Güvenlik ve süreç iyileştirmeleri uyguladım; olay çözüm süresini azalttım.",
-      "İş açısından kritik BT ortamlarını mühendislik ekipleriyle yakın iş birliği içinde destekledim.",
+    { period: "2016 — 2017", role: "İş Geliştirme Uzmanı & Teknik Köprü", company: "Finesse", location: "İstanbul", bullets: [
+      "Teknik ve ticari ekipler arasında köprü kurdum; karmaşık yazılım gereksinimlerini değer odaklı ticari tekliflere dönüştürdüm.",
+    ]},
+    { period: "2013 — 2016", role: "Kıdemli BT Altyapı Lideri & Uzmanı", company: "Mercedes-Benz AG", location: "Tebriz", bullets: [
+      "Ağır montaj operasyonlarının BT altyapısını yönettim ve optimize ettim; %99,9 çalışma sürekliliği sağladım.",
+      "Standartlar ve güvenlik iyileştirmeleri için Avrupa'daki kurumsal departmanlarla yakın iş birliği yaptım.",
+      "İş açısından kritik BT ortamlarını mühendislik ekipleriyle birlikte destekledim.",
     ]},
     { period: "2011 — 2013", role: "BT Sistem Mühendisi", company: "EghtesadNovin Bankası", location: "Tebriz", bullets: [
-      "Bankacılık operasyonlarını ve iş sürekliliğini destekleyen kurumsal BT altyapısını tasarladım ve sürdürdüm.",
-      "Proaktif bakım ve altyapı modernizasyonuyla sistem kararlılığını ve güvenilirliğini artırdım.",
+      "Veri bütünlüğünü güvence altına alan güvenli bölgesel banka ağ mimarileri tasarladım.",
+      "Şube ağı modernizasyon projelerini yönettim.",
       "Kritik bankacılık uygulamaları için teknik destek sağladım.",
     ]},
   ],
@@ -535,15 +547,19 @@ export const educationI18n: Record<Lang, EducationT[]> = {
 export type CertificationT = { title: string; issuer: string; status: string };
 export const certificationsI18n: Record<Lang, CertificationT[]> = {
   en: [
-    { title: "Microsoft PL-300 — Power BI Data Analyst", issuer: "Microsoft", status: "Exam scheduled September 2026" },
+    { title: "Microsoft PL-300 — Power BI Data Analyst Associate", issuer: "Microsoft", status: "2026" },
     { title: "Career Essentials in Generative AI", issuer: "Microsoft / LinkedIn Learning", status: "2024" },
     { title: "Agile Foundations", issuer: "IIBA / LinkedIn Learning", status: "2026" },
+    { title: "Scrum Foundations / The Basics", issuer: "Scrum Alliance", status: "2026" },
+    { title: "Agile Project Management with Jira", issuer: "LinkedIn Learning", status: "2026" },
     { title: "Telling Stories with Data", issuer: "LinkedIn Learning", status: "2021" },
   ],
   tr: [
-    { title: "Microsoft PL-300 — Power BI Veri Analisti", issuer: "Microsoft", status: "Sınav tarihi Eylül 2026" },
+    { title: "Microsoft PL-300 — Power BI Veri Analisti Associate", issuer: "Microsoft", status: "2026" },
     { title: "Career Essentials in Generative AI", issuer: "Microsoft / LinkedIn Learning", status: "2024" },
     { title: "Agile Foundations (Çevik Temeller)", issuer: "IIBA / LinkedIn Learning", status: "2026" },
+    { title: "Scrum Foundations / The Basics", issuer: "Scrum Alliance", status: "2026" },
+    { title: "Jira ile Çevik Proje Yönetimi", issuer: "LinkedIn Learning", status: "2026" },
     { title: "Veriyle Hikâye Anlatımı", issuer: "LinkedIn Learning", status: "2021" },
   ],
 };
