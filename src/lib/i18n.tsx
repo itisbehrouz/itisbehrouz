@@ -138,7 +138,7 @@ export const ui: Record<Lang, UI> = {
       basedVal: "Istanbul, TR",
       langsVal: "TR · FA · AZ · EN",
       scopeVal: "EMEA · Balkans · GCC",
-      statusVal: "Open to a new role",
+      statusVal: "ACHORD founder",
     },
     sections: {
       capabilities: "Capabilities",
@@ -274,7 +274,7 @@ export const ui: Record<Lang, UI> = {
       basedVal: "İstanbul, TR",
       langsVal: "TR · FA · AZ · EN",
       scopeVal: "EMEA · Balkanlar · Körfez",
-      statusVal: "Yeni role açık",
+      statusVal: "ACHORD kurucusu",
     },
     sections: {
       capabilities: "Yetkinlikler",
@@ -425,10 +425,12 @@ export const capabilitiesI18n: Record<Lang, CapabilityT[]> = {
 export type ExperienceT = { period: string; role: string; company: string; location: string; bullets: string[] };
 export const experienceI18n: Record<Lang, ExperienceT[]> = {
   en: [
-    { period: "2026 — Present", role: "Independent Consulting / Product Development", company: "Independent", location: "Istanbul", bullets: [
-      "Advising organizations on digital transformation, enterprise AI and business intelligence on a project basis.",
-      "AI deployment strategy, BI ecosystem architecture and multi-entity digital governance.",
-      "Designing and shipping own products alongside advisory engagements.",
+    { period: "2026 — Present", role: "Founder at ACHORD", company: "ACHORD", location: "Istanbul", bullets: [
+      "ACHORD designs business architecture for modern enterprises.",
+      "ACHORD connects Microsoft, SAP, Oracle, and Salesforce.",
+      "ACHORD does not replace these systems.",
+      "ACHORD designs how they work together.",
+      "Customers do not buy software. Customers buy a designed system.",
     ]},
     { period: "2022 — 2026", role: "Head of Digital Transformation, BI & Enterprise AI", company: "Yiğitoğlu Group", location: "Istanbul", bullets: [
       "Directed the group IT, ERP and digital transformation roadmap across 7 international entities — Germany, Russia, India, China, Malaysia and Türkiye (incl. Rubin Kimya).",
@@ -478,10 +480,12 @@ export const experienceI18n: Record<Lang, ExperienceT[]> = {
     ]},
   ],
   tr: [
-    { period: "2026 — Halen", role: "Bağımsız Danışmanlık / Ürün Geliştirme", company: "Bağımsız", location: "İstanbul", bullets: [
-      "Kurumlara proje bazlı dijital dönüşüm, kurumsal yapay zekâ ve iş zekâsı danışmanlığı veriyorum.",
-      "YZ devreye alma stratejisi, iş zekâsı ekosistem mimarisi ve çoklu birim dijital yönetişimi.",
-      "Danışmanlığın yanında kendi ürünlerimi tasarlayıp yayına alıyorum.",
+    { period: "2026 — Halen", role: "ACHORD Kurucusu", company: "ACHORD", location: "İstanbul", bullets: [
+      "ACHORD modern kurumlar için iş mimarisi tasarlar.",
+      "ACHORD Microsoft, SAP, Oracle ve Salesforce'u birbirine bağlar.",
+      "ACHORD bu sistemlerin yerini almaz.",
+      "ACHORD bunların birlikte nasıl çalışacağını tasarlar.",
+      "Müşteriler yazılım satın almaz. Müşteriler tasarlanmış bir sistem satın alır.",
     ]},
     { period: "2022 — 2026", role: "Dijital Dönüşüm, İş Zekâsı & Kurumsal YZ Yöneticisi", company: "Yiğitoğlu Grup", location: "İstanbul", bullets: [
       "Almanya, Rusya, Hindistan, Çin, Malezya ve Türkiye (Rubin Kimya dâhil) olmak üzere 7 uluslararası kuruluşta grup BT, ERP ve dijital dönüşüm yol haritasını yönettim.",
