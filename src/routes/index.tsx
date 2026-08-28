@@ -294,9 +294,9 @@ function Portfolio() {
                 { k: t.hero.based, v: t.hero.basedVal },
                 { k: t.hero.langs, v: t.hero.langsVal },
                 { k: t.hero.scope, v: t.hero.scopeVal },
-                { k: t.hero.status, v: t.hero.statusVal },
+                { k: t.hero.status, v: t.hero.statusVal, href: "https://achord.io/" },
               ].map((r) => (
-                <Row key={r.k} k={r.k} v={r.v} />
+                <Row key={r.k} k={r.k} v={r.v} href={r.href} />
               ))}
             </motion.div>
           </motion.div>
@@ -557,11 +557,23 @@ function Portfolio() {
   );
 }
 
-function Row({ k, v }: { k: string; v: string }) {
+function Row({ k, v, href }: { k: string; v: string; href?: string }) {
+  const valueClasses = "min-w-0 text-right text-[0.85em] sm:text-[0.95em] sm:whitespace-nowrap text-foreground";
   return (
     <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-border pb-2 last:border-b-0">
       <span className="whitespace-nowrap">{k}</span>
-      <span className={`min-w-0 text-right text-[0.85em] sm:text-[0.95em] sm:whitespace-nowrap text-foreground`}>{v}</span>
+      {href ? (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${valueClasses} underline decoration-1 underline-offset-4 decoration-foreground/50 hover:decoration-2 hover:decoration-foreground transition-colors`}
+        >
+          {v} ↗
+        </a>
+      ) : (
+        <span className={valueClasses}>{v}</span>
+      )}
     </div>
   );
 }
