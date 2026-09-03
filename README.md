@@ -1,51 +1,54 @@
 
-Istanbul, Türkiye · [behruzbagirzade.com](https://behruzbagirzade.com) · [LinkedIn](https://linkedin.com/in/itisbehrouz) · [X](https://x.com/itisbehrouz)
+# Behrouz Bagherzadeh
+
+Founder and Systems Architect. I build enterprise platforms, developer tools, and software products.
+
+Istanbul, Türkiye · [Website](https://behruzbagirzade.com) · [LinkedIn](https://linkedin.com/in/itisbehrouz) · [X](https://x.com/itisbehrouz)
 
 ---
 
-I spend most of my career at the point where enterprise technology meets business strategy. Fifteen-plus years in, my job hasn't been to build the dashboard — it's been to turn what the dashboard shows into a narrative a leadership team can act on. I've done that across seven international business units, building and leading the teams that make it repeatable rather than a one-off.
+## Overview
 
-The four numbers below are the ones I keep coming back to, because they're the ones that changed how the organizations I worked in actually operated.
+I am the founder of Achord. I design and build modern software systems that solve operational problems for businesses and engineers.
 
-#### Impact
+My work focuses on three primary areas:
 
-| Metric | What it means |
-|---|---|
-| **80%** | reduction in manual reporting — Power BI rollout across Finance, HR, Sales, and Supply Chain |
-| **67%** | increase in operational efficiency — AI-driven automation built on Power Platform |
-| **450+** | employees across 9 locations — SAP SuccessFactors HR digitalization, delivered end to end |
-| **18 → 6 months** | transformation delivery cycle, compressed through standardized program design |
-
-**Right now:** I'm looking at Head of Digital Transformation and BI Director roles — AI Transformation Lead and Digital Transformation Officer too — at large, multi-unit enterprise organizations. If that's a conversation worth having on your end, LinkedIn below is the fastest way to reach me.
+- **Enterprise Platforms:** Scalable business systems, regulatory compliance engines, and automated workflow backends.
+- **Developer Ecosystems:** High-trust collaboration platforms, pair-programming networks, and developer telemetry tools.
+- **Native Applications:** Lightweight desktop utilities for macOS built with Swift.
 
 ---
 
-#### Where I've done this
+## Architectural Principles
 
-- **Yiğitoğlu** — Digital Transformation & BI Manager (2022–2026), Digital Transformation Analyst (2021–2022) · 12 projects delivered. Built and led a 5-person DX/BI team across 7 international business units; launched the Digital Workplace platform unifying ERP, HR, CRM, BI, and IT service desk.
-- **Kiğılı** — International E-Commerce Manager & Digital Transformation Analyst (2019–2021). Led a 10+ person team; integrated e-commerce operations with ERP and automated inventory/order flows via Power Automate, cutting manual processing time by 40%.
-- **Edgers** — E-Commerce Manager (2019). Designed and launched the company's first B2B e-commerce platform, spanning five international markets.
-- Earlier: Orka Holding, Finesse, Mercedes-Benz AG, EghtesadNovin Bank (2011–2018) — enterprise IT infrastructure and business development.
-
-#### Toolkit
-
-**Enterprise & BI** — Power BI · Power Platform · Power Automate · SAP SuccessFactors · ERP/CRM Integration · Data Governance · KPI Frameworks
-
-**Hands-on build & automation** — TypeScript/JavaScript · Next.js/React · Node.js · Kotlin (Android) · AI-assisted automation & rapid prototyping
-
-**Leadership** — Change Management · Cross-Functional Leadership · Multi-Unit Program Delivery
-
-#### Education & credentials
-
-- MicroMasters, Digital Transformation Leadership — Boston University (2023–2024)
-- BASc, Computer & Information Systems Security — University of Applied Science and Technology
-- Microsoft PL-300 (Power BI Data Analyst) — exam scheduled September 2026
-- Career Essentials in Generative AI — Microsoft / LinkedIn Learning (2024)
-
-#### Languages
-
-Turkish, Persian, Azerbaijani (native) · English (professional)
+- **Deep Architecture:** Deep modules with clean interface boundaries.
+- **Minimal Complexity:** Predictable and maintainable systems with minimal dependencies.
+- **Operational Clarity:** Real-time visibility into systems, data, and performance.
 
 ---
 
-Let's talk — [LinkedIn](https://linkedin.com/in/itisbehrouz).
+## Technical Stack
+
+- **Languages:** TypeScript, Go, Swift, Python, SQL
+- **Frontend & Web:** Next.js, React, Lit Web Components, Tailwind CSS
+- **Backend & Systems:** Node.js, Go HTTP services, PostgreSQL, SQLite, Redis
+- **Architecture:** Distributed systems, RESTful APIs, event-driven design, data pipelines
+
+---
+
+## Active Ventures & Projects
+
+- **Achord Solution:** Enterprise business platform and software ecosystem.
+- **CommitTogether:** High-trust developer network and collaboration platform.
+- **Luma:** Native macOS utility focused on desktop productivity.
+- **Karmis:** Open-source career intelligence and market data engine.
+
+---
+
+## Contact
+
+I am open to discussions with fellow founders, engineers, and product builders.
+
+- **LinkedIn:** [linkedin.com/in/itisbehrouz](https://linkedin.com/in/itisbehrouz)
+- **X (Twitter):** [@itisbehrouz](https://x.com/itisbehrouz)
+- **Email / Web:** [behruzbagirzade.com](https://behruzbagirzade.com)
