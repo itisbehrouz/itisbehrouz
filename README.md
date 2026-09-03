@@ -36,15 +36,6 @@ My work focuses on three primary areas:
 
 ---
 
-## Active Ventures & Projects
-
-- **Achord Solution:** Enterprise business platform and software ecosystem.
-- **CommitTogether:** High-trust developer network and collaboration platform.
-- **Luma:** Native macOS utility focused on desktop productivity.
-- **Karmis:** Open-source career intelligence and market data engine.
-
----
-
 ## Contact
 
 I am open to discussions with fellow founders, engineers, and product builders.
