@@ -36,6 +36,18 @@ My work focuses on three primary areas:
 
 ---
 
+## Achord Company
+
+Follow Achord on official company channels:
+
+- **Website:** [achord.io](https://achord.io/)
+- **LinkedIn:** [linkedin.com/company/achord-io](https://www.linkedin.com/company/achord-io)
+- **X (Twitter):** [@achord_io](https://x.com/achord_io)
+- **Instagram:** [@achord.io](https://www.instagram.com/achord.io/)
+- **GitHub:** [github.com/achord-io](https://github.com/achord-io)
+
+---
+
 ## Contact
 
 I am open to discussions with fellow founders, engineers, and product builders.
