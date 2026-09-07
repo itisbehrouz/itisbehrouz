@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./banner.png" width="100%" alt="Behrouz Bagherzadeh — Founder & Systems Architect at Achord Ltd" />
+  <img src="./banner.png" width="100%" alt="Behrouz Bagherzadeh — Founder & Systems Architect" />
 </div>
 
 <p align="center">

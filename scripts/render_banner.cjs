@@ -70,16 +70,22 @@ async function generateBanner() {
       z-index: 1;
     }
 
-    /* Official Achord Mark Watermark */
-    .brand-watermark {
+    /* 3D Graphic Canvas Container */
+    .canvas-3d-container {
       position: absolute;
-      right: 44px;
-      top: 24px;
-      width: 740px;
-      height: 770px;
-      opacity: 0.085;
+      right: 80px;
+      top: 60px;
+      width: 720px;
+      height: 640px;
       pointer-events: none;
-      z-index: 2;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #canvas3d {
+      width: 720px;
+      height: 640px;
     }
 
     /* Top Bar */
@@ -230,24 +236,19 @@ async function generateBanner() {
   <div class="radial-glow-top"></div>
   <div class="radial-glow-right"></div>
 
-  <!-- Canonical Achord 4-Plate Mark Watermark -->
-  <svg class="brand-watermark" viewBox="0 0 1399.79 1461.03" fill="none">
-    <g transform="translate(-300.11,-269.48)" fill="#38BDF8">
-      <path d="M1699.89,922.22l-269.47,4.96c-194.35,3.58-366.69-164.26-367.92-358.25l-1.89-299.34,636.52-.11,2.77,652.74Z"/>
-      <path d="M935.12,1486.53l-3.15,243.36-629.36.62-2.5-661.89,276.05,1.66c209.91,1.26,361.77,199.56,358.97,416.24Z"/>
-      <path d="M938.38,493.53c18.87,227.74-139.71,432.4-361.84,433.83l-273.85,1.77-2.04-659.48,423.44,1.96c120.34.56,212.36,94.37,214.29,221.92Z"/>
-      <path d="M1699.39,1725.69l-453.35,4.07c-124.07,1.11-186.15-97.18-188.84-211.87-5.35-227.54,142.1-424.51,375.82-447.08l263.72-1.68,2.64,656.55Z"/>
-    </g>
-  </svg>
+  <!-- 3D Geometric Structure -->
+  <div class="canvas-3d-container">
+    <canvas id="canvas3d" width="720" height="640"></canvas>
+  </div>
 
   <!-- Top Bar -->
   <div class="top-bar">
     <div class="role-badge">
       <div class="status-dot"></div>
-      Founder & Systems Architect • Achord Ltd
+      Founder & Systems Architect
     </div>
     <div class="meta-location">
-      Achord Bilgi Teknolojileri • Istanbul, TR
+      Istanbul, Türkiye
     </div>
   </div>
 
@@ -289,6 +290,135 @@ async function generateBanner() {
       <div class="col-desc">Minimal surface interfaces that hide significant complexity, with zero passthrough.</div>
     </div>
   </div>
+
+  <!-- 3D Canvas Rendering Script -->
+  <script>
+    const canvas = document.getElementById('canvas3d');
+    const ctx = canvas.getContext('2d');
+    const cx = canvas.width / 2 + 40;
+    const cy = canvas.height / 2 - 20;
+
+    // 3D Isometric projection angles
+    const pitch = 28 * Math.PI / 180;
+    const yaw = 42 * Math.PI / 180;
+
+    function project(x, y, z) {
+      const x1 = x * Math.cos(yaw) + z * Math.sin(yaw);
+      const y1 = y;
+      const z1 = -x * Math.sin(yaw) + z * Math.cos(yaw);
+      const x2 = x1;
+      const y2 = y1 * Math.cos(pitch) - z1 * Math.sin(pitch);
+      const z2 = y1 * Math.sin(pitch) + z1 * Math.cos(pitch);
+      return { x: cx + x2, y: cy + y2, z: z2 };
+    }
+
+    // Outer 3D Cube
+    const S = 145;
+    const vertices = [
+      project(-S, -S, -S), // 0
+      project( S, -S, -S), // 1
+      project( S,  S, -S), // 2
+      project(-S,  S, -S), // 3
+      project(-S, -S,  S), // 4
+      project( S, -S,  S), // 5
+      project( S,  S,  S), // 6
+      project(-S,  S,  S)  // 7
+    ];
+
+    // Floating Inner 3D Cube
+    const S2 = 75;
+    const innerVertices = [
+      project(-S2, -S2, -S2),
+      project( S2, -S2, -S2),
+      project( S2,  S2, -S2),
+      project(-S2,  S2, -S2),
+      project(-S2, -S2,  S2),
+      project( S2, -S2,  S2),
+      project( S2,  S2,  S2),
+      project(-S2,  S2,  S2)
+    ];
+
+    // Subtle 3D ground coordinates
+    ctx.strokeStyle = 'rgba(56, 189, 248, 0.08)';
+    ctx.lineWidth = 1;
+    for (let g = -240; g <= 240; g += 60) {
+      const p1 = project(g, S + 60, -240);
+      const p2 = project(g, S + 60, 240);
+      ctx.beginPath();
+      ctx.moveTo(p1.x, p1.y);
+      ctx.lineTo(p2.x, p2.y);
+      ctx.stroke();
+
+      const p3 = project(-240, S + 60, g);
+      const p4 = project(240, S + 60, g);
+      ctx.beginPath();
+      ctx.moveTo(p3.x, p3.y);
+      ctx.lineTo(p4.x, p4.y);
+      ctx.stroke();
+    }
+
+    function drawFace(verts, idxs, fillStyle, strokeStyle, lineWidth) {
+      ctx.beginPath();
+      ctx.moveTo(verts[idxs[0]].x, verts[idxs[0]].y);
+      for (let i = 1; i < idxs.length; i++) {
+        ctx.lineTo(verts[idxs[i]].x, verts[idxs[i]].y);
+      }
+      ctx.closePath();
+      if (fillStyle) {
+        ctx.fillStyle = fillStyle;
+        ctx.fill();
+      }
+      if (strokeStyle) {
+        ctx.strokeStyle = strokeStyle;
+        ctx.lineWidth = lineWidth || 1.5;
+        ctx.stroke();
+      }
+    }
+
+    // Outer cube faces & glowing edges
+    drawFace(vertices, [0, 1, 5, 4], 'rgba(56, 189, 248, 0.09)', 'rgba(56, 189, 248, 0.55)', 2);
+    drawFace(vertices, [4, 0, 3, 7], 'rgba(15, 23, 42, 0.5)', 'rgba(56, 189, 248, 0.4)', 1.5);
+    drawFace(vertices, [5, 4, 7, 6], 'rgba(30, 41, 59, 0.35)', 'rgba(56, 189, 248, 0.5)', 2);
+    drawFace(vertices, [1, 5, 6, 2], 'rgba(15, 23, 42, 0.35)', 'rgba(56, 189, 248, 0.35)', 1.5);
+
+    // Connecting dashed lines
+    ctx.setLineDash([4, 4]);
+    ctx.strokeStyle = 'rgba(56, 189, 248, 0.28)';
+    ctx.lineWidth = 1;
+    for (let i = 0; i < 8; i++) {
+      ctx.beginPath();
+      ctx.moveTo(vertices[i].x, vertices[i].y);
+      ctx.lineTo(innerVertices[i].x, innerVertices[i].y);
+      ctx.stroke();
+    }
+    ctx.setLineDash([]);
+
+    // Inner cube faces & edges
+    drawFace(innerVertices, [0, 1, 5, 4], 'rgba(56, 189, 248, 0.22)', 'rgba(186, 230, 254, 0.85)', 1.5);
+    drawFace(innerVertices, [4, 0, 3, 7], 'rgba(37, 99, 235, 0.18)', 'rgba(56, 189, 248, 0.6)', 1.5);
+    drawFace(innerVertices, [5, 4, 7, 6], 'rgba(14, 165, 233, 0.2)', 'rgba(186, 230, 254, 0.85)', 1.5);
+    drawFace(innerVertices, [1, 5, 6, 2], 'rgba(30, 41, 59, 0.25)', 'rgba(56, 189, 248, 0.6)', 1.5);
+
+    // Glowing nodes at outer vertices
+    vertices.forEach(v => {
+      ctx.shadowColor = '#38BDF8';
+      ctx.shadowBlur = 12;
+      ctx.fillStyle = '#38BDF8';
+      ctx.beginPath();
+      ctx.arc(v.x, v.y, 4.5, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    // Glowing nodes at inner vertices
+    innerVertices.forEach(v => {
+      ctx.shadowColor = '#BAE6FD';
+      ctx.shadowBlur = 8;
+      ctx.fillStyle = '#FFFFFF';
+      ctx.beginPath();
+      ctx.arc(v.x, v.y, 3, 0, Math.PI * 2);
+      ctx.fill();
+    });
+  </script>
 </body>
 </html>
   `;
