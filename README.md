@@ -1,6 +1,6 @@
 # Behrouz Bagherzadeh
 
-Founder and Systems Architect. I build enterprise platforms, developer tools, and software products.
+Founder and Systems Architect. I design distributed backend platforms, developer ecosystems, and local-first software engines.
 
 Istanbul, Türkiye
 
@@ -16,35 +16,35 @@ Istanbul, Türkiye
 
 ## Overview
 
-I am the founder of Achord. I design and build modern software systems that solve operational problems for businesses and engineers.
+I am the founder of Achord. I engineer software systems that eliminate operational bottlenecks and deliver deterministic reliability for enterprises and developers.
 
-My work focuses on three primary areas:
+My core focus spans three domains:
 
-- **Enterprise Platforms:** Scalable business systems, regulatory compliance engines, and automated workflow backends.
-- **Developer Ecosystems:** High-trust collaboration platforms, pair-programming networks, and developer telemetry tools.
-- **Native Applications:** Lightweight desktop utilities for macOS built with Swift.
+- **Enterprise Platforms:** Distributed business backends, regulatory compliance engines, and event-driven workflow architectures.
+- **Developer Ecosystems:** High-trust collaboration platforms, autonomous workflow sidecars, and developer productivity tooling.
+- **Native Systems:** High-performance macOS applications engineered natively with Swift.
 
 ---
 
 ## Featured Public Engines
 
-- **[ESNAFÇA](https://github.com/itisbehrouz/Esnafca)** — Open-source local commerce and neighborhood engine built with Next.js 15, Leaflet geospatial mapping, dynamic QR discovery, and a Zero-Trust operations dashboard.
-- **[KARMİS](https://github.com/itisbehrouz/karmis)** — Open-source, deterministic personal career decision engine powered by local-first SQLite scoring algorithms and zero telemetry.
+- **[ESNAFÇA](https://github.com/itisbehrouz/Esnafca)** — Open-source local commerce engine featuring Leaflet geospatial clustering, dynamic QR discovery, and a Zero-Trust administrative workstation.
+- **[KARMİS](https://github.com/itisbehrouz/karmis)** — Open-source, deterministic career decision engine driven by local-first SQLite scoring algorithms and zero telemetry.
 
 ---
 
 ## Architectural Principles
 
-- **Deep Architecture:** Deep modules with clean interface boundaries.
-- **Minimal Complexity:** Predictable and maintainable systems with minimal dependencies.
-- **Operational Clarity:** Real-time visibility into systems, data, and performance.
+- **Deep Interfaces:** Deep modules with clean seams that hide operational complexity behind simple abstractions.
+- **Deterministic Reliability:** Predictable state machines, strict data contracts, and zero-telemetry local-first architectures.
+- **Operational Clarity:** Real-time event streams, RFC 7807 standard error contracts, and immutable audit trails.
 
 ---
 
 ## Strategic Collaboration
 
-I collaborate with founders, technical leaders, and enterprises on:
+I collaborate with founders, technical directors, and engineering organizations on:
 
-- Designing resilient, zero-trust backend platforms and event-driven systems.
-- Local-first data architectures and deterministic decision engines.
-- Engineering productivity frameworks and high-trust developer tooling.
+- Distributed systems design, concurrency control, and zero-trust backend perimeters.
+- Local-first data architecture, deterministic decision engines, and edge performance.
+- Systems audit, technical debt elimination, and engineering workflow optimization.
