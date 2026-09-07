@@ -276,7 +276,7 @@ async function generateBanner() {
     <div class="grid-col">
       <div class="col-header">02 / Telemetry</div>
       <div class="col-title">Developer Control Planes</div>
-      <div class="col-desc">DevTower Port 5950 control plane, real-time SSE streams, and port sentinels.</div>
+      <div class="col-desc">Master telemetry control planes, real-time SSE streams, and system sentinels.</div>
     </div>
     <div class="grid-col">
       <div class="col-header">03 / Native Clients</div>

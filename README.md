@@ -18,7 +18,6 @@ $ achord sysinfo --architect itisbehrouz
   Organization       Achord Ltd (Achord Bilgi Teknolojileri Ltd. Şti.)
   Headquarters       Istanbul, Türkiye
   Architecture Core  John Ousterhout Deep Modules • Zero-Framework HTTP
-  Control Plane      DevTower (Port 5950)
   Active Runtimes    Go 1.24+ • TypeScript • Swift 6 • PostgreSQL • Lit 3
   Official Inbound   contact@achord.io
 ```
@@ -34,16 +33,16 @@ $ achord sysinfo --architect itisbehrouz
 <p>I design software systems that align business operations with technical architecture.</p>
 <ul>
   <li>Distributed backends and event-driven workflows</li>
-  <li>Chemical and regulatory compliance engines (KKDİK, BEKRA, TMGD)</li>
-  <li>High-performance data pipelines and enterprise integrations</li>
+  <li>Enterprise compliance and business process engines</li>
+  <li>High-performance data pipelines and system integrations</li>
 </ul>
 </td>
 <td width="50%" valign="top">
 <h4>Developer Telemetry & Control Planes</h4>
 <p>I build tools that give engineering teams real-time operational clarity.</p>
 <ul>
-  <li>DevTower master control plane and port telemetry (Port 5950)</li>
-  <li>Real-time Server-Sent Events (SSE) and process sentinels</li>
+  <li>Master control planes, metrics pipelines, and process sentinels</li>
+  <li>Real-time Server-Sent Events (SSE) and live streams</li>
   <li>Developer pair networks and automated engineering toolchains</li>
 </ul>
 </td>
@@ -69,21 +68,6 @@ $ achord sysinfo --architect itisbehrouz
 </td>
 </tr>
 </table>
-
----
-
-## Active Ecosystem Matrix
-
-| Venture / System                                     | Port / Surface | Role & Domain                          | Architecture & Stack                        | Interface Standard      |    Status    |
-| :--------------------------------------------------- | :------------: | :------------------------------------- | :------------------------------------------ | :---------------------- | :----------: |
-| [**Achord Ltd**](https://achord.io)                  |     `3000`     | Corporate Operating Architecture       | Next.js 15, Tailwind CSS, Token Compiler    | IBM Carbon + W3C Tokens | `Production` |
-| [**DevTower**](https://github.com/achord-io)         |     `5950`     | Developer Control Plane & Live Streams | Go HTTP Handlers, SSE Streams, Hono, React  | Linear Dark / Carbon    | `Active Dev` |
-| [**Achord HUB**](https://github.com/achord-io)       |     `8080`     | Chemical Regulatory OS (BEKRA & KKDİK) | Lit 3 TypeScript, Shadow DOM, Go Handlers   | Salesforce SLDS 2       | `Active Dev` |
-| [**Luma**](https://github.com/itisbehrouz)           |  Native macOS  | macOS Native Ambient Audio Utility     | Swift 6, SwiftUI Native, AppKit             | Apple HIG Native        |    `Live`    |
-| [**Satriano Atelier**](https://github.com/achord-io) |     `3002`     | B2B Luxury Fashion Commerce Platform   | Next.js 15, Tailored ERP Bridge, PostgreSQL | Luxury Minimal          | `Active Dev` |
-| [**Achord Insurance**](https://github.com/achord-io) |     `3003`     | Digital Risk Assessment Portal         | Next.js 15, Supabase, PostgreSQL            | shadcn / IBM Carbon     | `Active Dev` |
-| [**Achord Cortex**](https://github.com/achord-io)    |     `3007`     | AI Brain OS & Knowledge Graph Client   | Electron, React 19, Gemini AI API           | Obsidian Native Dark    | `Active Dev` |
-| [**AI Factory Document OS**](https://achord.io)      |     `3005`     | Industrial Document & Diagnostic OS    | Go 1.24, Python Docling, Lit 3, pgvector    | Industrial Dense        | `Active Dev` |
 
 ---
 
