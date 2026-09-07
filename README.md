@@ -5,12 +5,12 @@ Founder and Systems Architect. I build enterprise platforms, developer tools, an
 Istanbul, Türkiye · [Website](https://behruzbagirzade.com) · [LinkedIn](https://linkedin.com/in/itisbehrouz) · [X](https://x.com/itisbehrouz)
 
 <p align="center">
-  <a href="https://achord.io"><img src="https://img.shields.io/badge/Achord_Ecosystem-achord.io-0176D3?style=flat-square&logo=target&logoColor=white" alt="Achord Website" /></a>
-  <a href="https://behruzbagirzade.com"><img src="https://img.shields.io/badge/Founder_Portfolio-behruzbagirzade.com-0F172A?style=flat-square&logo=safari&logoColor=white" alt="Founder Website" /></a>
-  <a href="https://linkedin.com/in/itisbehrouz"><img src="https://img.shields.io/badge/LinkedIn-itisbehrouz-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-  <a href="https://x.com/itisbehrouz"><img src="https://img.shields.io/badge/X-@itisbehrouz-000000?style=flat-square&logo=x&logoColor=white" alt="X" /></a>
+  <a href="https://achord.io"><img src="https://img.shields.io/badge/Achord_Website-achord.io-161B22?style=flat-square&logo=target&logoColor=white" alt="Achord Website" /></a>
+  <a href="https://behruzbagirzade.com"><img src="https://img.shields.io/badge/Founder_Website-behruzbagirzade.com-161B22?style=flat-square&logo=safari&logoColor=white" alt="Founder Website" /></a>
+  <a href="https://linkedin.com/in/itisbehrouz"><img src="https://img.shields.io/badge/LinkedIn-itisbehrouz-161B22?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="https://x.com/itisbehrouz"><img src="https://img.shields.io/badge/X-@itisbehrouz-161B22?style=flat-square&logo=x&logoColor=white" alt="X" /></a>
   <br />
-  <a href="mailto:contact@achord.io"><img src="https://img.shields.io/badge/Official_Inbound-contact@achord.io-059669?style=flat-square&logo=mail.ru&logoColor=white" alt="Contact Email" /></a>
+  <a href="mailto:contact@achord.io"><img src="https://img.shields.io/badge/Contact_Email-contact@achord.io-161B22?style=flat-square&logo=mail.ru&logoColor=white" alt="Contact Email" /></a>
 </p>
 
 ---
