@@ -1,103 +1,37 @@
-<div align="center">
-  <img src="./banner.png" width="100%" alt="Behrouz Bagherzadeh — Founder & Systems Architect" />
-</div>
+# Behrouz Bagherzadeh
+
+Founder and Systems Architect. I build enterprise platforms, developer tools, and software products.
+
+Istanbul, Türkiye · [Website](https://behruzbagirzade.com) · [LinkedIn](https://linkedin.com/in/itisbehrouz) · [X](https://x.com/itisbehrouz)
 
 <p align="center">
   <a href="https://achord.io"><img src="https://img.shields.io/badge/Achord_Ecosystem-achord.io-0176D3?style=flat-square&logo=target&logoColor=white" alt="Achord Website" /></a>
   <a href="https://behruzbagirzade.com"><img src="https://img.shields.io/badge/Founder_Portfolio-behruzbagirzade.com-0F172A?style=flat-square&logo=safari&logoColor=white" alt="Founder Website" /></a>
   <a href="https://linkedin.com/in/itisbehrouz"><img src="https://img.shields.io/badge/LinkedIn-itisbehrouz-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
   <a href="https://x.com/itisbehrouz"><img src="https://img.shields.io/badge/X-@itisbehrouz-000000?style=flat-square&logo=x&logoColor=white" alt="X" /></a>
+  <br />
   <a href="mailto:contact@achord.io"><img src="https://img.shields.io/badge/Official_Inbound-contact@achord.io-059669?style=flat-square&logo=mail.ru&logoColor=white" alt="Contact Email" /></a>
 </p>
 
-```text
-$ achord sysinfo --architect itisbehrouz
+---
 
-  Identity           Behrouz Bagherzadeh (Behruz Bagirzade)
-  Title              Founder & Systems Architect
-  Organization       Achord Ltd (Achord Bilgi Teknolojileri Ltd. Şti.)
-  Headquarters       Istanbul, Türkiye
-  Architecture Core  John Ousterhout Deep Modules • Zero-Framework HTTP
-  Active Runtimes    Go 1.24+ • TypeScript • Swift 6 • PostgreSQL • Lit 3
-  Official Inbound   contact@achord.io
-```
+## Overview
+
+I am the founder of Achord. I design and build modern software systems that solve operational problems for businesses and engineers.
+
+My work focuses on three primary areas:
+
+- **Enterprise Platforms:** Scalable business systems, regulatory compliance engines, and automated workflow backends.
+- **Developer Ecosystems:** High-trust collaboration platforms, pair-programming networks, and developer telemetry tools.
+- **Native Applications:** Lightweight desktop utilities for macOS built with Swift.
 
 ---
 
-## Core Disciplines & Focus Areas
+## Architectural Principles
 
-<table width="100%">
-<tr>
-<td width="50%" valign="top">
-<h4>Enterprise Operating Architecture</h4>
-<p>I design software systems that align business operations with technical architecture.</p>
-<ul>
-  <li>Distributed backends and event-driven workflows</li>
-  <li>Enterprise compliance and business process engines</li>
-  <li>High-performance data pipelines and system integrations</li>
-</ul>
-</td>
-<td width="50%" valign="top">
-<h4>Developer Telemetry & Control Planes</h4>
-<p>I build tools that give engineering teams real-time operational clarity.</p>
-<ul>
-  <li>Master control planes, metrics pipelines, and process sentinels</li>
-  <li>Real-time Server-Sent Events (SSE) and live streams</li>
-  <li>Developer pair networks and automated engineering toolchains</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-<h4>Native Apple Desktop Engineering</h4>
-<p>I engineer native macOS applications that respect user attention and hardware resources.</p>
-<ul>
-  <li>Native Swift 6 and SwiftUI architectures</li>
-  <li>Apple Human Interface Guidelines (HIG) compliance</li>
-  <li>Zero-Webview overhead and minimal memory footprints</li>
-</ul>
-</td>
-<td width="50%" valign="top">
-<h4>Deep Module Engineering Doctrine</h4>
-<p>I enforce clear interface boundaries that hide operational complexity.</p>
-<ul>
-  <li>Deep modules with minimal interface surface areas</li>
-  <li>Zero-framework standard library HTTP handlers in Go</li>
-  <li>Type-safe contracts with RFC 7807 problem details</li>
-</ul>
-</td>
-</tr>
-</table>
-
----
-
-## Layered Architecture Model
-
-```text
-┌──────────────────────────────────────────────────────────────────────────────┐
-│                           LAYER 1: INTERFACE SEAMS                           │
-│  • Strict Type Contracts: TypeScript, Zod schemas, Go struct validations     │
-│  • Unified Design Tokens: W3C DTCG standard, Tailwind scales, SwiftUI tokens │
-│  • Standard Error Semantics: RFC 7807 Problem Details for HTTP APIs          │
-├──────────────────────────────────────────────────────────────────────────────┤
-│                           LAYER 2: DEEP DOMAIN MODULES                       │
-│  • High Depth-to-Interface Ratio: Simple function signatures, deep logic     │
-│  • Hidden Information: Internal state encapsulation, zero passthroughs       │
-│  • Deterministic Business Logic: Idempotent operations, state machines       │
-├──────────────────────────────────────────────────────────────────────────────┤
-│                           LAYER 3: RUNTIMES & DATA STORES                    │
-│  • Zero-Framework Go Handlers: Go 1.24+ standard library net/http            │
-│  • Concurrency & Pooling: pgxpool for PostgreSQL, SQLite in WAL mode         │
-│  • Event Distribution: Redis pub/sub, in-memory channels, SSE pipelines      │
-└──────────────────────────────────────────────────────────────────────────────┘
-```
-
-### Engineering Tenets
-
-1. **Architecture Before Technology:** Software tools change over time. Operating architecture remains stable.
-2. **Deep Modules Over Shallow Wrappers:** Design interfaces with small surface areas that hide significant complexity.
-3. **Systems Before Solutions:** Do not optimize isolated tools. Design the complete operating model.
-4. **Operational Clarity:** Real-time visibility into systems, data, and performance is mandatory.
+- **Deep Architecture:** Deep modules with clean interface boundaries.
+- **Minimal Complexity:** Predictable and maintainable systems with minimal dependencies.
+- **Operational Clarity:** Real-time visibility into systems, data, and performance.
 
 ---
 
@@ -158,43 +92,23 @@ $ achord sysinfo --architect itisbehrouz
 
 ---
 
-## Transformation Leadership & Track Record
+## Achord Company
 
-Fifteen years of enterprise leadership support these architectural standards.
+Follow Achord on official company channels:
 
-|    Metric     | Focus Area               | Operational Outcome                                                         |
-| :-----------: | :----------------------- | :-------------------------------------------------------------------------- |
-|    **80%**    | Report Automation        | Engineered unified data models across Finance, HR, Sales, and Supply Chain. |
-|    **67%**    | Operational Efficiency   | Built automated workflow pipelines on enterprise low-code platforms.        |
-|   **450+**    | Workforce Digitalization | Delivered unified digital workplace platforms across nine enterprise sites. |
-| **18 → 6 mo** | Program Velocity         | Compressed delivery cycles with standardized modular architecture.          |
-
----
-
-## Achord Ltd Official Channels
-
-Follow official updates and releases from Achord:
-
-- **Website:** [achord.io](https://achord.io)
-- **GitHub Organization:** [github.com/achord-io](https://github.com/achord-io)
+- **Website:** [achord.io](https://achord.io/)
 - **LinkedIn:** [linkedin.com/company/achord-io](https://www.linkedin.com/company/achord-io)
 - **X (Twitter):** [@achord_io](https://x.com/achord_io)
-- **Instagram:** [@achord.io](https://www.instagram.com/achord.io)
-- **Facebook:** [facebook.com/achord.io](https://www.facebook.com/achord.io)
+- **Instagram:** [@achord.io](https://www.instagram.com/achord.io/)
+- **Facebook:** [facebook.com/achord.io](https://www.facebook.com/achord.io/)
+- **GitHub:** [github.com/achord-io](https://github.com/achord-io)
 
 ---
 
-## Inbound & Direct Contact
+## Contact
 
-I welcome technical discussions with founders, software architects, and systems engineers.
+I am open to discussions with fellow founders, engineers, and product builders.
 
-- **Founder Website:** [behruzbagirzade.com](https://behruzbagirzade.com)
 - **LinkedIn:** [linkedin.com/in/itisbehrouz](https://linkedin.com/in/itisbehrouz)
 - **X (Twitter):** [@itisbehrouz](https://x.com/itisbehrouz)
-- **Official Inbound Email:** [contact@achord.io](mailto:contact@achord.io)
-
-<br />
-
-<div align="center">
-  <sub>Achord Bilgi Teknolojileri ve Danışmanlık Ltd. Şti. • Istanbul, Türkiye</sub>
-</div>
+- **Email / Web:** [behruzbagirzade.com](https://behruzbagirzade.com)
