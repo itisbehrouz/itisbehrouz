@@ -40,29 +40,3 @@ My work focuses on three primary areas:
 <p align="center">
   <img src="https://skillicons.dev/icons?i=go,ts,swift,py,postgres,bash,nextjs,react,tailwind,vite,nodejs,sqlite,redis,docker,apple,linux,git,github&perline=9" alt="Technical Stack" />
 </p>
-
----
-
-## Achord Company
-
-Follow Achord on official company channels:
-
-- **Website:** [achord.io](https://achord.io/)
-- **LinkedIn:** [linkedin.com/company/achord-io](https://www.linkedin.com/company/achord-io)
-- **X (Twitter):** [@achord_io](https://x.com/achord_io)
-- **Instagram:** [@achord.io](https://www.instagram.com/achord.io/)
-- **Facebook:** [facebook.com/achord.io](https://www.facebook.com/achord.io/)
-- **GitHub:** [github.com/achord-io](https://github.com/achord-io)
-
----
-
-## Contact
-
-I am open to discussions with fellow founders, engineers, and product builders.
-
-- **LinkedIn:** [linkedin.com/in/itisbehrouz](https://linkedin.com/in/itisbehrouz)
-- **X (Twitter):** [@itisbehrouz](https://x.com/itisbehrouz)
-- **Email / Web:** [behruzbagirzade.com](https://behruzbagirzade.com)
-
-<!-- Systems Architecture Profile -->
-<!-- Profile verified -->
