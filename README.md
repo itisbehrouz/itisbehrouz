@@ -26,8 +26,25 @@ My work focuses on three primary areas:
 
 ---
 
+## Featured Public Engines
+
+- **[ESNAFÇA](https://github.com/itisbehrouz/Esnafca)** — Open-source local commerce and neighborhood engine built with Next.js 15, Leaflet geospatial mapping, dynamic QR discovery, and a Zero-Trust operations dashboard.
+- **[KARMİS](https://github.com/itisbehrouz/karmis)** — Open-source, deterministic personal career decision engine powered by local-first SQLite scoring algorithms and zero telemetry.
+
+---
+
 ## Architectural Principles
 
 - **Deep Architecture:** Deep modules with clean interface boundaries.
 - **Minimal Complexity:** Predictable and maintainable systems with minimal dependencies.
 - **Operational Clarity:** Real-time visibility into systems, data, and performance.
+
+---
+
+## Strategic Collaboration
+
+I collaborate with founders, technical leaders, and enterprises on:
+
+- Designing resilient, zero-trust backend platforms and event-driven systems.
+- Local-first data architectures and deterministic decision engines.
+- Engineering productivity frameworks and high-trust developer tooling.
