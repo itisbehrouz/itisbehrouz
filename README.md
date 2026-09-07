@@ -2,14 +2,13 @@
 
 Founder and Systems Architect. I build enterprise platforms, developer tools, and software products.
 
-Istanbul, Türkiye · [Website](https://behruzbagirzade.com) · [LinkedIn](https://linkedin.com/in/itisbehrouz) · [X](https://x.com/itisbehrouz)
+Istanbul, Türkiye
 
-<p align="center">
+<p align="left">
   <a href="https://achord.io"><img src="https://img.shields.io/badge/Achord_Website-achord.io-161B22?style=flat-square&logo=target&logoColor=white" alt="Achord Website" /></a>
   <a href="https://behruzbagirzade.com"><img src="https://img.shields.io/badge/Founder_Website-behruzbagirzade.com-161B22?style=flat-square&logo=safari&logoColor=white" alt="Founder Website" /></a>
   <a href="https://linkedin.com/in/itisbehrouz"><img src="https://img.shields.io/badge/LinkedIn-itisbehrouz-161B22?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
   <a href="https://x.com/itisbehrouz"><img src="https://img.shields.io/badge/X-@itisbehrouz-161B22?style=flat-square&logo=x&logoColor=white" alt="X" /></a>
-  <br />
   <a href="mailto:contact@achord.io"><img src="https://img.shields.io/badge/Contact_Email-contact@achord.io-161B22?style=flat-square&logo=mail.ru&logoColor=white" alt="Contact Email" /></a>
 </p>
 
@@ -37,6 +36,6 @@ My work focuses on three primary areas:
 
 ## Technical Stack & Tooling
 
-<p align="center">
+<p align="left">
   <img src="https://skillicons.dev/icons?i=go,ts,swift,py,postgres,bash,nextjs,react,tailwind,vite,nodejs,sqlite,redis,docker,apple,linux,git,github&perline=9" alt="Technical Stack" />
 </p>
