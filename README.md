@@ -49,4 +49,4 @@ I collaborate with founders, technical directors, and engineering organizations 
 - Local-first data architecture, deterministic decision engines, and edge performance.
 - Systems audit, technical debt elimination, and engineering workflow optimization.
 
-<!-- profile-sync-rev: 7 -->
+<!-- profile-sync-rev: 8 -->
