@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="132" height="36" viewBox="0 0 132 36">
+  <rect x="0.5" y="0.5" width="131" height="35" rx="8" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+  <g transform="translate(14, 10) scale(0.008)" fill="#F0F6FC">
+    <path d="M0,0h667.71C801.38,0,909.9,108.52,909.9,242.19v146.92c0,280.76-227.94,508.71-508.71,508.71H0V0H0Z"/>
+    <path d="M1090.1,0h909.9v897.81h-350.77c-308.59,0-559.13-250.54-559.13-559.13V0h0Z"/>
+    <path d="M1.27,1100.97h363.19c301.74,0,546.71,244.97,546.71,546.71v351.1H1.27v-897.81h0Z"/>
+    <path d="M1598.76,1102.19h396.75c2.48,0,4.49,2.01,4.49,4.49v888.82c0,2.48-2.01,4.49-4.49,4.49h-663.17c-133.69,0-242.24-108.54-242.24-242.24v-146.92c0-280.74,227.92-508.66,508.66-508.66Z"/>
+  </g>
+  <line x1="40" y1="9" x2="40" y2="27" stroke="#30363D" stroke-width="1"/>
+  <text x="52" y="22.5" fill="#F0F6FC" font-family="-apple-system, BlinkMacSystemFont, 'Geist', 'Inter', sans-serif" font-size="13" font-weight="500" letter-spacing="-0.1">achord.io</text>
+</svg>

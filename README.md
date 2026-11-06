@@ -1,39 +1,44 @@
-# Behrouz Bagherzadeh
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-header-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/profile-header-light.svg">
+    <img alt="Founder & Systems Architect" src="./assets/profile-header-dark.svg" width="100%">
+  </picture>
+</div>
 
-Founder and Systems Architect. I design distributed backend platforms, developer ecosystems, and local-first software engines.
-
-Istanbul, Türkiye
+<br/>
 
 <p align="left">
-  <a href="https://achord.io"><img src="https://img.shields.io/badge/Achord_Website-achord.io-161B22?style=flat-square&logo=target&logoColor=white" alt="Achord Website" /></a>
-  <a href="https://behruzbagirzade.com"><img src="https://img.shields.io/badge/Founder_Website-behruzbagirzade.com-161B22?style=flat-square&logo=safari&logoColor=white" alt="Founder Website" /></a>
-  <a href="https://linkedin.com/in/itisbehrouz"><img src="https://img.shields.io/badge/LinkedIn-itisbehrouz-161B22?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-  <a href="https://x.com/itisbehrouz"><img src="https://img.shields.io/badge/X-@itisbehrouz-161B22?style=flat-square&logo=x&logoColor=white" alt="X" /></a>
-  <a href="mailto:contact@achord.io"><img src="https://img.shields.io/badge/Contact_Email-contact@achord.io-161B22?style=flat-square&logo=mail.ru&logoColor=white" alt="Contact Email" /></a>
+  <a href="https://achord.io"><img src="./assets/badge-achord.svg" height="36" alt="achord.io" /></a>&nbsp;
+  <a href="https://github.com/achord-io"><img src="./assets/badge-github.svg" height="36" alt="@achord-io" /></a>&nbsp;
+  <a href="https://linkedin.com/in/itisbehrouz"><img src="./assets/badge-linkedin.svg" height="36" alt="LinkedIn" /></a>&nbsp;
+  <a href="https://x.com/itisbehrouz"><img src="./assets/badge-x.svg" height="36" alt="X" /></a>
 </p>
 
 ---
 
-## Overview
+### Overview
 
-I am the founder of Achord. I engineer software systems that eliminate operational bottlenecks and deliver deterministic reliability for enterprises and developers.
+I am the founder of **[ACHORD](https://achord.io)**. I engineer software systems that eliminate operational bottlenecks and deliver deterministic reliability for enterprises and developers.
 
-My core focus spans three domains:
-
-- **Enterprise Platforms:** Distributed business backends, regulatory compliance engines, and event-driven workflow architectures.
-- **Developer Ecosystems:** High-trust collaboration platforms, autonomous workflow sidecars, and developer productivity tooling.
-- **Native Systems:** High-performance macOS applications engineered natively with Swift.
-
----
-
-## Featured Public Engines
-
-- **[ESNAFÇA](https://github.com/itisbehrouz/Esnafca)** — Open-source local commerce engine featuring Leaflet geospatial clustering, dynamic QR discovery, and a Zero-Trust administrative workstation.
-- **[KARMİS](https://github.com/itisbehrouz/karmis)** — Open-source, deterministic career decision engine driven by local-first SQLite scoring algorithms and zero telemetry.
+| Domain | Engineering Scope |
+| :--- | :--- |
+| **Enterprise Platforms** | Distributed business backends, regulatory compliance engines, and event-driven workflow architectures. |
+| **Developer Ecosystems** | High-trust collaboration platforms, autonomous workflow sidecars, and developer productivity tooling. |
+| **Native Systems** | High-performance macOS and Apple ecosystem applications engineered natively with Swift. |
 
 ---
 
-## Architectural Principles
+### Open-Source Public Engines
+
+| Repository | Architecture & Scope |
+| :--- | :--- |
+| **[ESNAFÇA (`itisbehrouz/Esnafca`)](https://github.com/itisbehrouz/Esnafca)** | Open-source local commerce engine featuring Leaflet geospatial clustering, dynamic QR discovery, and a Zero-Trust administrative workstation. |
+| **[KARMİS (`itisbehrouz/karmis`)](https://github.com/itisbehrouz/karmis)** | Open-source, deterministic career decision engine driven by local-first SQLite scoring algorithms and zero telemetry. |
+
+---
+
+### Architectural Principles
 
 - **Deep Interfaces:** Deep modules with clean seams that hide operational complexity behind simple abstractions.
 - **Deterministic Reliability:** Predictable state machines, strict data contracts, and zero-telemetry local-first architectures.
@@ -41,7 +46,7 @@ My core focus spans three domains:
 
 ---
 
-## Strategic Collaboration
+### Strategic Collaboration
 
 I collaborate with founders, technical directors, and engineering organizations on:
 
